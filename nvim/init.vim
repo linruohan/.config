@@ -143,15 +143,13 @@ noremap S :w<CR>
 
 " Open the vimrc file anytime
 noremap <LEADER>rc :e /home/xiaohan/.config/nvim/init.vim<CR>
-noremap <LEADER>rv :e .nvimrc<CR>
+noremap <LEADER>rv :e /home/xiaohan/.nvimrc<CR>
 
 " Undo operations
 noremap l u
-
 " Insert Key
 noremap k i
 noremap K I
-
 " make Y to copy till the end of the line
 nnoremap Y y$
 
@@ -225,7 +223,7 @@ source $XDG_CONFIG_HOME/nvim/cursor.vim
 " === Insert Mode Cursor Movement
 " ===
 inoremap <C-a> <ESC>A
-
+inoremap jk <ESC>
 
 " ===
 " === Command Mode Cursor Movement
@@ -775,7 +773,7 @@ vmap <C-e> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-e>'
 let g:coc_snippet_prev = '<c-n>'
 imap <C-e> <Plug>(coc-snippets-expand-jump)
-let g:snips_author = 'David Chen'
+let g:snips_author = 'xiaohan'
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 
