@@ -1,0 +1,10 @@
+--- a/plug/plug_settings.vim
++++ b/plug/plug_settings.vim
+@@ -326,7 +326,6 @@ noremap <LEADER>fn :DashboardNewFile<CR>
+ 
+ "Galaxyline设置
+ luafile ~/.config/nvim/theme/eviline.lua
+-"luafile ~/.config/nvim/theme/eviline.lua
+ 
+ "vim-easy-align设置
+ xmap ga <Plug>(EasyAlign)

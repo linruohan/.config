@@ -1,0 +1,10 @@
+--- a/plug/plug_list.vim
++++ b/plug/plug_list.vim
+@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
+ "美化插件
+ Plug 'glepnir/galaxyline.nvim'
+ Plug 'hardcoreplayers/vim-buffet'
++Plug 'kyazdani42/nvim-web-devicons'
+ Plug 'hardcoreplayers/dashboard-nvim'
+ Plug 'Yggdroot/indentLine',{ 'for': ['lua', 'c', 'h', 'cpp', 'py', 'json', 'go', 'java', 'vim', 'hs'] }
+ "主题插件

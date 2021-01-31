@@ -1,0 +1,15 @@
+--- a/plug/plug_list.vim
++++ b/plug/plug_list.vim
+@@ -12,12 +12,11 @@ call plug#begin('~/.config/nvim/plugged')
+ 
+ "美化插件
+ Plug 'glepnir/galaxyline.nvim'
+-" If you want to display icons, then use one of these plugins:
+ Plug 'kyazdani42/nvim-web-devicons' " lua
+ "Plug 'ryanoasis/vim-devicons' " vimscript
+ 
+ 
+ Plug 'hardcoreplayers/vim-buffet'
+ Plug 'hardcoreplayers/dashboard-nvim'
+ Plug 'Yggdroot/indentLine',{ 'for': ['lua', 'c', 'h', 'cpp', 'py', 'json', 'go', 'java', 'vim', 'hs'] }
+ "主题插件

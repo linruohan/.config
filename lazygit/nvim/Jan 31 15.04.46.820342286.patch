@@ -1,0 +1,10 @@
+--- a/core/general_config.vim
++++ b/core/general_config.vim
+@@ -60,7 +60,6 @@ if has('wildmenu')
+ 	"		set wildmode=list:longest,full
+ 	"		set wildoptions=tagfile
+ 	" endif
+-	endif
+ 	set wildignorecase
+ 	set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
+ 	set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store

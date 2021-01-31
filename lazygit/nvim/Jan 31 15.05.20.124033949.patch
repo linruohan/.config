@@ -1,0 +1,11 @@
+--- a/plug/plug_settings.vim
++++ b/plug/plug_settings.vim
+@@ -325,7 +325,8 @@ let g:dashboard_custom_shortcut={
+ noremap <LEADER>fn :DashboardNewFile<CR>
+ 
+ "Galaxyline设置
++luafile ~/.config/nvim/theme/eviline.lua
+ "luafile ~/.config/nvim/theme/eviline.lua
+ 
+ "vim-easy-align设置
+ xmap ga <Plug>(EasyAlign)
