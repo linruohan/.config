@@ -89,7 +89,8 @@
 	"explorer.file.column.git.showIgnored": true,
 	"explorer.keyMappingMode": "none",
 	"explorer.buffer.showHiddenBuffers": false,
-	"explorer.keyMappings": {
+	"explorer.keyMappings.global": {
+		"i": false, // cancel default mapkey
 		"u": "nodePrev",
 		"e": "nodeNext",
 		"h": "toggleSelection",
