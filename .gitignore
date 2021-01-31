@@ -35,8 +35,13 @@ picom
 pop-shell
 pulse
 qt5ct
-sogoupinyin
+sogoupinyin/
+user-dirs.dirs/
+user-dirs.locale/
+variety/
+xfce4/
+nvim_p/plugged/
+nvim/tmp/
+nvim/tmp/
 user-dirs.dirs
 user-dirs.locale
-variety
-xfce4
