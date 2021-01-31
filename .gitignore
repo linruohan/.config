@@ -45,3 +45,6 @@ nvim/tmp/
 nvim/tmp/
 user-dirs.dirs
 user-dirs.locale
+nvim/plugged/
+alacritty/my_manjaro_i3wm_config/
+nvim_p/plugged/
