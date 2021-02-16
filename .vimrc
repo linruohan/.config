@@ -1,4 +1,4 @@
-" __  ____   __  _   ___     _____ __  __ ____   ____
+
 "|  \/  \ \ / / | \ | \ \   / /_ _|  \/  |  _ \ / ___|
 "| |\/| |\ V /  |  \| |\ \ / / | || |\/| | |_) | |
 "| |  | | | |   | |\  | \ V /  | || |  | |  _ <| |___
@@ -84,7 +84,7 @@ set wildmenu
 set ignorecase
 set smartcase
 set shortmess+=c
-set inccommand=split
+"set inccommand=split
 set completeopt=longest,noinsert,menuone,noselect,preview
 set ttyfast "should make scrolling faster
 set lazyredraw "same as above
@@ -109,7 +109,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " === Terminal Behaviors
 " ===
 let g:neoterm_autoscroll = 1
-autocmd TermOpen term://* startinsert
+"autocmd TermOpen term://* startinsert
 tnoremap <C-N> <C-\><C-N>
 tnoremap <C-O> <C-\><C-N><C-O>
 let g:terminal_color_0  = '#000000'
@@ -398,9 +398,9 @@ call plug#begin('/home/xiaohan/.vim/plugged')
 
 " ===========================
 "美化插件
-#Plug 'glepnir/galaxyline.nvim'
+Plug 'glepnir/galaxyline.nvim'
 " If you want to display icons, then use one of these plugins:
-#Plug 'kyazdani42/nvim-web-devicons' " lua
+Plug 'kyazdani42/nvim-web-devicons' " lua
 " Plug 'ryanoasis/vim-devicons' " vimscript
 " ===========================
 Plug 'hardcoreplayers/vim-buffet'
@@ -636,12 +636,11 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "let g:oceanic_next_terminal_italic = 1
 "let g:one_allow_italics = 1
 
-"color dracula
+color dracula
 "color one
 "color deus
-color neodark 
 "color papercolor 
-"color gruvbox
+"color neodark olor gruvbox
 "let ayucolor="light"
 "color ayu
 "color xcodelighthc
