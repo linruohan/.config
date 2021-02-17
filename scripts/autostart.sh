@@ -5,7 +5,7 @@ xrandr --output LVDS1 --off --output DP1 --off --output HDMI1 --primary --mode 1
 picom -b
 /bin/bash ~/scripts/tap-to-click.sh &
 /bin/bash ~/scripts/inverse-scroll.sh &
-/bin/bash ~/scripts/setxmodmap-colemak.sh &
+#/bin/bash ~/scripts/setxmodmap-colemak.sh &
 nm-applet &
 fcitx &
 xfce4-power-manager &
