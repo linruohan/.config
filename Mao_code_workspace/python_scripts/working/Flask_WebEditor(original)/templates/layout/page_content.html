@@ -1,0 +1,24 @@
+<div class="page-content">
+    <!--第二菜单，主菜单-->
+    {% block secondary_sidebar %}
+    {% include "layout/secondary_sidebar.html" %}
+    {% endblock %}
+    <!-- Page Header -->
+    {% block page_header %}
+    {% include "layout/page_header.html" %}
+    {% endblock %}
+    <!-- /Page Header -->
+
+
+    {% block page_inner %}
+    {% include "layout/page_inner.html" %}
+    {% endblock %}
+
+
+    {% block main_right_sidebar %}
+    {% include "layout/main_right_sidebar.html" %}
+    {% endblock %}
+    {% block chat_right_sidebar %}
+    {% include "layout/chat_right_sidebar.html" %}
+    {% endblock %}
+</div>

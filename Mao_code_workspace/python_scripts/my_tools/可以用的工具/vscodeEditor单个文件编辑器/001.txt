@@ -1,0 +1,8 @@
+class Main(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setGeometry(200, 100, 800, 600)
+        self.setup_ui()
+        self.filename = None
+        123
+dadsdfasdfasdf

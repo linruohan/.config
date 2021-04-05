@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的froala Editor</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/froala_editor.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/froala_style.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/code_view.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/draggable.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/colors.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/emoticons.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/image_manager.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/image.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/line_breaker.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/table.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/char_counter.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/video.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/fullscreen.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/file.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/quick_insert.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/help.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/third_party/spell_checker.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/special_characters.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/codemirror/codemirror.min.css">
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="qwebchannel.js"></script>
+    <style>
+        body {
+            display: block;
+            margin: 0px !important;
+        }
+
+        div#edit {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            text-align: left;
+        }
+
+        .ss {
+            background-color: red;
+        }
+
+        .editor-wrap > div {
+            width: 100%;
+        }
+
+        .fr-box.fr-document .fr-wrapper .fr-element {
+            width: 100% !important;
+            /*background: #ccbaba;*/
+        }
+
+        .fr-wrapper > div[style*="z-index:9999;"],
+        .fr-wrapper > div[style*="z-index: 9999;"] {
+            overflow: hidden;
+            position: absolute;
+            top: -1000000px;
+            opacity: 0;
+
+        }
+
+        .fr-toolbar .fr-newline {
+            display: none;
+        }
+        .fr-view{
+            min-height: 1000px !important;
+        }
+        .fr-wrapper {
+            height: 1000px !important;
+            padding: 0 !important;
+        }
+
+        .fr-view {
+            padding: 0 0 0 10px;
+            position: absolute;
+            top: 0;
+        }
+
+        .fr-box .fr-toolbar {
+            border-radius: 4px 4px 0px 0px !important;
+            border-color: #3254a3;
+            background-color: #e5d2c5;
+        }
+
+        .fr-toolbar .fr-command.fr-btn, .fr-popup .fr-command.fr-btn, .fr-modal .fr-command.fr-btn {
+            height: 20px !important;
+        }
+
+        .fr-toolbar .fr-command.fr-btn i, .fr-toolbar .fr-command.fr-btn svg, .fr-popup .fr-command.fr-btn i, .fr-popup .fr-command.fr-btn svg, .fr-modal .fr-command.fr-btn i, .fr-modal .fr-command.fr-btn svg {
+            margin: 1px 2px;
+        }
+
+        .fr-toolbar .fr-command.fr-btn svg.fr-svg, .fr-popup .fr-command.fr-btn svg.fr-svg, .fr-modal .fr-command.fr-btn svg.fr-svg {
+            height: 20px !important;
+        }
+
+        .fr-sticky-dummy {
+            height: 0px !important;
+        }
+
+        .fr-second-toolbar {
+            display: none;
+        }
+
+        .fr-placeholder {
+            margin-top: 0;
+        }
+
+        .fr-box .second-toolbar {
+            display: none;
+        }
+
+        .fr-box .second-toolbar #logo {
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden;
+        }
+
+        .fr-box .fr-toolbar {
+            border-radius: 4px 4px 0 0;
+            border-color: #dcdfe6;
+        }
+
+        .fr-box .second-toolbar {
+            border-radius: 0 0 4px 4px;
+            border-color: #dcdfe6;
+        }
+
+        .fr-box .fr-wrapper {
+            border-color: #dcdfe6 !important;
+        }
+    </style>
+    <!--业务js-->
+    <script type="text/javascript">
+        window.onload = function () {
+
+            new QWebChannel(qt.webChannelTransport, function (channel) {
+                // 获取qt中绑定的交互对象
+                window.pyjs = channel.objects.interact_obj;
+                // js 绑定qt中的信号
+                pyjs.sig_send_to_js.connect(function (str) {
+                    // alert(str);
+                    window.editor.html.set(str);
+
+                });
+            });
+        }
+    </script>
+</head>
+
+<body>
+<div id="editor">
+    <!--    <button id="save">保存</button>-->
+    <div id="edit">
+        <div style=" color: rgba(0, 0, 0, 0.75); font-size: 14px;">
+    <main><h1 style=" font-size: 28px; color: rgb(34, 34, 38);">python操作Windows窗口程序</h1>
+        <article>
+            <div style=" font-size: 16px !important;">
+                <blockquote style=" color: rgba(0, 0, 0, 0.5);"><p style=" font-size: 14px; color: rgb(85, 86, 102);">
+                    想要看更加舒服的排版、更加准时的推送<br>关注公众号&ldquo;不太灵光的程序员&rdquo;<br>每日八点有干货推送</p></blockquote>
+                <h3 style=" font-size: 22px; color: rgb(79, 79, 79);"><a name="t0"
+                                                                         style=" color: rgb(78, 161, 219);"></a><a
+                        name="t0" style=" color: rgb(78, 161, 219);"></a><a style=" color: rgb(78, 161, 219);"></a>场景
+                </h3>
+                <p style=" font-size: 18px; color: rgb(77, 77, 77);">定时获取数据接口数据写入Excel表格，Excel需要被其他程序使用，需要处于开启状态。</p>
+                <h3 style=" font-size: 22px; color: rgb(79, 79, 79);"><a name="t1"
+                                                                         style=" color: rgb(78, 161, 219);"></a><a
+                        name="t1" style=" color: rgb(78, 161, 219);"></a><a style=" color: rgb(78, 161, 219);"></a>Pywin32
+                </h3>
+                <p style=" font-size: 18px; color: rgb(77, 77, 77);">首先，安装一个Pywin32，为python提供访问Windows
+                    API的扩展，提供了齐全的windows常量、接口、线程以及COM机制等等。其次，为了方面查找目标窗口的句柄，可以下载一个微软自家的Spy++，这玩意儿满大街都是。有了它，还能很方便的查看窗体的消息。<br>句柄是一个32位整数，在windows中标记对象用，类似一个dict中的key。<br>消息是windows应用的重要部分，用来告诉窗体&ldquo;发生了什么&rdquo;，比如给一个按钮发送BN_CLICKED这么个消息，按钮就知道&ldquo;哦，我被点了&rdquo;，才能执行相应的下一步操作。本文将大量使用消息机制。<a
+                            href="http://blog.csdn.net/liulianglin/article/details/14449577"
+                            style=" color: rgb(103, 149, 181);">详情参看这篇文章。</a></p>
+                <h3 style=" font-size: 22px; color: rgb(79, 79, 79);"><a name="t2"
+                                                                         style=" color: rgb(78, 161, 219);"></a><a
+                        name="t2" style=" color: rgb(78, 161, 219);"></a><a style=" color: rgb(78, 161, 219);"></a>查找窗体句柄
+                </h3>
+                <p style=" font-size: 18px; color: rgb(77, 77, 77);">
+                    貌似在win32编程的世界里，包括窗口到文本框的所有控件就是窗体，所有的窗体都有独立的句柄。要操作任意一个窗体，你都需要找到这个窗体的句柄，这里，我们就可以用到FindWindow函数和FindWindowEx函数。在pywin32中，他们都属于win32gui的模块。<br><a
+                        href="https://blog.csdn.net/qq_23934063/article/details/102928669"
+                        style=" color: rgb(103, 149, 181);">python获取窗口句柄</a></p><h4
+                    style=" font-size: 20px; color: rgb(79, 79, 79);"><a style=" color: rgb(78, 161, 219);"></a>FindWindow(lpClassName=None,
+                lpWindowName=None):</h4>
+                <blockquote style=" color: rgba(0, 0, 0, 0.5);"><p style=" font-size: 14px; color: rgb(85, 86, 102);">
+                    描述：自顶层窗口（也就是桌面）开始搜索条件匹配的窗体，并返回这个窗体的句柄。不搜索子窗口、不区分大小写。找不到就返回0<br>参数：<br>lpClassName：字符型，是窗体的类名，这个可以在Spy++里找到。<br>lpWindowName：字符型，是窗口名，也就是标题栏上你能看见的那个标题。<br>说明：这个函数我们仅能用来找主窗口。<br>####FindWindowEx(hwndParent=0,
+                    hwndChildAfter=0, lpszClass=None,
+                    lpszWindow=None);<br>描述：搜索类名和窗体名匹配的窗体，并返回这个窗体的句柄。不区分大小写，找不到就返回0。<br>参数：<br>hwndParent：若不为0，则搜索句柄为hwndParent窗体的子窗体。<br>hwndChildAfter：若不为0，则按照z-index的顺序从hwndChildAfter向后开始搜索子窗体，否则从第一个子窗体开始搜索。<br>lpClassName：字符型，是窗体的类名，这个可以在Spy++里找到。<br>lpWindowName：字符型，是窗口名，也就是标题栏上你能看见的那个标题。<br>说明：找到了主窗口以后就靠它来定位子窗体啦。
+                </p></blockquote>
+                <h3 style=" font-size: 22px; color: rgb(79, 79, 79);"><a name="t3"
+                                                                         style=" color: rgb(78, 161, 219);"></a><a
+                        name="t3" style=" color: rgb(78, 161, 219);"></a><a style=" color: rgb(78, 161, 219);"></a>菜单操作
+                </h3>
+                <p style=" font-size: 18px; color: rgb(77, 77, 77);">有了句柄，我们就可以操作FaceGen了！嗯，要先打开文件，File&rarr;Open，然后再File&rarr;Save
+                    Image（很悲剧，Save Image没有快捷键，所以不得不进行菜单操作）。现在我们有了FindWindow和FindWindowEx，要怎么操作菜单呢？</p>
+                <p style=" font-size: 18px; color: rgb(77, 77, 77);">哦，抱歉，靠他俩还做不到。</p>
+                <p style=" font-size: 18px; color: rgb(77, 77, 77);">
+                    窗口的菜单就像窗口的标题栏一样，是窗口自身的一部分，不是其他窗体控件，也就没有办法用FindWindow和FindWindowEx返回句柄。所以要对菜单进行操作的话，我们需要新的函数，也就是GetMenu，GetSubMenu和GetMenuItemID，它们也都属于win32gui模块。结合下图来说：</p>
+                <h4 style=" font-size: 20px; color: rgb(79, 79, 79);"><a style=" color: rgb(78, 161, 219);"></a>PostMessage(hWnd,
+                    Msg, wParam, lParam)</h4>
+                <blockquote style=" color: rgba(0, 0, 0, 0.5);"><p style=" font-size: 14px; color: rgb(85, 86, 102);">
+                    描述：在消息队列中加入为指定的窗体加入一条消息，并马上返回，不等待线程对消息的处理。<br>参数：<br>hWnd：整型，接收消息的窗体句柄<br>Msg：整型，要发送的消息，这些消息都是windows预先定义好的，可以参见系统定义消息（System-Defined
+                    Messages）<br>wParam：整型，消息的wParam参数<br>lParam：整型，消息的lParam参数<br>说明：简单说，就是给指定程序发一个消息，这些消息都用整型编好号，作为windows的常量可以查询的。在这里，我们用的就是win32con这个库里定义的WM_COMMAND这个消息，具体的wParam和lParam是根据消息的不同而不同的。具体请根据MSDN查阅。
+                </p></blockquote>
+                <h4 style=" font-size: 20px; color: rgb(79, 79, 79);"><a style=" color: rgb(78, 161, 219);"></a>GetMenu(hwnd)
+                </h4>
+                <blockquote style=" color: rgba(0, 0, 0, 0.5);"><p style=" font-size: 14px; color: rgb(85, 86, 102);">
+                    描述：获取窗口的菜单句柄。<br>参数：<br>hwnd：整型，需要获取菜单的窗口的句柄。<br>说明：获取的是插图中黄色的部分。</p></blockquote>
+                <h4 style=" font-size: 20px; color: rgb(79, 79, 79);"><a style=" color: rgb(78, 161, 219);"></a>GetSubMenu(hMenu,
+                    nPos)</h4>
+                <blockquote style=" color: rgba(0, 0, 0, 0.5);"><p style=" font-size: 14px; color: rgb(85, 86, 102);">
+                    描述：获取菜单的下拉菜单或者子菜单。<br>参数：<br>hMenu：整型，菜单的句柄，从GetMenu获得。<br>nPos：整型，下拉菜单或子菜单的的索引，从0算起。<br>说明：这个可以获取插图中蓝色的部分；如描述所述，这个不仅可以获取本例中的下拉菜单，还可以获取子菜单。
+                </p></blockquote>
+                <h4 style=" font-size: 20px; color: rgb(79, 79, 79);"><a style=" color: rgb(78, 161, 219);"></a>GetMenuItemID(hMenu,
+                    nPos)</h4>
+                <blockquote style=" color: rgba(0, 0, 0, 0.5);"><p style=" font-size: 14px; color: rgb(85, 86, 102);">
+                    描述：获取菜单中特定项目的标识符。<br>参数：<br>hMenu：整型，包含所需菜单项的菜单句柄，从GetSubMenu获得。<br>nPos：整型，菜单项的索引，从0算起。<br>说明：这个获取的就是红色区域中的项目啦，注意，分隔符是被编入索引的，所以Open的索引是2而非1，而Exit的索引是9而非6。
+                </p></blockquote>
+                <h3 style=" font-size: 22px; color: rgb(79, 79, 79);"><a name="t4"
+                                                                         style=" color: rgb(78, 161, 219);"></a><a
+                        name="t4" style=" color: rgb(78, 161, 219);"></a><a style=" color: rgb(78, 161, 219);"></a>控件操作
+                </h3>
+                <p style=" font-size: 18px; color: rgb(77, 77, 77);">
+                    在这里，我们用了SendMessage而不是PostMessage，其区别就在于我们可以通过SendMessage取得消息的返回信息。因为对于我们要设置文本框信息的WM_SETTEXT信息来说，设置成功将返回True。</p>
+                <h4 style=" font-size: 20px; color: rgb(79, 79, 79);"><a style=" color: rgb(78, 161, 219);"></a>SendMessage(hWnd,
+                    Msg, wParam, lParam)</h4>
+                <blockquote style=" color: rgba(0, 0, 0, 0.5);"><p style=" font-size: 14px; color: rgb(85, 86, 102);">
+                    描述：在消息队列中加入为指定的窗体加入一条消息，直到窗体处理完信息才返回。<br>参数：<br>hWnd：整型，接收消息的窗体句柄<br>Msg：整型，要发送的消息，这些消息都是windows预先定义好的，可以参见系统定义消息（System-Defined
+                    Messages）<br>wParam：整型，消息的wParam参数<br>lParam：整型，消息的lParam参数<br>说明：wParam和IParam根据具体的消息不同而有不同的定义，详情参阅Part
+                    2.</p></blockquote>
+                <h3 style=" font-size: 22px; color: rgb(79, 79, 79);"><a name="t5"
+                                                                         style=" color: rgb(78, 161, 219);"></a><a
+                        name="t5" style=" color: rgb(78, 161, 219);"></a><a style=" color: rgb(78, 161, 219);"></a>问题
+                </h3>
+                <blockquote style=" color: rgba(0, 0, 0, 0.5);"><p style=" font-size: 14px; color: rgb(85, 86, 102);">
+                    在开发机器上是可以正常运行的，但是换在其他机器上就会报<strong>1400</strong>的错误</p></blockquote>
+                <pre style=" font-size: 14px; color: rgb(0, 0, 0);"><code style=" font-size: 14px; color: unset;">盐池数据同步已开启 &gt;&gt; 西部绿谷数据.xls 盐池数据本次同步已完成 时间 2018-03-16 14:34:01  数据60分钟后更新 &gt;&gt; 西部绿谷数据.xls Traceback (most recent call last):  File &quot;data_acquisition_3600.py&quot;, line 414, in &lt;module&gt; pywintypes.error: (1400, &#39;CloseWindow&#39;, &#39;\xce\xde\xd0\xa7\xb5\xc4\xb4\xb0\xbf\xda\xbe\xe4\xb1\xfa\xa1\xa3&#39;) Failed to execute script data_acquisition_3600
+<div data-report-click='{"spm":"1001.2101.3001.4259"}' data-title="登录后复制"
+     style=" font-size: inherit; color: rgb(77, 77, 77);">
+</div></code><ul style=" font-size: 16px;"><li style=" font-size: inherit; color: rgb(153, 153, 153);">1</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">2</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">3</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">4</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">5</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">6</li></ul></pre>
+                <blockquote style=" color: rgba(0, 0, 0, 0.5);"><p style=" font-size: 14px; color: rgb(85, 86, 102);">
+                    pywintypes.error 1400
+                    开始以为是编码问题，发现还是找不到窗口句柄，后来发现获取窗口句柄和进程中的名字有关，不同版本的操作系统、Excel的窗口名称和进程名都不一致，需要特别注意。</p></blockquote>
+                <h6 style=" font-size: 16px; color: rgb(79, 79, 79);"><a style=" color: rgb(78, 161, 219);"></a>进程名</h6>
+                <p style=" font-size: 18px; color: rgb(77, 77, 77);"><img
+                        src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWctYmxvZy5jc2RuLm5ldC8yMDE4MDMxNjE3MDIxODU0P3dhdGVybWFyay8yL3RleHQvTHk5aWJHOW5MbU56Wkc0dWJtVjBMM0Z4WHpJek9UTTBNRFl6L2ZvbnQvNWE2TDVMMlQvZm9udHNpemUvNDAwL2ZpbGwvSTBKQlFrRkNNQT09L2Rpc3NvbHZlLzcw"
+                        alt="这里写图片描述"></p><h6 style=" font-size: 16px; color: rgb(79, 79, 79);"><a
+                    style=" color: rgb(78, 161, 219);"></a>窗口名</h6>
+                <p style=" font-size: 18px; color: rgb(77, 77, 77);"><img
+                        src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWctYmxvZy5jc2RuLm5ldC8yMDE4MDMxNjE3MDIyNTI4NT93YXRlcm1hcmsvMi90ZXh0L0x5OWliRzluTG1OelpHNHVibVYwTDNGeFh6SXpPVE0wTURZei9mb250LzVhNkw1TDJUL2ZvbnRzaXplLzQwMC9maWxsL0kwSkJRa0ZDTUE9PS9kaXNzb2x2ZS83MA"
+                        alt="这里写图片描述"></p>
+                <h3 style=" font-size: 22px; color: rgb(79, 79, 79);"><a name="t6"
+                                                                         style=" color: rgb(78, 161, 219);"></a><a
+                        name="t6" style=" color: rgb(78, 161, 219);"></a><a style=" color: rgb(78, 161, 219);"></a>代码
+                </h3>
+                <pre style=" font-size: 14px; color: rgb(0, 0, 0);"><code style=" font-size: 14px; color: unset;"># -*- coding:utf-8 -*- &quot;&quot;&quot; Created on 2018/3/12
+@author: jj &quot;&quot;&quot; import urllib import json import xlwt import copy import time import os import win32gui import win32con 
+def write_ex(data):    &quot;&quot;&quot;    数据 写 文件    :param data:    :return:    &quot;&quot;&quot;    file = xlwt.Workbook(encoding=&#39;utf-8&#39;)    table = file.add_sheet(&quot;sheet1&quot;)    params = [&#39;类型&#39;, &#39;项目名称&#39;, &#39;设备编号&#39;, &#39;阀门开关&#39;, &#39;泵1开关&#39;, &#39;泵2开关&#39;, &#39;水位&#39;, &#39;上报时间&#39;, &#39;水池大小&#39;, &#39;管径&#39;]    params_code = [&#39;leixing&#39;, &#39;name&#39;, &#39;code&#39;, &#39;famen&#39;, &#39;ben1&#39;, &#39;ben2&#39;, &#39;shuiwei&#39;, &#39;date&#39;, &#39;daxiao&#39;, &#39;guanjing&#39;]    for index, item in enumerate(params):        table.write(0, index, item)    table.write(0, 10, time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;, time.localtime(time.time())))    for l_index, equipment in enumerate(data):        for j_index, item in enumerate(params_code):            table.write(l_index+1, j_index, equipment.get(item))    filename = u&quot;西部绿谷数据.xls&quot;    file_path = os.path.join(filename)    file.save(file_path) 
+if __name__ == &#39;__main__&#39;:    print u&#39;盐池数据同步已开启 &gt;&gt; 西部绿谷数据.xls&#39;    while True:        get_api()        print u&#39;盐池数据本次同步已完成 时间 %s  数据5分钟后更新 &gt;&gt; 西部绿谷数据.xls&#39; % time.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;,time.localtime(time.time()))        os.startfile(u&quot;西部绿谷数据.xls&quot;)   # 打开文件        wndtitle = u&quot;西部绿谷数据.xls  [兼容模式] - Excel&quot;   # 进程名        wndclass = None        wnd = win32gui.FindWindow(wndclass, wndtitle)    # 获取窗口句柄        win32gui.CloseWindow(wnd)      # 窗口最小化        time.sleep(300)        win32gui.SendMessage(wnd, win32con.WM_CLOSE)   # 关闭窗口
+<div data-report-click='{"spm":"1001.2101.3001.4259"}' data-title="登录后复制"
+     style=" font-size: inherit; color: rgb(77, 77, 77);">
+</div></code><ul style=" font-size: 16px;"><li style=" font-size: inherit; color: rgb(153, 153, 153);">1</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">2</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">3</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">4</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">5</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">6</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">7</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">8</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">9</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">10</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">11</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">12</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">13</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">14</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">15</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">16</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">17</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">18</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">19</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">20</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">21</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">22</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">23</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">24</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">25</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">26</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">27</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">28</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">29</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">30</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">31</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">32</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">33</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">34</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">35</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">36</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">37</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">38</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">39</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">40</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">41</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">42</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">43</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">44</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">45</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">46</li><li
+                        style=" font-size: inherit; color: rgb(153, 153, 153);">47</li></ul></pre>
+                <h3 style=" font-size: 22px; color: rgb(79, 79, 79);"><a name="t7"
+                                                                         style=" color: rgb(78, 161, 219);"></a><a
+                        name="t7" style=" color: rgb(78, 161, 219);"></a><a style=" color: rgb(78, 161, 219);"></a>推荐阅读：
+                </h3>
+                <ul style=" font-size: 16px;">
+                    <li><a href="https://mp.weixin.qq.com/s/xVPHzSeJaoSl3XnAh6NzLw" style=" color: rgb(103, 149, 181);">Redis实现消息队列的6种方案</a>
+                    </li>
+                    <li><a href="https://mp.weixin.qq.com/s/JMk57dq3dk794gRkvwkvTQ" style=" color: rgb(103, 149, 181);">让运维更简单的7种定时任务实现方式</a>
+                    </li>
+                    <li><a href="https://mp.weixin.qq.com/s/rbi9TkRzP9kP1odgrM1cBw" style=" color: rgb(103, 149, 181);">细品28岁程序员退休创业背后的可怕故事</a>
+                    </li>
+                    <li><a href="https://mp.weixin.qq.com/s/IrPZh71Vuc9STnkweC7UmQ" style=" color: rgb(103, 149, 181);">工作中都有哪些让你心累的时刻</a><br><img
+                            src="https://img-blog.csdnimg.cn/20200628195421850.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzOTM0MDYz,size_16,color_FFFFFF,t_70"
+                            alt="在这里插入图片描述"></li>
+                </ul>
+            </div>
+        </article>
+        <div data-url="https://marketing.csdn.net/p/cd55e58359edb2ed22832e46ed85d96a"><a
+                data-report-click='{"ab":"new","mod":"popu_871","extra":"{\"utm_medium\":\"distribute.pc_relevant_t0.470966\"}","index":"1","strategy":"32_470966_RCMD","dest":"https://marketing.csdn.net/p/cd55e58359edb2ed22832e46ed85d96a"}'
+                data-report-query="utm_medium=distribute.pc_relevant_t0.470966&depth_1-utm_source=distribute.pc_relevant_t0.470966"
+                href="https://marketing.csdn.net/p/cd55e58359edb2ed22832e46ed85d96a"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank">自觉性差的<em
+                style=" color: rgb(252, 85, 49);">程序</em>员，该如何克服这一大难题？</a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);">12-09</span><a
+                data-report-click='{"ab":"new","mod":"popu_871","extra":"{\"utm_medium\":\"distribute.pc_relevant_t0.470966\"}","index":"1","strategy":"32_470966_RCMD","dest":"https://marketing.csdn.net/p/cd55e58359edb2ed22832e46ed85d96a"}'
+                data-report-query="utm_medium=distribute.pc_relevant_t0.470966&depth_1-utm_source=distribute.pc_relevant_t0.470966"
+                href="https://marketing.csdn.net/p/cd55e58359edb2ed22832e46ed85d96a" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;"><em style=" color: rgb(252, 85, 49);">程序</em>员是很苦的，技术发展太快，一个优秀的数据分析师应该从实战出发，对各种类型的项目得心应手。
+            </div>
+        </a></div>
+        <div data-url="https://download.csdn.net/download/thehappygod/9876051"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-BlogCommendFromBaidu-1.not_use_machine_learn_pai\"}","index":"1","strategy":"BlogCommendFromBaidu","dest":"https://download.csdn.net/download/thehappygod/9876051"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-download-BlogCommendFromBaidu-1.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-download-BlogCommendFromBaidu-1.not_use_machine_learn_pai"
+                href="https://download.csdn.net/download/thehappygod/9876051"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank"><em style=" color: rgb(252, 85, 49);">Python</em><em
+                style=" color: rgb(252, 85, 49);">操作</em><em style=" color: rgb(252, 85, 49);">Windows</em><em
+                style=" color: rgb(252, 85, 49);">窗口</em>的库</a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);">06-21</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-download-BlogCommendFromBaidu-1.not_use_machine_learn_pai\"}","index":"1","strategy":"BlogCommendFromBaidu","dest":"https://download.csdn.net/download/thehappygod/9876051"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-download-BlogCommendFromBaidu-1.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-download-BlogCommendFromBaidu-1.not_use_machine_learn_pai"
+                href="https://download.csdn.net/download/thehappygod/9876051" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;"><em style=" color: rgb(252, 85, 49);">windows</em><em
+                    style=" color: rgb(252, 85, 49);">窗口</em>各种GUI不同控制类型可用的方法
+            </div>
+        </a></div>
+        <a name="commentBox"></a>
+        <div data-url="https://blog.csdn.net/wcg541/article/details/94213910"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai\"}","index":"2","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/wcg541/article/details/94213910"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/wcg541/article/details/94213910"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank">使用<em
+                style=" color: rgb(252, 85, 49);">Python</em>开发<em style=" color: rgb(252, 85, 49);">windows</em>桌面<em
+                style=" color: rgb(252, 85, 49);">程序</em>【超简单】</a><a href="https://blog.csdn.net/wcg541"
+                                                                     style=" color: rgb(79, 79, 79);"
+                                                                     target="_blank"><span
+                style=" color: rgb(153, 154, 170); font-size: 13px;">Python追梦</span></a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);"><img
+                src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">&nbsp;2万+</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai\"}","index":"2","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/wcg541/article/details/94213910"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-2.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/wcg541/article/details/94213910" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">一、开发前期准备 1. boa-constructor-0.6.1.bin.setup.exe
+                一个wxWidges的集成开发环境，简单如Delphi，可以直接拖拽控件，并且和其他集成环境不一样， #它不与集成开发环境的MainLoop冲突，用<em
+                        style=" color: rgb(252, 85, 49);">python</em>win,pyScripter都会冲突，典型报错就是运行第二次 #<em
+                        style=" color: rgb(252, 85, 49);">程序</em>的时候，直接导致集成开发### 一、开发前期准备 1. boa-con...
+            </div>
+        </a></div>
+        <div data-url="https://blog.csdn.net/qq_37482202/article/details/84201259"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.not_use_machine_learn_pai\"}","index":"3","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/qq_37482202/article/details/84201259"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/qq_37482202/article/details/84201259"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank">教你用<em
+                style=" color: rgb(252, 85, 49);">Python</em>写界面</a><a href="https://blog.csdn.net/qq_37482202"
+                                                                       style=" color: rgb(79, 79, 79);" target="_blank"><span
+                style=" color: rgb(153, 154, 170); font-size: 13px;">流月的博客</span></a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);"><img
+                src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">&nbsp;12万+</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.not_use_machine_learn_pai\"}","index":"3","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/qq_37482202/article/details/84201259"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/qq_37482202/article/details/84201259" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">好代码本身就是最好的文档。当你需要添加一个注释时，你应该考虑如何修改代码才能不需要注释
+                作为Pyhon开发者，你迟早都会碰到图形用户界面（GUI）应用开发任务，这时候我们就需要一些界面库来帮助我们快速搭建界面，<em style=" color: rgb(252, 85, 49);">python</em>的界面库很多，我认识的并不多，这里只列出几种我认识的
+                1.tkinter Tkinter(也叫Tk接口)是Tk图形用户界面工具包标准的<em style=" color: rgb(252, 85, 49);">Python</em>接口。Tk是一个轻量级...
+            </div>
+        </a></div>
+        <div data-flg="true"><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-2\"}","spm":"1001.2101.3001.4242","dest":"https://blog.csdn.net/weixin_39860201/article/details/109621634","strategy":"searchFromBaidu1","ab":"new","index":"2"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-2&spm=1001.2101.3001.4242"
+                href="https://blog.csdn.net/weixin_39860201/article/details/109621634" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(40, 43, 49); font-size: 16px;"><em style=" color: rgb(252, 85, 49);">python</em><em
+                    style=" color: rgb(252, 85, 49);">操作</em><em style=" color: rgb(252, 85, 49);">windows</em><em
+                    style=" color: rgb(252, 85, 49);">窗口</em><em style=" color: rgb(252, 85, 49);">程序</em>-<em
+                    style=" color: rgb(252, 85, 49);">Python</em> 实现&nbsp;<em
+                    style=" color: rgb(252, 85, 49);">Windows</em> <em style=" color: rgb(252, 85, 49);">程序</em>...
+            </div>
+        </a><span style=" font-size: 13px; color: rgb(153, 154, 170);">11-11</span><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-2\"}","spm":"1001.2101.3001.4242","dest":"https://blog.csdn.net/weixin_39860201/article/details/109621634","strategy":"searchFromBaidu1","ab":"new","index":"2"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-2&spm=1001.2101.3001.4242"
+                href="https://blog.csdn.net/weixin_39860201/article/details/109621634" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">和大家一起聊聊如何使用<em style=" color: rgb(252, 85, 49);">python</em>做<em
+                    style=" color: rgb(252, 85, 49);">Windows</em> 一、环境安装 使用<em
+                    style=" color: rgb(252, 85, 49);">python</em>实现来做PC端 pip install pywinauto 二、使用说明
+                安装好了之后,关于使用说明大家可以参照官方...
+            </div>
+        </a></div>
+        <div data-flg="true"><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-3\"}","spm":"1001.2101.3001.4242","dest":"https://blog.csdn.net/weixin_37988176/article/details/109414025","strategy":"searchFromBaidu1","ab":"new","index":"3"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-3&spm=1001.2101.3001.4242"
+                href="https://blog.csdn.net/weixin_37988176/article/details/109414025" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(40, 43, 49); font-size: 16px;"><em style=" color: rgb(252, 85, 49);">python</em><em
+                    style=" color: rgb(252, 85, 49);">窗口</em><em style=" color: rgb(252, 85, 49);">程序</em>-<em
+                    style=" color: rgb(252, 85, 49);">python</em><em style=" color: rgb(252, 85, 49);">操作</em><em
+                    style=" color: rgb(252, 85, 49);">Windows</em><em style=" color: rgb(252, 85, 49);">窗口</em><em
+                    style=" color: rgb(252, 85, 49);">程序</em>_weixin_379...
+            </div>
+        </a><span style=" font-size: 13px; color: rgb(153, 154, 170);">12-6</span><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-3\"}","spm":"1001.2101.3001.4242","dest":"https://blog.csdn.net/weixin_37988176/article/details/109414025","strategy":"searchFromBaidu1","ab":"new","index":"3"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-3&spm=1001.2101.3001.4242"
+                href="https://blog.csdn.net/weixin_37988176/article/details/109414025" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">Excel需要使用其他<em style=" color: rgb(252, 85, 49);">程序</em>和需要打开。Pywin32处理是一个32位整数,用于标记对象在<em
+                    style=" color: rgb(252, 85, 49);">windows</em>中,类似于一个字典找到一个关键的<em style=" color: rgb(252, 85, 49);">窗口</em>句柄看起来像在win32编程的世界,所有控件...
+            </div>
+        </a></div>
+        <div data-url="https://blog.csdn.net/xinxinNoGiveUp/article/details/81019275"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.not_use_machine_learn_pai\"}","index":"4","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/xinxinNoGiveUp/article/details/81019275"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/xinxinNoGiveUp/article/details/81019275"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank"><em style=" color: rgb(252, 85, 49);">python</em><em
+                style=" color: rgb(252, 85, 49);">操作</em><em style=" color: rgb(252, 85, 49);">Windows</em><em
+                style=" color: rgb(252, 85, 49);">窗口</em></a><a href="https://blog.csdn.net/xinxinNoGiveUp"
+                                                                style=" color: rgb(79, 79, 79);" target="_blank"><span
+                style=" color: rgb(153, 154, 170); font-size: 13px;">xinxinNoGiveUp的博客</span></a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);"><img
+                src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">&nbsp;9650</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.not_use_machine_learn_pai\"}","index":"4","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/xinxinNoGiveUp/article/details/81019275"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/xinxinNoGiveUp/article/details/81019275" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">pywin32 pywin32是&nbsp;<em
+                    style=" color: rgb(252, 85, 49);">python</em> 中访问&nbsp;<em
+                    style=" color: rgb(252, 85, 49);">windows</em> API 的一个扩展 pywin32gui documentation 2.4 pywin32gui
+                documentation 3.3 1. 根据<em style=" color: rgb(252, 85, 49);">窗口</em>名获取<em
+                        style=" color: rgb(252, 85, 49);">窗口</em>句柄 from win32gui import FindWindow handler =
+                FindWindow(None, &#39;xxx<em style=" color: rgb(252, 85, 49);">窗口</em>&#39;) # 结果 if...
+            </div>
+        </a></div>
+        <div data-url="https://bbs.csdn.net/topics/396024717"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-discussion_topic-BlogCommendFromBaidu-5.not_use_machine_learn_pai\"}","index":"5","strategy":"BlogCommendFromBaidu","dest":"https://bbs.csdn.net/topics/396024717"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-discussion_topic-BlogCommendFromBaidu-5.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-discussion_topic-BlogCommendFromBaidu-5.not_use_machine_learn_pai"
+                href="https://bbs.csdn.net/topics/396024717" style=" color: rgb(40, 43, 49); font-size: 16px;"
+                target="_blank"><em style=" color: rgb(252, 85, 49);">python</em>3通过句柄获取<em
+                style=" color: rgb(252, 85, 49);">窗口</em>内容</a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);">03-04</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-discussion_topic-BlogCommendFromBaidu-5.not_use_machine_learn_pai\"}","index":"5","strategy":"BlogCommendFromBaidu","dest":"https://bbs.csdn.net/topics/396024717"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-discussion_topic-BlogCommendFromBaidu-5.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-discussion_topic-BlogCommendFromBaidu-5.not_use_machine_learn_pai"
+                href="https://bbs.csdn.net/topics/396024717" style=" color: rgb(79, 79, 79);" target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">各位大神，<em
+                    style=" color: rgb(252, 85, 49);">python</em>3如何通过句柄获取<em style=" color: rgb(252, 85, 49);">窗口</em>内容？
+            </div>
+        </a></div>
+        <div data-flg="true"><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-6\"}","spm":"1001.2101.3001.4242","dest":"https://blog.csdn.net/weixin_39897749/article/details/110628122","strategy":"searchFromBaidu1","ab":"new","index":"6"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-6&spm=1001.2101.3001.4242"
+                href="https://blog.csdn.net/weixin_39897749/article/details/110628122" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(40, 43, 49); font-size: 16px;"><em style=" color: rgb(252, 85, 49);">python</em> <em
+                    style=" color: rgb(252, 85, 49);">操作</em> <em style=" color: rgb(252, 85, 49);">windows</em>
+                控件_在中文<em style=" color: rgb(252, 85, 49);">windows</em>下使用pywinau...
+            </div>
+        </a><span style=" font-size: 13px; color: rgb(153, 154, 170);">12-5</span><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-6\"}","spm":"1001.2101.3001.4242","dest":"https://blog.csdn.net/weixin_39897749/article/details/110628122","strategy":"searchFromBaidu1","ab":"new","index":"6"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-6&spm=1001.2101.3001.4242"
+                href="https://blog.csdn.net/weixin_39897749/article/details/110628122" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">来说,首先中文菜单的支持是问题,其次各种<em
+                    style=" color: rgb(252, 85, 49);">操作</em>也没有写清楚,阅读官方的文档,发现这个东西使用起来还真是非常方便,下面我也以notepad为例来说明一下它的简单<em
+                    style=" color: rgb(252, 85, 49);">操作</em>。
+            </div>
+        </a></div>
+        <div data-flg="true"><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-7\"}","spm":"1001.2101.3001.4242","dest":"https://blog.csdn.net/luan_tianjiao/article/details/24650843","strategy":"searchFromBaidu1","ab":"new","index":"7"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-7&spm=1001.2101.3001.4242"
+                href="https://blog.csdn.net/luan_tianjiao/article/details/24650843" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(40, 43, 49); font-size: 16px;"><em style=" color: rgb(252, 85, 49);">python</em><em
+                    style=" color: rgb(252, 85, 49);">操作</em><em style=" color: rgb(252, 85, 49);">windows</em><em
+                    style=" color: rgb(252, 85, 49);">窗口</em>一个小case_luan_tianjiao的专栏
+            </div>
+        </a><span style=" font-size: 13px; color: rgb(153, 154, 170);">12-3</span><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-7\"}","spm":"1001.2101.3001.4242","dest":"https://blog.csdn.net/luan_tianjiao/article/details/24650843","strategy":"searchFromBaidu1","ab":"new","index":"7"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-7&spm=1001.2101.3001.4242"
+                href="https://blog.csdn.net/luan_tianjiao/article/details/24650843" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;"><em
+                    style=" color: rgb(252, 85, 49);">python</em><em style=" color: rgb(252, 85, 49);">操作</em><em
+                    style=" color: rgb(252, 85, 49);">windows</em><em style=" color: rgb(252, 85, 49);">窗口</em>一个小case
+                1. import win32gui, win32con 2. win32gui.FindWindow找到目标<em style=" color: rgb(252, 85, 49);">程序</em>:
+                win = win32gui.FindWindow(None, u&#39;无标题 - 记事...
+            </div>
+        </a></div>
+        <div data-url="https://blog.csdn.net/baidu_37964071/article/details/105055804"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-6.not_use_machine_learn_pai\"}","index":"6","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/baidu_37964071/article/details/105055804"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-6.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-6.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/baidu_37964071/article/details/105055804"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank"><em style=" color: rgb(252, 85, 49);">python</em>-<em
+                style=" color: rgb(252, 85, 49);">操作</em><em style=" color: rgb(252, 85, 49);">windows</em><em
+                style=" color: rgb(252, 85, 49);">窗口</em></a><a href="https://blog.csdn.net/baidu_37964071"
+                                                                style=" color: rgb(79, 79, 79);" target="_blank"><span
+                style=" color: rgb(153, 154, 170); font-size: 13px;">honeyJ</span></a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);"><img
+                src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">&nbsp;591</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-6.not_use_machine_learn_pai\"}","index":"6","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/baidu_37964071/article/details/105055804"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-6.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-6.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/baidu_37964071/article/details/105055804" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">在自动化测试时，遇到一种情况，校验是否打开了某<em
+                    style=" color: rgb(252, 85, 49);">程序</em>，但不涉及UI自动化，所以就想到了利用<em style=" color: rgb(252, 85, 49);">windows</em><em
+                    style=" color: rgb(252, 85, 49);">窗口</em>去校验。 关闭<em style=" color: rgb(252, 85, 49);">窗口</em>句柄
+                比如，关闭资源管理器的<em style=" color: rgb(252, 85, 49);">窗口</em> import win32gui,win32con def close_<em
+                        style=" color: rgb(252, 85, 49);">windows</em>_handle(title): #&quot;CabinetWClass&quot;是explorer的类名
+                handle = win32gui.Fin...
+            </div>
+        </a></div>
+        <div data-url="https://blog.csdn.net/weixin_33739541/article/details/93964322"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-7.not_use_machine_learn_pai\"}","index":"7","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/weixin_33739541/article/details/93964322"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-7.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-7.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/weixin_33739541/article/details/93964322"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank"><em style=" color: rgb(252, 85, 49);">Python</em>
+            GUI之tkinter<em style=" color: rgb(252, 85, 49);">窗口</em>视窗教程大集合（看这篇就够了）</a><a
+                href="https://blog.csdn.net/weixin_33739541" style=" color: rgb(79, 79, 79);" target="_blank"><span
+                style=" color: rgb(153, 154, 170); font-size: 13px;">weixin_33739541的博客</span></a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);"><img
+                src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">&nbsp;4万+</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-7.not_use_machine_learn_pai\"}","index":"7","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/weixin_33739541/article/details/93964322"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-7.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-7.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/weixin_33739541/article/details/93964322" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">一、前言
+                　　由于本篇文章较长，所以下面给出内容目录方便跳转阅读，当然也可以用博客页面最右侧的文章目录导航栏进行跳转查阅。 　　一、前言 　　二、Tkinter 是什么 　　三、Tkinter 控件详细介绍
+                　　　　1. Tkinter 模块元素简要说明 　　　　2. 常用<em style=" color: rgb(252, 85, 49);">窗口</em>部件及简要说明： 　　四、动手实践学习 　　　　1.
+                创建主<em style=" color: rgb(252, 85, 49);">窗口</em>及Label部件（标签）创建使用 　　　...
+            </div>
+        </a></div>
+        <div data-flg="true"><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-10\"}","spm":"1001.2101.3001.4242","dest":"https://download.csdn.net/download/weixin_38653085/12862291","strategy":"searchFromBaidu1","ab":"new","index":"10"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-10&spm=1001.2101.3001.4242"
+                href="https://download.csdn.net/download/weixin_38653085/12862291" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(40, 43, 49); font-size: 16px;"><em
+                    style=" color: rgb(252, 85, 49);">python</em>打开<em
+                    style=" color: rgb(252, 85, 49);">windows</em>应用<em style=" color: rgb(252, 85, 49);">程序</em>的实例_<em
+                    style=" color: rgb(252, 85, 49);">python</em>打开<em style=" color: rgb(252, 85, 49);">windows</em><em
+                    style=" color: rgb(252, 85, 49);">程序</em>-其它...
+            </div>
+        </a><span style=" font-size: 13px; color: rgb(153, 154, 170);">12-9</span><a
+                data-report-click='{"mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-baidulandingword-10\"}","spm":"1001.2101.3001.4242","dest":"https://download.csdn.net/download/weixin_38653085/12862291","strategy":"searchFromBaidu1","ab":"new","index":"10"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-10&spm=1001.2101.3001.4242"
+                href="https://download.csdn.net/download/weixin_38653085/12862291" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;"><em
+                    style=" color: rgb(252, 85, 49);">python</em><em style=" color: rgb(252, 85, 49);">操作</em><em
+                    style=" color: rgb(252, 85, 49);">Windows</em><em style=" color: rgb(252, 85, 49);">窗口</em><em
+                    style=" color: rgb(252, 85, 49);">程序</em> 78808 想要看更加舒服的排版、更加准时的推送关注公众号&ldquo;不太灵光的<em
+                    style=" color: rgb(252, 85, 49);">程序</em>员&rdquo;每日八点有干货推送 场景定时获取数据接口数据写入Excel表格,Ex...
+            </div>
+        </a></div>
+        <div data-url="https://elainelv.blog.csdn.net/article/details/81429819"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-8.not_use_machine_learn_pai\"}","index":"8","strategy":"BlogCommendFromBaidu","dest":"https://elainelv.blog.csdn.net/article/details/81429819"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-8.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-8.not_use_machine_learn_pai"
+                href="https://elainelv.blog.csdn.net/article/details/81429819"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank"><em style=" color: rgb(252, 85, 49);">python</em>3：Tkinter&mdash;&mdash;简单的<em
+                style=" color: rgb(252, 85, 49);">窗口</em>视窗</a><a href="https://blog.csdn.net/sunshine_lyn"
+                                                                  style=" color: rgb(79, 79, 79);" target="_blank"><span
+                style=" color: rgb(153, 154, 170); font-size: 13px;">sunshine_lyn的博客</span></a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);"><img
+                src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">&nbsp;3万+</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-8.not_use_machine_learn_pai\"}","index":"8","strategy":"BlogCommendFromBaidu","dest":"https://elainelv.blog.csdn.net/article/details/81429819"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-8.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-8.not_use_machine_learn_pai"
+                href="https://elainelv.blog.csdn.net/article/details/81429819" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">编程环境:pycharm、<em
+                    style=" color: rgb(252, 85, 49);">python</em> 3.6 Tkinter 是 tk 的&nbsp;<em
+                    style=" color: rgb(252, 85, 49);">python</em> 接口，使用&nbsp;<em style=" color: rgb(252, 85, 49);">python</em>
+                进行<em style=" color: rgb(252, 85, 49);">窗口</em>视窗的设计。其<em style=" color: rgb(252, 85, 49);">操作</em>非常的简单易懂，对于和我一样的初学者来说，是入门之选。
+                本博文包括Label、Button、Entry、Text、Listbox、Radiobutton、Scale、Checkbutton、Canvas、Manubar、Frame、Messagebox...
+            </div>
+        </a></div>
+        <div data-url="https://blog.csdn.net/guapiyipian/article/details/81023099"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-9.not_use_machine_learn_pai\"}","index":"9","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/guapiyipian/article/details/81023099"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-9.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-9.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/guapiyipian/article/details/81023099"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank">用<em
+                style=" color: rgb(252, 85, 49);">python</em>创建一个<em style=" color: rgb(252, 85, 49);">窗口</em></a><a
+                href="https://blog.csdn.net/guapiyipian" style=" color: rgb(79, 79, 79);" target="_blank"><span
+                style=" color: rgb(153, 154, 170); font-size: 13px;">guapiyipian的博客</span></a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);"><img
+                src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">&nbsp;1万+</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-9.not_use_machine_learn_pai\"}","index":"9","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/guapiyipian/article/details/81023099"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-9.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-9.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/guapiyipian/article/details/81023099" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">常用的<em
+                    style=" color: rgb(252, 85, 49);">python</em> GUI库&mdash;&mdash;tkinter （<em
+                    style=" color: rgb(252, 85, 49);">python</em> 3.x，在<em style=" color: rgb(252, 85, 49);">python</em>
+                2.x中使用的库名是Tkinter）由于 tkinter 是内置到&nbsp;<em style=" color: rgb(252, 85, 49);">python</em> 的安装包中、只要安装好&nbsp;<em
+                        style=" color: rgb(252, 85, 49);">Python</em> 之后就能 import tkinter 库，仅需下列代码就能创建一个简单的<em
+                        style=" color: rgb(252, 85, 49);">窗口</em>#!/usr/bin/<em
+                        style=" color: rgb(252, 85, 49);">python</em> # -*- coding: UTF-8 -*- import tkinte...
+            </div>
+        </a></div>
+        <div data-url="https://blog.csdn.net/qq_30016059/article/details/103034097"><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-10.not_use_machine_learn_pai\"}","index":"10","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/qq_30016059/article/details/103034097"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-10.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-10.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/qq_30016059/article/details/103034097"
+                style=" color: rgb(40, 43, 49); font-size: 16px;" target="_blank"><em style=" color: rgb(252, 85, 49);">python</em><em
+                style=" color: rgb(252, 85, 49);">操作</em>应用<em style=" color: rgb(252, 85, 49);">程序</em><em
+                style=" color: rgb(252, 85, 49);">窗口</em>句柄，输入文本</a><a href="https://blog.csdn.net/qq_30016059"
+                                                                       style=" color: rgb(79, 79, 79);" target="_blank"><span
+                style=" color: rgb(153, 154, 170); font-size: 13px;">qq_30016059的博客</span></a><span
+                style=" font-size: 13px; color: rgb(153, 154, 170);"><img
+                src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">&nbsp;2751</span><a
+                data-report-click='{"ab":"new","mod":"popu_387","extra":"{\"utm_medium\":\"distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-10.not_use_machine_learn_pai\"}","index":"10","strategy":"BlogCommendFromBaidu","dest":"https://blog.csdn.net/qq_30016059/article/details/103034097"}'
+                data-report-query="utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-10.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-10.not_use_machine_learn_pai"
+                href="https://blog.csdn.net/qq_30016059/article/details/103034097" style=" color: rgb(79, 79, 79);"
+                target="_blank">
+            <div style=" color: rgb(153, 154, 170); font-size: 14px;">https://www.cnblogs.com/klb561/p/9392560.html 一，
+                首先import win32gui, win32con 二， 使用win32gui.FindWindow找到目标<em style=" color: rgb(252, 85, 49);">程序</em>：
+                win = win32gui.FindWindow(None, &lsquo;User Login&rsquo;) 三， 使用win32gui.FindWindowEx找到目标文本框： tid =
+                win3...
+            </div>
+        </a></div>
+        <ul>
+            <li style=" color: rgb(153, 154, 170); font-size: 14px;"><a
+                    href="https://www.csdn.net/company/index.html#about" style=" color: inherit;"
+                    target="_blank">关于我们</a></li>
+            <li style=" color: rgb(153, 154, 170); font-size: 14px;"><a
+                    href="https://www.csdn.net/company/index.html#recruit" style=" color: inherit;"
+                    target="_blank">招贤纳士</a></li>
+            <li style=" color: rgb(153, 154, 170); font-size: 14px;"><a
+                    href="https://www.csdn.net/company/index.html#advertisement" style=" color: inherit;"
+                    target="_blank">广告服务</a></li>
+            <li style=" color: rgb(153, 154, 170); font-size: 14px;"><a href="https://plugin.csdn.net/"
+                                                                        style=" color: inherit;"
+                                                                        target="_blank">开发助手</a></li>
+            <li style=" color: rgb(153, 154, 170); font-size: 14px;"><img
+                    src="https://g.csdnimg.cn/common/csdn-footer/images/tel.png" alt="">400-660-0108
+            </li>
+            <li style=" color: rgb(153, 154, 170); font-size: 14px;"><img
+                    src="https://g.csdnimg.cn/common/csdn-footer/images/email.png" alt=""><a
+                    href="mailto:webmaster@csdn.net" style=" color: inherit;" target="_blank">kefu@csdn.net</a></li>
+            <li style=" color: rgb(153, 154, 170); font-size: 14px;"><img
+                    src="https://g.csdnimg.cn/common/csdn-footer/images/cs.png" alt=""><a
+                    href="https://csdn.s2.udesk.cn/im_client/?web_plugin_id=29181" style=" color: inherit;"
+                    target="_blank">在线客服</a></li>
+            <li style=" color: rgb(153, 154, 170); font-size: 14px;">工作时间&nbsp;8:30-22:00</li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a
+                    href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502030143" rel="noreferrer"
+                    style=" color: inherit;" target="_blank">公安备案号11010502030143</a></li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a
+                    href="http://beian.miit.gov.cn/publish/query/indexFirst.action" rel="noreferrer"
+                    style=" color: inherit;" target="_blank">京ICP备19004658号</a></li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a
+                    href="https://csdnimg.cn/release/live_fe/culture_license.png" rel="noreferrer"
+                    style=" color: inherit;" target="_blank">京网文〔2020〕1039-165号</a></li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a
+                    href="https://csdnimg.cn/cdn/content-toolbar/csdn-ICP.png" style=" color: inherit;" target="_blank">经营性网站备案信息</a>
+            </li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a href="http://www.bjjubao.org/"
+                                                                        style=" color: inherit;" target="_blank">北京互联网违法和不良信息举报中心</a>
+            </li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a href="http://www.cyberpolice.cn/"
+                                                                        style=" color: inherit;" target="_blank">网络110报警服务</a>
+            </li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a href="http://www.12377.cn/"
+                                                                        style=" color: inherit;" target="_blank">中国互联网举报中心</a>
+            </li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a
+                    href="https://download.csdn.net/index.php/tutelage/" style=" color: inherit;"
+                    target="_blank">家长监护</a></li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a
+                    href="https://chrome.google.com/webstore/detail/csdn%E5%BC%80%E5%8F%91%E8%80%85%E5%8A%A9%E6%89%8B/kfkdboecolemdjodhmhmcibjocfopejo?hl=zh-CN"
+                    style=" color: inherit;" target="_blank">Chrome商店下载</a></li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);">&copy;1999-2020北京创新乐知网络技术有限公司</li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a
+                    href="https://www.csdn.net/company/index.html#statement" style=" color: inherit;" target="_blank">版权与免责声明</a>
+            </li>
+            <li style=" font-size: 12px; color: rgb(153, 154, 170);"><a
+                    href="https://blog.csdn.net/blogdevteam/article/details/90369522" style=" color: inherit;"
+                    target="_blank">版权申诉</a></li>
+        </ul>
+    </main>
+</div>
+<div style=" color: rgba(0, 0, 0, 0.75); font-size: 14px;"><br></div>
+<div style=" font-size: 12px; color: rgba(0, 0, 0, 0.75);">你的浏览器目前处于缩放状态，页面可能会出现错位现象，建议100%大小显示。</div>
+
+        <!--<h1>Full Featured</h1>-->
+
+        <!--<p>This is the full featured Froala WYSIWYG HTML editor.</p>-->
+    </div>
+</div>
+<!-- Include Code Mirror JS. -->
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/codemirror/codemirror.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/codemirror/xml.min.js"></script>
+
+<!--
+froala_editor.min.js为必须引用的，
+align.min.js为控制文本方向的插件，
+colors.min.js为颜色选择器插件，
+font_size.min.js为设置字体大小插件，
+char_counter.min.js为统计字数插件，
+zh_cn.min.js为汉化插件。-->
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/align.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/char_counter.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/code_beautifier.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/code_view.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/colors.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/draggable.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/emoticons.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/entities.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/file.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/font_size.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/font_family.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/fullscreen.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/image.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/image_manager.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/line_breaker.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/inline_style.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/link.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/lists.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/paragraph_format.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/paragraph_style.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/quick_insert.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/quote.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/table.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/save.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/url.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/video.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/help.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/print.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/third_party/spell_checker.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/special_characters.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/word_paste.min.js"></script>
+<script type="text/javascript" src="../assets/plugins/froala_editor/js/languages/zh_cn.js"></script>
+
+<script>
+
+    (function () {
+        FroalaEditor.DefineIcon('alert', {NAME: 'info', SVG_KEY: 'help'});
+        FroalaEditor.RegisterCommand('alert', {
+            title: 'Hello',
+            focus: false,
+            undo: false,
+            refreshAfterCallback: false,
+            callback: function () {
+                alert('Hello!');
+            }
+        });
+
+        FroalaEditor.DefineIcon('clear', {NAME: 'remove', SVG_KEY: 'remove'});
+        FroalaEditor.RegisterCommand('clear', {
+            title: 'Clear HTML',
+            focus: false,
+            undo: true,
+            refreshAfterCallback: true,
+            callback: function () {
+                this.html.set('');
+                this.events.focus();
+            }
+        });
+
+        FroalaEditor.DefineIcon('insert', {NAME: 'plus', SVG_KEY: 'add'});
+        FroalaEditor.RegisterCommand('insert', {
+            title: '保存html',
+            focus: true,
+            undo: true,
+            refreshAfterCallback: true,
+            callback: function () {
+                // this.html.insert('My New HTML');
+                pyjs.receive_str_from_js(this.html.get())
+                alert('保存成功')
+            }
+        });
+        window.editor = new FroalaEditor('div#edit', {
+            fullPage: true,//Using the fullPage option allows the usage of HTML, HEAD, BODY tags and DOCTYPE declaration.
+            //By enabling the document mode, the Froala WYSIWYG HTML Editor sets by default the best options for creating online documents. After editing the content, the print and export as PDF buttons are perfect so you to take the content and use it further just as you'd do with any Word processor such as Microsoft Word or Google Docs.
+            documentReady: true,
+            autofocus: true,
+            language: 'zh_cn',
+            // ================color===================================
+            colorsHEXInput: false,
+            colorsBackground: ['#2E2E2E', '#767676', '#DF281B', '#F4821C', '#46AC43', '#2E5BF7', '#A249B3', 'REMOVE'],
+            colorsText: ['#2E2E2E', '#767676', '#DF281B', '#F4821C', '#46AC43', '#2E5BF7', '#A249B3', 'REMOVE'],
+            //Using the iframe the editor's content will be placed in an iframe and isolated from the rest of the page.
+            //iframe: true, //使用iframe替换编辑器内容
+            initOnClick: false,//点击时初始化编辑器
+            toolbarInline: false,//选择显示行内工具条
+            charCounterCount: false, //字符统计器
+            heightMin: 800,
+            toolbarVisibleWithoutSelection: false,//始终显示工具条
+            // ==================选择工具按钮,true显示,false不显示=================================
+//                toolbarButtons: ['fontFamily', '|', 'fontSize', '|', 'paragraphFormat', '|', 'bold', 'italic', 'underline', 'undo', 'redo', 'codeView'],
+            //toolbarButtons: [['undo', 'redo'], ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript'], ['fontFamily', 'fontSize', 'textColor', 'backgroundColor'], ['inlineClass', 'inlineStyle', 'clearFormatting']],
+            /* 选择不同的按钮大小
+           toolbarButtons for large devices (≥ 1200px)
+           toolbarButtonsMD for medium devices (≥ 992px)
+           toolbarButtonsSM for small devices (≥ 768px)
+           toolbarButtonsXS for extra small devices (< 768px)
+            */
+            toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic', 'underline', '|', 'fontFamily', 'fontSize', 'align', 'color', 'textColor', 'backgroundColor', '|', 'inlineClass', 'clearFormatting', 'fullscreen', '|', 'alert', 'clear', 'insert','insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR'],
+            /*
+                           toolbarButtonsXS: {
+                               'moreText': {
+                                   'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
+                               },
+                               'moreParagraph': {
+                                   'buttons': ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote']
+                               },
+                               'moreRich': {
+                                   'buttons': ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR']
+                               },
+                               'moreMisc': {
+                                   'buttons': ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help']
+                               }
+                           },
+
+                       toolbarButtonsMD: [['undo', 'redo'], ['bold', 'italic', 'underline']],
+                       // Set custom buttons.
+                       toolbarButtonsSM: {
+                           // Key represents the more button from the toolbar.
+                           moreText: {
+                               // List of buttons used in the  group.
+                               buttons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting'],
+
+                               // Alignment of the group in the toolbar.
+                               align: 'left',
+
+                               // By default, 3 buttons are shown in the main toolbar. The rest of them are available when using the more button.
+                               buttonsVisible: 3
+                           },
+
+
+                           moreParagraph: {
+                               buttons: ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote'],
+                               align: 'left',
+                               buttonsVisible: 3
+                           },
+
+                           moreRich: {
+                               buttons: ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR'],
+                               align: 'left',
+                               buttonsVisible: 3
+                           },
+
+                           moreMisc: {
+                               buttons: ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
+                               align: 'right',
+                               buttonsVisible: 2
+                           }
+                       },
+                       */
+
+
+
+            // ================font===================================
+            fontSize: ['14', '16', '18', '20', '24', '28', '30'],
+            htmlAllowComments: false,
+            pasteAllowedStyleProps: ['font-size', 'color'],
+            placeholderText: '请输入内容',
+            //charCounterMax: 500,
+            fontSizeDefaultSelection: '16',
+            // height: 1000,
+            fontFamilySelection: true,
+            fontSizeSelection: true,
+            paragraphFormatSelection: true,
+            toolbarStickyOffset: 0,//距离顶部的距离
+            toolbarSticky: true,//默认编辑器的工具栏将保留在屏幕顶部,设为false则不保留
+            toolbarBottom: false,// true工具栏放在底部
+            // ================table===================================
+            tableResizerOffset: 10,
+            tableResizingLimit: 50,
+            // =================image==================================
+            imageTUIOptions: {
+                includeUI: {
+                    initMenu: "filter",
+                    menuBarPosition: "left",
+                    theme: {
+                        "menu.activeIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-b.svg",
+                        "menu.disabledIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-a.svg",
+                        "menu.hoverIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-c.svg",
+                        "menu.normalIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-d.svg",
+                        "submenu.activeIcon.name": "icon-c",
+                        "submenu.activeIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-c.svg",
+                        "submenu.normalIcon.name": "icon-d",
+                        "submenu.normalIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-d.svg"
+                    }
+                }
+            },
+            imageUpload: false,
+            // imageUploadURL:"",
+            imageUploadParam: 'file_name',
+            imageUploadParams: {
+                id: 'my_editor'
+            },
+            //imageUploadRemoteUrls: false,//通过URL插入的图像上传到自定义服务器，而不是通过URL链接它们。
+            imageDefaultDisplay: 'inline',
+            //imageCORSProxy: 'https://cors-anywhere.herokuapp.com',//代理服务器
+            imageTextNear: false,
+            imageEditButtons: ['imageDisplay', 'imageAlign', 'imageInfo', 'imageRemove'],
+            events: {
+                // 'image.beforePasteUpload': function (img) {
+                //     // Do something here.
+                //     // this is the editor instance.
+                //     alert("beforePasteUpload");
+                // },
+                // 'image.inserted': function (img, response) {
+                //     // Do something here.
+                //     // this is the editor instance.
+                //     console.log(this);
+                // },
+                'image.beforeUpload': function (files) {
+                    alert("beforeUpload");
+                    const editor = this
+                    if (files.length) {
+                        let reader = new FileReader()
+                        reader.onload = function (e) {
+                            var result = e.target.result
+                            editor.image.insert(result, null, null, editor.image.get())
+                        }
+                        reader.readAsDataURL(files[0])
+                    }
+                    return false
+                },
+                // 'image.uploaded': function (response) {
+                //     // Do something here.
+                //     // this is the editor instance.
+                //     console.log(this);
+                // },
+                // 'image.loaded': function (img) {
+                //     // Do something here.
+                //     // this is the editor instance.
+                //     console.log(this);
+                // },
+                contentChanged: function () {
+                    console.log('content changed');
+                }
+            }
+
+        }, function () {
+
+            // alert(editor.html.get());
+        })
+    })()
+    // $('#save').click(function () {
+    //     // console.log(window.editor.html.get());
+    //     // js调用qt中的方法
+    //     alert('111')
+    //     pyjs.receive_str_from_js(window.editor.html.get())
+    //     alert(window.editor.html.get());
+    //     // alert('');
+    // })
+</script>
+
+
+</body>
+
+</html>

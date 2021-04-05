@@ -1,0 +1,215 @@
+{% extends "base.html" %}      <!-- # 继承base.html文件-->
+
+{% block title %} task_new {% endblock %}<!-- 定制title部分的内容-->
+
+<!--# styles && css && scripts-->
+{% block head_css %}
+{% include 'base/css_task_froala_editor.html' %}
+{% endblock %}
+{% block head_scripts %}
+{% endblock %}
+
+<!--head-->
+{% block head %}
+<!--{{  super()  }}&lt;!&ndash;用于获取原有的信息&ndash;&gt;-->
+{% endblock %}
+
+
+<!-- Page Inner -->
+# 页面内容 :标题和行内容
+{% block page_pa_title %}
+<li class="breadcrumb-item"><a href="app-tasks.html">Tasks</a></li>
+{% endblock %}
+{% block page_title %}修改任务{% endblock %}
+<!-- Page title -->
+{% block main_wrapper_rows %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <form action="app-tasks.html">
+                <div class="card-body">
+                    <button type="submit" class="btn btn-primary float-right" style="background-color: chocolate"
+                            onclick="modify_task()">保存
+                    </button>
+                    <h1 class="card-title">修改一个任务</h1>
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <label for="task_modify_name">Task Name :</label>
+                            <input type="text" size="16" class="form-control" id="task_modify_name"
+                                   placeholder="一句话描述的任务(20个字)" value="{{ task.name }}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-4">
+                            <label for="task_modify_start_date">StartTime:</label>
+                            <input type="text" readonly class="form-control" id="task_modify_start_date"
+                                   value="{{ task.start_date }}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_end_date">EndTime</label>
+                            <input type="text" readonly class="form-control" id="task_modify_end_date"
+                                   value="{{ task.end_date }}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_left_time">剩余时间</label>
+                            <input type="text" readonly class="form-control" id="task_modify_left_time" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <label for="task_modify_killers">选择任务的执行Owner</label>
+                            <select id="task_modify_killers" class="select_killer js-states form-control" tabindex="-1"
+                                    style="display: none;width: 100%"
+                                    multiple="multiple">
+                                <optgroup label="Team Members">
+                                    {% for id,value in team_member.items() %}
+                                    <option value="{{id}}">{{value}}</option>
+                                    {% endfor %}
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_type">任务类型</label>
+                            <select id="task_modify_type" class="select_killer js-states form-control" tabindex="-1"
+                                    style="display: none;width: 100%">
+                                <option value="t">rtos</option>
+                                <option value="m">mine</option>
+                                <option value="o">other</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_state">任务状态</label>
+                            <select id="task_modify_state" class="select_killer js-states form-control" tabindex="-1"
+                                    style="display: none;width: 100%">
+                                <option value="NV">doing</option>
+                                <option value="NV">done</option>
+                                <option value="NV">discard</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_level">任务星级</label>
+                            <select id="task_modify_level" class="select_killer js-states form-control" tabindex="-1"
+                                    style="display: none;width: 100%">
+                                <option value="CA">1</option>
+                                <option value="NV">2</option>
+                                <option value="OR">3</option>
+                                <option value="WA">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <label for="task_modify_content">任务内容</label>
+                            <textarea class="form-control" id="task_modify_content" minlength="500"
+                                      placeholder="请输入任务具体内容"
+                                      rows="3">{{task_html}}</textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+
+# =========================== JavaScript ======================
+{% block inner_scripts %}
+{% include 'base/js_modify_datetimepicker.html' %}
+{% include 'base/task_froala_editor.html' %}
+<script type='text/javascript'>
+    if (FroalaEditor) {
+        // FroalaEditor.DEFAULTS.imageUploadURL = 'https:/i.froala.com/upload';
+        // FroalaEditor.DEFAULTS.fileUploadURL = '/upload';
+        FroalaEditor.DEFAULTS.pastedImagesUploadURL = '/upload_base64';
+        // FroalaEditor.DEFAULTS.imagesLoadURL = '/load_images';
+        FroalaEditor.DEFAULTS.maxImageSize = 1024 * 1024;
+        FroalaEditor.DEFAULTS.maxFileSize = 1024 * 1024;
+        FroalaEditor.DEFAULTS.key = '1CC3kA5C7A3F6E4C3byrncoeG4eheuD3E2A2B2C4G1G4F1A11A7==';
+        FroalaEditor.DEFAULTS.defaultBlockStyle = {
+            'text-thin': 'Thin Text',
+            'text-light': 'Light Text',
+            'text-bold': 'Strong Text',
+            'text-spaced': 'Spaced Text'
+        };
+        FroalaEditor.DEFAULTS.buttons = ['bold', 'italic', 'underline', 'fontSize', 'color', 'fontFamily', 'sep', 'formatBlock', 'align', 'insertOrderedList', 'insertUnorderedList', 'outdent', 'indent', 'sep', 'createLink', 'insertImage', 'table', 'undo', 'redo', 'html'];
+        // pluginsEnabled: ['align', 'colors', 'draggable', 'embedly', 'emoticons', 'entities', 'file', 'fontFamily', 'fontSize', 'fullscreen', 'image', 'imageManager', 'lineBreaker', 'link', 'lists', 'paragraphFormat', 'quote', 'table', 'url', 'video', 'wordPaste']
+
+        window.modify_editor = new FroalaEditor('#task_modify_content', {
+            theme: 'dark',//'gray',royal'
+            imageUpload: false,
+            // zIndex: 2003,
+            fullPage: true,
+            documentReady: true,
+            tabSpaces: 4,
+            initOnClick: true,//点击时初始化编辑器
+            heightMin: 500,
+            charCounterCount: false, //字符统计器
+            toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic', 'underline', '|', 'fontFamily', 'fontSize', 'align', 'color', 'textColor', 'backgroundColor', '|', 'inlineClass', 'clearFormatting', 'fullscreen', '|', 'alert', 'clear', 'insert',],
+        })
+
+    }
+</script>
+<script>
+
+    $(document).ready(function () {
+        // <!--初始化所有的select-->
+        $('select').select2({
+            language: "zh-CN",
+            placeholder: "请选择",
+            allowClear: true,
+        });
+        setMultiSeleceVal('task_modify_killers', "{{team_ids}}");
+        // alert(window.modify_editor)
+        // $("#task_modify_killers").val(['0','1']).trigger('change');
+
+    });
+
+    function modify_task() {
+        // alert(1)
+        let task_name = $('#task_modify_name').val();
+        // alert($('#task_name').text());
+        let task_start_date = $('#task_modify_start_date').val();
+        let task_end_date = $('#task_modify_end_date').val();
+        let task_state = $('#task_modify_state').find("option:selected").text();
+        let task_type = $('#task_modify_type').find("option:selected").text();
+        let task_killers = getMultiSelectVal("task_modify_killers");
+        let send_info = {
+            "type": "mod",
+            "task_info":
+                {
+                    "id": parseInt("{{ task.id }}"),
+                    "name": task_name,
+                    "start_date": task_start_date,
+                    "end_date": task_end_date,
+                    "left_time": "",
+                    "content": "{{ task.id }}.html",
+                    "state": task_state,
+                    "percent": "0%",
+                    "progress_detail": [],
+                    "creator": "{{ task.creator }}",
+                    "killers": task_killers,
+                    "team": task_type,
+                }
+        };
+
+        alert(JSON.stringify(send_info));
+        pyjs.add_mod_del_task(JSON.stringify(send_info), function (res) {
+            pyjs.receive_str_from_js(window.modify_editor.html.get())
+            // alert(window.modify_editor.html.get())
+            // alert('保存html成功')
+            alert(res);
+        })
+    }
+
+
+</script>
+
+
+{% endblock %}

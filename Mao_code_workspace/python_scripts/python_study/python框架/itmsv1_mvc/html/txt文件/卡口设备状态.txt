@@ -1,0 +1,1038 @@
+0:link 无
+xpath=>/html/head/link[1]
+1:link 无
+xpath=>/html/head/link[2]
+2:link 无
+xpath=>/html/head/link[3]
+3:link 无
+xpath=>//*[@id="headCss"]
+4:link 无
+xpath=>/html/head/link[5]
+5:link 无
+xpath=>/html/head/link[6]
+6:title 智能交通综合管控平台
+xpath=>/html/head/title
+7:link 无
+xpath=>/html/body/link[1]
+8:link 无
+xpath=>/html/body/link[2]
+9:link 无
+xpath=>/html/body/link[3]
+10:link 无
+xpath=>//*[@id="TipsCss"]
+11:link 无
+xpath=>//*[@id="MainCss"]
+12:div 
+xpath=>/html/body/div[1]
+13:div logo
+xpath=>/html/body/div[1]/div[1]
+14:div 
+xpath=>//*[@id="notice"]
+15:ul scroll-container
+xpath=>//*[@id="notice_ul"]
+16:div 
+xpath=>/html/body/div[1]/div[3]
+17:input switch
+xpath=>//*[@id="radio"]
+18:label 
+xpath=>/html/body/div[1]/div[3]/label
+19:span circle
+xpath=>/html/body/div[1]/div[3]/label/span[1]
+20:span 
+xpath=>/html/body/div[1]/div[3]/label/span[2]
+21:span 
+xpath=>/html/body/div[1]/div[3]/label/span[3]
+22:div 
+xpath=>/html/body/div[1]/div[4]
+23:div 
+xpath=>/html/body/div[1]/div[4]/div[1]
+24:select 
+xpath=>//*[@id="skin-sel"]
+25:option 天空蓝
+xpath=>/html/body/div[1]/div[4]/div[1]/select/option[1]
+26:option 清新绿
+xpath=>/html/body/div[1]/div[4]/div[1]/select/option[2]
+27:option 深邃蓝
+xpath=>/html/body/div[1]/div[4]/div[1]/select/option[3]
+28:div 
+xpath=>/html/body/div[1]/div[4]/div[2]
+29:a 
+xpath=>//*[@id="dropdown-toggle"]
+30:i icon-user pull-left
+xpath=>/html/body/div[1]/div[4]/div[2]/a/i
+31:span 超级管理员
+xpath=>/html/body/div[1]/div[4]/div[2]/a/span[1]
+32:span caret
+xpath=>/html/body/div[1]/div[4]/div[2]/a/span[2]
+33:ul 
+xpath=>//*[@id="dropdown-menu"]
+34:li 无
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[1]
+35:a 修改密码
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[1]/a
+36:li 无
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[2]
+37:a 安全退出
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[2]/a
+38:li 无
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[3]
+39:a 手册下载
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[3]/a
+40:li 无
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[4]
+41:a 修改日志
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[4]/a
+42:div 
+xpath=>//*[@id="mainnavbar"]
+43:div menu_main_h menu_mai
+xpath=>//*[@id="main-interface"]
+44:a 主界面
+xpath=>/html/body/div[2]/div/a
+45:div 
+xpath=>//*[@id="mainInfo"]
+46:div 
+xpath=>/html/body/div[3]/div
+47:div 
+xpath=>//*[@id="mainPage"]
+48:div 无
+xpath=>/html/body/div[3]/div/div[1]/div[1]
+49:div 
+xpath=>/html/body/div[3]/div/div[1]/div[2]
+50:cite pull-left LeftBotton
+xpath=>/html/body/div[3]/div/div[1]/div[2]/cite[1]
+51:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/cite[1]/img
+52:cite pull-right RightBott
+xpath=>/html/body/div[3]/div/div[1]/div[2]/cite[2]
+53:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/cite[2]/img
+54:div 
+xpath=>//*[@id="scr_list"]
+55:div 
+xpath=>//*[@id="List1"]
+56:div 
+xpath=>//*[@id="menupage_1"]
+57:div 
+xpath=>//*[@id="menu_130402081930284387431bd38d30c4ac"]
+58:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/a
+59:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/a/img
+60:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/p
+61:a 基础模块
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/p/a
+62:div 
+xpath=>//*[@id="menu_1304261304150253833622fa401af96b"]
+63:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/a
+64:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/a/img
+65:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/p
+66:a 卡口系统
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/p/a
+67:div 
+xpath=>//*[@id="menu_130619095023993fa6f0e33461840c4b"]
+68:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[3]/a
+69:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[3]/a/img
+70:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[3]/p
+71:a 违法系统
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[3]/p/a
+72:div 
+xpath=>//*[@id="menu_1305030918504367a63fdc4d5033ea81"]
+73:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[4]/a
+74:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[4]/a/img
+75:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[4]/p
+76:a 布控系统
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[4]/p/a
+77:div 
+xpath=>//*[@id="menu_130711115821246a8d2ec5fa025cf78c"]
+78:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[5]/a
+79:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[5]/a/img
+80:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[5]/p
+81:a 系统
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[5]/p/a
+82:div 
+xpath=>//*[@id="menu_1305211608157961944e4b8ee198113e"]
+83:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[6]/a
+84:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[6]/a/img
+85:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[6]/p
+86:a 短信平台
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[6]/p/a
+87:div 
+xpath=>//*[@id="menu_1305030838361678927dc9e50f2767b3"]
+88:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[7]/a
+89:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[7]/a/img
+90:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[7]/p
+91:a 流量分析
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[7]/p/a
+92:div 
+xpath=>//*[@id="menu_13080709290681228edef50e3108843e"]
+93:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[8]/a
+94:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[8]/a/img
+95:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[8]/p
+96:a 视频管理
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[8]/p/a
+97:div 
+xpath=>//*[@id="menu_130716164458319caba6aa33d3d78bc7"]
+98:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[9]/a
+99:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[9]/a/img
+100:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[9]/p
+101:a 应急指挥
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[9]/p/a
+102:div 
+xpath=>//*[@id="menu_130806084811984481e6bc0ae7979a84"]
+103:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[10]/a
+104:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[10]/a/img
+105:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[10]/p
+106:a 信号控制
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[10]/p/a
+107:div 
+xpath=>//*[@id="menu_130806161937625499ae3241745dc757"]
+108:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[11]/a
+109:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[11]/a/img
+110:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[11]/p
+111:a 停车诱导
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[11]/p/a
+112:div 
+xpath=>//*[@id="menu_1310211154453754aa80667f3b44173d"]
+113:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[12]/a
+114:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[12]/a/img
+115:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[12]/p
+116:a 交通设施
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[12]/p/a
+117:div 
+xpath=>//*[@id="menu_13102113525445309b6551b1c005120c"]
+118:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[13]/a
+119:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[13]/a/img
+120:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[13]/p
+121:a 道路挖占
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[13]/p/a
+122:div 
+xpath=>//*[@id="menu_1310251126180903b934590cbc5290e3"]
+123:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[14]/a
+124:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[14]/a/img
+125:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[14]/p
+126:a 勤务系统
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[14]/p/a
+127:div 
+xpath=>//*[@id="menu_131029102508828e9fb1368f49a3df53"]
+128:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[15]/a
+129:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[15]/a/img
+130:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[15]/p
+131:a 发布
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[15]/p/a
+132:div 
+xpath=>//*[@id="menu_130613092559383983b85a84923d428d"]
+133:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[16]/a
+134:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[16]/a/img
+135:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[16]/p
+136:a 地图管理
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[16]/p/a
+137:div 
+xpath=>//*[@id="menu_131202153958236e9e2ce62b00c9f113"]
+138:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[17]/a
+139:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[17]/a/img
+140:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[17]/p
+141:a 通行证管理
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[17]/p/a
+142:div 
+xpath=>//*[@id="menu_1312171401175469a9c24efc6eda16fe"]
+143:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[18]/a
+144:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[18]/a/img
+145:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[18]/p
+146:a 事故分析
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[18]/p/a
+147:div 
+xpath=>//*[@id="menu_1408220902505154a56cd7094dac5bd9"]
+148:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[19]/a
+149:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[19]/a/img
+150:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[19]/p
+151:a 运维中心
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[19]/p/a
+152:div 
+xpath=>//*[@id="menu_1312161602376024862822f94df79d57"]
+153:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[20]/a
+154:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[20]/a/img
+155:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[20]/p
+156:a 信息交互
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[20]/p/a
+157:div 
+xpath=>//*[@id="menu_1312171517265786bb594992c2e2961c"]
+158:a 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[21]/a
+159:img 无
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[21]/a/img
+160:p list1_nav_p
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[21]/p
+161:a 决策分析
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[21]/p/a
+162:div clear
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[22]
+163:div clear
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[2]
+164:div 
+xpath=>//*[@id="List2"]
+165:div clear
+xpath=>/html/body/div[3]/div/div[1]/div[3]
+166:div 
+xpath=>//*[@id="operation_bar"]
+167:div 
+xpath=>/html/body/div[3]/div/div[2]/div
+168:table 
+xpath=>/html/body/div[3]/div/div[2]/div/table
+169:tr 
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr
+170:td control_l
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[1]
+171:td 
+xpath=>//*[@id="smalPic"]
+172:a 无
+xpath=>//*[@id="pic1"]
+173:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/a[1]/img
+174:a 无
+xpath=>//*[@id="pic2"]
+175:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/a[2]/img
+176:a 无
+xpath=>//*[@id="pic3"]
+177:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/a[3]/img
+178:a 无
+xpath=>//*[@id="pic4"]
+179:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/a[4]/img
+180:a 无
+xpath=>//*[@id="pic5"]
+181:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/a[5]/img
+182:a 无
+xpath=>//*[@id="pic6"]
+183:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/a[6]/img
+184:a 无
+xpath=>//*[@id="pic7"]
+185:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/a[7]/img
+186:a 无
+xpath=>//*[@id="pic8"]
+187:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/a[8]/img
+188:a 无
+xpath=>//*[@id="pic9"]
+189:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/a[9]/img
+190:h 无
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/h
+191:span 
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[2]/h/span
+192:td control_op
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[3]
+193:img 无
+xpath=>//*[@id="dropmenu_btn"]
+194:td control_r
+xpath=>/html/body/div[3]/div/div[2]/div/table/tr/td[4]
+195:div 
+xpath=>/html/body/div[3]/div/div[2]/div/div
+196:h3 功能菜单
+xpath=>/html/body/div[3]/div/div[2]/div/div/h3
+197:a 关闭
+xpath=>/html/body/div[3]/div/div[2]/div/div/h3/a
+198:div 
+xpath=>//*[@id="tab_nav"]
+199:a 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[1]/a[1]
+200:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[1]/a[1]/span
+201:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[1]/a[1]/span/img
+202:a 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[1]/a[2]
+203:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[1]/a[2]/span
+204:img 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[1]/a[2]/span/img
+205:div 无
+xpath=>//*[@id="datainfo"]
+206:div 
+xpath=>//*[@id="tab_content"]
+207:div 
+xpath=>//*[@id="t_1"]
+208:div 
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]
+209:ul 
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul
+210:li 无
+xpath=>//*[@id="2_level_menu"]
+211:a 基础模块
+xpath=>//*[@id="img_130402081930284387431bd38d30c4ac"]
+212:div secMenu
+xpath=>//*[@id="submenu_frame_130402081930284387431bd38d30c4ac"]
+213:li 无
+xpath=>//*[@id="2_level_menu"]
+214:a 卡口系统
+xpath=>//*[@id="img_1304261304150253833622fa401af96b"]
+215:div secMenu
+xpath=>//*[@id="submenu_frame_1304261304150253833622fa401af96b"]
+216:li 无
+xpath=>//*[@id="2_level_menu"]
+217:a 违法系统
+xpath=>//*[@id="img_130619095023993fa6f0e33461840c4b"]
+218:div secMenu
+xpath=>//*[@id="submenu_frame_130619095023993fa6f0e33461840c4b"]
+219:li 无
+xpath=>//*[@id="2_level_menu"]
+220:a 布控系统
+xpath=>//*[@id="img_1305030918504367a63fdc4d5033ea81"]
+221:div secMenu
+xpath=>//*[@id="submenu_frame_1305030918504367a63fdc4d5033ea81"]
+222:li 无
+xpath=>//*[@id="2_level_menu"]
+223:a 系统
+xpath=>//*[@id="img_130711115821246a8d2ec5fa025cf78c"]
+224:div secMenu
+xpath=>//*[@id="submenu_frame_130711115821246a8d2ec5fa025cf78c"]
+225:li 无
+xpath=>//*[@id="2_level_menu"]
+226:a 短信平台
+xpath=>//*[@id="img_1305211608157961944e4b8ee198113e"]
+227:div secMenu
+xpath=>//*[@id="submenu_frame_1305211608157961944e4b8ee198113e"]
+228:li 无
+xpath=>//*[@id="2_level_menu"]
+229:a 流量分析
+xpath=>//*[@id="img_1305030838361678927dc9e50f2767b3"]
+230:div secMenu
+xpath=>//*[@id="submenu_frame_1305030838361678927dc9e50f2767b3"]
+231:li 无
+xpath=>//*[@id="2_level_menu"]
+232:a 视频管理
+xpath=>//*[@id="img_13080709290681228edef50e3108843e"]
+233:div secMenu
+xpath=>//*[@id="submenu_frame_13080709290681228edef50e3108843e"]
+234:li 无
+xpath=>//*[@id="2_level_menu"]
+235:a 应急指挥
+xpath=>//*[@id="img_130716164458319caba6aa33d3d78bc7"]
+236:div secMenu
+xpath=>//*[@id="submenu_frame_130716164458319caba6aa33d3d78bc7"]
+237:li 无
+xpath=>//*[@id="2_level_menu"]
+238:a 信号控制
+xpath=>//*[@id="img_130806084811984481e6bc0ae7979a84"]
+239:div secMenu
+xpath=>//*[@id="submenu_frame_130806084811984481e6bc0ae7979a84"]
+240:li 无
+xpath=>//*[@id="2_level_menu"]
+241:a 停车诱导
+xpath=>//*[@id="img_130806161937625499ae3241745dc757"]
+242:div secMenu
+xpath=>//*[@id="submenu_frame_130806161937625499ae3241745dc757"]
+243:li 无
+xpath=>//*[@id="2_level_menu"]
+244:a 交通设施
+xpath=>//*[@id="img_1310211154453754aa80667f3b44173d"]
+245:div secMenu
+xpath=>//*[@id="submenu_frame_1310211154453754aa80667f3b44173d"]
+246:li 无
+xpath=>//*[@id="2_level_menu"]
+247:a 道路挖占
+xpath=>//*[@id="img_13102113525445309b6551b1c005120c"]
+248:div secMenu
+xpath=>//*[@id="submenu_frame_13102113525445309b6551b1c005120c"]
+249:li 无
+xpath=>//*[@id="2_level_menu"]
+250:a 勤务系统
+xpath=>//*[@id="img_1310251126180903b934590cbc5290e3"]
+251:div secMenu
+xpath=>//*[@id="submenu_frame_1310251126180903b934590cbc5290e3"]
+252:li 无
+xpath=>//*[@id="2_level_menu"]
+253:a 发布
+xpath=>//*[@id="img_131029102508828e9fb1368f49a3df53"]
+254:div secMenu
+xpath=>//*[@id="submenu_frame_131029102508828e9fb1368f49a3df53"]
+255:li 无
+xpath=>//*[@id="2_level_menu"]
+256:a 地图管理
+xpath=>//*[@id="img_130613092559383983b85a84923d428d"]
+257:div secMenu
+xpath=>//*[@id="submenu_frame_130613092559383983b85a84923d428d"]
+258:li 无
+xpath=>//*[@id="2_level_menu"]
+259:a 通行证管理
+xpath=>//*[@id="img_131202153958236e9e2ce62b00c9f113"]
+260:div secMenu
+xpath=>//*[@id="submenu_frame_131202153958236e9e2ce62b00c9f113"]
+261:li 无
+xpath=>//*[@id="2_level_menu"]
+262:a 事故分析
+xpath=>//*[@id="img_1312171401175469a9c24efc6eda16fe"]
+263:div secMenu
+xpath=>//*[@id="submenu_frame_1312171401175469a9c24efc6eda16fe"]
+264:li 无
+xpath=>//*[@id="2_level_menu"]
+265:a 运维中心
+xpath=>//*[@id="img_1408220902505154a56cd7094dac5bd9"]
+266:div secMenu
+xpath=>//*[@id="submenu_frame_1408220902505154a56cd7094dac5bd9"]
+267:li 无
+xpath=>//*[@id="2_level_menu"]
+268:a 信息交互
+xpath=>//*[@id="img_1312161602376024862822f94df79d57"]
+269:div secMenu
+xpath=>//*[@id="submenu_frame_1312161602376024862822f94df79d57"]
+270:li 无
+xpath=>//*[@id="2_level_menu"]
+271:a 决策分析
+xpath=>//*[@id="img_1312171517265786bb594992c2e2961c"]
+272:div secMenu
+xpath=>//*[@id="submenu_frame_1312171517265786bb594992c2e2961c"]
+273:div 
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[2]
+274:div 
+xpath=>//*[@id="t_2"]
+275:div 
+xpath=>//*[@id="scr1"]
+276:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[1]/span
+277:div 
+xpath=>//*[@id="scr2"]
+278:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[2]/span
+279:div 
+xpath=>//*[@id="scr3"]
+280:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[3]/span
+281:div 
+xpath=>//*[@id="scr4"]
+282:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[4]/span
+283:div 
+xpath=>//*[@id="scr5"]
+284:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[5]/span
+285:div 
+xpath=>//*[@id="scr6"]
+286:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[6]/span
+287:div 
+xpath=>//*[@id="scr7"]
+288:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[7]/span
+289:div 
+xpath=>//*[@id="scr8"]
+290:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[8]/span
+291:div 
+xpath=>//*[@id="scr9"]
+292:span 无
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[9]/span
+293:div 点击添加桌面
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[10]
+294:div 
+xpath=>//*[@id="contentInfo"]
+295:div 
+xpath=>//*[@id="leftMenuDiv"]
+296:div 无
+xpath=>//*[@id="leftMenu"]
+297:div 
+xpath=>//*[@id="content"]
+298:div lr_btn lr_btn_bg_l
+xpath=>//*[@id="lr_btn"]
+299:div 
+xpath=>/html/body/div[4]/div[2]/div[2]
+300:iframe 
+xpath=>//*[@id="content-frame"]
+301:link 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/link[1]
+302:link 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/link[2]
+303:link 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/link[3]
+304:link 无
+xpath=>//*[@id="headCss"]
+305:link 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/link[5]
+306:link 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/link[6]
+307:title 智能交通综合管控平台
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/title
+308:link 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/link[7]
+309:link 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/link[8]
+310:link 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/link[9]
+311:div 
+xpath=>//*[@id="alert-div"]
+312:p 无
+xpath=>//*[@id="alert-content"]
+313:div 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]
+314:div 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]
+315:form 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form
+316:table 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table
+317:tbody 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody
+318:tr 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]
+319:td 设备名称
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[1]
+320:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[2]
+321:input 支持设备名称模糊查询设备名称
+xpath=>//*[@id="name"]
+322:td 建设厂家
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[3]
+323:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[4]
+324:select 
+xpath=>//*[@id="companyId"]
+325:option 请选择
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[4]/select/option[1]
+326:option 大华
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[4]/select/option[2]
+327:option 西安翔迅
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[4]/select/option[3]
+328:option 浙江宇视
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[4]/select/option[4]
+329:td 设备状态
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[5]
+330:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[6]
+331:select 
+xpath=>//*[@id="deviceStatFlag"]
+332:option 请选择
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[6]/select/option[1]
+333:option 正常
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[6]/select/option[2]
+334:option 故障
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[6]/select/option[3]
+335:option 未接入
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[1]/td[6]/select/option[4]
+336:tr 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]
+337:td 设备编号
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]/td[1]
+338:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]/td[2]
+339:input 支持设备编号模糊查询设备编号
+xpath=>//*[@id="code"]
+340:td 所属部门
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]/td[3]
+341:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]/td[4]
+342:input search_orgNames
+xpath=>//*[@id="orgNames"]
+343:input search_orgId
+xpath=>//*[@id="search_orgId"]
+344:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]/td[5]
+345:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]/td[6]
+346:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]/td[7]
+347:input 查询
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]/td[7]/input[1]
+348:input 重置
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[1]/form/table/tbody/tr[2]/td[7]/input[2]
+349:div 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]
+350:table 
+xpath=>//*[@id="table"]
+351:thead 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead
+352:tr 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr
+353:th 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[1]
+354:th 设备名称
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[2]
+355:th 状态
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[3]
+356:th 设备编号
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[4]
+357:th 所在道路
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[5]
+358:th 设备类型
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[6]
+359:th 地址
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[7]
+360:th 建设厂家
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[8]
+361:th 所属部门
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[9]
+362:th 最新数据到达时间
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/thead/tr/th[10]
+363:tbody 无
+xpath=>//*[@id="tbody"]
+364:tr color2
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]
+365:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[1]
+366:img 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[1]/img
+367:td 订术正之叨
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[2]
+368:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[3]
+369:font 未接入
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[3]/font
+370:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[4]
+371:td 三峡路
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[5]
+372:td 闯红灯
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[6]
+373:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[7]
+374:td 西安翔迅
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[8]
+375:td 罗甸第一大队
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[9]
+376:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[1]/td[10]
+377:tr color1
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]
+378:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[1]
+379:img 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[1]/img
+380:td 龙儿入令丑
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[2]
+381:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[3]
+382:font 未接入
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[3]/font
+383:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[4]
+384:td 三峡路
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[5]
+385:td 闯红灯
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[6]
+386:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[7]
+387:td 西安翔迅
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[8]
+388:td 罗甸第一大队
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[9]
+389:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[2]/td[10]
+390:tr color2
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]
+391:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[1]
+392:img 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[1]/img
+393:td 南阳路
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[2]
+394:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[3]
+395:font 故障
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[3]/font
+396:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[4]
+397:td 南阳路
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[5]
+398:td 公路卡口设备
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[6]
+399:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[7]
+400:td 西安翔迅
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[8]
+401:td 罗甸支队
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[9]
+402:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[3]/td[10]
+403:tr color1
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]
+404:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[1]
+405:img 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[1]/img
+406:td 启明星路设备
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[2]
+407:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[3]
+408:font 故障
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[3]/font
+409:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[4]
+410:td 启明星路
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[5]
+411:td 公路卡口设备
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[6]
+412:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[7]
+413:td 浙江宇视
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[8]
+414:td 罗甸支队
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[9]
+415:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[4]/td[10]
+416:tr color2
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]
+417:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[1]
+418:img 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[1]/img
+419:td 切互仪罐厉
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[2]
+420:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[3]
+421:font 未接入
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[3]/font
+422:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[4]
+423:td 三峡路
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[5]
+424:td 闯红灯
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[6]
+425:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[7]
+426:td 西安翔迅
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[8]
+427:td 罗甸第一大队
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[9]
+428:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[5]/td[10]
+429:tr color1
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]
+430:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[1]
+431:img 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[1]/img
+432:td 三峡路设备
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[2]
+433:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[3]
+434:font 故障
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[3]/font
+435:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[4]
+436:td 三峡路
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[5]
+437:td 测速设备
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[6]
+438:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[7]
+439:td 浙江宇视
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[8]
+440:td 罗甸支队
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[9]
+441:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[6]/td[10]
+442:tr color2
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]
+443:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[1]
+444:img 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[1]/img
+445:td 小明大路设备
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[2]
+446:td 无
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[3]
+447:font 故障
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[3]/font
+448:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[4]
+449:td 小明大路
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[5]
+450:td 闭路电视
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[6]
+451:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[7]
+452:td 西安翔迅
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[8]
+453:td 罗甸支队
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[9]
+454:td 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/table/tbody/tr[7]/td[10]
+455:div 无
+xpath=>//*[@id="pager"]
+456:ul pages
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/div[1]/ul
+457:li 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/div[1]/ul/li[1]
+458:li 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/div[1]/ul/li[2]
+459:li 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/div[1]/ul/li[3]
+460:li 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/div[1]/ul/li[4]
+461:li 
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/div[1]/ul/li[5]
+462:div clear
+xpath=>/html/body/div[4]/div[2]/div[2]/iframe/div[2]/div[2]/div[2]
+463:div 
+xpath=>//*[@id="orgTreeContent"]
+464:ul ztree
+xpath=>//*[@id="orgTreeSpace"]
+465:li level0
+xpath=>//*[@id="orgTreeSpace_1"]
+466:span button level0 switch
+xpath=>//*[@id="orgTreeSpace_1_switch"]
+467:span button chk radio_fal
+xpath=>//*[@id="orgTreeSpace_1_check"]
+468:a 交警支队
+xpath=>//*[@id="orgTreeSpace_1_a"]
+469:span button ico_open
+xpath=>//*[@id="orgTreeSpace_1_ico"]
+470:span 交警支队
+xpath=>//*[@id="orgTreeSpace_1_span"]
+471:ul level0
+xpath=>//*[@id="orgTreeSpace_1_ul"]
+472:li level1
+xpath=>//*[@id="orgTreeSpace_2"]
+473:span button level1 switch
+xpath=>//*[@id="orgTreeSpace_2_switch"]
+474:span button chk radio_fal
+xpath=>//*[@id="orgTreeSpace_2_check"]
+475:a 罗甸第一大队
+xpath=>//*[@id="orgTreeSpace_2_a"]
+476:span button ico_docu
+xpath=>//*[@id="orgTreeSpace_2_ico"]
+477:span 罗甸第一大队
+xpath=>//*[@id="orgTreeSpace_2_span"]
+478:li level1
+xpath=>//*[@id="orgTreeSpace_3"]
+479:span button level1 switch
+xpath=>//*[@id="orgTreeSpace_3_switch"]
+480:span button chk radio_fal
+xpath=>//*[@id="orgTreeSpace_3_check"]
+481:a 罗甸支队
+xpath=>//*[@id="orgTreeSpace_3_a"]
+482:span button ico_docu
+xpath=>//*[@id="orgTreeSpace_3_ico"]
+483:span 罗甸支队
+xpath=>//*[@id="orgTreeSpace_3_span"]
+484:div clear
+xpath=>/html/body/div[5]
+485:div 
+xpath=>//*[@id="passwd-change"]
+486:div 
+xpath=>/html/body/div[6]/div[1]
+487:button 
+xpath=>/html/body/div[6]/div[1]/button
+488:h2 修改密码
+xpath=>/html/body/div[6]/div[1]/h2
+489:div 
+xpath=>/html/body/div[6]/div[2]
+490:form 
+xpath=>//*[@id="changePasswdForm"]
+491:div 
+xpath=>/html/body/div[6]/div[2]/form/div[1]
+492:label 原密码
+xpath=>/html/body/div[6]/div[2]/form/div[1]/label
+493:div 
+xpath=>/html/body/div[6]/div[2]/form/div[1]/div
+494:input 原密码
+xpath=>//*[@id="old-passwd"]
+495:div 
+xpath=>/html/body/div[6]/div[2]/form/div[2]
+496:label 新密码
+xpath=>/html/body/div[6]/div[2]/form/div[2]/label
+497:div 
+xpath=>/html/body/div[6]/div[2]/form/div[2]/div
+498:input 新密码
+xpath=>//*[@id="user-passwd"]
+499:div 
+xpath=>/html/body/div[6]/div[2]/form/div[3]
+500:label 重复一次
+xpath=>/html/body/div[6]/div[2]/form/div[3]/label
+501:div 
+xpath=>/html/body/div[6]/div[2]/form/div[3]/div
+502:input 重复一次
+xpath=>//*[@id="repeat-passwd"]
+503:div 
+xpath=>/html/body/div[6]/div[3]
+504:a 修改
+xpath=>/html/body/div[6]/div[3]/a[1]
+505:a 关闭
+xpath=>/html/body/div[6]/div[3]/a[2]
+506:div 
+xpath=>//*[@id="uploading_div"]
+507:div 
+xpath=>/html/body/div[7]/div[1]
+508:h4 文件上传
+xpath=>/html/body/div[7]/div[1]/h4
+509:div 根据文件大小保存过程可能需要分钟期间请勿
+xpath=>/html/body/div[7]/div[2]
+510:div clear
+xpath=>/html/body/div[8]
+511:div 无
+xpath=>//*[@id="progress-bar"]
+512:div company-info
+xpath=>/html/body/div[10]
+513:span 西安翔迅科技有限责任公司
+xpath=>/html/body/div[10]/span[1]
+514:span shouce_download
+xpath=>//*[@id="flashContent"]
+515:font 系统提示
+xpath=>/html/body/div[10]/span[2]/font
+516:a 下载安装
+xpath=>/html/body/div[10]/span[2]/a
+517:bgsound 
+xpath=>//*[@id="sndie"]
+518:audio 无
+xpath=>//*[@id="snd"]

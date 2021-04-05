@@ -1,0 +1,3 @@
+*** Settings ***
+Documentation     巡检用例
+Resource          ../../3项目资源/share_resourse.txt

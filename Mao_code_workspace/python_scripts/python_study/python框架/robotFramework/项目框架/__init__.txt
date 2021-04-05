@@ -1,0 +1,54 @@
+*** Settings ***
+Suite Setup       Setup_Pre_Conidtion
+Test Setup        Common_Test_Setup    ${TESTNAME}    ${OUTPUT DIR}
+Test Teardown     Run Keywords    Common_Test_Teardown
+...               AND    Close Browser
+Resource          ../3项目资源/share_resourse.txt
+
+*** Keywords ***
+Setup_Pre_Condition
+    [Documentation]    Setup_Pre_Condition：项目预设
+    ...    A. 记录项目开始时间
+    ...    B. 调用keywords：Setup_Testbed_Variable & Setup_Website_Variable
+    ...    项目预设：Setup_Pre_Condition
+    ...    主要目的：预设全局变量，实现参数化
+    ...    命名规则：全部大写并以“_”分隔
+    ${time}    Evaluate    datetime.datetime.now()    datetime
+    Set Environment Variable    \    ${time}
+    Setup_Testbed_Variable
+    Setup_Website_Variable
+
+Setup_Testbed_Variable
+    [Documentation]    设置关于测试电脑的信息，分为四部分
+    ...    A. 测试电脑基本信息：主机名和IP地址
+    ...    B. 项目和日志文件保存路径（后面会讲解如何通过修改源代码保存日志文件到指定路径）
+    ...    C. Appium服务器IP地址：手机端测试
+    ...    D. 多浏览器配置（后续讲解，浏览器支持firefox, chrome, IE, 360极度和360安全浏览器等）
+    #LAN PC Info
+    Set Environment Variable    G_HOST_NAME    ${EMPTY}
+    Set Environment Variable    G_HOST_IP    127.0.0.1
+    #PATH Info
+    Set Environment Variable    G_SQAROOT    E:\\atom\\robotFramework
+    Set Environment Variable    G_LOG    %{G_SQAROOT}\\logs
+    Set Environment Variable    G_CURRENTLOG    ${OUTPUT DIR}
+    Set Environment Variable    G_TOTAL_RESULT    %{G_SQAROOT}\\Total_Result
+    Set Environment Variable    G_OUTPUT_DIR    ${OUTPUT DIR}
+    Set Environment Variable    U_PATH_LIBRARY    %{G_SQAROOT}\\library
+    #APPIUM Server
+    Set Environment Variable    G_APPIUM_HOST_IP0    ${EMPTY}
+    #Browser Type
+    Set Environment Variable    U_CUSTOME_BROWSER_TYPE    Chrome
+
+Setup_Website_Variable
+    [Documentation]    设置关于被测网站的信息
+    ...    A. 网站基本信息：内测IP地址，域名，网页标题，登陆用户和密码等
+    ...    B. 网站测试信息：默认页面加载时间和线上/线下测试
+    #Website Basic Info
+    Set Environment Variable    G_PROD_IP_ADDR    http://193.169.100.249:8086/itmsld/login
+    Set Environment Variable    G_PROD_DOMAIN_NAME    http://193.169.100.249:8086/itmsld/login
+    Set Environment Variable    U_WEB_HTTP_TITLE    欢迎来到！
+    Set Environment Variable    U_WEB_HTTP_USER    admin
+    Set Environment Variable    U_WEB_HTTP_PWD    admin
+    #Website Test Info
+    Set Environment Variable    U_WEB_WAITING_TIME    3
+    Set Environment Variable    U_WEB_TESTING_TYPE    online

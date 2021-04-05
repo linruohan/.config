@@ -1,0 +1,123 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by SerFrame.rc
+//
+#define IDM_ABOUTBOX                    0x0010
+#define IDD_ABOUTBOX                    100
+#define IDP_OLE_INIT_FAILED             100
+#define IDS_ABOUTBOX                    101
+#define IDD_SERFRAME_DIALOG             102
+#define IDS_CH_FREE                     102
+#define IDS_CH_OFFHOOK                  103
+#define IDS_CH_WELCOME                  104
+#define IDS_CH_SELECT                   105
+#define IDS_CH_RECORD_MESSAGE_START     106
+#define IDS_CH_RECORD_MESSAGE_ING       107
+#define IDS_CH_RECORD_MESSAGE_END       108
+#define IDS_CH_CALL_BY_SPEECH_START     109
+#define IDS_CH_CALL_BY_SPEECH_RECORDING 110
+#define IDS_CH_CALL_BY_SPEECH_RECONITION 111
+#define IDS_CH_CALL_BY_DTMF_START       112
+#define IDS_CH_CALL_BY_DTMF_GETDTMF     113
+#define IDS_CH_CALL_BY_DTMF_SEARCHING   114
+#define IDS_CH_INLINE_BUSY              115
+#define IDS_CH_INLINE_HANGUP            116
+#define IDS_CH_TALKING_WITH_IN          117
+#define IDS_CH_CHOICE_MESSAGE           118
+#define IDS_CH_PLAY_MESSAGE_START       119
+#define IDS_CH_PLAY_MESSAGE_ING         120
+#define IDS_CH_PLAY_MESSAGE_END         121
+#define IDS_CH_RINGING                  122
+#define IDS_CH_WAIT_OFFHOOK             123
+#define IDS_CH_NO_LISTEN                124
+#define IDS_CH_FEED_OFFHOOK             125
+#define IDS_CH_WAIT_LINK                126
+#define IDS_CH_TALKING_WITH_OUT         127
+#define IDR_MAINFRAME                   128
+#define IDS_CH_OUT_HANGUP               128
+#define IDR_MENU1                       129
+#define IDS_CH_WAIT_IN_HANGUP           129
+#define IDD_NAMELIST                    130
+#define IDS_CH_EMPTY                    130
+#define IDD_TELOPT                      131
+#define IDS_CHTYPE_USER                 131
+#define IDD_NETOPT                      132
+#define IDS_CHTYPE_TRUNK                132
+#define IDS_CHTYPE_EMPTY                133
+#define IDD_CHANNELTYPE                 133
+#define IDS_CHTYPE_RECORD               134
+#define IDD_FAXOPT                      134
+#define IDS_CH_RECEIVE_FAX_LINK         135
+#define IDS_CH_RECEIVE_FAX_START        136
+#define IDS_CH_RECEIVE_FAX_ING          137
+#define IDS_CH_RECEIVE_FAX_END          138
+#define IDS_CH_SEND_FAX_LINK            139
+#define IDS_CH_SEND_FAX_DAIL            140
+#define IDS_CH_SEND_FAX_START           141
+#define IDS_CH_SEND_FAX_ING             142
+#define IDS_CH_SEND_FAX_END             143
+#define IDS_CHTYPE_TRUNK_WITH_FAX       144
+#define IDB_CLOSE                       1000
+#define IDB_MANAGENAME                  1003
+#define IDB_START                       1004
+#define IDB_STOP                        1005
+#define IDB_NETOPT                      1007
+#define IDB_TELOPT                      1009
+#define IDB_FAXOPT                      1010
+#define ID_REPORT                       1011
+#define IDC_NAMELIST                    1012
+#define IDE_PERSONNAME                  1014
+#define IDE_HOSTNAME                    1015
+#define IDB_PERSONNEW                   1016
+#define IDB_PERSONEDIT                  1017
+#define IDB_SHOWALL                     1018
+#define IDB_PERSONSEARCH                1019
+#define IDB_PERSONDEL                   1020
+#define IDE_DTMFNO                      1025
+#define IDE_INLINENO                    1026
+#define IDC_OUT1IN1                     1029
+#define IDC_OUT1IN2                     1030
+#define IDC_OUT1IN3                     1031
+#define IDC_OUT1IN4                     1032
+#define IDC_OUT2IN1                     1033
+#define IDC_OUT2IN2                     1034
+#define IDC_OUT2IN3                     1035
+#define IDC_OUT2IN4                     1036
+#define IDC_OUT3IN1                     1037
+#define IDC_OUT3IN2                     1038
+#define IDC_OUT3IN3                     1039
+#define IDC_OUT3IN4                     1040
+#define IDS_OUT1                        1041
+#define IDS_OUT2                        1042
+#define IDS_OUT3                        1043
+#define IDE_OUTLINENO                   1044
+#define IDE_INLINENUM                   1045
+#define IDE_INLINE1                     1046
+#define IDE_INLINE4                     1047
+#define IDE_INLINE6                     1048
+#define IDE_INLINE2                     1049
+#define IDE_INLINE3                     1050
+#define IDE_INLINE5                     1051
+#define IDB_OK                          1054
+#define IDB_CANCEL                      1055
+#define IDE_SERVER_IP                   1056
+#define IDE_SERVER_PORT                 1057
+#define IDC_SHOW_ALL_CHAN               1058
+#define IDL_ALLCHENNELTYPE              1059
+#define IDL_FAXREPORT                   1060
+#define IDE_OUTLINEWITHFAX              1061
+#define IDB_SENDFAX_SERFRAME            1067
+#define IDE_FAX_DIAL_NO                 1068
+#define IDC_BUTTON1                     1069
+#define IDC_NEW                         32771
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        136
+#define _APS_NEXT_COMMAND_VALUE         32772
+#define _APS_NEXT_CONTROL_VALUE         1070
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<body>
+<table id="lookInfoTable" border="1" cellspacing="0">
+    <thead>
+    <tr>
+        <th>年级</th>
+        <th>院系</th>
+        <th>班级</th>
+        <th>人数</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>2016</td>
+        <td>计算机系</td>
+        <td>1班</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>2016</td>
+        <td>计算机系</td>
+        <td>2班</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>2016</td>
+        <td>计算机系</td>
+        <td>3班</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>2016</td>
+        <td>化学系</td>
+        <td>1班</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>2016</td>
+        <td>化学系</td>
+        <td>1班</td>
+        <td>50</td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    jQuery.fn.rowspan = function (colIdx) {
+        return this.each(function () {
+            var that;
+            $('tr', this).each(function (row) {
+                $('td:eq(' + colIdx + ')', this).filter(':visible').each(function (col) {
+                    if (that != null && $(this).html() == $(that).html()) {
+                        rowspan = $(that).attr("rowSpan");
+                        if (rowspan == undefined) {
+                            $(that).attr("rowSpan", 1);
+                            rowspan = $(that).attr("rowSpan");
+                        }
+                        rowspan = Number(rowspan) + 1;
+                        $(that).attr("rowSpan", rowspan);
+                        $(this).hide();
+                    } else {
+                        that = this;
+                    }
+                });
+            });
+        });
+    }
+    $(document).ready(function () {
+        $("#lookInfoTable").rowspan(0);
+        $("#lookInfoTable").rowspan(1);
+    });
+    /*调用方法：
+
+    $("#表格id").rowspan(需要合并的列index);
+    列index从左往右，从0开始
+    */
+
+    $("#lookInfoTable").rowspan(2);
+    $("#lookInfoTable").rowspan(3);
+
+</script>
+</body>
+</html>

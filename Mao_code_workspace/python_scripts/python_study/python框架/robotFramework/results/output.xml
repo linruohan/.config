@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180301 18:49:31.707" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="E:\atom\robot\003.txt" id="s1" name="003">
+<test id="s1-t1" name="Google Access">
+<kw name="Open browser with URL">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>browser=gc</arg>
+</arguments>
+<msg timestamp="20180301 18:49:31.802" level="INFO">Opening browser 'gc' to base url 'http://www.google.com'.</msg>
+<status status="PASS" endtime="20180301 18:50:40.250" starttime="20180301 18:49:31.802"></status>
+</kw>
+<status status="PASS" endtime="20180301 18:50:40.251" starttime="20180301 18:49:31.801"></status>
+</kw>
+<kw name="Set input on text box">
+<arguments>
+<arg>//*[@id="gbqfq"]</arg>
+<arg>Critical Software</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${xpath}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20180301 18:50:40.251" level="INFO">Typing text 'Critical Software' into text field '//*[@id="gbqfq"]'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180301 18:50:40.548" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180301 18:50:40.548" starttime="20180301 18:50:40.262"></status>
+</kw>
+<msg timestamp="20180301 18:50:40.549" level="FAIL">Element with locator '//*[@id="gbqfq"]' not found.</msg>
+<status status="FAIL" endtime="20180301 18:50:40.549" starttime="20180301 18:50:40.251"></status>
+</kw>
+<status status="FAIL" endtime="20180301 18:50:40.549" starttime="20180301 18:50:40.251"></status>
+</kw>
+<status status="FAIL" endtime="20180301 18:50:40.549" critical="yes" starttime="20180301 18:49:31.801">Element with locator '//*[@id="gbqfq"]' not found.</status>
+</test>
+<status status="FAIL" endtime="20180301 18:50:40.550" starttime="20180301 18:49:31.709"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="003" pass="0">003</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180301 18:49:31.800" level="ERROR">Error in file 'E:\atom\robot\003.txt': Resource file '\steps\keywords.txt' does not exist.</msg>
+</errors>
+</robot>

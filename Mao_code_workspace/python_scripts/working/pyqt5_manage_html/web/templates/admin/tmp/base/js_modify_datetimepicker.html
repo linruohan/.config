@@ -1,0 +1,80 @@
+<script type="text/javascript" src="../../assets/plugins/bootstrap/js/bootstrap-datetimepicker.js"
+        charset="UTF-8"></script>
+<script src="../../assets/plugins/bootstrap/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../../assets/plugins/select2/js/select2.full.min.js"></script>
+<script>
+    function set_left_date() {
+        let start_date = $("#task_modify_start_date").data("datetimepicker").getDate();
+        let end_date = $("#task_modify_end_date").data("datetimepicker").getDate();
+        // alert(start_date);
+        let total = (end_date - start_date) / 1000;
+        // alert('total:'+total)
+        let day = parseInt(total / (24 * 60 * 60));//计算整数天数
+        // alert('day:'+day)
+        let afterDay = total - day * 24 * 60 * 60;//取得算出天数后剩余的秒数
+        let hour = parseInt(afterDay / (60 * 60));//计算整数小时数
+        // alert('hour:'+hour)
+        let afterHour = total - day * 24 * 60 * 60 - hour * 60 * 60;//取得算出小时数后剩余的秒数
+        let min = parseInt(afterHour / 60);//计算整数分
+        let afterMin = total - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60;//取得算出分后剩余的秒数
+        // $('#left_time').val(day + " days, " + hour + " h, " + min + " m");
+        let left_days = ((end_date - start_date) / (1000 * 60 * 60 * 24)).toFixed(2);
+        $('#task_left_time').val(left_days + " 天");
+    }
+
+
+
+    $('#task_modify_start_date').datetimepicker({
+        pickerPosition: 'bottom-left',
+        format: "yyyy-mm-dd hh:ii",
+        locale: moment.locale('zh-cn'),
+        forceParse: 0,//设置为0，时间不会跳转1899，会显示当前时间。
+        language: 'zh-CN',//显示中文
+        startView: 2,
+        maxView: 4,
+        weekStart: 1,
+        viewSelect: 'hour',
+        showMeridian: 1,
+        initialDate: new Date(),//初始化当前日期
+        autoclose: 1,//选中自动关闭
+        todayBtn: 1,//显示今日按钮
+        todayHighlight: 1,
+        minuteStep: 10,//分钟jian'ge
+    }).on('changeDate', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        let startTime = event.date;
+        $('#task_modify_end_date').datetimepicker('setStartDate', startTime);
+        set_left_date()
+    });
+    $('#task_modify_end_date').datetimepicker({
+        pickerPosition: 'bottom-left',
+        // format: "yyyy-mm-dd hh:ii:ss",
+        format: "yyyy-mm-dd hh:ii",
+        locale: moment.locale('zh-cn'),
+        forceParse: 0,//设置为0，时间不会跳转1899，会显示当前时间。
+        language: 'zh-CN',//显示中文
+        startView: 2,
+        maxView: 4,
+        weekStart: 1,
+        viewSelect: 'hour',
+        showMeridian: 1,
+        initialDate: new Date(),//初始化当前日期
+        autoclose: 1,//选中自动关闭
+        todayBtn: 1,//显示今日按钮
+        todayHighlight: 1,
+        minuteStep: 10,//分钟jian'ge
+    }).on('changeDate', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var endTime = event.date;
+        $("#task_modify_start_date").datetimepicker('setEndDate', endTime);
+        set_left_date();
+    });
+    $("#task_modify_start_date").datetimepicker("setDate", new Date());  //设置显示默认当天的时间
+    let tomorrow = new Date();
+    tomorrow = tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow = new Date(tomorrow);
+    $("#task_modify_end_date").datetimepicker("setDate", tomorrow);  //设置显示默认当天的时间
+    set_left_date();
+</script>

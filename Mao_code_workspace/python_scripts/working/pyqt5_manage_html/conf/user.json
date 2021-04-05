@@ -1,0 +1,20 @@
+{
+  "0": {
+    "id": 0,
+    "work_number": "mwx637269",
+    "name": "毛金涛",
+    "IP": "127.0.0.1",
+    "nick_name": "mao",
+    "star": 0,
+    "score": 0
+  },
+  "1": {
+    "id": 1,
+    "work_number": "mwx637260",
+    "name": "毛涛",
+    "IP": "127.0.0.2",
+    "nick_name": "tao",
+    "star": 0,
+    "score": 0
+  }
+}

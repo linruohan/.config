@@ -1,0 +1,55 @@
+*** Settings ***
+Documentation     所有资源全部由文件share_resourse导入，实现资源的统一管理。
+Resource          GUI_keywords.txt
+Resource          Func_keywords.txt
+Library           BuiltIn
+Library           Screenshot
+Library           Collections
+Library           DateTime
+Library           Dialogs
+Library           OperatingSystem
+Library           Process
+Library           Screenshot
+Library           String
+Library           Telnet
+Library           XML
+Library           AutoItLibrary
+Library           Common/library/main.py
+
+*** Keywords ***
+Common_Test_Setup
+    [Arguments]    ${TESTNAME}    ${OUTPUT DIR}
+    [Documentation]    A. 改变日志等级：Set Log Level Trace
+    ...    Trace会返回详细日志，追踪错误原因；
+    ...    B. 关闭所有浏览器：减少因未能正常关闭浏览器而致使RIDE软件死掉的问题；
+    ...    C. 新建日志目录：Create Log Path
+    ...    RIDE默认日志目录是在C盘临时目录，不易管理；
+    ...    改变目录到G_LOG，并在logs下以用例名为每个用例建立单独目录；
+    ...    D. 改变截屏存储路径：Set Screenshot Directory
+    ...    保存截屏存储路径到用例目录G_CURRENT，便于查找与分析错误。
+    [Timeout]    10 minutes
+    #change log level for Debug
+    Set Log Level    TRACE
+    Close All Browsers
+    #set log to custome path
+    create log path    ${TESTNAME}      ${OUTPUT DIR}
+    #SAVE screenshot to current path
+    Set Screenshot Directory    %{G_CURRENTLOG}
+
+Common_Test_Teardown
+    [Documentation]    A. 存储测试结果到指定文件： Run echo “${TEST_NAME}:${TEST_STATUS}:${TEST MESSAGE}” >> %{G_TOTAL_RESULT}
+    ...    把结果存储单独的文件，用于发报告给boss；
+    ...    B. 多浏览器兼容性测试后，设置回初始浏览器；
+    ...    C. 关闭webdriver：减少因未能正常关闭webdriver而致使RIDE软件无法运行的问题。
+    ...    D. Teardown中关闭所有浏览器：如果前面有些关键字未能成功执行，Teardown能保证即使失败也会执行。
+    [Timeout]    15 minutes
+    #SAVE test results to file
+    OperatingSystem.Run    echo “${TEST_NAME}:${TEST_STATUS}:${TEST MESSAGE}” >> %{G_TOTAL_RESULT}
+    #set to Original Browser    dhrome
+    Set Environment Variable    U_CUSTOME_BROWSER_TYPE    chrome
+    #KILL Thread webdriver
+    :FOR    ${i}    IN RANGE    0    10
+    \    ${result}    Run Process    tskill    *driver*    timeout=10s
+    \    log    ${result.stderr}
+    \    Exit For Loop IF    ${result.rc}==1
+    [Teardown]    Close All Browsers

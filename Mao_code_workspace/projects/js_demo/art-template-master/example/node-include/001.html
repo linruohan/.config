@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../../lib/template-web.js" ></script>
+</head>
+<body>
+<div id="container"></div>
+<%
+include('./header.art', {
+title: title
+})
+%>
+<p>This is just an awesome page.</p>
+
+{{ include './footer.html' }}
+<script type="text/html" id="div">
+    <h1>{{name}}</h1>
+    <h2>{{age}}</h2>
+</script>
+<script type="text/javascript">
+    var data = {
+        name:"geekWeb",
+        age:22
+    }
+    var html = template('div',data);
+    document.getElementById("container").innerHTML = html;
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+﻿  找不到 D:\workspace\vs2019_space\windows_1.048_52cd06e0\bin\asrdemo.exe
+  cl: 命令行 warning D9035 :“Gm”选项已否决，并将在将来的版本中移除
+  asrdemo.cpp
+asrdemo.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+  asrdemo.vcxproj -> D:\workspace\vs2019_space\windows_1.048_52cd06e0\Examples\asrdemo\temp\output\Win32\Debug\asrdemo.exe
+  已复制         1 个文件。

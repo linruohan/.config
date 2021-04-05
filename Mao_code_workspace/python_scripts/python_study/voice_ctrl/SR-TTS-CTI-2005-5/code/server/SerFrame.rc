@@ -1,0 +1,419 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SerFrame.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\SerFrame.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 SerFrame"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "SerFrame 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2005",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_SERFRAME_DIALOG DIALOGEX 0, 0, 431, 249
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "电话呼叫中心服务器"
+FONT 10, "宋体"
+BEGIN
+    PUSHBUTTON      "关闭程序",IDB_CLOSE,355,108,50,14
+    PUSHBUTTON      "管理人名",IDB_MANAGENAME,291,51,50,14
+    PUSHBUTTON      "启动",IDB_START,291,23,50,14
+    PUSHBUTTON      "停止",IDB_STOP,355,23,50,14,WS_DISABLED
+    LTEXT           "电话通道运行状态：",IDC_STATIC,15,7,115,8
+    PUSHBUTTON      "网络设置",IDB_NETOPT,355,51,50,14
+    PUSHBUTTON      "电话设置",IDB_TELOPT,291,78,50,14
+    PUSHBUTTON      "传真设置",IDB_FAXOPT,355,78,50,14
+    CONTROL         "List1",ID_REPORT,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,15,22,257,95
+    CONTROL         "List1",IDL_FAXREPORT,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,15,146,256,68
+    LTEXT           "传真通道运行状态：",IDC_STATIC,15,130,68,8
+    PUSHBUTTON      "发送传真",IDB_SENDFAX_SERFRAME,355,165,50,14,
+                    WS_DISABLED
+    EDITTEXT        IDE_FAX_DIAL_NO,291,165,53,14,ES_AUTOHSCROLL
+    LTEXT           "发送传真的目标的号码：",IDC_STATIC,291,148,83,8
+    PUSHBUTTON      "测试用",IDC_BUTTON1,291,110,50,14,NOT WS_VISIBLE
+END
+
+IDD_NAMELIST DIALOG DISCARDABLE  0, 0, 330, 206
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "人员列表"
+FONT 12, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_NAMELIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,180,188
+    LTEXT           "主机名称：",IDC_STATIC,197,7,41,8
+    EDITTEXT        IDE_HOSTNAME,197,20,50,14,ES_AUTOHSCROLL
+    LTEXT           "姓名全称：",IDC_STATIC,197,48,41,8
+    EDITTEXT        IDE_PERSONNAME,197,61,50,14,ES_AUTOHSCROLL
+    LTEXT           "按键标识号码：",IDC_STATIC,266,7,57,8
+    EDITTEXT        IDE_DTMFNO,266,20,50,14,ES_AUTOHSCROLL
+    LTEXT           "内线通道号码：",IDC_STATIC,266,48,57,8
+    EDITTEXT        IDE_INLINENO,266,61,50,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "显示全部",IDB_SHOWALL,273,102,44,14
+    PUSHBUTTON      "新增",IDB_PERSONNEW,194,131,44,14
+    PUSHBUTTON      "修改",IDB_PERSONEDIT,273,131,44,14
+    PUSHBUTTON      "删除",IDB_PERSONDEL,194,157,44,14
+    PUSHBUTTON      "查找",IDB_PERSONSEARCH,273,157,45,14
+    PUSHBUTTON      "关闭",IDB_CLOSE,273,185,45,14
+END
+
+IDD_TELOPT DIALOG DISCARDABLE  0, 0, 254, 134
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "电话线路设置"
+FONT 10, "System"
+BEGIN
+    LTEXT           "要使用的外线通道号：",IDC_STATIC,13,13,81,8
+    EDITTEXT        IDE_OUTLINENO,95,13,40,14,ES_AUTOHSCROLL
+    LTEXT           "要使用的内线数量：",IDC_STATIC,13,34,73,8
+    EDITTEXT        IDE_INLINENUM,95,34,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "要使用的内线列表：",IDC_STATIC,13,63,228,58
+    LTEXT           "内线1：",IDC_STATIC,24,76,30,8
+    EDITTEXT        IDE_INLINE1,55,76,25,14,ES_AUTOHSCROLL
+    LTEXT           "内线2：",IDC_STATIC,97,76,29,8
+    EDITTEXT        IDE_INLINE2,131,76,25,14,ES_AUTOHSCROLL
+    LTEXT           "内线3：",IDC_STATIC,173,76,29,8
+    EDITTEXT        IDE_INLINE3,203,76,25,14,ES_AUTOHSCROLL
+    LTEXT           "内线4：",IDC_STATIC,24,98,29,8
+    EDITTEXT        IDE_INLINE4,55,98,25,14,ES_AUTOHSCROLL
+    LTEXT           "内线5：",IDC_STATIC,97,98,29,8
+    EDITTEXT        IDE_INLINE5,131,98,25,14,ES_AUTOHSCROLL
+    LTEXT           "内线6：",IDC_STATIC,173,98,29,8
+    EDITTEXT        IDE_INLINE6,203,98,25,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "确定",IDB_OK,184,30,56,14
+    PUSHBUTTON      "取消",IDB_CANCEL,184,48,56,14
+    DEFPUSHBUTTON   "查看通道类型",IDC_SHOW_ALL_CHAN,184,11,56,14
+END
+
+IDD_NETOPT DIALOG DISCARDABLE  0, 0, 200, 107
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "网络服务设置"
+FONT 12, "System"
+BEGIN
+    LTEXT           "服务器 IP 地址：",IDC_STATIC,21,24,60,8
+    EDITTEXT        IDE_SERVER_IP,85,24,63,14,ES_AUTOHSCROLL
+    LTEXT           "服务器端口：",IDC_STATIC,21,50,49,8
+    EDITTEXT        IDE_SERVER_PORT,85,50,30,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDB_OK,143,69,50,14
+    PUSHBUTTON      "取消",IDB_CANCEL,143,86,50,14
+END
+
+IDD_CHANNELTYPE DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "所有的通道类型"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,130,73,50,14
+    CONTROL         "List1",IDL_ALLCHENNELTYPE,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,113,80
+END
+
+IDD_FAXOPT DIALOG DISCARDABLE  0, 0, 187, 131
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "传真设置"
+FONT 10, "System"
+BEGIN
+    LTEXT           "要收发传真的外线通道号：",IDC_STATIC,24,30,97,8
+    EDITTEXT        IDE_OUTLINEWITHFAX,123,30,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDB_OK,116,75,50,14
+    PUSHBUTTON      "取消",IDB_CANCEL,116,95,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "SerFrame Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "SerFrame\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SerFrame.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "SerFrame 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SERFRAME_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 424
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 242
+    END
+
+    IDD_NAMELIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_TELOPT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 127
+    END
+
+    IDD_NETOPT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 100
+    END
+
+    IDD_CHANNELTYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_FAXOPT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "NEW"
+    BEGIN
+        MENUITEM "xinjian",                     IDC_NEW
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE 程序初始化失败。请确认 OLE 库程序是正确的版本。"
+    IDS_ABOUTBOX            "关于 电话呼叫办公系统(&A)..."
+    IDS_CH_FREE             "空闲"
+    IDS_CH_OFFHOOK          "摘机"
+    IDS_CH_WELCOME          "欢迎"
+    IDS_CH_SELECT           "主菜单"
+    IDS_CH_RECORD_MESSAGE_START "留言开始"
+    IDS_CH_RECORD_MESSAGE_ING "正在留言"
+    IDS_CH_RECORD_MESSAGE_END "留言结束"
+    IDS_CH_CALL_BY_SPEECH_START "语音找人开始"
+    IDS_CH_CALL_BY_SPEECH_RECORDING "语音找人录音"
+    IDS_CH_CALL_BY_SPEECH_RECONITION "语音找人识别"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CH_CALL_BY_DTMF_START "按键找人开始"
+    IDS_CH_CALL_BY_DTMF_GETDTMF "按键找人获取按键"
+    IDS_CH_CALL_BY_DTMF_SEARCHING "按键找人搜索"
+    IDS_CH_INLINE_BUSY      "处理内线忙"
+    IDS_CH_INLINE_HANGUP    "处理内线挂机"
+    IDS_CH_TALKING_WITH_IN  "正在与内线通话"
+    IDS_CH_CHOICE_MESSAGE   "选择留言"
+    IDS_CH_PLAY_MESSAGE_START "开始播放留言"
+    IDS_CH_PLAY_MESSAGE_ING "正在播放留言"
+    IDS_CH_PLAY_MESSAGE_END "留言播放结束"
+    IDS_CH_RINGING          "振铃"
+    IDS_CH_WAIT_OFFHOOK     "等待摘机"
+    IDS_CH_NO_LISTEN        "无人接听"
+    IDS_CH_FEED_OFFHOOK     "内线摘机"
+    IDS_CH_WAIT_LINK        "等待连接"
+    IDS_CH_TALKING_WITH_OUT "正在与外线通话"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CH_OUT_HANGUP       "处理外线挂机"
+    IDS_CH_WAIT_IN_HANGUP   "正在挂机"
+    IDS_CH_EMPTY            "悬空"
+    IDS_CHTYPE_USER         "内线通道"
+    IDS_CHTYPE_TRUNK        "外线通道"
+    IDS_CHTYPE_EMPTY        "悬空"
+    IDS_CHTYPE_RECORD       "录音模块"
+    IDS_CH_RECEIVE_FAX_LINK "在为接收传真建立连接"
+    IDS_CH_RECEIVE_FAX_START "开始接收传真"
+    IDS_CH_RECEIVE_FAX_ING  "正在接收传真"
+    IDS_CH_RECEIVE_FAX_END  "接收传真结束"
+    IDS_CH_SEND_FAX_LINK    "在为发送传真建立连接"
+    IDS_CH_SEND_FAX_DAIL    "正在拨号"
+    IDS_CH_SEND_FAX_START   "开始发送传真"
+    IDS_CH_SEND_FAX_ING     "正在发送传真"
+    IDS_CH_SEND_FAX_END     "传真发送结束"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CHTYPE_TRUNK_WITH_FAX "传真通道"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\SerFrame.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

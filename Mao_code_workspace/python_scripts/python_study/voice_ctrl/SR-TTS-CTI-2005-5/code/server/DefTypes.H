@@ -1,0 +1,10 @@
+#define USER_LOGIN_MESSAGE            3001
+#define USER_LANDING_MESSAGE          3002
+#define USER_ONLINE_NOTIFY_MESSAGE    3003
+#define USER_QUIT_MESSAGE             3004
+#define USER_QUIT_NOTIFY_MESSAGE      3005
+#define TEXT_MESSAGE    			  3006
+#define VIDEO_MESSAGE    			  3007
+#define AUDIO_MESSAGE    			  3008
+#define DEFAULT_PORT                  5150
+#define DEFAULT_BUFFER_LENGTH         4096

@@ -1,0 +1,195 @@
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/align.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/char_counter.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/code_beautifier.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/code_view.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/colors.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/draggable.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/emoticons.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/entities.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/file.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/font_size.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/font_family.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/fullscreen.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/image.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/image_manager.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/line_breaker.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/inline_style.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/link.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/lists.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/paragraph_format.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/paragraph_style.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/quick_insert.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/quote.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/table.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/save.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/url.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/video.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/help.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/print.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/third_party/spell_checker.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/special_characters.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/plugins/word_paste.min.js"></script>
+<script type="text/javascript" src="../../assets/plugins/froala_editor/js/languages/zh_cn.js"></script>
+<!--<script>-->
+<!--    FroalaEditor.DefineIcon('alert', {NAME: 'info', SVG_KEY: 'help'});-->
+<!--    FroalaEditor.RegisterCommand('alert', {-->
+<!--        title: 'Hello',-->
+<!--        focus: false,-->
+<!--        undo: false,-->
+<!--        refreshAfterCallback: false,-->
+<!--        callback: function () {-->
+<!--            alert('Hello!');-->
+<!--        }-->
+<!--    });-->
+
+<!--    FroalaEditor.DefineIcon('clear', {NAME: 'remove', SVG_KEY: 'remove'});-->
+<!--    FroalaEditor.RegisterCommand('clear', {-->
+<!--        title: 'Clear HTML',-->
+<!--        focus: false,-->
+<!--        undo: true,-->
+<!--        refreshAfterCallback: true,-->
+<!--        callback: function () {-->
+<!--            this.html.set('');-->
+<!--            this.events.focus();-->
+<!--        }-->
+<!--    });-->
+
+<!--    FroalaEditor.DefineIcon('insert', {NAME: 'plus', SVG_KEY: 'add'});-->
+<!--    FroalaEditor.RegisterCommand('insert', {-->
+<!--        title: '保存html',-->
+<!--        focus: true,-->
+<!--        undo: true,-->
+<!--        refreshAfterCallback: true,-->
+<!--        callback: function () {-->
+<!--            // this.html.insert("{{task_html}}");-->
+<!--            // pyjs.receive_str_from_js(this.html.get())-->
+<!--            alert('保存成功')-->
+<!--        }-->
+<!--    });-->
+<!--    window.modify_editor = new FroalaEditor('#task_modify_content', {-->
+<!--        fullPage: true,//Using the fullPage option allows the usage of HTML, HEAD, BODY tags and DOCTYPE declaration.-->
+<!--        //By enabling the document mode, the Froala WYSIWYG HTML Editor sets by default the best options for creating online documents. After editing the content, the print and export as PDF buttons are perfect so you to take the content and use it further just as you'd do with any Word processor such as Microsoft Word or Google Docs.-->
+<!--        documentReady: true,-->
+<!--        language: 'zh_cn',-->
+<!--        pasteAllowLocalImages: true,-->
+<!--        tabSpaces: 4,-->
+<!--        theme: "dark",-->
+<!--        autofocus: true,-->
+<!--        typingTimer: 750,-->
+<!--        // ================color===================================-->
+<!--        colorsHEXInput: false,-->
+<!--        colorsBackground: ['#2E2E2E', '#767676', '#DF281B', '#F4821C', '#46AC43', '#2E5BF7', '#A249B3', 'REMOVE'],-->
+<!--        colorsText: ['#2E2E2E', '#767676', '#DF281B', '#F4821C', '#46AC43', '#2E5BF7', '#A249B3', 'REMOVE'],-->
+<!--        //Using the iframe the editor's content will be placed in an iframe and isolated from the rest of the page.-->
+<!--        //iframe: true, //使用iframe替换编辑器内容-->
+<!--        initOnClick: true,//点击时初始化编辑器-->
+<!--        toolbarInline: false,//选择显示行内工具条-->
+<!--        charCounterCount: false, //字符统计器-->
+<!--        heightMin: 500,-->
+<!--        toolbarVisibleWithoutSelection: false,//始终显示工具条-->
+<!--        // ==================选择工具按钮,true显示,false不显示=================================-->
+<!--        toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic', 'underline', '|', 'fontFamily', 'fontSize', 'align', 'color', 'textColor', 'backgroundColor', '|', 'inlineClass', 'clearFormatting', 'fullscreen', '|', 'alert', 'clear', 'insert',],-->
+<!--        // ================font===================================-->
+<!--        fontSize: ['14', '16', '18', '20', '24', '28', '30'],-->
+<!--        // htmlAllowComments: false,-->
+<!--        // pasteAllowedStyleProps: ['font-size', 'color'],-->
+<!--        placeholderText: '请输入内容',-->
+<!--        //charCounterMax: 500,-->
+<!--        fontSizeDefaultSelection: '16',-->
+<!--        // height: 1000,-->
+<!--        fontFamilySelection: true,-->
+<!--        fontSizeSelection: true,-->
+<!--        paragraphFormatSelection: true,-->
+<!--        toolbarStickyOffset: 0,//距离顶部的距离-->
+<!--        toolbarSticky: true,//默认编辑器的工具栏将保留在屏幕顶部,设为false则不保留-->
+<!--        toolbarBottom: false,// true工具栏放在底部-->
+<!--        // ================table===================================-->
+<!--        tableResizerOffset: 10,-->
+<!--        tableResizingLimit: 50,-->
+<!--        // pluginsEnabled: ['align', 'charCounter', 'codeBeautifier', 'codeView', 'colors', 'draggable', 'embedly', 'emoticons', 'entities', 'file', 'fontAwesome', 'fontFamily', 'fontSize', 'fullscreen', 'image', 'imageTUI', 'imageManager', 'inlineStyle', 'inlineClass', 'lineBreaker', 'lineHeight', 'link', 'lists', 'paragraphFormat', 'paragraphStyle', 'quickInsert', 'quote', 'save', 'table', 'url', 'video', 'wordPaste'],-->
+<!--        // =================image==================================-->
+<!--        imagePaste: true,-->
+<!--        imagePasteProcess: true,-->
+<!--        imageResize: true,-->
+<!--        imageResizeWithPercent: true,-->
+<!--        imageUpload: false,-->
+<!--        // imageUploadURL:"",-->
+<!--        imageUploadParam: 'file_name',-->
+<!--        imageUploadParams: {-->
+<!--            id: 'my_editor'-->
+<!--        },-->
+<!--        // imageSizeButtons: ['imageBack'],-->
+<!--        //imageUploadRemoteUrls: false,//通过URL插入的图像上传到自定义服务器，而不是通过URL链接它们。-->
+<!--        imageDefaultDisplay: 'inline',-->
+<!--        //imageCORSProxy: 'https://cors-anywhere.herokuapp.com',//代理服务器-->
+<!--        imageTextNear: false,-->
+<!--        imageEditButtons: ['imageDisplay', 'imageAlign', 'imageInfo', 'imageRemove'],-->
+<!--        events: {-->
+<!--            // 'paste.after': function () {-->
+<!--            //   // Do something here.-->
+<!--            //   // this is the editor instance.-->
+<!--            //   alert(this);-->
+<!--            // },-->
+<!--            // 'image.beforePasteUpload': function (img) {-->
+<!--            //     // Do something here.-->
+<!--            //     // this is the editor instance.-->
+<!--            //     alert("beforePasteUpload");-->
+<!--            // },-->
+<!--            'image.inserted': function ($img, response) {-->
+<!--                // Do something here.-->
+<!--                // this is the editor instance.-->
+<!--                alert(this);-->
+<!--            },-->
+<!--            'image.beforeUpload': function (files) {-->
+<!--                alert("beforeUpload");-->
+<!--                const editor = this-->
+<!--                if (files.length) {-->
+<!--                    let reader = new FileReader()-->
+<!--                    reader.onload = function (e) {-->
+<!--                        var result = e.target.result-->
+<!--                        editor.image.insert(result, null, null, editor.image.get())-->
+<!--                    }-->
+<!--                    reader.readAsDataURL(files[0])-->
+<!--                }-->
+<!--                return false-->
+<!--            },-->
+<!--            // 'image.uploaded': function (response) {-->
+<!--            //     // Do something here.-->
+<!--            //     // this is the editor instance.-->
+<!--            //     console.log(this);-->
+<!--            // },-->
+<!--            'image.loaded': function ($img) {-->
+<!--                // Do something here.-->
+<!--                // this is the editor instance.-->
+<!--                console.log(this);-->
+<!--            },-->
+<!--            contentChanged: function () {-->
+<!--                console.log('content changed');-->
+<!--                // alert('content changed');-->
+<!--            }-->
+<!--        }-->
+<!--    }, function () {-->
+<!--        // alert(editor.html.get());-->
+<!--    })-->
+<!--</script>-->
+
+<script>
+    FroalaEditor.DEFAULTS.pastedImagesUploadURL = '/upload_base64';
+    // FroalaEditor.DEFAULTS.imagesLoadURL = '/load_images';
+    FroalaEditor.DEFAULTS.maxImageSize = 1024 * 1024;
+    FroalaEditor.DEFAULTS.maxFileSize = 1024 * 1024;
+    FroalaEditor.DEFAULTS.key = '1CC3kA5C7A3F6E4C3byrncoeG4eheuD3E2A2B2C4G1G4F1A11A7==';
+    FroalaEditor.DEFAULTS.defaultBlockStyle = {
+        'text-thin': 'Thin Text',
+        'text-light': 'Light Text',
+        'text-bold': 'Strong Text',
+        'text-spaced': 'Spaced Text'
+    };
+    FroalaEditor.DEFAULTS.buttons = ['bold', 'italic', 'underline', 'fontSize', 'color', 'fontFamily', 'sep', 'formatBlock', 'align', 'insertOrderedList', 'insertUnorderedList', 'outdent', 'indent', 'sep', 'createLink', 'insertImage', 'table', 'undo', 'redo', 'html'];
+    window.modify_editor = new FroalaEditor('#task_modify_content', {
+        theme: 'dark',//'gray',royal'
+        imageUpload: false,
+        zIndex: 2003
+    })
+</script>

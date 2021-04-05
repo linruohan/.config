@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Fast Live Filter</title>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="jquery.fastLiveFilter.js"></script>
+    <script>
+        $(function () {
+            $('#search_input').fastLiveFilter('#search_list');
+        });
+    </script>
+    <style type="text/css">
+        body {
+            margin: 0px;
+            background-color: #F6F6F6;
+        }
+        .jq22 {
+            width: 600px;
+            height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #FFFFFF;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="jq22">
+    <input id="search_input" placeholder="输入文字开始筛选">
+    <ul id="search_list">
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>One</li>
+        <li>awo</li>
+        <li>bhree</li>
+        <li>cne</li>
+        <li>dwo</li>
+        <li>ehree</li>
+        <li>fne</li>
+        <li>gwo</li>
+        <li>hhree</li>
+        <li>ihree</li>
+    </ul>
+</div>
+<div class="alert cjms" role="alert">插件描述：fastLiveFilter这是jQuery过滤器插件,超轻量级（大小只有2K），用法简单执行效率高。</div>
+<p><strong>更新日期：2017-12-29 10:49:00</strong></p>
+<p><strong>更新内容：</strong>删除多余代码。</p>
+<hr/>
+<h3>使用方法<br/></h3>
+<p>fastLiveFilter这是jQuery过滤器插件,超轻量级（大小只有2K），用法简单执行效率高。</p>
+<p>包括jQuery的插件，然后初始化插件：</p>
+<pre class="brush:html;toolbar:false">&lt;script&nbsp;src=&quot;jquery-1.6.4.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&nbsp;src=&quot;jquery.fastLiveFilter.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;$(function()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$(&#39;#search_input&#39;).fastLiveFilter(&#39;#search_list&#39;);
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</pre>
+<p>上述将与此HTML：</p>
+<pre class="brush:html;toolbar:false">&lt;input&nbsp;id=&quot;search_input&quot;&nbsp;placeholder=&quot;Type&nbsp;to&nbsp;filter&quot;&gt;
+&lt;ul&nbsp;id=&quot;search_list&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;One&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Two&lt;/li&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Three&lt;/li&gt;
+&lt;/ul&gt;</pre>
+<p><strong>选项</strong></p>
+<p>选项给出的第二个参数：</p>
+<pre class="brush:js;toolbar:false">$(INPUT_SELECTOR).fastLiveFilter(LIST_SELECTOR,&nbsp;options);</pre>
+<p><strong>可用的选项：</strong></p>
+<p>超时：有多少毫秒的keydown后等待过滤列表之前。默认值是0。</p>
+<p>回调：回调方法，该方法将得到保留在列表中的项目数。</p>
+<p>选择：默认情况下，该插件将匹配滤波器对的文字里。如果具体确定，选择将被应用到李和由此产生的文本将被代替使用。警告：使用复杂的选择可能会显著降低性能，特别是在大名单！</p>
+<p><strong>例如：</strong></p>
+<pre class="brush:js;toolbar:false">$(&#39;#search_input&#39;).fastLiveFilter(&#39;#search_list&#39;,&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;timeout:&nbsp;200,
+&nbsp;&nbsp;&nbsp;&nbsp;callback:&nbsp;function(total)&nbsp;{&nbsp;$(&#39;#num_results&#39;).html(total);&nbsp;}
+});</pre>
+</body>
+</html>

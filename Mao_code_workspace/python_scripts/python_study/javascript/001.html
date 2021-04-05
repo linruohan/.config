@@ -1,0 +1,264 @@
+<script type="text/javascript">
+    // 在javascript中打印时document.write()
+    // 双斜杠（//）在这里是单行注释,下面是打印
+    // 这是一个单行注释，下面这个打印<span style="font-family:Microsoft YaHei;">代码</span>是一个语句
+    document.write("单行注释" + " <br /> ");
+    /*    多行注释*/
+    document.write("多行注释" + " <br /> ");
+    document.write("打印效果" + " <br /> ");
+
+    // 变量的定义和使用
+    var name = "Anthony"; //字符类型变量
+    var age = 23; //整形变量
+    var price = 18.99;
+    /*
+        变量使用var关键字去声明，可以先声明，不赋值，
+            也可以申明的时候就赋值，单行可以写多个变量声明
+    */
+    var X;
+    var x = 2, y = 3, z = 4;
+    document.write(x + y + z);
+    document.write(name + " is my name." + " <br /> ");
+    //    document.write(Name); // 变量区分大小写，这里不会执行这行代码
+    // 整形变量
+    var age1 = 18;
+    // 字符变量
+    var name1 = "Anthony";
+    // 小数
+    var price1 = 19.99;
+    // 负数
+    var x1 = -34.56;
+    // 布尔型(false true)
+    var status = false;
+    var s = null; // 这是什么鬼
+    // 字符串中如何打印出双引号？ 需要转义
+    var message = "He said \" I like becon. \" ";
+    document.write(message + " <br /> ");
+
+    // 本文介绍变量和字符串的组合输出，这里采用 + 连接符；很好理解，很多语言都通用
+    var name2 = "Anthony";
+    var age2 = 18;
+    document.write(name + " is my name and my age is " + age + " <br /> ");
+    // 本文介绍变量和字符串的组合输出，这里采用 + 连接符；很好理解，很多语言都通用
+    var x2 = "I";
+    var y2 = "like";
+    var z3 = "Beijing";
+    document.write(x + y + z);
+    document.write("<br />");
+
+    // 本文本介绍函数的定义和调用
+    function fun1() {
+        alert("this is an alert dialog.");
+    }
+
+    //fun1();
+
+
+    // 本文本介绍函数的定义和调用
+    function fun2(x) {
+        alert("I love " + x);
+    }
+
+    fun2("Beijing");
+    fun2("培根");
+    fun2("Just a test message");
+
+    function fun3(x, y) {
+        document.write(x + " is better than " + y + "<br />");
+    }
+
+    fun3("张三", "李四");
+    fun3("培根", "鸡肉");
+
+
+    //    返回语句
+    function addNumbers(a, b) {
+        var c5 = a + b;
+        return document.write(c5);
+        ;
+    }
+
+    document.write(addNumbers() + "<br />");
+    document.write(addNumbers(2, 3));
+
+
+    //函数中调用其他函数
+    function doFirst() {
+        document.write("第一个函数");
+    }
+
+    function doSecond() {
+        document.write("第二个函数");
+    }
+
+    function start() {
+        doFirst();
+        doSecond();
+    }
+
+    start();
+
+
+    // 定义一个全局变量
+    var name22 = " Anthony ";
+
+    function fun22() {
+        document.write(name22 + "<br />");
+    }
+
+    fun1(); // 函数内部可以调用全局变量
+    document.write(name);
+
+    function fun11() {
+        var name = " Anthony"; // 定义一个局部变量
+        document.write(name + "<br />");
+    }
+
+    fun11(); // 这个可以输出Anthony
+    document.write(name); // 这里调用局部变量失败，不会打印 Anthony
+
+
+    // 练习下数学运算
+    var a = 56 + 67 + 675; // 加法
+    document.write(a + " <br /> ");
+
+    var b = 234 - 89; // 减法
+    document.write(b + " <br /> ");
+
+    var c = 7 * 8; // 乘法
+    document.write(c + " <br /> ");
+
+    var d = 89 / 8; // 除法
+    document.write(d + " <br /> ");
+
+    var e = 89 % 3; // 取模
+    document.write(e + " <br /> ");
+
+    var f = 67;
+    f++; // 自增，相当于，f = f + 1;
+    document.write(f + " <br /> ");
+
+    var g = 88;
+    g--; // 自增，相当于，g = g - 1;
+    document.write(g + " <br /> ");
+
+    // 赋值操作练习
+    var x3 = 67;
+    x3 += 45;
+    x3 -= 23;
+    x3 *= 6;
+    x3 /= 8;
+    document.write(x3 + "<br />");
+
+
+    var apple = 35;
+    var hotdogs = 45;
+    if (apple < hotdogs) {
+        document.write('yea is worked.' + "</br>")
+    }
+    /*自己修改下数字大小，还有以下条件，测试运行看看。
+    apples == hotdogs
+    apples != hotdogs
+    apples > hotdogs
+    apples >= hotdogs
+    apples <= hotdogs
+    */
+    if (apple < hotdogs) {
+        document.write("I like hotdogs!" + "<br />");
+    } else {
+        document.write(" I like apples" + "<br />");
+    }
+
+    /*JavaScript中if嵌套。生活中，我们有时候需要根据两个
+    或者两个以上的条件去判断一个事情。例如，假如事件A，
+    在事件A的基础上又假如事件B，
+    那么这个结果是一种情况，否则结果是别的情况。
+    我们通过一个实例来解决这个问题。*/
+    var firstName = "Anthony";
+    var lastName = "Liu";
+    if (firstName = "Anthony") {
+        if (lastName = "Liu") {
+            document.write("Welcome " + firstName + " " + lastName + "<br />");
+        } else {
+            document.write("Welcome somebody!" + "<br />");
+        }
+    }
+
+
+    // 逻辑与
+    if ((firstName = "Anthony") && (lastName = "Liu")) {
+        document.write("Yeah, That is my name." + "<br />");
+    }
+    // 逻辑或
+    if ((firstName = "Anthony") || (lastName = "Wang")) {
+        document.write("只要有一个符合就打印" + "<br />");
+    }
+
+    //        switch
+    var score = "A+";
+    switch (score) {
+        case "A+":
+            document.write("很优秀" + "<br />");
+            break;
+        case "A":
+            document.write("优秀" + "<br />");
+            break;
+        case "B":
+            document.write("良好" + "<br />");
+            break;
+        case "C":
+            document.write("及格" + "<br />");
+            break;
+        default:
+            document.write("一般" + "<br />");
+    }
+
+    //    for 循环
+    for (i = 0; i < 10; i++) {
+        document.write("I am learing JavaScript！" + i + "<br />");
+    }
+    // 设置步长
+    for (j = 0; j < 10; j += 3) {
+        document.write("for 循环经常要计算好步长，这里步长是：" + j + "<br />");
+    }
+    //    while循环  +++  do... while 循环
+    var sum = 0;
+    var i = 1;
+    while (i < 101) {
+        sum = sum + i;
+        i++;
+    }
+    document.write(sum + "<br />");
+    var sum1 = 0;
+    var i1 = 1;
+    do {
+        sum1 = sum1 + i1;
+        i1++;
+    } while (i1 < 101);
+    document.write(sum1+ "<br />");
+//    对象
+    var stringA = "This is a test message";
+    document.write(stringA.length);
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>javascript test001</title>
+</head>
+<body onLoad="alert('该页面已经加载成功！');">
+<form>
+    <input type="button" value="无参数" onclick=fun1()>
+    <input type="button" value="一个参数" onclick=fun2("xiaohan")>
+    <input type="button" value="多个参数" onclick=fun3("xiaohan","xiaohei")>
+    <input type="button" value="返回值" onclick=addNumbers(2,3)>
+    <input type="button" value="函数调用其他函数" onclick=start()>
+    <input type="button" value="函数调用全局变量" onclick=fun11()>
+    <input type="button" value="事件响应" onclick="alert('第一个弹出框');alert('第二个弹出框')">
+</form>
+
+<a href="htps://www.baidu.com" onmouseover="alert('鼠标滑过')">鼠标悬停，弹出alert框。</a>
+<a href="htps://www.baidu.com" onmouseout="alert('鼠标离开')">鼠标悬停，弹出alert框。</a>
+
+</body>
+</html>

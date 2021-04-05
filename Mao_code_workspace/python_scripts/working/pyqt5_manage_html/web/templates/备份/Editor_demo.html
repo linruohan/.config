@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>XiaoHan Editor.js 🤩🧦🤨</title>
+    <link rel="icon" href="./app.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./app.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/bootstrapStyle/bootstrapStyle.css" type="text/css">
+    <link href="../assets/css/notionEditor.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/sweetalert/1.1.2/sweetalert.min.css" rel="stylesheet">
+    <script src="../assets/js/fileParse.js"></script>
+    <script src="../assets/js/json-preview.js"></script>
+    <script src="https://cdn.bootcss.com/FileSaver.js/1.3.8/FileSaver.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.ztree.exedit.js"></script>
+    <script src="../assets/js/phanimate.jquery.js"></script>
+
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/sweetalert/1.1.2/sweetalert.min.js"></script>
+    <script src="/eel.js"></script>
+
+
+    <style type="text/css">
+        .custom-input {
+            position: relative;
+            padding-top: 5px;
+            margin-bottom: 0px;
+            max-width: 800px;
+            align-items: center;
+        }
+
+        .custom-input input {
+            padding-left: 55px;
+            font-family: "Comic Sans MS";
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .custom-input:-webkit-autofill {
+            box-shadow: 0 0 0px 1000px #FFF inset !important;
+        }
+
+        .custom-input label {
+            cursor: text;
+            margin: 0;
+            padding: 0;
+            left: 15px;
+            top: 27px;
+            position: absolute;
+            font-size: 14px;
+            color: #b517d9;
+            font-weight: normal;
+            transition: all .3s ease;
+        }
+
+        .custom-input label.active {
+            top: 0;
+            left: 0;
+            font-size: 12px;
+        }
+
+        .custom-input label.active.focusIn {
+            color: #e70f7f;
+        }
+    </style>
+    <script type="text/javascript">
+        var setting = {
+            view: {
+                addHoverDom: addHoverDom,
+                removeHoverDom: removeHoverDom,
+                selectedMulti: false,
+                dblClickExpand: false,
+                showLine: false,
+                fontCss: {
+                    "color": "black",
+                    //"font-size":"50px",<!--3.75em|100%-->
+                    "font-style": "normal", //italic斜体|oblique倾斜
+                    "font-weight": "normal", //bold |900
+                    "font-family": "Fira code", //Times, TimesNR, 'New Century Schoolbook',Georgia, 'New York', serif"
+                },
+            },
+            data: {
+                simpleData: {
+                    enable: true,
+                    idKey: "id",
+                    pIdKey: "pId",
+                    rootPId: ""
+                }
+            },
+            callback: {
+                // onDblClick: function (event, treeId, treeNode) {
+                onClick: function (event, treeId, treeNode) {
+                    $("#fileid").val(treeNode.id);
+                    console.log("点击了" + treeNode.name + " ; fileid=" + treeNode.id);
+                    if (treeNode.path.search(".json") != -1) {
+                        async function getFileContentByPy() {
+                            let content = await eel.openfile(treeNode.path)();
+                            console.log(content);
+                            $("#fileTitle").val(treeNode.name);
+                            console.log("点击了json文件   fileid=" + $("#fileid").val() + " fileTitle=" + $("#fileTitle").val());
+                            editor.blocks.render(content);
+                        };
+                        getFileContentByPy();
+                    }
+                },
+                onRename: onRename,
+                onRemove: onRemove,
+                beforeRemove: beforeRemove,
+                beforeRename: beforeRename,
+
+            },
+            check: {
+                enable: false
+            },
+            edit: {
+                enable: true,
+                editNameSelectAll: true,
+                showRemoveBtn: true,
+                showRenameBtn: true,
+            }
+        };
+
+
+        $(document).ready(function () {
+            async function getFilesByPy() {
+                let result = await eel.get_dirs()();
+                console.log("从python文件中获取文件树")
+                console.log(result);
+                var zNodes = result;
+                $.fn.zTree.init($("#ztree"), setting, zNodes);
+            };
+            getFilesByPy();
+
+        });
+
+        var newCount = 1;
+        var className = "dark";
+
+        function addHoverDom(treeId, treeNode) {
+            if (!treeNode.parrent) return;
+            var sObj = $("#" + treeNode.tId + "_span");
+            if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+            var addStr = "<span class='button add' id='addBtn_" + treeNode.tId +
+                "' title='add node' onfocus='this.blur();'></span>";
+            sObj.after(addStr);
+            var btn = $("#addBtn_" + treeNode.tId);
+            if (btn) btn.bind("click", function () {
+                var zTree = $.fn.zTree.getZTreeObj("ztree");
+                var name = "new_node_" + (newCount++);
+                var filepath = treeNode.path + '\\' + name + '.json';
+                zTree.addNodes(treeNode, {
+                    id: (treeNode.id + 1) * 1000 + (treeNode.children && treeNode.children.length) || 0,
+                    pId: treeNode.id,
+                    name: name,
+                    path: filepath,
+                });
+                console.log("新建文件:" + filepath);
+                eel.createFile(filepath);
+                return false;
+            });
+        };
+
+        function removeHoverDom(treeId, treeNode) {
+            $("#addBtn_" + treeNode.tId).unbind().remove();
+
+        };
+
+        function onRemove(e, treeId, treeNode) {
+            eel.moveToTrash(treeNode.path);
+        }
+
+
+        function beforeRename(treeId, treeNode, newName, isCancel) {
+            var zTree = $.fn.zTree.getZTreeObj("ztree");
+            className = (className === "dark" ? "" : "dark");
+            if (newName.length == 0) {
+                setTimeout(function () {
+                    zTree.cancelEditName();
+                    alert("节点名称不能为空.");
+                }, 0);
+                return false;
+            }
+            if (!isCancel) {
+                var oldName = treeNode.name;
+                eel.rename(treeNode.path, oldName, newName);
+                treeNode.path = treeNode.path.replace(oldName, newName);
+                if (treeNode.children) {
+                    console.log("递归文件夹" + treeNode.path + " 下子文件重命名");
+                    var arr = treeNode.children;
+                    for (j = 0; j < arr.length; j++) {
+                        var item = arr[j];
+                        item.path = item.path.replace(oldName, newName);
+                        console.log("rename更新 success:" + item.path);
+                        zTree.updateNode(item);
+                    }
+                }
+                zTree.updateNode(treeNode);
+            }
+
+            return true;
+        }
+
+        function onRename(e, treeId, treeNode, isCancel) {
+            if (!isCancel) {
+                // alert(treeNode.path);
+            }
+        }
+
+
+        function beforeRemove(treeId, treeNode) {
+            className = (className === "dark" ? "" : "dark");
+            var zTree = $.fn.zTree.getZTreeObj("ztree");
+            zTree.selectNode(treeNode);
+            return confirm("确认删除 节点 --" + treeNode.name + " 吗？");
+        }
+
+        function loadReady() {
+            var bodyH = demoIframe.contents().find("body").get(0).scrollHeight,
+                htmlH = demoIframe.contents().find("html").get(0).scrollHeight,
+                maxH = Math.max(bodyH, htmlH),
+                minH = Math.min(bodyH, htmlH),
+                h = demoIframe.height() >= maxH ? minH : maxH;
+            if (h < 530) h = 530;
+            demoIframe.height(h);
+        }
+    </script>
+</head>
+
+<body>
+<table border=0 height=600px align=left>
+    <tr>
+        <td width=10% align=left valign=top style="BORDER-RIGHT: #999999 1px dashed">
+            <input type="file" name="files" style="display: none;" id="files" onchange="readFile();">
+            <table border=0>
+                <tr>
+                    <td width="90px">
+                        <div class="ce-example__button" id="fileOpen">打开文件</div>
+                    </td>
+                    <td width="100px">
+                        <div class="ce-example__button" id="newdir">新建文件夹</div>
+                    </td>
+                    <td width="80px">
+                        <div class="ce-example__button" id="saveButton">保存</div>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <div width=260px align=left valign=top style="BORDER-RIGHT: #999999 1px dashed">
+                    <ul id="ztree" class="ztree" style="width:260px; overflow:auto;"></ul>
+                </div>
+            </div>
+        </td>
+        <td width=60% align=left valign=top>
+            <!--      notionlike      editor  begin-->
+            <div class="ce-example">
+                <div class="custom-input">
+                    <label for="fileTitle"> Title </label>
+                    <input type="text" value="" style="display: none;" id="fileid">
+                    <input type="text" class="form-control" id="fileTitle">
+                </div>
+                <div class="ce-example__content _ce-example__content--small">
+                    <div id="editorjs"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+
+
+</table>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
+<!-- Load Editor.js's Core -->
+<script src="../assets/js/editor.js"></script>
+<!-- Initialization -->
+<script>
+    /**
+     * Saving button
+     */
+    $('#saveButton').click(function () {
+        console.log("点击了保存按钮");
+        saveJson();
+    });
+    var fileName = $("#filename");
+    //点击导入按钮,使files触发点击事件,然后完成读取文件的操作
+    $("#fileOpen").click(function (e) {
+        $("#files").click();
+        $("#files").val("");
+        e.preventDefault();
+    });
+    var dir_count = 0;
+    $("#newdir").click(function (e) {
+        var zTree = $.fn.zTree.getZTreeObj("ztree");
+        var fileid = $("#fileid").val();
+        var node = zTree.getNodeByParam("id", fileid, null);
+        console.log('node: ' + node.name + "在[" + node.path + "]上点击新建dir,fileid:" + fileid);
+        console.log('node.parrent:' + node.parrent);
+        var name = "新文件夹_" + (dir_count++);
+        var par;
+        if (node.parrent) {
+            par = node;
+        } else {
+            par = node.getParentNode();
+        }
+        zTree.addNodes(par, {
+            id: (par.id + 1 + par.children.length),
+            pId: par.id,
+            name: name,
+            path: par.path + "\\" + name,
+            parrent: true,
+        });
+        console.log(node.id + " " + par.id)
+        console.log("新建文件夹success:" + par.path + "\\" + name)
+        eel.newdir(par.path + "\\" + name)
+    });
+
+    document.onkeydown = function (event) {
+        if (event.keyCode == 83 && event.altKey) {
+            saveJson();
+        } else if (event.keyCode == 113) {
+            console.log('F2 clicked');
+            var zTree = $.fn.zTree.getZTreeObj("ztree");
+            var fileid = $("#fileid").val();
+            var node = zTree.getNodeByParam("id", fileid, null);
+            zTree.editName(node);
+        }
+    };
+
+    function readFile() {
+        var selectedFile = document.getElementById('files').files[0];
+        var reader = new FileReader(); //这是核心,读取操作就是由它完成.
+        reader.readAsText(selectedFile); //读取文件的内容,也可以读取文件的URL
+        reader.onload = function () {
+            //当读取完成后回调这个函数,然后此时文件的内容存储到了result中,直接操作即可
+            let json = JSON.parse(this.result);
+            startEditor(json);
+            $("#fileTitle").val('');
+        };
+    }
+
+    /**
+     * To initialize the Editor, create a new instance with configuration object
+     * @see docs/installation.md for mode details
+     */
+    window.editor = new EditorJS({
+        /**
+         * Wrapper of Editor
+         */
+        holder: 'editorjs',
+
+        /**
+         * Tools list
+         */
+        tools: {
+            /**
+             * Each Tool is a Plugin. Pass them via 'class' option with necessary settings {@link docs/tools.md}
+             */
+            header: {
+                class: Header,
+                inlineToolbar: ['link'],
+                config: {
+                    placeholder: 'Header'
+                },
+                shortcut: 'CMD+SHIFT+H'
+            },
+
+            /**
+             * Or pass class directly without any configuration
+             */
+            image: SimpleImage,
+
+            list: {
+                class: List,
+                inlineToolbar: true,
+                shortcut: 'CMD+SHIFT+L'
+            },
+
+            checklist: {
+                class: Checklist,
+                inlineToolbar: true,
+            },
+
+            quote: {
+                class: Quote,
+                inlineToolbar: true,
+                config: {
+                    quotePlaceholder: 'Enter a quote',
+                    captionPlaceholder: 'Quote\'s author',
+                },
+                shortcut: 'CMD+SHIFT+O'
+            },
+
+            warning: Warning,
+
+            marker: {
+                class: Marker,
+                shortcut: 'CMD+SHIFT+M'
+            },
+
+            code: {
+                class: CodeTool,
+                shortcut: 'CMD+SHIFT+C'
+            },
+
+            delimiter: Delimiter,
+
+            inlineCode: {
+                class: InlineCode,
+                shortcut: 'CMD+SHIFT+C'
+            },
+
+            linkTool: LinkTool,
+
+            embed: Embed,
+
+            table: {
+                class: Table,
+                inlineToolbar: true,
+                shortcut: 'CMD+ALT+T'
+            },
+
+        },
+
+        /**
+         * This Tool will be used as default
+         */
+        // initialBlock: 'paragraph',
+
+        /**
+         * Initial Editor data
+         */
+        data: [],
+        placeholder: "记录你的故事！述说你的缤纷！let 's beginning...",
+        /** *启用自动对焦*/
+        autofocus: true,
+        onReady: function () {
+            // saveButton.click();
+        },
+        onChange: function () {
+            console.log('something changed ');
+        }
+    });
+
+    function startEditor(fileJsonData) {
+        window.editor.blocks.render(fileJsonData);
+    };
+
+    /**
+     * 保存json文件,直接从浏览器下载
+     */
+    function saveJson() {
+        $('.custom-input input ').phAnim();
+        var filename = $("#fileTitle").val();
+        var fileid = $("#fileid").val();
+        if (filename) {
+            editor.save().then((savedData) => {
+                var output = JSON.stringify(savedData, null, 4);
+                var zTree = $.fn.zTree.getZTreeObj("ztree");
+                var savenode = zTree.getNodeByParam("id", fileid, null);
+                if (fileid) {
+                    eel.moveToTrash(savenode.path);
+                    savenode.path = savenode.path.replace(savenode.name, filename);
+                    savenode.name = filename;
+                    zTree.updateNode(savenode);
+                    var newpath = savenode.path;
+                    // console.log(newpath + output);
+                    // console.log(savenode);
+                    eel.save(savenode.path, output);
+                }
+                alert(filename + "保存成功!");
+                // $("#fileTitle").val(' ');
+                // editor.blocks.clear();
+            });
+        }
+    }
+
+
+</script>
+<!--      notionlike      editor  end-->
+
+</body>
+
+</html>

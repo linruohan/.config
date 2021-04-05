@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- Include external CSS. -->
+    <link href="${ctx }/common/static/froala_editor_2.8.5/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link rel="stylesheet"
+          href="${ctx }/common/static/froala_editor_2.8.5/codemirror/codemirror-5.40.2/lib/codemirror.css">
+    <link href="${ctx }/common/static/froala_editor_2.8.5/css/themes/dark.min.css" rel="stylesheet" type="text/css"/>
+    <!-- Include Editor style. -->
+    <link href="${ctx }/common/static/froala_editor_2.8.5/css/froala_editor.pkgd.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="${ctx }/common/static/froala_editor_2.8.5/css/froala_style.min.css" rel="stylesheet" type="text/css"/>
+    <title>创建文章</title>
+</head>
+<body>
+<article class="page-container" style="margin-left:25px;">
+    <input type="hidden" name="articleId" id="articleId" value="${article.article_id}"/>
+    <div class="row cl">
+        <div id="artcleName">
+            <input type="text" class="input-text" placeholder="输入文章标题" style="background:#eee;margin-bottom:10px;">
+        </div>
+        <div id="edit">
+
+        </div>
+    </div>
+
+    <div class="row cl" style="margin:50px 0;">
+        <div class="col-xs-8 col-sm-7 col-xs-offset-4 col-sm-offset-3">
+            <input class="btn btn-primary radius" type="button" οnclick="saveArticle()"
+                   value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        </div>
+    </div>
+</article>
+<script type="text/javascript" src="${ctx}/common/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/common/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript"
+        src="${ctx }/common/static/froala_editor_2.8.5/codemirror/codemirror-5.40.2/lib/codemirror.js"></script>
+<script type="text/javascript"
+        src="${ctx }/common/static/froala_editor_2.8.5/codemirror/codemirror-5.40.2/mode/xml/xml.js"></script>
+
+<!-- Include Editor JS files. -->
+<script type="text/javascript" src="${ctx }/common/static/froala_editor_2.8.5/js/froala_editor.pkgd.min.js"></script>
+<!--中文字体包，注意要放在最下面，不然会报错-->
+<script type="text/javascript" src="${ctx }/common/static/froala_editor_2.8.5/js/languages/zh_cn.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        //超大屏幕的功能按钮
+        var toolbarButtons = ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', 'insertHR', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'];
+        //大屏幕的功能按钮
+        var toolbarButtonsMD = ['fullscreen', 'bold', 'italic', 'underline', 'fontFamily', 'fontSize', 'color', 'paragraphStyle', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', 'insertHR', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', 'undo', 'redo', 'clearFormatting'];
+        //小屏幕的功能按钮
+        var toolbarButtonsSM = ['fullscreen', 'bold', 'italic', 'underline', 'fontFamily', 'fontSize', 'insertLink', 'insertImage', 'insertTable', 'undo', 'redo'];
+        //手机的功能按钮
+        var toolbarButtonsXS = ['bold', 'italic', 'fontFamily', 'fontSize', 'undo', 'redo'];
+        //var pid = $('#pid').val();
+        //编辑器初始化并赋值
+        $('#edit').on('froalaEditor.initialized', function (e, editor) {
+            $('#edit').froalaEditor('html.set', '${article.article_content}');
+
+        })
+            .froalaEditor({
+                placeholderText: '请输入内容', //默认填充内容
+                charCounterCount: true,//默认 显示字数
+                saveInterval: 0,//不自动保存，默认10000，0为不自动保存
+                //theme                  : "dark",//主题：dark，red，gray，royal，注意需要引入对应主题的css
+                height: "600px",
+                toolbarBottom: false,//默认
+                toolbarButtonsMD: toolbarButtonsMD,
+                toolbarButtonsSM: toolbarButtonsSM,
+                toolbarButtonsXS: toolbarButtonsXS,
+                toolbarInline: false,//true选中设置样式,默认false
+                imageUploadMethod: 'POST',
+                heightMin: 450,
+                charCounterMax: 3000,  //最大字数限制，-1为不限制
+                saveURL: '${ctx}/webmana/article/saveArticle',  //自动保存的地址（body参数为html内容）
+                saveParams: {postId: '1'},  //保存内容时传的参数
+                spellcheck: false,  //是否允许浏览器对输入内容进行拼写检查
+                imageUploadURL: '${ctx}/webmana/attachment/uploadArticleImg',//上传到本地服务器
+                //imageUploadParams: {pid: '1'}, //上传图片时带的参数
+                ///imageDefaultWidth: 100, //上传图片后的默认大小
+                //imageResizeWithPercent: true,//不设置这个，imageDefaultWidth的单位为像素，设置后为%
+                videoUploadURL: '${ctx}/webmana/attachment/uploadArticleVideo',
+                enter: $.FroalaEditor.ENTER_BR, //设置回车键功能
+                language: 'zh_cn',
+                // toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align','color','fontSize','insertImage','insertTable','undo', 'redo']
+            });
+    })
+
+    function saveArticle() {
+        var html = $('#edit').froalaEditor('html.get', true); //返回富文本编辑里面的html代码
+        $.ajax({
+            type: 'POST',
+            url: '${ctx}/webmana/article/saveArticle',
+            dataType: 'json',
+            data: {
+                "articleName": $("#articleName").val(),
+                "body": html,
+                "articleId": $("#articleId").val()
+            },
+            success: function (data) {
+                if (data.success) {
+                    layer.msg("保存成功", {icon: 1, time: 1500}, function () {
+                        window.parent.location.reload();
+                    });
+                } else {
+                    layer.msg("保存失败", {icon: 1, time: 1500}, function () {
+                        window.parent.location.reload();
+                    });
+                }
+            },
+            error: function (data) {
+                //console.log(data.msg);
+            },
+        });
+    }
+
+
+</script>
+
+</body>

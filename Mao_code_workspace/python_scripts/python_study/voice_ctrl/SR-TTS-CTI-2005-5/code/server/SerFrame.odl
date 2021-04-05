@@ -1,0 +1,70 @@
+// SerFrame.odl : type library source for SerFrame.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (SerFrame.tlb).
+
+[ uuid(AAFBDC47-D86D-468B-AA07-53BDDB3B5B6E), version(1.0) ]
+library SerFrame
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CSerFrameDoc
+	
+	[ uuid(B0EFB0E7-940A-420E-8BDA-1B692BB01BEC) ]
+	dispinterface ISerFrame
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CSerFrameDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CSerFrameDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CSerFrameDoc
+	
+	[ uuid(03E77512-2203-4512-8033-542695039192) ]
+	coclass SerFrame
+	{
+		[default] dispinterface ISerFrame;
+	};
+
+
+	//  Primary dispatch interface for CNameList
+	
+	[ uuid(EB701AC9-800A-4C90-9B2C-B1F68A27FB53) ]
+	dispinterface INameList
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CNameList)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CNameList)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CNameList
+
+	[ uuid(7315EAC1-2078-4FC6-840F-2FC8E7924EE2) ]
+	coclass NameList
+	{
+		[default] dispinterface INameList;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

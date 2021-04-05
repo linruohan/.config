@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form1</title>
+    <script type="text/javascript">
+        //简单的form验证，就是点击了form里面某一个元素，然后判断一下，是否点击。
+        function ischecked() {
+            if (document.myform.thebox.checked) {
+                alert("had checked.")
+            } else {
+                alert("has never be checked.")
+            }
+        }
+    </script>
+</head>
+<body>
+<form name="myform">
+    checkbox:<input type="checkbox" name="thebox" value="check me"> </br>
+    <input type="button" onclick=ischecked() value="check"> </br>
+
+    Username:<input type="text" name="username">
+    </br>
+    Password:<input type="password" name="passwd">
+    </br>
+    <input type="submit" name="submit" value="提交">
+    </br>
+</form>
+<script type="text/javascript">
+    var x = document.forms[0].length;
+    var username = document.forms[0].elements[0].name;
+    var passwd = document.forms[0].elements[1].name;
+    var submit = document.forms[0].elements[2].name;
+    document.write(x);
+    document.write(username);
+    document.write(passwd);
+    document.write(submit);
+</script>
+</body>
+
+</html>

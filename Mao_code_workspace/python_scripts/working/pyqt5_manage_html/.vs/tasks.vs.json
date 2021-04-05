@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "任务-pyqt5_manage_html",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}

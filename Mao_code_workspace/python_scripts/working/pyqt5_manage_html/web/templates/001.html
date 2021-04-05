@@ -1,0 +1,182 @@
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" value=""
+                       id="check-all-contacts">
+                <label class="custom-control-label" for="check-all-contacts">
+                </label>
+            </div>
+        </th>
+        
+        <th scope="col">ID</th>
+        
+        <th scope="col">Task Name</th>
+        
+        <th scope="col">Left time</th>
+        
+        <th scope="col">Percent</th>
+        
+        <th scope="col">Progress Detail</th>
+        
+        <th scope="col">State</th>
+        
+        <th scope="col">Content</th>
+        
+        <th scope="col">Create Time</th>
+        
+        <th scope="col">Complete Time</th>
+        
+        <th scope="col">Task Killers</th>
+        
+        <th scope="col">Task Creator</th>
+        
+        <th scope="col">Team</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    
+    <!--                            <script type="text/javascript">-->
+    <!--                                grouparray.push('{'id': 1, 'name': '检查网络连接', 'start_time': '2020-11-20 11:30', 'end_time': '2020-12-20 11:30', 'left_time': '20:03:00', 'content': '1.html', 'state': 'doing', 'percent': '10%', 'progress_detail': [{'who': 'mwx637260', 'time': '2020-11-20 11:30', 'text': '做了1231部分,剩余其他的明天在做'}, {'who': 'mwx637260', 'time': '2020-11-21 11:30', 'text': '做了1231部分,剩余其他的明天在做'}], 'creator': 'mwx637260', 'killers': 'mwx637260', 'team': 'mine'}');-->
+    <!--                            </script>-->
+    <tr>
+        <th>
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" value=""
+                       id="check-c-0">
+                <label class="custom-control-label" for="check-c-0">
+                </label>
+            </div>
+        </th>
+        <th scope="row">1</th>
+        <!--                        <td>检查网络连接</td>-->
+        <td>检查网络连接</td>
+        <td>20:03:00</td>
+        <td>10%</td>
+        <!--                        <td>[{'who': '</td>-->
+        <td>
+            <button class="btn btn-primary task-progress" onclick="show_task_progress()">
+                进展详情
+            </button>
+        </td>
+        <td>doing</td>
+        <td class="task_content">
+            <button class="btn btn-primary task-content" onclick="show_task_content()">任务详情
+            </button>
+        </td>
+        <td>2020-11-20 11:30</td>
+        <td>2020-12-20 11:30</td>
+        <td>mwx637260</td>
+        <td>mwx637260</td>
+        <td>mine</td>
+    </tr>
+    
+    <!--                            <script type="text/javascript">-->
+    <!--                                grouparray.push('{'id': 2, 'name': '检查代理服务器和防火墙', 'start_time': '2020-3-20 11:30', 'end_time': '2020-12-20 11:30', 'left_time': '20:03:00', 'content': '2.html', 'state': 'doing', 'percent': '23.5%', 'progress_detail': [{'who': 'mwx637260', 'time': '2020-11-20 11:30', 'text': '工作日报汇报,理解详情'}, {'who': 'zwx6217260', 'time': '2020-11-21 11:30', 'text': '理解领导深已'}], 'creator': 'mwx637260', 'killers': 'mwx637260,zwx6217260', 'team': 'rtos'}');-->
+    <!--                            </script>-->
+    <tr>
+        <th>
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" value=""
+                       id="check-c-1">
+                <label class="custom-control-label" for="check-c-1">
+                </label>
+            </div>
+        </th>
+        <th scope="row">2</th>
+        <!--                        <td>检查代理服务器和防火</td>-->
+        <td>检查代理服务器和防火墙</td>
+        <td>20:03:00</td>
+        <td>23.5%</td>
+        <!--                        <td>[{'who': '</td>-->
+        <td>
+            <button class="btn btn-primary task-progress" onclick="show_task_progress()">
+                进展详情
+            </button>
+        </td>
+        <td>doing</td>
+        <td class="task_content">
+            <button class="btn btn-primary task-content" onclick="show_task_content()">任务详情
+            </button>
+        </td>
+        <td>2020-3-20 11:30</td>
+        <td>2020-12-20 11:30</td>
+        <td>mwx637260</td>
+        <td>mwx637260,zwx6217260</td>
+        <td>rtos</td>
+    </tr>
+    
+    <!--                            <script type="text/javascript">-->
+    <!--                                grouparray.push('{'id': 3, 'name': '检查代理服务器和防火墙', 'start_time': '2020-3-20 11:30', 'end_time': '2020-12-20 11:30', 'left_time': '20:03:00', 'content': '4.html', 'state': 'done', 'percent': '23.5%', 'progress_detail': [{'who': 'mwx637260', 'time': '2020-11-20 11:30', 'text': '工作日报汇报,理解详情'}, {'who': 'zwx6217260', 'time': '2020-11-21 11:30', 'text': '理解领导深已'}], 'creator': 'mwx637260', 'killers': 'mwx637260,zwx6217260', 'team': 'rtos'}');-->
+    <!--                            </script>-->
+    <tr>
+        <th>
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" value=""
+                       id="check-c-2">
+                <label class="custom-control-label" for="check-c-2">
+                </label>
+            </div>
+        </th>
+        <th scope="row">3</th>
+        <!--                        <td>检查代理服务器和防火</td>-->
+        <td>检查代理服务器和防火墙</td>
+        <td>20:03:00</td>
+        <td>23.5%</td>
+        <!--                        <td>[{'who': '</td>-->
+        <td>
+            <button class="btn btn-primary task-progress" onclick="show_task_progress()">
+                进展详情
+            </button>
+        </td>
+        <td>done</td>
+        <td class="task_content">
+            <button class="btn btn-primary task-content" onclick="show_task_content()">任务详情
+            </button>
+        </td>
+        <td>2020-3-20 11:30</td>
+        <td>2020-12-20 11:30</td>
+        <td>mwx637260</td>
+        <td>mwx637260,zwx6217260</td>
+        <td>rtos</td>
+    </tr>
+    
+    <!--                            <script type="text/javascript">-->
+    <!--                                grouparray.push('{'id': 4, 'name': '检查代理服务器和防火墙', 'start_time': '2020-3-20 11:30', 'end_time': '2020-12-20 11:30', 'left_time': '20:03:00', 'content': '4.html', 'state': 'done', 'percent': '23.5%', 'progress_detail': [{'who': 'mwx637260', 'time': '2020-11-20 11:30', 'text': '工作日报汇报,理解详情'}, {'who': 'zwx6217260', 'time': '2020-11-21 11:30', 'text': '理解领导深已'}], 'creator': 'mwx637260', 'killers': 'mwx637260,zwx6217260', 'team': 'rtos'}');-->
+    <!--                            </script>-->
+    <tr>
+        <th>
+            <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" type="checkbox" value=""
+                       id="check-c-3">
+                <label class="custom-control-label" for="check-c-3">
+                </label>
+            </div>
+        </th>
+        <th scope="row">4</th>
+        <!--                        <td>检查代理服务器和防火</td>-->
+        <td>检查代理服务器和防火墙</td>
+        <td>20:03:00</td>
+        <td>23.5%</td>
+        <!--                        <td>[{'who': '</td>-->
+        <td>
+            <button class="btn btn-primary task-progress" onclick="show_task_progress()">
+                进展详情
+            </button>
+        </td>
+        <td>done</td>
+        <td class="task_content">
+            <button class="btn btn-primary task-content" onclick="show_task_content()">任务详情
+            </button>
+        </td>
+        <td>2020-3-20 11:30</td>
+        <td>2020-12-20 11:30</td>
+        <td>mwx637260</td>
+        <td>mwx637260,zwx6217260</td>
+        <td>rtos</td>
+    </tr>
+    
+    </tbody>
+</table>

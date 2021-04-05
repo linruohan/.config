@@ -1,0 +1,5 @@
+Python的Bottle框架中实现最基本的get和post的方法的教程
+
+
+
+Python的Bottle框架中返回静态文件和JSON对象的方法

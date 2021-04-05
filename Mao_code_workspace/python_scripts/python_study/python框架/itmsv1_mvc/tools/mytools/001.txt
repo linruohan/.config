@@ -1,0 +1,592 @@
+1: viewport:
+xpath=>/html/head/meta[2]
+2: 兼容IE6的插件（i:
+xpath=>/html/head/comment()[2]
+3: 智能交通综合管控平台:
+xpath=>/html/head/title
+4: //切换皮肤方法:
+xpath=>/html/body/script[12]
+5: 头部 starts:
+xpath=>/html/body/comment()[2]
+6: container-fluid header:
+xpath=>/html/body/div[1]
+7: logo:
+xpath=>/html/body/div[1]/div[1]
+8: ladtnews:
+xpath=>/html/body/div[1]/div[2]
+9: scroll-container:
+xpath=>/html/body/div[1]/div[2]/ul
+10: ladtnews:
+xpath=>/html/body/div[1]/div[3]
+11: switch:
+xpath=>/html/body/div[1]/div[3]/input
+12: radio:
+xpath=>/html/body/div[1]/div[3]/label
+13: circle:
+xpath=>/html/body/div[1]/div[3]/label/span[1]
+14: text on:
+xpath=>/html/body/div[1]/div[3]/label/span[2]
+15: text off:
+xpath=>/html/body/div[1]/div[3]/label/span[3]
+16: 皮肤切换开始:
+xpath=>/html/body/div[1]/div[4]/comment()[1]
+17: pull-right:
+xpath=>/html/body/div[1]/div[4]/div[1]
+18: skin-sel-blue:
+xpath=>/html/body/div[1]/div[4]/div[1]/select
+19: 天空蓝:
+xpath=>/html/body/div[1]/div[4]/div[1]/select/option[1]
+20: 清新绿:
+xpath=>/html/body/div[1]/div[4]/div[1]/select/option[2]
+21: 深邃蓝:
+xpath=>/html/body/div[1]/div[4]/div[1]/select/option[3]
+22: 皮肤切换结束:
+xpath=>/html/body/div[1]/div[4]/comment()[2]
+23: 用户上下收缩开始:
+xpath=>/html/body/div[1]/div[4]/comment()[3]
+24: btn-group pull-right:
+xpath=>/html/body/div[1]/div[4]/div[2]
+25: btn dropdown-toggle border-btn:
+xpath=>/html/body/div[1]/div[4]/div[2]/a
+26: icon-user pull-left:
+xpath=>/html/body/div[1]/div[4]/div[2]/a/i
+27: 超级管理员:
+xpath=>/html/body/div[1]/div[4]/div[2]/a/span[1]
+28: caret:
+xpath=>/html/body/div[1]/div[4]/div[2]/a/span[2]
+29: dropdown-menu:
+xpath=>/html/body/div[1]/div[4]/div[2]/ul
+30: 修改密码:
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[1]/a
+31: 安全退出:
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[2]/a
+32: 手册下载:
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[3]/a
+33: 修改日志:
+xpath=>/html/body/div[1]/div[4]/div[2]/ul/li[4]/a
+34: 用户上下收缩结束:
+xpath=>/html/body/div[1]/div[4]/comment()[4]
+35: 顶部栏结束:
+xpath=>/html/body/comment()[3]
+36: 主栏目打开后显示的:
+xpath=>/html/body/comment()[4]
+37: menu_main_op menu_sys menu_main:
+xpath=>/html/body/div[2]/div[1]
+38: 主界面:
+xpath=>/html/body/div[2]/div[1]/a
+39: menu_op menu_active:
+xpath=>/html/body/div[2]/div[2]
+40: 卡口系统:
+xpath=>/html/body/div[2]/div[2]/a
+41: close_span:
+xpath=>/html/body/div[2]/div[2]/span
+42: 主栏目打开后显示的:
+xpath=>/html/body/comment()[5]
+43: row-fluid main-box:
+xpath=>/html/body/div[3]
+44: container-fluid:
+xpath=>/html/body/div[3]/div
+45: row-fluid:
+xpath=>/html/body/div[3]/div/div[1]
+46: 系统搜索部分开始:
+xpath=>/html/body/div[3]/div/div[1]/comment()[1]
+47: 系统搜索部分结束:
+xpath=>/html/body/div[3]/div/div[1]/comment()[2]
+48: rollBox:
+xpath=>/html/body/div[3]/div/div[1]/div[2]
+49: 修正原来toolb:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/comment()[1]
+50: pull-left LeftBotton:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/cite[1]
+51: pull-right RightBotton:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/cite[2]
+52: 图片列表 begi:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/comment()[2]
+53: Cont2:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div
+54: menupage:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]
+55: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]
+56: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/p
+57: 基础模块:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/p/a
+58: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]
+59: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/p
+60: 卡口系统:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/p/a
+61: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[3]
+62: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[3]/p
+63: 违法系统:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[3]/p/a
+64: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[4]
+65: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[4]/p
+66: 布控系统:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[4]/p/a
+67: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[5]
+68: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[5]/p
+69: GPS系统:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[5]/p/a
+70: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[6]
+71: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[6]/p
+72: 短信平台:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[6]/p/a
+73: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[7]
+74: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[7]/p
+75: 流量分析:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[7]/p/a
+76: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[8]
+77: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[8]/p
+78: 视频管理:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[8]/p/a
+79: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[9]
+80: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[9]/p
+81: 应急指挥:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[9]/p/a
+82: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[10]
+83: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[10]/p
+84: 信号控制:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[10]/p/a
+85: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[11]
+86: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[11]/p
+87: 停车诱导:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[11]/p/a
+88: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[12]
+89: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[12]/p
+90: 交通设施:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[12]/p/a
+91: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[13]
+92: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[13]/p
+93: 道路挖占:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[13]/p/a
+94: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[14]
+95: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[14]/p
+96: 勤务系统:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[14]/p/a
+97: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[15]
+98: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[15]/p
+99: LED发布:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[15]/p/a
+100: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[16]
+101: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[16]/p
+102: 地图管理:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[16]/p/a
+103: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[17]
+104: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[17]/p
+105: 通行证管理:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[17]/p/a
+106: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[18]
+107: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[18]/p
+108: 事故分析:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[18]/p/a
+109: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[19]
+110: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[19]/p
+111: 运维中心:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[19]/p/a
+112: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[20]
+113: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[20]/p
+114: 信息交互:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[20]/p/a
+115: pic-2 pull-left:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[21]
+116: list1_nav_p:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[21]/p
+117: 决策分析:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[21]/p/a
+118: clear:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[1]/div[22]
+119: 图片列表 end:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/comment()
+120: clear:
+xpath=>/html/body/div[3]/div/div[1]/div[2]/div/div[1]/div[2]
+121: clear:
+xpath=>/html/body/div[3]/div/div[1]/div[3]
+122: 主界面图标区域结束:
+xpath=>/html/body/div[3]/div/comment()[1]
+123: 主界面综合统计页面:
+xpath=>/html/body/div[3]/div/comment()[2]
+124: 主界面综合统计页面:
+xpath=>/html/body/div[3]/div/comment()[3]
+125: 分页按钮开始:
+xpath=>/html/body/div[3]/div/comment()[4]
+126: operation_bar:
+xpath=>/html/body/div[3]/div/div[2]
+127: options:
+xpath=>/html/body/div[3]/div/div[2]/div
+128: op_table:
+xpath=>/html/body/div[3]/div/div[2]/div/table
+129: control_l:
+xpath=>/html/body/div[3]/div/div[2]/div/table/tbody/tr/td[1]
+130: control_c:
+xpath=>/html/body/div[3]/div/div[2]/div/table/tbody/tr/td[2]
+131: control_op:
+xpath=>/html/body/div[3]/div/div[2]/div/table/tbody/tr/td[3]
+132: control_r:
+xpath=>/html/body/div[3]/div/div[2]/div/table/tbody/tr/td[4]
+133: dropmenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div
+134: 功能菜单:
+xpath=>/html/body/div[3]/div/div[2]/div/div/h3
+135: 关闭:
+xpath=>/html/body/div[3]/div/div[2]/div/div/h3/a
+136: 图片列表 begi:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/comment()[1]
+137: sidebar:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]
+138: sub-menu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul
+139: 基础模块:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[1]/a
+140: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[1]
+141: 卡口系统:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[2]/a
+142: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[2]
+143: 违法系统:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[3]/a
+144: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[3]
+145: 布控系统:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[4]/a
+146: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[4]
+147: GPS系统:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[5]/a
+148: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[5]
+149: 短信平台:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[6]/a
+150: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[6]
+151: 流量分析:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[7]/a
+152: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[7]
+153: 视频管理:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[8]/a
+154: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[8]
+155: 应急指挥:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[9]/a
+156: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[9]
+157: 信号控制:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[10]/a
+158: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[10]
+159: 停车诱导:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[11]/a
+160: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[11]
+161: 交通设施:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[12]/a
+162: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[12]
+163: 道路挖占:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[13]/a
+164: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[13]
+165: 勤务系统:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[14]/a
+166: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[14]
+167: LED发布:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[15]/a
+168: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[15]
+169: 地图管理:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[16]/a
+170: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[16]
+171: 通行证管理:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[17]/a
+172: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[17]
+173: 事故分析:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[18]/a
+174: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[18]
+175: 运维中心:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[19]/a
+176: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[19]
+177: 信息交互:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[20]/a
+178: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[20]
+179: 决策分析:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/li[21]/a
+180: secMenu:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[1]/ul/div[21]
+181: 左边菜单栏结束:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/comment()[2]
+182: right_con:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/div[2]
+183: 右边内容栏结束:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[1]/comment()[3]
+184: div_box del:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[1]
+185: div_box del:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[2]
+186: div_box del:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[3]
+187: div_box del:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[4]
+188: div_box del:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[5]
+189: div_box del:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[6]
+190: div_box del:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[7]
+191: div_box del:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[8]
+192: div_box del:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[9]
+193: 点击添加桌面:
+xpath=>/html/body/div[3]/div/div[2]/div/div/div[2]/div[2]/div[10]
+194: row-fluid:
+xpath=>/html/body/div[4]
+195: span2:
+xpath=>/html/body/div[4]/div[1]
+196: 左边菜单开始:
+xpath=>/html/body/div[4]/div[1]/comment()[1]
+197: nav_title:
+xpath=>/html/body/div[4]/div[1]/div/div[1]
+198: 卡口系统首页:
+xpath=>/html/body/div[4]/div[1]/div/div[1]/a
+199: menu_first:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[1]
+200: a_part:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[1]/p
+201: collapse in menu_sec:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[1]
+202: colums_two:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[1]/ul
+203: 卡口设备:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[1]/ul/li[1]/a
+204: 自定义分组:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[1]/ul/li[2]/a
+205: 文件服务器:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[1]/ul/li[3]/a
+206: 设备功能:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[1]/ul/li[4]/a
+207: 设备状态:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[1]/ul/li[5]/a
+208: clear:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[2]
+209: menu_first:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[2]
+210: a_part:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[2]/p
+211: collapse in menu_sec:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[3]
+212: colums_two:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[3]/ul
+213: 卡口监控:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[3]/ul/li[1]/a
+214: 卡口报警:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[3]/ul/li[2]/a
+215: 报警颜色:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[3]/ul/li[3]/a
+216: clear:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[4]
+217: menu_first:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[3]
+218: a_part:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[3]/p
+219: collapse in menu_sec:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[5]
+220: colums_two:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[5]/ul
+221: 通行车辆查询:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[5]/ul/li[1]/a
+222: 通行车辆导出:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[5]/ul/li[2]/a
+223: 卡口图库:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[5]/ul/li[3]/a
+224: 碰撞对比:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[5]/ul/li[4]/a
+225: 卡口查询HBASE:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[5]/ul/li[5]/a
+226: clear:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[6]
+227: menu_first:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[4]
+228: a_part:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[4]/p
+229: collapse in menu_sec:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[7]
+230: colums_two:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[7]/ul
+231: 套牌嫌疑分析:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[7]/ul/li[1]/a
+232: 跟踪徘徊分析:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[7]/ul/li[2]/a
+233: clear:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[8]
+234: menu_first:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[5]
+235: a_part:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/a[5]/p
+236: collapse in menu_sec:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]
+237: colums_two:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul
+238: 卡口流量统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[1]/a
+239: 高峰流量统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[2]/a
+240: 时段流量统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[3]/a
+241: 颜色流量统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[4]/a
+242: 区域流量统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[5]/a
+243: 平均速度统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[6]/a
+244: 外地车辆统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[7]/a
+245: 道路流量统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[8]/a
+246: 环比流量统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[9]/a
+247: 环比速度统计:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[9]/ul/li[10]/a
+248: clear:
+xpath=>/html/body/div[4]/div[1]/div/div[2]/div[10]
+249: 左侧菜单列结束:
+xpath=>/html/body/div[4]/div[1]/comment()[2]
+250: span10:
+xpath=>/html/body/div[4]/div[2]
+251: lr_btn lr_btn_bg_l:
+xpath=>/html/body/div[4]/div[2]/div[1]
+252: 界面左右展开闭合按:
+xpath=>/html/body/div[4]/div[2]/comment()[2]
+253: span12:
+xpath=>/html/body/div[4]/div[2]/div[2]
+254: clear:
+xpath=>/html/body/div[5]
+255: modal hide fade:
+xpath=>/html/body/div[6]
+256: modal-header:
+xpath=>/html/body/div[6]/div[1]
+257: close:
+xpath=>/html/body/div[6]/div[1]/button
+258: 修改密码:
+xpath=>/html/body/div[6]/div[1]/h2
+259: modal-body:
+xpath=>/html/body/div[6]/div[2]
+260: form-horizontal:
+xpath=>/html/body/div[6]/div[2]/form
+261: control-group:
+xpath=>/html/body/div[6]/div[2]/form/div[1]
+262: 原密码：:
+xpath=>/html/body/div[6]/div[2]/form/div[1]/label
+263: controls:
+xpath=>/html/body/div[6]/div[2]/form/div[1]/div
+264: 原密码:
+xpath=>/html/body/div[6]/div[2]/form/div[1]/div/input
+265: control-group:
+xpath=>/html/body/div[6]/div[2]/form/div[2]
+266: 新密码：:
+xpath=>/html/body/div[6]/div[2]/form/div[2]/label
+267: controls:
+xpath=>/html/body/div[6]/div[2]/form/div[2]/div
+268: 新密码:
+xpath=>/html/body/div[6]/div[2]/form/div[2]/div/input
+269: control-group:
+xpath=>/html/body/div[6]/div[2]/form/div[3]
+270: 重复一次：:
+xpath=>/html/body/div[6]/div[2]/form/div[3]/label
+271: controls:
+xpath=>/html/body/div[6]/div[2]/form/div[3]/div
+272: 重复一次:
+xpath=>/html/body/div[6]/div[2]/form/div[3]/div/input
+273: modal-footer:
+xpath=>/html/body/div[6]/div[3]
+274: 修改:
+xpath=>/html/body/div[6]/div[3]/a[1]
+275: 关闭:
+xpath=>/html/body/div[6]/div[3]/a[2]
+276: 应急指挥 文档管理:
+xpath=>/html/body/comment()[6]
+277: modal hide fade:
+xpath=>/html/body/div[7]
+278: modal-header:
+xpath=>/html/body/div[7]/div[1]
+279: 文件上传:
+xpath=>/html/body/div[7]/div[1]/h4
+280: 根据文件大小:
+xpath=>/html/body/div[7]/div[2]
+281: clear:
+xpath=>/html/body/div[8]
+282: 应急指挥 文档管理:
+xpath=>/html/body/comment()[7]
+283: company-info:
+xpath=>/html/body/div[10]
+284: mar_l10:
+xpath=>/html/body/div[10]/span[1]
+285: shouce_download:
+xpath=>/html/body/div[10]/span[2]
+286: 系统提示：:
+xpath=>/html/body/div[10]/span[2]/font
+287: 下载安装:
+xpath=>/html/body/div[10]/span[2]/a
+288: 打开主界面页面栏目:
+xpath=>/html/body/comment()[8]
+289: 打开主界面页面栏目:
+xpath=>/html/body/comment()[9]
+290: 翻页功能开始:
+xpath=>/html/body/comment()[10]
+291: 翻页功能结束:
+xpath=>/html/body/comment()[11]
+292: 分屏功能开始:
+xpath=>/html/body/comment()[12]
+293: 分屏功能结束:
+xpath=>/html/body/comment()[13]
+294: 主界面菜单页功能操:
+xpath=>/html/body/comment()[14]
+295: 主界面菜单页功能操:
+xpath=>/html/body/comment()[15]
+296: 兼容IE6的插件（鄙:
+xpath=>/html/body/bgsound/comment()[2]

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<script type="text/javascript">
+
+    <!--创建一个对象-->
+    function person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.leftlife = leftlife;
+    }
+
+    function leftlife() {
+        var num = 100 - this.age;
+        return num;
+    }
+
+    var authory = new person("xiaohan", 14);
+    //定义一个对象
+    author = {name: "xiaohan", age: 34};
+    suny = {name: "xiaomei", age: 22};
+
+    //定义数组
+    var people001 = new Array("张三", "李四", "王二", "Lucy", "Tom");
+    document.write(people001[2] + "<br />");
+
+    var people002 = new Array(5);
+    people002[0] = "张三";
+    people002[1] = "李四";
+    people002[2] = "王二";
+    people002[3] = "Lucy";
+    people002[4] = "Tom";
+    document.write(people002[3] + "<br />");
+    //    如果无法确定数组大小，就这样写，不写数组长度。
+    //var people = new Array();
+    var ar1 = new Array("张三", "李四", "王二");
+    var ar2 = new Array("Lucy", "Lily", "Tom");
+
+    // 数组常用属性length
+    document.write(ar1.length + "<br />");
+
+    // 数组方法concat() 两个数组拼接
+    var name1 = ar1.concat(ar2); // 把ar2拼接到ar1的末尾
+    var name2 = ar2.concat(ar1);
+    document.write(name1 + "<br />");
+    document.write(name1[5] + "<br />");
+    document.write(name2 + "<br />");
+    document.write(name2[5] + "<br />");
+
+    // 数组方法join(),返回原始的字符串，需要制定符号参数
+    var stringA = ar2.join(",");
+    document.write(stringA);
+    //数组中还有其他方法例如,自己去查资料（http://www.365mini.com/page/javascript-array-sort.htm），练习下
+    //1. 删除最后一个数组元素 pop()
+    //2. 向当前数组添加一个或多个元 push()
+    //3. 把当前数组的元素的顺序全部反转 reverse()
+    //4. 按指定顺序排序 sort()
+    //循环遍历打印数组元素
+    //先排序再打印
+    var stuff = new Array("zoom", "apple", "hums", "pears", "tom", "lucy");
+    stuff.sort();
+    for (j = 0; j < stuff.length; j++) {
+        document.write(stuff[j] + "<br/>");
+    }
+
+    //关联数组（Associative Array），又称映射（Map）、
+    //    字典（Dictionary）是一个抽象的数据结构，
+    //    它包含着类似于（键，值）的有序对。这里介绍如何根据键去寻找值。
+    var x = array();
+    x['color'] = 'red';
+    x['name'] = 'xiao';
+    document.write("anthony favoutire color is " + x["color"] + "<br/>");
+    document.write("anthony favoutire food is " + x["name"] + "<br/>");
+
+    //Math对象中的PI和求平方根。
+    var n = prompt("Enter a number here:", "");
+    var answer = Math.sqrt(n);
+    alert(n + "的平方根是 " + answer + "<br/>");
+
+    var x = Math.PI;
+    document.write(x);
+
+
+
+</script>
+<body>
+<script type="text/javascript">
+
+    document.write(authory.name + "</br>");
+    document.write(authory.age + "</br>");
+    document.write(authory.leftlife() + "</br>");
+    document.write(author.name + " love  " + suny.name + " because she is " + suny.age + "</br>")
+//    使用循环语句给数组添加元素
+//        我们需要用户的输入，拿到这个输入的字符，保存到数组里去，这个需要for语句和prompt()方法。
+        var names = new Array(3);
+        for (i = 0; i < 3; i++) {
+            names[i] = prompt("Enter some name here:", "");
+        }
+        document.write("All the element in Array are:  " + "</br>" + names[0] + "</br>" + names[1] +
+            "</br>" + names[2] + "</br>");
+
+
+</script>
+</body>
+</html>

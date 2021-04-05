@@ -1,0 +1,317 @@
+{% extends "base.html" %}      <!-- # 继承base.html文件-->
+
+{% block title %} test {% endblock %}<!-- 定制title部分的内容-->
+
+<!--# styles && css && scripts-->
+{% block head_styles %}{% endblock %}
+{% block head_css %}{% endblock %}
+{% block head_scripts %}{% endblock %}
+
+<!--head-->
+{% block head %}
+{% endblock %}
+
+
+<!-- Page Header -->
+# 通知和提醒
+{% block notices %}
+<li>
+    <a href="#"><span class="notification-badge bg-info"><i
+            class="fas fa-at"></i></span>
+        <span class="notification-info">
+                                        <span class="notification-info"><b>John Doe</b> mentioned you in a post "Update v1.5"</span>
+                                        <small class="notification-date">06:07</small>
+                                        </span>
+    </a>
+</li>
+<li>
+    <a href="#"><span class="notification-badge bg-danger"><i
+            class="fas fa-bolt"></i></span>
+        <span class="notification-info">
+                                                                <span class="notification-info">4 new special offers from the apps you follow!</span>
+                                                                <small class="notification-date">Yesterday</small>
+                                                            </span></a>
+</li>
+<li>
+    <a href="#"><span class="notification-badge bg-success"><i
+            class="fas fa-bullhorn"></i></span>
+        <span class="notification-info">
+                                                                <span class="notification-info">There is a meeting with <b>Ethan</b> in 15 minutes!</span>
+                                                                <small class="notification-date">Yesterday</small>
+                                                            </span></a>
+</li>
+{% endblock %}
+
+<!-- Page Inner -->
+# 页面内容 :标题和行内容
+{% block page_title %}123{% endblock %}
+<!-- Page title -->
+{% block main_wrapper_rows %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Monthly Earnings</h5>
+                <div id="apex1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Trending Services</h5>
+                <div class="trending-services">
+                    <ul class="list-unstyled slimscroll">
+                        <li>Social Network
+                            <div class="text-success float-right">32%<i class="fa fa-level-up"></i></div>
+                        </li>
+                        <li>File Management
+                            <div class="text-success float-right">25%<i class="fa fa-level-up"></i></div>
+                        </li>
+                        <li>Search Engine
+                            <div class="text-success float-right">16%<i class="fa fa-level-up"></i></div>
+                        </li>
+                        <li>Calendar
+                            <div class="text-danger float-right">4%<i class="fa fa-level-down"></i></div>
+                        </li>
+                        <li>Todo App
+                            <div class="text-danger float-right">17%<i class="fa fa-level-down"></i></div>
+                        </li>
+                        <li>Mailbox
+                            <div class="text-success float-right">14%<i class="fa fa-level-up"></i></div>
+                        </li>
+                        <li>Travel Guide
+                            <div class="text-danger float-right">9%<i class="fa fa-level-down"></i></div>
+                        </li>
+                        <li>Finances App
+                            <div class="text-danger float-right">27%<i class="fa fa-level-down"></i></div>
+                        </li>
+                        <li>Online Wallet
+                            <div class="text-success float-right">16%<i class="fa fa-level-up"></i></div>
+                        </li>
+                        <li>Others
+                            <div class="text-success float-right">9%<i class="fa fa-level-up"></i></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-info alert-dismissible fade show m-b-md" role="alert">
+            Activity reports have been updated 2 days ago. <a href="#" class="alert-link">Click here</a> to see
+            the old data.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm">
+        <div class="card">
+            <div class="card-body">
+                <div class="info-card">
+                    <h4 class="info-title">Sales Today<span class="info-stats">45.6k</span></h4>
+                    <div class="progress" style="height: 3px;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 60%"
+                             aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="card">
+            <div class="card-body">
+                <div class="info-card">
+                    <h4 class="info-title">Support Questions<span class="info-stats">1.2k</span></h4>
+                    <div class="progress" style="height: 3px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 45%"
+                             aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="card">
+            <div class="card-body">
+                <div class="info-card">
+                    <h4 class="info-title">New Members<span class="info-stats">2.4k</span></h4>
+                    <div class="progress" style="height: 3px;">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 75%"
+                             aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Last Orders</h5>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">07809</th>
+                            <td>Alpha - Angular 8</td>
+                            <td>Chritopher Palmer</td>
+                            <td>Dec 15, 2019</td>
+                            <td><span class="badge badge-info">In Progress</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">07068</th>
+                            <td>Modern - PSD</td>
+                            <td>Stuart Woodley</td>
+                            <td>Nov 29, 2019</td>
+                            <td><span class="badge badge-info">In Progress</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">08392</th>
+                            <td>Mobile App Theme</td>
+                            <td>Murphy Cartwright</td>
+                            <td>Nov 12, 2019</td>
+                            <td><span class="badge badge-success">Finished</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">09415</th>
+                            <td>CRM Application</td>
+                            <td>Gurpreet Holder</td>
+                            <td>Jul 8, 2019</td>
+                            <td><span class="badge badge-danger">Canceled</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">08678</th>
+                            <td>Crypto Exchange</td>
+                            <td>Marshall Wheeler</td>
+                            <td>Feb 17, 2019</td>
+                            <td><span class="badge badge-danger">Canceled</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">08446</th>
+                            <td>Alpha - Bootstrap Version</td>
+                            <td>Nikki Blanchard</td>
+                            <td>Dec 26, 2018</td>
+                            <td><span class="badge badge-success">Finished</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!--main-right-sidebar-->
+# 最近联系的list
+{%  block recent_chat  %}
+<a href="javascript:void(0);" class="right-sidebar-toggle chat-item unread" data-sidebar-id="chat-right-sidebar">
+    <div class="user-avatar">
+        <img src="../../assets/images/avatars/xin.png" alt="">
+    </div>
+    <div class="chat-info">
+        <span class="chat-author">David</span>
+        <span class="chat-text">Hello there!</span>
+        <span class="chat-time">16:20</span>
+    </div>
+</a>
+<a href="javascript:void(0);" class="right-sidebar-toggle chat-item unread active-user" data-sidebar-id="chat-right-sidebar">
+    <div class="user-avatar">
+        <img src="../../assets/images/avatars/avatar2.png" alt="">
+    </div>
+    <div class="chat-info">
+        <span class="chat-author">Bob</span>
+        <span class="chat-text">Hello there!</span>
+        <span class="chat-time">11:34</span>
+    </div>
+</a>
+{% endblock %}
+# 以前联系的list
+{%  block older_chat  %}
+<a href="javascript:void(0);" class="right-sidebar-toggle chat-item" data-sidebar-id="chat-right-sidebar">
+    <div class="user-avatar">
+        <img src="../../assets/images/avatars/avatar3.png" alt="">
+    </div>
+    <div class="chat-info">
+        <span class="chat-author">Tom</span>
+        <span class="chat-text">Hello there!</span>
+        <span class="chat-time">2d</span>
+    </div>
+</a>
+<a href="javascript:void(0);" class="right-sidebar-toggle chat-item active-user" data-sidebar-id="chat-right-sidebar">
+    <div class="user-avatar">
+        <img src="../../assets/images/avatars/avatar4.png" alt="">
+    </div>
+    <div class="chat-info">
+        <span class="chat-author">Anna</span>
+        <span class="chat-text">Hello there!</span>
+        <span class="chat-time">4d</span>
+    </div>
+</a>
+<a href="javascript:void(0);" class="right-sidebar-toggle chat-item active-user" data-sidebar-id="chat-right-sidebar">
+    <div class="user-avatar">
+        <img src="../../assets/images/avatars/avatar5.png" alt="">
+    </div>
+    <div class="chat-info">
+        <span class="chat-author">Noah</span>
+        <span class="chat-text">Hello there!</span>
+        <span class="chat-time">&nbsp;</span>
+    </div>
+</a>
+<a href="javascript:void(0);" class="load-more-messages"  data-toggle="tooltip" data-placement="bottom" title="Load More">&bull;&bull;&bull;</a>
+{% endblock %}
+
+<!--chat-right-sidebar-->
+#和某人聊天详情里面 人名和时间
+{% block chat_top_info %}
+<span class="chat-name">Noah</span>
+<span class="chat-state">2h ago</span>
+{% endblock %}
+# 聊天的详细信息
+{% block chat_bubbles %}
+<!-- 开始聊天的时间-->
+<div class="chat-start-date">02/06/2017 5:58PM</div>
+<div class="chat-bubble them">
+    <div class="chat-bubble-img-container">
+        <img src="../../assets/images/avatars/xin.png" alt="">
+    </div>
+    <div class="chat-bubble-text-container">
+        <span class="chat-bubble-text">Hello</span>
+    </div>
+</div>
+<div class="chat-bubble me">
+    <div class="chat-bubble-text-container">
+        <span class="chat-bubble-text">Hello!</span>
+    </div>
+</div>
+<div class="chat-start-date">03/06/2017 4:22AM</div>
+<div class="chat-bubble me">
+    <div class="chat-bubble-text-container">
+        <span class="chat-bubble-text">lorem</span>
+    </div>
+</div>
+<div class="chat-bubble them">
+    <div class="chat-bubble-img-container">
+        <img src="../../assets/images/avatars/xin.png" alt="">
+    </div>
+    <div class="chat-bubble-text-container">
+        <span class="chat-bubble-text">ipsum dolor sit amet</span>
+    </div>
+</div>
+{% endblock %}

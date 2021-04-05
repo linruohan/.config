@@ -1,0 +1,99 @@
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>在线计算字数-计算文章字数器-统计-汉字查个数 </title>
+    <meta name="keywords" content="在线">
+    <meta name="description"
+          content="在线字数查询统计 本计算文章字数器程序可查汉字，文字数字，字母等个数查询，缺点是不能按字节来查询，程序无法分计算文章字数器，word计算字数-在线字数统计-汉字查个数查字器 ">
+
+    <meta name="mobile-agent" content="format=html5;url=http://m.ab126.com/goju/1646.html">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <style>
+        #share .jiathis_txt {
+            float: left;;
+            font-size: 13px;
+            line-height: 28px;
+        }
+    </style>
+    <script type="text/javascript">
+        var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+        var browser = navigator.userAgent.toLowerCase();
+        var isMobile = false;
+        for (var i = 0; i < mobileAgent.length; i++) {
+            if (browser.indexOf(mobileAgent[i]) != -1) {
+                isMobile = true;
+                location.href = 'http://m.ab126.com/goju/1646.html';
+                break;
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+<div align="center">
+
+    <table cellspacing="0" cellpadding="0" width="321" border="0">
+        <tbody>
+        <tr>
+            <td style="BORDER-RIGHT: #4fff5d 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #ff3ea7 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #1d24ff 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #fcff3e 1px solid"
+                align="middle">
+                <a onmouseover="window.status='Download Xara 3D for FREE now!'; return true;"
+                   onmouseout="window.status=''; return true;" target="_blank" href="http://www.ab126.com/"
+                   style="text-decoration: none">
+                    <font color="#000000">在线字数查询统计<br>&nbsp;</font></a>
+                <script language="javascript"><!--
+                function body1count() {
+                    document.form.body1char.value = document.form.unicode.value.length;
+                }
+
+                --></script>
+                <form name="form" action="cgi-bin/web_tools/unicode.pl" method="post"><input type="hidden"
+                                                                                             value="generate"
+                                                                                             name="action">
+                    <textarea class="c1" onkeydown="body1count();" onkeyup="body1count();"
+                              style="WIDTH: 425px" name="unicode" rows="20" cols="28"></textarea><br>
+                    <center>
+                        <input class="c1" style="FONT-WEIGHT: bold; WIDTH: 99; HEIGHT: 22" maxlength="3"
+                               size="8" value="0" name="body1char">
+                        <input class="c2" style="WIDTH: 50px" onclick="body1count();" type="button"
+                               value="计算"></center>
+                    　<p>
+                        本计算文章文字字数器程序可查汉字，数字，字母等个数查询，缺点是不能按字节来查询，程序无法分辨出一个汉字等于几个字节。把其它文章上的文字粘贴到文本框里点击计算即可查出多少字。
+                        可将word里的字粘贴到这里来计算。。。</p>
+                    <p>注意：本查字器每个空格也算一个字</p>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<style>
+    .pllist {
+        width: 100%;
+        float: left;
+        word-break: break-all;
+        word-wrap: break-word;
+    }
+
+    .pllist p {
+        font-size: 12px;
+        line-height: 22px
+    }
+</style>
+<script>
+    function clear() {
+        Source = document.body.firstChild.data;
+        document.open();
+        document.close();
+        document.body.innerHTML = Source;
+    }
+</script>
+
+
+</body>
+</html>

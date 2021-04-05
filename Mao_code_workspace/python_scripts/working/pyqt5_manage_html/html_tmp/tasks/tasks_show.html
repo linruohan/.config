@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CSS Tables</title>
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<style type="text/css">
+    /* CSS Document */
+
+    body {
+        font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #4f6b72;
+        background: #E6EAE9;
+    }
+
+    a {
+        color: #c75f3e;
+    }
+
+    #mytable {
+        width: 700px;
+        padding: 0;
+        margin: 0;
+    }
+
+    caption {
+        padding: 0 0 5px 0;
+        width: 700px;
+        font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        text-align: right;
+    }
+
+    th {
+        font: bold 15px Consolas, "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #4f6b72;
+        border-right: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        border-top: 1px solid #C1DAD7;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 6px 6px 6px 12px;
+        background: #CAE8EA;
+    }
+
+    th.nobg {
+        border-top: 0;
+        border-left: 0;
+        border-right: 1px solid #C1DAD7;
+        background: none;
+    }
+
+    td {
+        border-right: 1px solid #C1DAD7;
+        border-bottom: 1px solid #C1DAD7;
+        background: #fff;
+        font-size: 11px;
+        padding: 6px 6px 6px 12px;
+        color: #4f6b72;
+    }
+
+
+    td.alt {
+        background: #F5FAFA;
+        color: #797268;
+    }
+
+    th.spec {
+        border-left: 1px solid #C1DAD7;
+        border-top: 0;
+        background: #fff;
+        font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    th.specalt {
+        border-left: 1px solid #C1DAD7;
+        border-top: 0;
+        background: #f5fafa;
+        font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #797268;
+    }
+
+    /*---------for IE 5.x bug*/
+    html > body td {
+        font-size: 14px;
+    }
+</style>
+<body>
+<table id="mytable" cellspacing="0" summary="The technical specifications of the Apple PowerMac G5 series">
+    <caption>&nbsp;</caption>
+    <tr>
+        {% for head in headrs %}
+        <th scope="col" abbr="Dual 2.5">{{head|upper}}</th>
+        {% endfor %}
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <th scope="row" abbr="G5 Processor" class="specalt">{{task.id}}</th>
+        <td class="alt">{{'%.10s' | format(task.name)}}</td>
+        <td class="alt">{{task.deadline }}</td>
+        <td class="alt">{{task.progress}}</td>
+        <td class="alt">{{'%.10s' | format(task.schedule)}}</td>
+        <td class="alt">{{task.state}}</td>
+        <td class="alt">{{task.html}}</td>
+        <td class="alt">{{task.creat_time}}</td>
+        <td class="alt">{{task.finish_time}}</td>
+        <td class="alt">{{task.creater}}</td>
+        <td class="alt">{{task.owner}}</td>
+        <td class="alt">{{task.team}}</td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\SerFrame.Application = SerFrame Application
+HKEY_CLASSES_ROOT\SerFrame.Application\CLSID = {03E77512-2203-4512-8033-542695039192}
+
+HKEY_CLASSES_ROOT\CLSID\{03E77512-2203-4512-8033-542695039192} = SerFrame Application
+HKEY_CLASSES_ROOT\CLSID\{03E77512-2203-4512-8033-542695039192}\ProgId = SerFrame.Application
+HKEY_CLASSES_ROOT\CLSID\{03E77512-2203-4512-8033-542695039192}\LocalServer32 = SERFRAME.EXE

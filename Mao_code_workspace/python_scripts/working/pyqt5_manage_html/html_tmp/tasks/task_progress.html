@@ -1,0 +1,49 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" value=""
+                           id="check-all-progress">
+                    <label class="custom-control-label" for="check-all-progress">
+                    </label>
+                </div>
+            </th>
+            <th scope="col">ID</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Time</th>
+            <th scope="col">Progress Info</th>
+            <th scope="col">Operator</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task_progress in progress_detail %}
+        <tr>
+            <th>
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" name="task-progress-check" type="checkbox" value=""
+                           id="check-c-{{progress_detail.index(task_progress)}}">
+                    <label class="custom-control-label" for="check-c-{{progress_detail.index(task_progress)}}">
+                    </label>
+                </div>
+            </th>
+            <th scope="row">{{task_progress.id}}</th>
+            <th scope="row">{{task_progress.who}}</th>
+            <td>{{task_progress.time }}</td>
+            <td style="width:50px;overflow:hidden; white-space:nowrap; text-overflow:ellipsis">
+                {{task_progress.text}}
+            </td>
+            <td>
+                <button class="btn btn-primary mod-task-progress float-left m-r-xxs"><i
+                        class="fas fa-user-edit"></i>
+                </button>
+                <button class="btn btn-primary del-task-progress float-left m-r-xxs"><i
+                        class="fas fa-minus"></i>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

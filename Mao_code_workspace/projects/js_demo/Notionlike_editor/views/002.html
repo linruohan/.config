@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>TestDot</title>
+    <script src="js/doT.min.js" type="text/javascript"></script>
+    <script src="js/jquery-2.2.0.js"></script>
+    <script id="interpolationtmpl" type="text/x-dot-template">
+        <h3>{{=it.className}}</h3>
+        <ul>
+            {{~it.students :value:index}}
+            <div>{{=index}}</div>
+            {{~}}
+        </ul>
+    </script>
+    <script id="interpolationtmpl" type="text/x-dot-template">
+        <h3>{{=it.className}}</h3>
+        <ul>
+            {{ for (var prop in it) { }} {{? prop === 'students'}} {{~it.students :value:index}}
+            <li>名字是{{=value}}</li>
+            {{~}} {{?}} {{ } }}
+        </ul>
+    </script>
+    <script id="classpolationtmpl" type="text/x-dot-template">
+        <h3>{{=it.className}}</h3>
+        <ul>
+            {{ for(var prop in it) { }} {{? prop !== "className"}} {{for(var i in it[prop]) { }}
+            <li>{{=it[prop][i]}}</li>
+            {{ } }} {{?}} {{ } }}
+        </ul>
+    </script>
+</head>
+
+<body>
+    <div id="interpolation"></div>
+    <div id="sannianerban"></div>
+    <script type="text/javascript">
+        var data = {
+            className: "三年二班",
+            xiaoming: {
+                Chinese: 88,
+                English: 20
+            },
+            xiaohua: {
+                Chinese: 89,
+                English: 20
+            }
+        }
+        var interText1 = doT.template($("#classpolationtmpl").text());
+        $("#sannianerban").html(interText1(data));
+    </script>
+    <script type="text/javascript">
+        var data = {
+            className: "doT.js 测试",
+            students: ["张飞", "刘备", "诸葛亮", "甄姬", "赵云"]
+        }
+        var interText = doT.template($("#interpolationtmpl").text());
+        $("#interpolation").html(interText(data));
+    </script>
+</body>
+
+</html>

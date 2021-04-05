@@ -1,0 +1,11 @@
+D:\workspace\vs2019_space\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.deps.json
+D:\workspace\vs2019_space\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.runtimeconfig.json
+D:\workspace\vs2019_space\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.runtimeconfig.dev.json
+D:\workspace\vs2019_space\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.dll
+D:\workspace\vs2019_space\ConsoleApp1\bin\Debug\netcoreapp2.1\ConsoleApp1.pdb
+D:\workspace\vs2019_space\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.csprojAssemblyReference.cache
+D:\workspace\vs2019_space\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\workspace\vs2019_space\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.AssemblyInfoInputs.cache
+D:\workspace\vs2019_space\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.AssemblyInfo.cs
+D:\workspace\vs2019_space\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.dll
+D:\workspace\vs2019_space\ConsoleApp1\obj\Debug\netcoreapp2.1\ConsoleApp1.pdb

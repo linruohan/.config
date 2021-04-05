@@ -1,0 +1,19 @@
+{% from 'common/_macros.html' import static %}
+<!-- Page Sidebar -->
+<div class="page-sidebar">
+    <div class="profile-menu">
+        <a href="app-profile.html">
+            <img src="{{ static('assets/images/avatars/avatar1.png') }}" alt="">
+        </a>
+    </div>
+    <!--    左1  图标快捷菜单-->
+    {% block page_sidebar_menu %}
+    {% include "layout/page_sidebar_menu.html" %}
+    {% endblock %}
+    <!--    左1 下  设置菜单按钮-->
+    {% block settings_menu_btn %}
+    {% include "layout/settings_menu_btn.html" %}
+    {% endblock %}
+
+</div>
+<!-- /Page Sidebar -->

@@ -1,0 +1,2 @@
+*** Settings ***
+Documentation     用于Debug关键字，库，用例等

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/css">
+        table {
+            width: 100%;
+        }
+    </script>
+</head>
+<body>
+<table id="dragTable" border="1" cellspacing="0">
+    <tbody>
+    <tr>
+        <th width="300px">拖拽标题行这里</th>
+        <th width="190px">标题</th>
+        <th width="435px">标题</th>
+        <th width="135px">标题</th>
+        <th>标题</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    $(function () {
+        function isNullOrUndefined(obj) {
+            if (typeof (obj) == "undefined" || obj == null) {
+                return true;
+            }
+            return false;
+        }
+
+        function registerTableDragEvent() {
+            var dragTH; //记录拖拽的列
+            //第一步按下
+            $('#dragTable th').mousedown(function (e) {
+                e = e || window.event;
+                if (e.offsetX > $(this).innerWidth() - 10) {
+                    dragTH = $(this);
+                    dragTH.mouseDown = true;
+                    dragTH.oldX = e.pageX || e.clientX;
+                    dragTH.oldWidth = $(this).innerWidth();
+                }
+            })
+            //第二步 拖动
+            $('#dragTable th').mousemove(function (e) {
+                //改鼠标样式
+                if (e.offsetX > $(this).innerWidth() - 10) {
+                    $(this).css({
+                        cursor: "e-resize"
+                    });
+                } else {
+                    $(this).css({
+                        cursor: "default"
+                    });
+                }
+                if (isNullOrUndefined(dragTH)) {
+                    dragTH = $(this);
+                }
+                if (!isNullOrUndefined(dragTH.mouseDown) && dragTH.mouseDown == true) {
+                    var difference = (e.pageX - dragTH.oldX) || (e.clientX - dragTH.oldX);
+                    var newWidth = dragTH.oldWidth + difference; //新的宽度
+                    dragTH.width(newWidth)
+                }
+            })
+            // 第三步，释放
+            $("table#dragTable th").mouseup(function (e) {
+                // 还原鼠标样式
+                // if (isNullOrUndefined(dragTH)) {
+                //     dragTH = $(this);
+                // }
+                dragTH.mouseDown = false;
+                // $(dragTH).css({
+                //     cursor : "default"
+                // });
+            });
+        }
+
+        registerTableDragEvent()
+    })
+</script>
+</body>
+</html>

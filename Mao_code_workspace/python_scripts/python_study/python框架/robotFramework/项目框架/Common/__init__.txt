@@ -1,0 +1,3 @@
+*** Settings ***
+Documentation     A. Library中存放自己开发的库。例如，库文件main.py中关键字Create Log Path用于日志文件的创建和data_center.py中关键字Read Data From Excel实现数据驱动等；
+...               B. Resource中存储数据源。例如，txt，xls和csv等类型的数据文件

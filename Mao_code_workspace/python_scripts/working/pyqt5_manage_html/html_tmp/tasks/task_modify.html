@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <form action="app-tasks.html">
+                <div class="card-body">
+                    <button type="submit" class="btn btn-primary float-right" style="background-color: chocolate" onclick="modify_task()">保存</button>
+                    <h1 class="card-title">修改一个任务</h1>
+                    {{task}}
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <label id="task_id">taskid:{{ task.id }}</label>
+                            <label for="task_modify_name">Task Name :</label>
+                            <input type="text" size="16" class="form-control" id="task_modify_name"
+                                   placeholder="一句话描述的任务(20个字)" value="{{ task.name }}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-4">
+                            <label for="task_modify_start_date">StartTime:</label>
+                            <input type="text" readonly class="form-control" id="task_modify_start_date" value="{{ task.start_date }}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_end_date">EndTime</label>
+                            <input type="text" readonly class="form-control" id="task_modify_end_date" value="{{ task.end_date }}">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_left_time">剩余时间</label>
+                            <input type="text" readonly class="form-control" id="task_modify_left_time" value="{{ task.left_time }}">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <label for="task_modify_killers">选择任务的执行Owner</label>
+                            <select id="task_modify_killers" class="select_killer js-states form-control" tabindex="-1"
+                                    style="display: none;width: 100%"
+                                    multiple="multiple">
+                                <optgroup label="Team Members">
+                                    <option value="0">mwx637260</option>
+                                    <option value="1">lwx565817</option>
+                                    <option value="2">wwx565341</option>
+                                    <option value="3">xwx562897</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_type">任务类型</label>
+                            <select id="task_modify_type" class="select_killer js-states form-control" tabindex="-1"
+                                    style="display: none;width: 100%">
+                                <option value="t">team</option>
+                                <option value="m">mine</option>
+                                <option value="o">other</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_state">任务状态</label>
+                            <select id="task_modify_state" class="select_killer js-states form-control" tabindex="-1"
+                                    style="display: none;width: 100%">
+                                <option value="CA">new</option>
+                                <option value="NV">working</option>
+                                <option value="OR">finish</option>
+                                <option value="WA">discard</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="task_modify_level">任务星级</label>
+                            <select id="task_modify_level" class="select_killer js-states form-control" tabindex="-1"
+                                    style="display: none;width: 100%">
+                                <option value="CA">1</option>
+                                <option value="NV">2</option>
+                                <option value="OR">3</option>
+                                <option value="WA">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <label for="task_modify_content">任务内容</label>
+                            <textarea class="form-control" id="task_modify_content" placeholder="请输入任务具体内容"
+                                      rows="3"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

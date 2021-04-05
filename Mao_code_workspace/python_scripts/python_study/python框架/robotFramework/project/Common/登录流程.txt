@@ -1,0 +1,31 @@
+*** Settings ***
+Library           AutoItLibrary
+Library           SeleniumLibrary
+Resource          登录流程.txt
+Library           ../../py/001.py
+
+*** Keywords ***
+打开浏览器
+    [Arguments]    ${url}    # http://193.169.100.249:8086/itmsld/login
+    open browser    ${url}    chrome
+    maximize browser window
+
+输入用户名和密码
+    [Arguments]    ${username}    ${passwd}    # admin|admin
+    input text    id=username    ${username}
+    input text    id=password    ${passwd}
+    Sleep    1
+
+点击登录按钮
+    click button    xpath=//*[@id="loginForm"]/div[4]/input[1]
+
+退出
+    Close Window
+
+登录
+    [Arguments]    ${username}    ${passwd}    # \ admin|admin
+    打开浏览器    http://193.169.100.249:8086/itmsld/login
+    输入用户名和密码
+    点击登录按钮
+    退出
+    add    4    5

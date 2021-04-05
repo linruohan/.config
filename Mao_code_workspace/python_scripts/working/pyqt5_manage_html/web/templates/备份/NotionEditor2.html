@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>XiaoHan Editor.js 🤩🧦🤨</title>
+    <link rel="icon" href="./app.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./app.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/bootstrapStyle/bootstrapStyle.css" type="text/css">
+    <link href="../assets/css/notionEditor.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/sweetalert.min.css" rel="stylesheet">
+    <script src="../assets/js/fileParse.js"></script>
+    <script src="../assets/js/json-preview.js"></script>
+    <script src="../assets/js/FileSaver.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/phanimate.jquery.js"></script>
+    <script type="text/javascript" src="qwebchannel.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            new QWebChannel(qt.webChannelTransport, function (channel) {
+                // 获取qt中绑定的交互对象
+                window.pyjs = channel.objects.interact_obj
+
+                // js 绑定qt中的信号
+                pyjs.sig_send_to_js.connect(function (str) {
+
+                    document.getElementById("output").value = str;
+                    alert(str);
+                    //let json_str= JSON.stringify(str, null, 4)
+                    let json_str= eval('(' + str + ')');
+                    alert(typeof(json_str));
+                    alert(json_str);
+                    editor.blocks.render(json_str);
+
+                });
+            });
+        }
+    </script>
+
+    <style type="text/css">
+        .custom-input {
+            position: relative;
+            padding-top: 5px;
+            margin-bottom: 0px;
+            max-width: 800px;
+            align-items: center;
+        }
+
+        .custom-input input {
+            padding-left: 55px;
+            font-family: "Comic Sans MS";
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .custom-input:-webkit-autofill {
+            box-shadow: 0 0 0px 1000px #FFF inset !important;
+        }
+
+        .custom-input label {
+            cursor: text;
+            margin: 0;
+            padding: 0;
+            left: 15px;
+            top: 27px;
+            position: absolute;
+            font-size: 14px;
+            color: #b517d9;
+            font-weight: normal;
+            transition: all .3s ease;
+        }
+
+        .custom-input label.active {
+            top: 0;
+            left: 0;
+            font-size: 12px;
+        }
+
+        .custom-input label.active.focusIn {
+            color: #e70f7f;
+        }
+    </style>
+
+</head>
+
+<body>
+<textarea id="output">web控件内容!</textarea>
+<input type="submit" id="send" value="同步到Qt" onclick="javascript:click();"/>
+<table border=0 height=600px align=left>
+    <tr>
+        <td width="80px">
+            <div class="ce-example__button" id="saveButton">保存</div>
+        </td>
+        <td width=60% align=left valign=top>
+            <!--      notionlike      editor  begin-->
+            <div class="ce-example">
+                <div class="custom-input">
+                    <label for="fileid"> Title </label>
+                    <input type="text" value="" style="display: none;" id="fileid">
+                    <input type="text" class="form-control" id="fileTitle">
+                </div>
+                <div class="ce-example__content _ce-example__content--small">
+                    <div id="editorjs"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+
+
+</table>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
+<!-- Load Editor.js's Core -->
+<script src="../assets/js/editor.js"></script>
+<!-- Initialization -->
+<script>
+    /**
+     * Saving button
+     */
+    $('#saveButton').click(function () {
+        alert("点击了保存按钮");
+        saveJson();
+    });
+    document.onkeydown = function (event) {
+        if (event.keyCode == 83 && event.altKey) {
+            saveJson();
+        } else if (event.keyCode == 113) {
+            console.log('F2 clicked');
+        }
+    };
+
+    /**
+     * To initialize the Editor, create a new instance with configuration object
+     * @see docs/installation.md for mode details
+     */
+    window.editor = new EditorJS({
+        /**
+         * Wrapper of Editor
+         */
+        holder: 'editorjs',
+
+        /**
+         * Tools list
+         */
+        tools: {
+            /**
+             * Each Tool is a Plugin. Pass them via 'class' option with necessary settings {@link docs/tools.md}
+             */
+            header: {
+                class: Header,
+                inlineToolbar: ['link'],
+                config: {
+                    placeholder: 'Header'
+                },
+                shortcut: 'CMD+SHIFT+H'
+            },
+
+            /**
+             * Or pass class directly without any configuration
+             */
+            image: SimpleImage,
+
+            list: {
+                class: List,
+                inlineToolbar: true,
+                shortcut: 'CMD+SHIFT+L'
+            },
+
+            checklist: {
+                class: Checklist,
+                inlineToolbar: true,
+            },
+
+            quote: {
+                class: Quote,
+                inlineToolbar: true,
+                config: {
+                    quotePlaceholder: 'Enter a quote',
+                    captionPlaceholder: 'Quote\'s author',
+                },
+                shortcut: 'CMD+SHIFT+O'
+            },
+
+            warning: Warning,
+
+            marker: {
+                class: Marker,
+                shortcut: 'CMD+SHIFT+M'
+            },
+
+            code: {
+                class: CodeTool,
+                shortcut: 'CMD+SHIFT+C'
+            },
+
+            delimiter: Delimiter,
+
+            inlineCode: {
+                class: InlineCode,
+                shortcut: 'CMD+SHIFT+C'
+            },
+
+            linkTool: LinkTool,
+
+            embed: Embed,
+
+            table: {
+                class: Table,
+                inlineToolbar: true,
+                shortcut: 'CMD+ALT+T'
+            },
+
+        },
+
+        /**
+         * This Tool will be used as default
+         */
+        // initialBlock: 'paragraph',
+
+        /**
+         * Initial Editor data
+         */
+        data: [],
+        placeholder: "记录你的故事！述说你的缤纷！let 's beginning...",
+        /** *启用自动对焦*/
+        autofocus: true,
+        onReady: function () {
+            // saveButton.click();
+        },
+        onChange: function () {
+            console.log('something changed ');
+        }
+    });
+
+    /**
+     * 保存json文件,直接从浏览器下载
+     */
+    function saveJson() {
+        $('.custom-input input ').phAnim();
+        var filename = $("#fileTitle").val();
+        if (filename) {
+            editor.save().then((savedData) => {
+                var output = JSON.stringify(savedData, null, 4);
+                alert(output + "保存成功!");
+                window.pyjs.receive_str_from_js(output)
+            });
+        }
+    }
+
+
+</script>
+<!--      notionlike      editor  end-->
+
+</body>
+
+</html>

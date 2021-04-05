@@ -1,0 +1,71 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,Latency,IdleTime,Connect
+1.51679E+12,1,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-1,text,FALSE,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0
+1.51679E+12,0,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-2,text,FALSE,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0
+1.51679E+12,0,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-3,text,FALSE,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0
+1.51679E+12,0,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-4,text,FALSE,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0
+1.51679E+12,0,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-5,text,FALSE,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0
+1516788884846,7,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0
+1516788885038,1,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0
+1516788885238,0,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0
+1516788885438,0,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0
+1516788885638,1,http://www.baidu.com/,Non HTTP response code: java.net.UnknownHostException,Non HTTP response message: www.baidu.com,Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[Non HTTP response code: java.net.UnknownHostException]]]
+
+****** comparison: [[[200                                                  ]]]
+
+/",1734,0,1,1,0,0,0

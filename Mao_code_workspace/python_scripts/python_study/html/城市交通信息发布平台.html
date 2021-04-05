@@ -1,0 +1,151 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ITIS Control Panel</title>
+<link href="/res/cms/css/admin.css" rel="stylesheet" type="text/css">
+<link href="/res/common/css/theme.css" rel="stylesheet" type="text/css">
+<link href="/res/common/css/jquery.validate.css" rel="stylesheet" type="text/css">
+<link href="/res/common/css/jquery.treeview.css" rel="stylesheet" type="text/css">
+<link href="/res/common/css/jquery.ui.css" rel="stylesheet" type="text/css">
+
+<script src="/thirdparty/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="/thirdparty/My97DatePicker/WdatePicker.js" type="text/javascript"></script><link href="http://193.169.100.238:8188/thirdparty/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+<script src="/res/common/js/jquery.js" type="text/javascript"></script>
+<script src="/res/common/js/jquery.ext.js" type="text/javascript"></script>
+<script src="/res/common/js/jquery-ui.js" type="text/javascript"></script>
+<script src="/res/common/js/xiangxun.js" type="text/javascript"></script>
+<script src="/res/cms/js/admin.js" type="text/javascript"></script><style type="text/css">
+*{margin:0;padding:0}
+a:focus {outline:none;}
+html{height:100%;overflow:hidden;}
+body{height:100%;}
+#top{ background-color: #64b7fe; height:71px; width:100%;}
+.logo{width:209px; height:71px;}
+.topbg{ height:71px;}
+.login-welcome{padding-left:20px; color: #42ff33; font-size:12px;}
+.login-welcome a:link,.login-welcome a:visited{color: #fe4dd5; text-decoration:none;}
+
+#welcome {color: #0d1616;padding: 0 30px 0 5px;}
+#logout {color: #ff1740; padding-left: 5px;}
+
+.nav{height:28px; overflow:hidden;}
+.nav-menu{ height:28px; list-style:none; font-size:13px;}
+.nav .current {background: url(/res/cms/img/admin/top_menu_selected.png) no-repeat center; color:#fff; text-align:center; width:100px; height:28px;}
+.nav .current a{color: #ff2c62;}
+.nav-menu li {height:28px;text-align:center; line-height:28px; float:left; }
+.nav-menu li a{color:#fff; font-weight:bold;}
+.nav-menu li.sep{background: url(/res/cms/img/admin/top_menu_Divideline.png) no-repeat; width:3px; height:13px; margin:9px 0 0 0;}
+.nav .normal{text-align:center; width:100px;}
+
+.undis{display:none;}
+.dis{display:block;}
+</style>
+
+<script type="text/javascript">
+function g(o){
+	return document.getElementById(o);
+}
+function HoverLi(id){
+	$("li[id^='tb_']").each(function(){
+		$(this).removeClass("current");
+		$(this).addClass("normal");
+	});
+	$("#tb_"+id).removeClass("normal");
+	$("#tb_"+id).addClass("current");
+}
+function countUnreadMsg(){
+	 $.post("message/v_countUnreadMsg.do", {
+		}, function(data) {
+			if(data.result){
+				 $("#countDiv").html(""+data.count+"");
+			}else{
+				alert("请先登录");
+			}
+		}, "json");
+	 setTimeout( "countUnreadMsg() ",1000*60*10);
+}
+
+$(function(){
+	$('a').bind("focus", function(){
+	    $(this).blur();
+	});
+	countUnreadMsg();
+});
+setTimeout( "countUnreadMsg() ",1000*60*10);
+function mapDialog(){
+	var result=window.showModalDialog("map.do","","dialogHeight:600px;dialogWidth:800px;center:yes;resizable: yes;");
+	if(result!=null){
+		var href=result.split(";")[0];
+		var target=result.split(";")[1];
+		if(target=="rightFrame"){
+				window.parent.mainFrame.document.getElementById(target).src=href;
+				var rightFrameSrc=window.parent.mainFrame.document.getElementById(target).src;
+				 if(rightFrameSrc.indexOf("frame")>=0){
+					window.parent.mainFrame.document.getElementById(target).src=rightFrameSrc.split("frame/")[0]+rightFrameSrc.split("frame/")[1];
+					}
+			}
+		else {
+			 	window.parent.document.getElementById(target).src=href;
+			}
+		}
+}
+</script>
+<script>
+
+</script>
+</head>
+
+<body style=""><div style="position: absolute; z-index: 19700; top: -1970px; left: -1970px; display: none;"><iframe src="http://193.169.100.238:8188/thirdparty/My97DatePicker/My97DatePicker.html" frameborder="0" border="0" scrolling="no" style="width: 186px; height: 199px;"></iframe></div>
+<div id="top">
+     <div class="top">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background:url(/res/cms/img/admin/newtopbg2.jpg) repeat-x;">
+          <tbody><tr>
+            <td width="209"><div class="logo"><img src="/res/cms/img/admin/logo.gif" width="209" height="71"></div></td>
+            <td valign="top" style="background:url(/res/cms/img/admin/newtopbg1.jpg) no-repeat;">
+                <div class="topbg">
+                     <div class="login-welcome">
+                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tbody><tr>
+                                    <td width="420" height="42">
+                                    <img src="/res/cms/img/admin/top_useinfo_icon_01.png">&nbsp;<span id="welcome">您好, admin</span>
+                                    <img src="/res/cms/img/admin/top_useinfo_icon_02.png">&nbsp;<a href="logout.do?returnUrl=index.do" target="_top" id="logout" onclick="return confirm('您确定退出吗？');">退出</a>　　
+                                    <img src="/res/cms/img/admin/top_useinfo_icon_03.png">&nbsp;&nbsp;<a href="message/v_list.do" target="rightFrame">您有&nbsp;<span id="countDiv">0</span>&nbsp;条信息未读</a>
+                                    </td>
+                                    <td align="right">
+                                    </td>
+                                    <td width="180">
+                                    &nbsp;<a id="view_index" href="http://193.169.100.238:8188/" target="_blank">【查看首页】</a>
+                                    <!--
+                                    &nbsp;<a style="color:#FFF" href="javascript:alert($(document).width()+','+$(document).height())">【窗口大小】</a>
+                                    -->
+                                    </td>
+                                  </tr>
+                                </tbody></table>
+                       </div>
+                     <div class="nav">
+                     	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tbody><tr>
+                                <td>
+                                	<ul class="nav-menu">
+                                    	<li class="sep"></li>
+                                    	<li class="normal" id="tb_11" onclick="HoverLi(11);"><a href="main.do" target="mainFrame">我的工作台</a></li>
+										<li class="sep"></li><li class="normal" id="tb_12" onclick="HoverLi(12);"><a href="frame/content_main.do?source=top" target="mainFrame">内容</a></li>
+	      	    <li class="normal" id="tb_15" onclick="HoverLi(15);"><a href="channel/channel_main.do" target="mainFrame">栏目</a></li>
+										<li class="sep"></li><li class="current" id="tb_13" onclick="HoverLi(13);"><a href="frame/maintain_main.do" target="mainFrame">维护</a></li>
+										<li class="sep"></li><li class="normal" id="tb_14" onclick="HoverLi(14);"><a href="frame/user_main.do" target="mainFrame">用户</a></li>
+										<!--
+										<li class="sep"></li><li class="normal" id="tb_16" onclick="HoverLi(16);"><a href="frame/statistic_main.do" target="mainFrame">数据</a></li>
+										 -->
+										<li class="sep"></li><li class="normal" id="tb_17" onclick="HoverLi(17);"><a href="frame/config_main.do" target="mainFrame">配置</a></li>
+                                    </ul>
+                                </td>
+                              </tr>
+                            </tbody></table>
+                     </div>
+                </div>
+          </td></tr>
+        </tbody></table>
+     </div>
+</div>
+
+
+</body></html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doT test</title>
+    <script src="../assets/js/doT.min.js"></script>
+    <script src="../assets/js/jquery-3.1.1.min.js"></script>
+    <!-- 必须加上type="text/x-dot-template" -->
+    <script id="category-goods-tmpl" type="text/x-dot-template">
+        {{~it:item:index}}
+        <div class="rxsp">
+            <div class="aui-pull-left">
+                <h3> {{= item.name }} 【索引： {{= index }} 】</h3>
+            </div>
+            <a class="aui-pull-right ">
+                    查看更多
+                    <span class="aui-iconfont aui-icon-right"></span>
+                </a>
+        </div>
+
+        <div class="aui-list-item-inner">
+            <div class="aui-row aui-row-padded">
+                {{~it[index].goods:item:j}}
+                <div class="aui-col-xs-6">
+                    <img src="{{= item.logoimg }}" onclick="">
+                    <p class="tit">{{= item.name }} </p>
+                    <div class="aui-info" style="padding-top:0">
+                        <div class="aui-info-item">
+                            <span class="red">￥{{= item.price }}
+                            </div>
+                        </div>
+                    </div>
+                    {{~}}
+                </div>
+            </div>
+            {{~}}
+        </div>
+    </script>
+</head>
+<body>
+    <div id="category-goods"></div>
+    <script type="text/javascript">
+        var goods_list = {
+            "list": [{
+                "id": "1",
+                "name": "衣服",
+                "goods": [{
+                    "goods_id": "1",
+                    "name": "衣服1",
+                    "price": "100",
+                    "logoimg": "http://image.diandodo.com/zhudianbao/Uploads/User/u1250000222/20160723/201607231342158687.png@250h_250w_1e_1c"
+                },
+                {
+                    "goods_id": "2",
+                    "name": "衣服2",
+                    "price": "200",
+                    "logoimg": "http://image.diandodo.com/zhudianbao/Uploads/User/u1250000222/20160723/201607231342158687.png@250h_250w_1e_1c"
+                }
+                ]
+            },
+            {
+                "id": "2",
+                "name": "鞋子",
+                "goods": [{
+                    "goods_id": "3",
+                    "name": "鞋子1",
+                    "price": "100",
+                    "logoimg": "http://image.diandodo.com/zhudianbao/Uploads/User/u1250000222/20160723/201607231342158687.png@250h_250w_1e_1c"
+                },
+                {
+                    "goods_id": "4",
+                    "name": "鞋子2",
+                    "price": "200",
+                    "logoimg": "http://image.diandodo.com/zhudianbao/Uploads/User/u1250000222/20160723/201607231342158687.png@250h_250w_1e_1c"
+                }
+                ]
+            }
+            ]
+        };
+
+        //        var tmpltxt = doT.template(document.getElementById("category-goods-tmpl").innerHTML);
+        //        document.getElementById("category-goods").innerHTML = tmpltxt(goods_list.list); //数据渲染
+
+        var evalText = doT.template($("#category-goods-tmpl").html());
+        $("#category-goods").html(evalText(goods_list.list));
+    </script>
+</body>
+</html>

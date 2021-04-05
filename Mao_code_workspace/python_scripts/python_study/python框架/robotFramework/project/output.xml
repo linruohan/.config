@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180305 11:33:21.747" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\ride\project" id="s1" name="Project">
+<suite source="C:\ride\project\testSuites.txt" id="s1-s1" name="testSuites">
+<test id="s1-s1-t1" name="登录交通平台">
+<kw name="打开浏览器" library="登录流程">
+<arguments>
+<arg>http://193.169.100.249:8086/itmsld/login</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20180305 11:33:21.942" level="INFO">Opening browser 'chrome' to base url 'http://193.169.100.249:8086/itmsld/login'.</msg>
+<status status="PASS" endtime="20180305 11:33:27.434" starttime="20180305 11:33:21.941"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180305 11:33:28.556" starttime="20180305 11:33:27.434"></status>
+</kw>
+<status status="PASS" endtime="20180305 11:33:28.556" starttime="20180305 11:33:21.941"></status>
+</kw>
+<kw name="输入用户名和密码" library="登录流程">
+<arguments>
+<arg>admin</arg>
+<arg>admin</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=username</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20180305 11:33:28.557" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<status status="PASS" endtime="20180305 11:33:28.625" starttime="20180305 11:33:28.557"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>${passwd}</arg>
+</arguments>
+<msg timestamp="20180305 11:33:28.626" level="INFO">Typing text 'admin' into text field 'id=password'.</msg>
+<status status="PASS" endtime="20180305 11:33:28.690" starttime="20180305 11:33:28.625"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20180305 11:33:29.691" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180305 11:33:29.691" starttime="20180305 11:33:28.691"></status>
+</kw>
+<status status="PASS" endtime="20180305 11:33:29.692" starttime="20180305 11:33:28.556"></status>
+</kw>
+<kw name="点击登录按钮" library="登录流程">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="loginForm"]/div[4]/input[1]</arg>
+</arguments>
+<msg timestamp="20180305 11:33:29.692" level="INFO">Clicking button 'xpath=//*[@id="loginForm"]/div[4]/input[1]'.</msg>
+<status status="PASS" endtime="20180305 11:33:30.389" starttime="20180305 11:33:29.692"></status>
+</kw>
+<status status="PASS" endtime="20180305 11:33:30.390" starttime="20180305 11:33:29.692"></status>
+</kw>
+<kw name="退出" library="登录流程">
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened pop-up window.</doc>
+<status status="PASS" endtime="20180305 11:33:30.432" starttime="20180305 11:33:30.390"></status>
+</kw>
+<status status="PASS" endtime="20180305 11:33:30.432" starttime="20180305 11:33:30.390"></status>
+</kw>
+<status status="PASS" endtime="20180305 11:33:30.432" critical="yes" starttime="20180305 11:33:21.939"></status>
+</test>
+<status status="PASS" endtime="20180305 11:33:30.434" starttime="20180305 11:33:21.786"></status>
+</suite>
+<status status="PASS" endtime="20180305 11:33:30.436" starttime="20180305 11:33:21.767"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Project" pass="1">Project</stat>
+<stat fail="0" id="s1-s1" name="testSuites" pass="1">Project.testSuites</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

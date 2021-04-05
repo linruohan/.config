@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% include 'tmp/base/meta.html' %}
+    <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>{% block title %} {{title}} {% endblock %} -- My webApp</title>
+
+    {% block head_styles %}
+    {% endblock %}
+    {% block head_css %}{% endblock %}
+    {% block head_script %}{% endblock %}
+    {% block head %}{% endblock %}
+
+    {% include 'tmp/base/style.html' %}
+    <script type="text/javascript" src="qwebchannel.js"></script>
+    <script type="text/javascript">
+        grouparray=[]
+        window.onload = function () {
+            new QWebChannel(qt.webChannelTransport, function (channel) {
+                // 获取qt中绑定的交互对象
+                window.pyjs = channel.objects.interact_obj
+                // js 绑定qt中的信号
+                pyjs.sig_send_to_js.connect(function (str) {
+                    document.getElementById("output").value = str;
+                });
+
+                // 按钮点击事件
+                document.getElementById("send").onclick = function () {
+                    var text_area = document.getElementById("output");
+                    if (!text_area.value) {
+                        return;
+                    }
+                    // js调用qt中的方法
+                    pyjs.receive_str_from_js(text_area.value)
+                    text_area.value = "";
+                }
+            });
+        }
+    </script>
+    <style>
+        .search-form,
+        .search-form input,
+        .page-header,
+        .navbar-nav > li > a,
+        .navbar-default,
+        .container-fluid,
+        .navbar-default,
+        .navbar-collapse {
+            height: 25px !important;
+        }
+        .fa, .fab, .fal, .far, .fas {
+            line-height: 0.2;
+        }
+        .modal-sm {
+            max-width: 92% !important;
+        }
+        .contact-person .person-body p {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Page Container -->
+<div class="page-container">
+    <!-- Page Sidebar -->
+    {% include 'tmp/base/page_sidebar.html' %}
+    {% include 'tmp/base/settings_sidebar.html' %}
+    <!-- Page Content -->
+    {% block content %}
+    <div class="page-content">
+        {% include 'tmp/base/secondary_sidebar.html' %}
+        <!-- Page Header -->
+        {% include 'tmp/base/page_header.html' %}
+        <!-- Page Inner -->
+        {% block page_inner %}
+        <div class="page-inner no-page-title">
+            <div id="main-wrapper">
+                <div class="content-header">
+                    <h3 class="page-title">{% block page_title %}{{page_title}}{% endblock %}</h3>
+                </div>
+                {% block main_wrapper_rows %}
+                {% endblock %}
+            </div><!-- Main Wrapper -->
+            {% include 'tmp/base/page_footer.html' %}
+
+        </div><!-- /Page Inner -->
+
+        <div class="page-right-sidebar" id="main-right-sidebar">
+            <div class="page-right-sidebar-inner">
+                <div class="right-sidebar-top">
+                    <span class="chat-header">Chat</span>
+                    <a href="javascript:void(0)" class="right-sidebar-toggle right-sidebar-close"
+                       data-sidebar-id="main-right-sidebar"><i class="icon-close"></i></a>
+                </div>
+                <div class="right-sidebar-content">
+                    <!-- Tab panes -->
+                    <div class="chat-list">
+                        <span class="chat-title">最近</span>
+                        {% block recent_chat %}
+                        {% endblock %}
+                    </div>
+                    <div class="chat-list">
+                        <span class="chat-title">几天前</span>
+                        {% block older_chat %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-right-sidebar" id="chat-right-sidebar">
+            <div class="page-right-sidebar-inner">
+                <div class="right-sidebar-top">
+                    <div class="chat-top-info">
+                        {% block chat_top_info %}
+                        <span class="chat-name">Noah</span>
+                        <span class="chat-state">2h ago</span>
+                        {% endblock %}
+                    </div>
+                    <a href="javascript:void(0)" class="right-sidebar-toggle chat-sidebar-close float-right"
+                       data-sidebar-id="chat-right-sidebar"><i class="icon-keyboard_arrow_right"></i></a>
+                </div>
+                <div class="right-sidebar-content">
+                    <div class="right-sidebar-chat slimscroll">
+                        <div class="chat-bubbles">
+                            <!--聊天的详细内容-->
+                            {% block chat_bubbles %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                    <!-- 开始聊天: 我开始输入-->
+                    {% block chat_write %}
+                    {% endblock %}
+
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+
+    </div><!-- /Page Content -->
+    {% endblock %}
+</div><!-- /Page Container -->
+
+    {% include 'tmp/base/javascripts.html' %}
+    {% block inner_scripts %}{% endblock %}
+</body>
+</html>

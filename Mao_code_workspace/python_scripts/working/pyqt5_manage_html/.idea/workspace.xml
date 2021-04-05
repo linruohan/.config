@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae23880b-9461-48e0-9dd0-bf3f65153485" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1i2Rrge7oyEgjC0Evb38tMcqBOJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../python_GUI" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\其他\pyqt5原生管理" />
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\web\templates\admin\tmp\base\froala\wp-content\themes\jupiterx-child\asserts\js" />
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\web\templates\admin\tmp\base\froala\wp-includes\js" />
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\html_tmp\tasks" />
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\web\templates\备份" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\web\templates\备份" />
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\web\templates\admin\tmp\base" />
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\web\templates\admin" />
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\web\templates\admin\tmp" />
+      <recent name="D:\workspace\Python_pro\working\pyqt5_manage_html\web\assets\plugins\froala_editor" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="app-tasks.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/pyqt5_manage_html/web/templates/admin/tmp/app-tasks.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Task_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pyqt5_manage_html" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\workspace\Python_pro\working\pyqt5_manage_html\其他\pyqt5原生管理\Task_manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pyqt5_manage_html" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_web" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pyqt5_manage_html" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:\workspace\Python_pro\working\pyqt5_manage_html\其他\pyqt5原生管理\my_web.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pyqt5_manage_html" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="JavaScript Debug.app-tasks.html" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.my_web" />
+        <item itemvalue="Python.Task_manager" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae23880b-9461-48e0-9dd0-bf3f65153485" name="Default Changelist" comment="" />
+      <created>1601103900863</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601103900863</updated>
+      <workItem from="1601103906349" duration="119000" />
+      <workItem from="1605930507724" duration="377000" />
+      <workItem from="1605931010288" duration="2016000" />
+      <workItem from="1605934503363" duration="6808000" />
+      <workItem from="1605959502847" duration="4332000" />
+      <workItem from="1606531671309" duration="22065000" />
+      <workItem from="1606568145404" duration="9847000" />
+      <workItem from="1606614202612" duration="12455000" />
+      <workItem from="1606654814017" duration="10464000" />
+      <workItem from="1606826482500" duration="13004000" />
+      <workItem from="1607606110422" duration="4149000" />
+      <workItem from="1607610467674" duration="5959000" />
+      <workItem from="1607736277493" duration="15355000" />
+      <workItem from="1607751820140" duration="459000" />
+      <workItem from="1607752314180" duration="4812000" />
+      <workItem from="1607758013907" duration="15806000" />
+      <workItem from="1607824314817" duration="3054000" />
+      <workItem from="1607830819740" duration="6559000" />
+      <workItem from="1607863265919" duration="12473000" />
+      <workItem from="1607952898983" duration="6086000" />
+      <workItem from="1608040382950" duration="8279000" />
+      <workItem from="1608071941199" duration="736000" />
+      <workItem from="1608129233102" duration="5633000" />
+      <workItem from="1608135032237" duration="111000" />
+      <workItem from="1608213228822" duration="8731000" />
+      <workItem from="1608300023821" duration="9577000" />
+      <workItem from="1608349763564" duration="1142000" />
+      <workItem from="1608350937948" duration="13948000" />
+      <workItem from="1608365823717" duration="1072000" />
+      <workItem from="1608367114949" duration="14347000" />
+      <workItem from="1608381986818" duration="306000" />
+      <workItem from="1608434122642" duration="6432000" />
+      <workItem from="1608739208723" duration="1718000" />
+      <workItem from="1610787794522" duration="2713000" />
+      <workItem from="1610792604873" duration="2721000" />
+      <workItem from="1610795846884" duration="20600000" />
+      <workItem from="1610844289345" duration="28120000" />
+      <workItem from="1610886907548" duration="9374000" />
+      <workItem from="1613026425931" duration="496000" />
+      <workItem from="1613028841433" duration="7957000" />
+      <workItem from="1613305325302" duration="546000" />
+      <workItem from="1615689337489" duration="1056000" />
+      <workItem from="1617410488272" duration="43000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="513" y="260" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615689373586">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="513" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.24.1920.1056@0.24.1920.1056" timestamp="1615689373586" />
+    <state x="549" y="107" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1610845343226">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="549" y="107" key="#com.intellij.ide.macro.MacrosDialog/0.24.1920.1056@0.24.1920.1056" timestamp="1610845343226" />
+    <state x="640" y="287" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1613026734348">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="640" y="287" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.24.1920.1056@0.24.1920.1056" timestamp="1613026734348" />
+    <state x="527" y="240" key="#com.intellij.tools.ToolEditorDialog" timestamp="1610845420495">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="527" y="240" key="#com.intellij.tools.ToolEditorDialog/0.24.1920.1056@0.24.1920.1056" timestamp="1610845420495" />
+    <state x="651" y="203" key="FileChooserDialogImpl" timestamp="1617410527802">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="651" y="203" key="FileChooserDialogImpl/0.24.1920.1056@0.24.1920.1056" timestamp="1617410527802" />
+    <state width="1877" height="328" key="GridCell.Tab.0.bottom" timestamp="1613036880060">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.0.bottom/0.24.1920.1056@0.24.1920.1056" timestamp="1613036880060" />
+    <state width="1877" height="328" key="GridCell.Tab.0.center" timestamp="1613036880060">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.0.center/0.24.1920.1056@0.24.1920.1056" timestamp="1613036880060" />
+    <state width="1877" height="328" key="GridCell.Tab.0.left" timestamp="1613036880060">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.0.left/0.24.1920.1056@0.24.1920.1056" timestamp="1613036880060" />
+    <state width="1877" height="328" key="GridCell.Tab.0.right" timestamp="1613036880060">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state width="1877" height="328" key="GridCell.Tab.0.right/0.24.1920.1056@0.24.1920.1056" timestamp="1613036880060" />
+    <state x="301" y="47" key="SettingsEditor" timestamp="1610845423700">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="301" y="47" key="SettingsEditor/0.24.1920.1056@0.24.1920.1056" timestamp="1610845423700" />
+    <state x="681" y="293" width="540" height="540" key="StructurePopup" timestamp="1610796035629">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="681" y="293" width="540" height="540" key="StructurePopup/0.24.1920.1056@0.24.1920.1056" timestamp="1610796035629" />
+    <state x="486" y="-26" width="942" height="225" key="search.everywhere.popup" timestamp="1610793967952">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="486" y="-26" width="942" height="225" key="search.everywhere.popup/0.24.1920.1056@0.24.1920.1056" timestamp="1610793967952" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$common_team_members.coverage" NAME="common_team_members Coverage Results" MODIFIED="1610811552528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$froala_editor1.coverage" NAME="froala_editor1 Coverage Results" MODIFIED="1607613622872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$common_date.coverage" NAME="common_date Coverage Results" MODIFIED="1607835750768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$tree_demo.coverage" NAME="tree_demo Coverage Results" MODIFIED="1605936308954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UI" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$001.coverage" NAME="001 Coverage Results" MODIFIED="1605966604458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jinjia2" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$jinjia2html__1_.coverage" NAME="使用jinjia2模板生成html (1) Coverage Results" MODIFIED="1607741533556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web/templates/admin" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$my_web.coverage" NAME="my_web Coverage Results" MODIFIED="1610888045338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$jinjia2html.coverage" NAME="使用jinjia2模板生成html Coverage Results" MODIFIED="1607959401956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/web/templates/admin" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1608220283129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../个人知识管理平台(eel开发中)" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$Task_manager.coverage" NAME="Task_manager Coverage Results" MODIFIED="1610887975541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$environment.coverage" NAME="environment Coverage Results" MODIFIED="1606546907855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../../../software/python3.7.7/Lib/site-packages/jinja2" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$.coverage" NAME="富文本粘贴 Coverage Results" MODIFIED="1607755195314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$common.coverage" NAME="common Coverage Results" MODIFIED="1606665146603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$UI_base.coverage" NAME="UI_base Coverage Results" MODIFIED="1607749038349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/UI" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$UI_today.coverage" NAME="UI_today Coverage Results" MODIFIED="1610887573888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$test.coverage" NAME="test Coverage Results" MODIFIED="1610888284093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$main.coverage" NAME="main Coverage Results" MODIFIED="1613036792996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$common_html.coverage" NAME="common_html Coverage Results" MODIFIED="1608355862364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$froala_editor__1_.coverage" NAME="froala_editor (1) Coverage Results" MODIFIED="1606531802134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$froala_editor.coverage" NAME="froala_editor Coverage Results" MODIFIED="1607610400210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$common_sqlite.coverage" NAME="common_sqlite Coverage Results" MODIFIED="1607755160224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pyqt5_manage_html$common_tasks.coverage" NAME="common_tasks Coverage Results" MODIFIED="1607770673882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="com.zxy.ijplugin.zApiForSpring.settings.module.ProjectSettings">
+    <option name="miniprogramType" value="QQ" />
+  </component>
+</project>

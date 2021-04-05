@@ -1,0 +1,11 @@
+D:\workspace\vscode_space\c#_pro\obj\Debug\netcoreapp2.1\c#_pro.csprojAssemblyReference.cache
+D:\workspace\vscode_space\c#_pro\obj\Debug\netcoreapp2.1\c#_pro.csproj.CoreCompileInputs.cache
+D:\workspace\vscode_space\c#_pro\obj\Debug\netcoreapp2.1\c#_pro.AssemblyInfoInputs.cache
+D:\workspace\vscode_space\c#_pro\obj\Debug\netcoreapp2.1\c#_pro.AssemblyInfo.cs
+D:\workspace\vscode_space\c#_pro\bin\Debug\netcoreapp2.1\c#_pro.deps.json
+D:\workspace\vscode_space\c#_pro\bin\Debug\netcoreapp2.1\c#_pro.runtimeconfig.json
+D:\workspace\vscode_space\c#_pro\bin\Debug\netcoreapp2.1\c#_pro.runtimeconfig.dev.json
+D:\workspace\vscode_space\c#_pro\bin\Debug\netcoreapp2.1\c#_pro.dll
+D:\workspace\vscode_space\c#_pro\bin\Debug\netcoreapp2.1\c#_pro.pdb
+D:\workspace\vscode_space\c#_pro\obj\Debug\netcoreapp2.1\c#_pro.dll
+D:\workspace\vscode_space\c#_pro\obj\Debug\netcoreapp2.1\c#_pro.pdb

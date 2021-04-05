@@ -1,0 +1,8 @@
+D:\workspace\vs2019_space\XFVoic_CSharp_Demo\XFVoice\bin\x86\Debug\msc.dll
+D:\workspace\vs2019_space\XFVoic_CSharp_Demo\XFVoice\bin\x86\Debug\speex.dll
+D:\workspace\vs2019_space\XFVoic_CSharp_Demo\XFVoice\bin\x86\Debug\msc.cfg
+D:\workspace\vs2019_space\XFVoic_CSharp_Demo\XFVoice\bin\x86\Debug\XFVoice.dll
+D:\workspace\vs2019_space\XFVoic_CSharp_Demo\XFVoice\bin\x86\Debug\XFVoice.pdb
+D:\workspace\vs2019_space\XFVoic_CSharp_Demo\XFVoice\obj\x86\Debug\XFVoice.csproj.CoreCompileInputs.cache
+D:\workspace\vs2019_space\XFVoic_CSharp_Demo\XFVoice\obj\x86\Debug\XFVoice.dll
+D:\workspace\vs2019_space\XFVoic_CSharp_Demo\XFVoice\obj\x86\Debug\XFVoice.pdb

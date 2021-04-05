@@ -1,0 +1,555 @@
+{% extends "base.html" %}      <!-- # 继承base.html文件-->
+
+{% block title %} tasks {% endblock %}<!-- 定制title部分的内容-->
+
+
+<!--# styles && css && scripts-->
+{% block head_styles %}
+{% include 'base/css_task_froala_editor.html' %}
+{% endblock %}
+{% block head_css %}
+<style xmlns="http://www.w3.org/1999/html">
+    .modal-sm {
+        max-width: 90% !important;
+    }
+
+    .modal-body {
+        padding: 16px 25px;
+        text-align: left;
+    }
+
+    .modal-header {
+        color: red;
+        font-family: Consolas, serif;
+        float: left;
+        font-size: 18px
+        /*text-align: center;*/
+    }
+</style>
+{% endblock %}
+{% block head_scripts %}{{  super()  }}{% endblock %}
+
+
+<!-- Page Inner -->
+# 页面内容 :标题和行内容
+{% block page_pa_title %}{% endblock %}
+{% block page_title %}Tasks{% endblock %}
+<!-- Page title -->
+{% block main_wrapper_rows %}
+<li class="divider"></li>
+<div class="row">
+    <div class="col-lg">
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#javascript:void(0);" id="tasks_today">今日任务<i
+                                class="fas fa-paint-brush"></i></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#javascript:void(0);" id="tasks_history">历史任务
+                            <i class="fas fa-bell-slash"></i></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#javascript:void(0);" id="tasks_all">所有任务 <i
+                                class="fas fa-tags"></i></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#javascript:void(0);" id="tasks_mine">我的 <i
+                                class="fas fa-user"></i></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#javascript:void(0);" id="tasks_trash">Trash<i
+                                class="fas fa-trash-alt"></i></a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="task-list contact-list">
+                    <div class="task-list-header contact-list-header">
+                        <a href="task_create.html">
+                            <button class="btn btn-primary float-left m-r-xxs">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </a>
+                        <a href="002.html">
+                            <button class="btn btn-secondary float-right m-r-xxs" onclick="task_refresh()">
+                                <i class="fas fa-leaf"></i> 刷新
+                            </button>
+                        </a>
+                        <button class="btn btn-secondary float-right m-r-xxs">&gt;</button>
+                        <button class="btn btn-secondary float-right m-r-xxs">&lt;</button>
+                    </div>
+                    <div class="table-responsive" id="tasks-table">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" name="task-check" type="checkbox" value=""
+                                               id="check-all-tasks">
+                                        <label class="custom-control-label" for="check-all-tasks">
+                                        </label>
+                                    </div>
+                                </th>
+                                {% for head in task_info_headers %}
+                                <th scope="col">{{head}}</th>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for task in tasks %}
+                            <!--                            <script type="text/javascript">-->
+                            <!--                                grouparray.push('{{task}}');-->
+                            <!--                            </script>-->
+                            <tr>
+                                <th>
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" name="task-check" type="checkbox" value=""
+                                               id="check-c-{{tasks.index(task)}}">
+                                        <label class="custom-control-label" for="check-c-{{tasks.index(task)}}">
+                                        </label>
+                                    </div>
+                                </th>
+                                <th scope="row">{{task.id}}</th>
+                                <td style="width:20px;overflow:hidden; white-space:nowrap; text-overflow:ellipsis"
+                                    data-toggle="tooltip" data-placement="top" title="{{task.name}}">
+                                    {{'%.10s' | format(task.name)}}
+                                </td>
+                                <td>{{task.left_time }}</td>
+                                <td>{{task.percent}}</td>
+                                <!--                        <td>{{'%.10s' | format(task.progress_detail)}}</td>-->
+                                <td class="task-progress">
+                                    <button class="btn btn-success float-xl-right m-r-xxs">
+                                        <i class="fas fa-eye "></i>进展
+                                    </button>
+                                </td>
+                                <td>{{task.state}}</td>
+                                <td class="task-content">
+                                    <button class="btn btn-info float-xl-right m-r-xxs">
+                                        <i class="fas fa-eye"></i>详情
+                                    </button>
+                                </td>
+                                <td>{{task.start_date}}</td>
+                                <td>{{task.end_date}}</td>
+                                <td style="background-color: indianred;color:white;font-weight: bold">{{task.killers}}
+                                </td>
+                                <td>{{task.creator}}</td>
+                                <td>{{task.team}}</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a href="task_modify.html">
+                                            <button class="btn btn-info float-left m-r-xxs task-modify-show"
+                                                    style="background-color: blueviolet">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </a>
+                                        <a href="app-tasks.html">
+                                            <button class="btn btn-danger float-left m-r-xxs"
+                                                    style="background-color: red" data-toggle="modal"
+                                                    data-target="#task-delete-{{task.id}}">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <div class="modal fade" id="task-delete-{{task.id}}" tabindex="-1"
+                                                 role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="mySmallModalLabel">确认删除</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            请确认, 是否要删除 "{{task.name}}" ?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">取消
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary task-delete">
+                                                                确认
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal fade" id="task-info" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header"></div>
+                            <div class="modal-body">
+                                <div class="contact-person">
+                                    <div class="person-header">
+                                    </div>
+                                    <div class="person-body">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="task-progress" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="col-lg-12 mx-auto">
+                                    <div class="card-body">
+                                        <div class="card-title text-uppercase text-black-50"><i
+                                                class="fa fa-bible fa-book-open"></i>添加工作进展
+                                        </div>
+                                        <hr>
+
+                                        <div class="form-row">
+                                            <div class="form-group  col-md-1">
+                                                <label for="task-progress-id">Progress ID:</label>
+                                                <input type="text" readonly class="form-control"
+                                                       id="task-progress-id">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="task-process-killers">选择执行Owner</label>
+                                                <select id="task-process-killers"
+                                                        class="select_killer js-states form-control" tabindex="-1"
+                                                        style="display: none;width: 100%"
+                                                        multiple="multiple">
+                                                    <optgroup label="Team Members">
+                                                        {% for id,value in team_member.items() %}
+                                                        <option value="{{id}}">{{value}}</option>
+                                                        {% endfor %}
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                            <div class="form-group  col-md-3">
+                                                <label for="task-progress-date">WriteTime:</label>
+                                                <input type="text" readonly class="form-control"
+                                                       id="task-progress-date">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="task-progress-text">任务进展详情:</label>
+                                                <textarea class="form-control" minlength="500" id="task-progress-text"
+                                                          placeholder="请输入具体进展内容"
+                                                          rows="3"></textarea>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                                <button class="btn btn-primary float-left m-r-xxs"
+                                                        onclick="add_task_progress()"><i class="fas fa-plus"></i>添加
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="contact-person">
+                                    <div class="person-header">
+                                    </div>
+                                    <div class="person-body">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+# =========================== JavaScript ======================
+{% block inner_scripts %}
+{% include 'base/js_datetimepicker.html' %}
+<script>
+    task_id = 0;
+    cur_task_tab = "today";
+
+    $(document).ready(function () {
+        "use strict";
+        // let json_str= eval('(' + str + ')');
+        // alert(typeof(json_str));
+        // checkbox_selected_setting($('#check-all-tasks'), document.getElementsByName('task-check'))
+        $('select').select2({
+            language: "zh-CN",
+            placeholder: "请选择",
+            allowClear: true,
+        });
+        $('#task-progress-date').datetimepicker({
+            pickerPosition: 'bottom-left',
+            format: "yyyy-mm-dd hh:ii",
+            locale: moment.locale('zh-cn'),
+            forceParse: 0,//设置为0，时间不会跳转1899，会显示当前时间。
+            language: 'zh-CN',//显示中文
+            startView: 2,
+            maxView: 4,
+            weekStart: 1,
+            viewSelect: 'hour',
+            showMeridian: 1,
+            initialDate: new Date(),//初始化当前日期
+            autoclose: 1,//选中自动关闭
+            todayBtn: 1,//显示今日按钮
+            todayHighlight: 1,
+            minuteStep: 10,//分钟jian'ge
+        }).on('changeDate', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        });
+        $("#task-progress-date").datetimepicker("setDate", new Date());
+
+        $(document).on('click', '.task-list .table tbody th', function (e) {
+            if (e.target === this) {
+                $(this).find('input').click();
+            }
+        });
+
+        $(document).on('change', '.task-list .table thead th input', evt => {
+            if ($(evt.target).is(':checked')) {
+                $('.task-list table tbody th input:not(:checked)').click();
+            } else {
+                $('.task-list table tbody th input:checked').click();
+            }
+        });
+        //=======================  查看任务内容和进展  ==================================
+        // 获取单条任务的html内容
+        $(document).on('click', '.task-content', function (e) {
+            task_id = $(this).parents("tr").children()[1].innerHTML;
+            // alert(task_id);
+            pyjs.get_task_html_data_with_id(task_id, function (res) {
+                $('#task-info .modal-body').html(res);
+                $('#task-info .modal-header').html("<span style=''>" + task_id + ".html</span>")
+                $('#task-info').modal('show');
+            })
+        })
+        // 获取单条任务的progress内容
+        $(document).on('click', '.task-progress', function (e) {
+            task_id = $(this).parents("tr").children()[1].innerHTML;
+            // alert(task_id);
+            pyjs.get_task_progress_data_with_id(task_id, function (res) {
+                $('#task-progress .modal-body').html(res);
+                $('#task-progress').modal('show');
+            })
+        })
+
+        // ======================== 切换不同的任务 =======================================
+        // let nav_link_items = $('.nav-link')
+        $('#tasks_today').on('click', function (e) {
+            pyjs.get_tasks_by_type('today', function (res) {
+                let nav_link_items = $('.nav-link');
+                remove_active_attr(nav_link_items);
+                $('#tasks-table').html(res);
+                add_active_attr(e.target)
+            })
+        })
+
+        $('#tasks_history').on('click', function (e) {
+            pyjs.get_tasks_by_type('history', function (res) {
+                let nav_link_items = $('.nav-link');
+                remove_active_attr(nav_link_items);
+                $('#tasks-table').html(res);
+                add_active_attr(e.target)
+            })
+        })
+
+        $('#tasks_all').on('click', function (e) {
+            pyjs.get_tasks_by_type('all', function (res) {
+                let nav_link_items = $('.nav-link');
+                remove_active_attr(nav_link_items);
+                $('#tasks-table').html(res);
+                add_active_attr(e.target)
+            })
+        })
+
+        $('#tasks_mine').on('click', function (e) {
+            pyjs.get_tasks_by_type('mine', function (res) {
+                let nav_link_items = $('.nav-link');
+                remove_active_attr(nav_link_items);
+                $('#tasks-table').html(res);
+                add_active_attr(e.target)
+            })
+        })
+
+        $('#tasks_trash').on('click', function (e) {
+            pyjs.get_tasks_by_type('trash', function (res) {
+                let nav_link_items = $('.nav-link');
+                remove_active_attr(nav_link_items);
+                $('#tasks-table').html(res);
+                add_active_attr(e.target);
+            })
+        })
+
+
+        // ======================== 任务修改和删除 =======================================
+        $(document).on('click', '.task-modify-show', function (e) {
+            task_id = $(this).parents("tr").children()[1].innerHTML;
+            // alert("task-modify-show:" + task_id)
+            pyjs.get_task_data_with_id(task_id, function (res) {
+                // alert("tasks_info:" + res);
+            })
+
+        })
+        $(document).on('click', '.task-modify', function (e) {
+            task_id = $(this).parents("tr").children()[1].innerHTML;
+            alert(task_id);
+            let task_name = $('#task_name').val();
+            // alert($('#task_name').text());
+            let task_start_date = $('#task_start_date').val();
+            let task_end_date = $('#task_end_date').val();
+            let task_state = $('#task_state').find("option:selected").text();
+            let task_type = $('#task_type').find("option:selected").text();
+            let task_killers = getMultiSelectVal("task_killers");
+            let send_info = {
+                "type": "mod",
+                "task_info":
+                    {
+                        "id": 1,
+                        "name": task_name,
+                        "start_time": task_start_date,
+                        "end_time": task_end_date,
+                        "left_time": "",
+                        "content": "1.html",
+                        "state": task_state,
+                        "percent": "0%",
+                        "progress_detail": [],
+                        "creator": "",
+                        "killers": task_killers,
+                        "team": task_type,
+                    }
+            };
+
+            // alert(send_info);
+            pyjs.add_mod_del_task(JSON.stringify(send_info), function (res) {
+                pyjs.receive_str_from_js(window.editor.html.get())
+                // alert('保存html成功')
+                alert(res);
+
+            })
+        })
+        $(document).on('click', '.task-delete', function (e) {
+            task_id = $(this).parents("tr").children()[1].innerHTML;
+            // alert(task_id);
+            let send_info = {
+                "type": "del",
+                "task_info":
+                    {
+                        "id": task_id,
+                    }
+            };
+            pyjs.add_mod_del_task(JSON.stringify(send_info), function (res) {
+                alert(res);
+                $('#tasks_today').classList.add("active");
+            })
+        })
+    });
+
+    function task_refresh() {
+        alert(task_id);
+
+
+    }
+
+    // ================== task_progress =================
+    function add_task_progress() {
+        // alert("in add:", task_id);
+        let task_process_killers = getMultiSelectVal("task-process-killers");
+        let send_info = {
+            "type": "add",
+            "id": task_id,
+            "task_progress":
+                {
+                    "id": $('#task-progress-id').val(),
+                    "who": task_process_killers,
+                    "time": $('#task-progress-date').val(),
+                    "text": $('#task-progress-text').val(),
+                }
+        };
+        pyjs.add_mod_del_task_progress(JSON.stringify(send_info), function (res) {
+            alert(res);
+        })
+        refresh_task_progress();
+        $("#task-process-killers").select2("val", "");
+        $("#task-process-killers").val("");
+    }
+
+    $(document).on('click', '.mod-task-progress', function (e) {
+        // alert(task_id);
+        let task_progress_id = $(this).parents("tr").children()[1].innerHTML;
+        let task_progress_killers = $(this).parents("tr").children()[2].innerHTML;
+        let task_progress_date = $(this).parents("tr").children()[3].innerHTML;
+        let task_progress_text = $(this).parents("tr").children()[4].innerHTML;
+        $('#task-progress-id').val(task_progress_id);
+        $("#task-process-killers").val(task_progress_killers.split(",<br>")).trigger("change");
+        // $("#task-process-killers").select2("val", task_progress_killers.split(",<br>"));
+        // $("#task-process-killers").val(task_progress_killers);
+        $('#task-progress-date').val(task_progress_date);
+        $('#task-progress-text').val(task_progress_text);
+    })
+
+    $(document).on('click', '.del-task-progress', function (e) {
+        let task_progress_id = $(this).parents("tr").children()[1].innerHTML;
+        // alert(task_id);
+        alert("in del:", task_progress_id);
+        let send_info = {
+            "type": "del",
+            "id": task_id,
+            "task_progress":
+                {
+                    "id": task_progress_id
+                }
+        };
+        pyjs.add_mod_del_task_progress(JSON.stringify(send_info), function (res) {
+            alert(res);
+        })
+        refresh_task_progress();
+    })
+
+    function refresh_task_progress() {
+        $('#task-progress-id').val('');
+        $('#task-process-killers').val(null).trigger("change");
+        // $("#task-process-killers").select2('val', 'all');
+        $('#task-progress-date').val("")
+        $('#task-progress-text').val("");
+        pyjs.get_task_progress_data_with_id(task_id, function (res) {
+            $('#task-progress .modal-body').html(res);
+            $('#task-progress').modal('show');
+        })
+
+    }
+
+    // 动态添加的元素 生效
+    // $('body').tooltip({
+    //     selector: '[data-toggle="tooltip"]'
+    // });
+    // $('body').modal({
+    //     selector: '.task-delete[data-toggle="modal"]'
+    // });
+</script>
+{% endblock %}

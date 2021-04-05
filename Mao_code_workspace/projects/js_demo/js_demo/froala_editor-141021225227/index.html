@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link href="css/froala_editor.min.css" rel="stylesheet" type="text/css">
+    <!-- 主题 ===================================-->
+    <link href="css/themes/dark.css">
+    <link href="css/themes/dark.min.css">
+    <link href="css/themes/gray.css">
+    <link href="css/themes/gray.min.css">
+    <link href="css/themes/red.css">
+    <link href="css/themes/red.min.css">
+    <link href="css/themes/royal.css">
+    <link href="css/themes/royal.min.css">
+    <!-- Code Mirror CSS file. -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css"> -->
+    <link rel="stylesheet" href="css/codemirror.min.css">
+    <!-- 主题  end -->
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        section {
+            width: 80%;
+            margin: auto;
+            text-align: left;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <section id="editor">
+        <div id='edit' style="margin-top: 30px;">
+
+        </div>
+    </section>
+
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="js/froala_editor.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="../js/froala_editor_ie8.min.js"></script>
+  <![endif]-->
+    <!-- Include the plugin JS file. -->
+    <script src="js/plugins/tables.min.js"></script>
+    <script src="js/plugins/lists.min.js"></script>
+    <script src="js/plugins/colors.min.js"></script>
+    <script src="js/plugins/media_manager.min.js"></script>
+    <script src="js/plugins/font_family.min.js"></script>
+    <script src="js/plugins/font_size.min.js"></script>
+    <script src="js/plugins/block_styles.min.js"></script>
+    <script src="js/plugins/video.min.js"></script>
+    <script src="js/plugins/code_view.js"></script>
+    <script src="js/plugins/codemirror.min.js"></script>
+    <!-- Code Mirror JS files. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js">
+    </script>
+
+    <script>
+        $(function() {
+            $('#edit').editable({
+                inlineMode: false, //显示头部工具条
+                // toolbarInline: true, //行内工具条,和inlineMode只能二选一
+                theme: 'gray', //主题
+                //模版
+                height: '800px', //高度
+                alwaysBlank: true, //无法编辑
+                charCounterCount: false, //设置最大输入字数
+                codeMirror: true, //html代码查看器
+                codeMirrorOptions: {
+                    indentWithTabs: true,
+                    lineNumbers: true,
+                    lineWrapping: true,
+                    mode: 'text/html',
+                    tabMode: 'indent',
+                    tabSize: 4
+                },
+                direction: "ltr",
+                allowedImageTypes: ["jpeg", "jpg", "png", "gif"],
+                autosave: true,
+                autosaveInterval: 2500,
+                saveURL: 'hander/FroalaHandler.ashx',
+                saveParams: {
+                    postId: "123"
+                },
+                spellcheck: true,
+                plainPaste: true,
+                imageButtons: ["floatImageLeft", "floatImageNone", "floatImageRight", "linkImage", "replaceImage",
+                    "removeImage"
+                ],
+                imageUploadURL: 'hander/FroalaHandler.ashx',
+                imageParams: {
+                    postId: "123"
+                },
+                enableScript: false,
+                language: "zh_CN",
+                imageUploadURL: 'lib/imgupload.php', //上传到本地服务器
+                imageUploadParams: {
+                    id: "edit"
+                },
+                imageDeleteURL: 'lib/delete_image.php', //删除图片
+                imagesLoadURL: 'lib/load_images.php' //管理图片
+            }).on('editable.afterRemoveImage', function(e, editor, $img) {
+                // Set the image source to the image delete params.
+                editor.options.imageDeleteParams = {
+                    src: $img.attr('src')
+                };
+                // Make the delete request
+                editor.deleteImage($img);
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+QTabWidget {
+    background-color: transparent;
+
+
+}
+
+QTabWidget::pane {
+    border: 2px;
+    border-radius:255px;
+}
+
+QTabWidget::tab-bar {
+    alignment: left;
+
+}
+
+QTabBar::tab {
+    background: rgb(14, 106, 175);
+    color: white;
+    min-width: 35ex;
+    min-height: 10ex;
+    border: 20px;
+    border-radius:25px;
+}
+
+QTabBar::tab:hover {
+    background: rgb(34, 193, 221);
+    color: black;
+}
+
+QTabBar::tab:selected {
+    border-color: black;
+    background: #19920a;
+    color: white;
+}

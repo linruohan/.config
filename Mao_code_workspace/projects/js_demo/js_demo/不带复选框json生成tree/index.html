@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>tree</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="css/tree.css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="http://www.jq22.com/jquery/jquery-ui-1.11.0.js"></script>
+    <script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+</head>
+
+<body>
+    <div class="row">
+
+        <div id="default_tree" class="col-sm-4">
+            <h3>原始树结构</h3>
+        </div>
+
+        <div id="tree_data" class="col-sm-4">
+            <h3>选中的数据</h3>
+            <div></div>
+        </div>
+        <div id="select_tree" class="col-sm-4">
+            <h3>选中的树结构</h3>
+            <div></div>
+        </div>
+    </div>
+    <button id="setBtn" class="btn btn-primary">设置</button>
+    <div class="modal toggle" id="myModal" data-backdrop="static">
+        <div id="modalDialog" class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="btn btn-default modal-btn" id="closeBtn" aria-hidden="true" title="关闭"><i class="fa fa-close"></i></button>
+                    <button class="btn btn-default modal-btn" id="saveBtn" title="保存"><i class="fa fa-save"></i></button>
+                    <div class="modal-title">表格-列选择</div>
+                </div>
+                <div class="modal-body">
+
+                    <div id="tree_table"></div>
+                </div>
+                <div class="modal-footer">
+
+                    <h2 align="left">预览</h2>
+                    <div id="select_tree_table"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tree.js"></script>
+    <script>
+        $(document).ready(function() {
+            var data2 = [{
+                title: "编码",
+                field: "code",
+                candidate: false
+            }, {
+                title: "基本信息",
+                open: true,
+                children: [{
+                    title: "名称",
+                    field: "name",
+                    candidate: true
+                }, {
+                    title: "年龄",
+                    field: "age",
+                    candidate: true
+                }, {
+                    title: "性别",
+                    field: "sex",
+                    candidate: true
+                }]
+            }];
+
+            var data = [{
+                title: "编码",
+                field: "code",
+                candidate: false
+            }, {
+                title: "基本信息",
+                open: false,
+                children: [{
+                    title: "名称",
+                    field: "name",
+                    candidate: true
+                }, {
+                    title: "年龄",
+                    field: "age",
+                    candidate: true
+                }, {
+                    title: "性别",
+                    field: "sex",
+                    candidate: true
+                }, {
+                    title: '教育相关1',
+                    open: true,
+                    children: [{
+                        title: "最高学历1",
+                        field: "education",
+                        candidate: true
+                    }, {
+                        title: "毕业学校1",
+                        field: "college",
+                        candidate: true
+                    }, {
+                        title: "所学技术1",
+                        open: true,
+                        children: [{
+                            title: "Java编程1",
+                            field: 'java',
+                            candidate: true
+                        }, {
+                            title: "Oracle数据操作1",
+                            field: 'oracle',
+                            candidate: true
+                        }, {
+                            title: "网页设计1",
+                            field: 'html',
+                            candidate: true
+                        }]
+                    }]
+                }, {
+                    title: '教育相关2',
+                    open: true,
+                    children: [{
+                        title: "最高学历2",
+                        field: "education",
+                        candidate: true
+                    }, {
+                        title: "毕业学校2",
+                        field: "college",
+                        candidate: true
+                    }, {
+                        title: "所学技术2",
+                        open: true,
+                        children: [{
+                            title: "Java编程2",
+                            field: 'java',
+                            candidate: true
+                        }, {
+                            title: "Oracle数据操作2",
+                            field: 'oracle',
+                            candidate: true
+                        }, {
+                            title: "网页设计2",
+                            field: 'html',
+                            candidate: true
+                        }]
+                    }]
+                }]
+            }, {
+                title: '工作信息',
+                open: true,
+                children: [{
+                    title: "职位",
+                    field: "office",
+                    candidate: true
+                }, {
+                    title: "职称",
+                    field: "call",
+                    candidate: true
+                }, {
+                    title: "所在楼层",
+                    field: "place",
+                    candidate: true
+                }]
+            }];
+
+            $('#default_tree').append(loadTree(data));
+            nodeClick($('#default_tree'));
+
+            // 是否已保存数据
+            var isSave = false;
+            $('#setBtn').click(function() {
+                $('#tree_table').empty();
+                $('#tree_table').append(loadTreeTable(data));
+                tableClick();
+
+                $('#select_tree_table').empty();
+                // 加载已选中的数据
+                if (selectData != undefined && selectData.length > 0 && isSave) {
+                    $('#select_tree_table').append(loadTreeTable(selectData));
+                } else {
+                    $('#select_tree_table').append(loadTreeTable([{
+                        title: '编码',
+                        field: 'code',
+                        candidate: false
+                    }]));
+                }
+                $('#myModal').modal('show');
+            })
+
+            // 保存数据
+            $('#saveBtn').click(function() {
+                $('#select_tree>div').empty();
+
+                // 获取选中的叶子 field
+                $('#tree_data>div').empty();
+                if (selectData != undefined && selectData.length > 1) {
+                    $('#select_tree>div').append(loadTree(selectData));
+                    $('#tree_data>div').append("[" + result(selectData) + "]");
+                    nodeClick($('#select_tree>div'));
+                }
+
+                isSave = true;
+
+                $('#myModal').modal('hide');
+            })
+
+            $('#closeBtn').click(function() {
+                $('#myModal').modal('hide');
+            })
+        })
+    </script>
+</body>
+
+</html>

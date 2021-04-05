@@ -1,0 +1,6 @@
+﻿  找不到 D:\workspace\vs2019_space\windows_1.048_52cd06e0\bin\iatdemo_with_multi-result.exe
+  cl: 命令行 warning D9035 :“Gm”选项已否决，并将在将来的版本中移除
+  iatdemo_with_multi-result.cpp
+iatdemo_with_multi-result.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+  iatdemo_with_multi-result.vcxproj -> D:\workspace\vs2019_space\windows_1.048_52cd06e0\Examples\iatdemo_with_multi-result\temp\output\Win32\Debug\iatdemo_with_multi-result.exe
+  已复制         1 个文件。

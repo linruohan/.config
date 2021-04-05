@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的froala Editor</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/froala_editor.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/froala_style.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/code_view.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/draggable.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/colors.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/emoticons.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/image_manager.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/image.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/line_breaker.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/table.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/char_counter.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/video.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/fullscreen.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/file.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/quick_insert.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/help.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/third_party/spell_checker.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/plugins/special_characters.css">
+    <link rel="stylesheet" href="../assets/plugins/froala_editor/css/codemirror/codemirror.min.css">
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="qwebchannel.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div#editor {
+            width: 100%;
+            margin: auto;
+            text-align: left;
+        }
+
+        .ss {
+            background-color: red;
+        }
+
+        .editor-wrap > div {
+            width: 100%;
+        }
+
+        .fr-wrapper > div[style*="z-index:9999;"],
+        .fr-wrapper > div[style*="z-index: 9999;"] {
+            overflow: hidden;
+            position: absolute;
+            top: -1000000px;
+            opacity: 0;
+
+        }
+
+        .fr-toolbar .fr-newline {
+            display: none;
+        }
+
+        .fr-wrapper {
+            height: 430px !important;
+            padding: 0 !important;
+        }
+
+        .fr-view {
+            padding: 0 0 0 10px;
+            position: absolute;
+            top: 0;
+        }
+
+        .fr-box .fr-toolbar {
+            border-radius: 4px 4px 0px 0px !important;
+            border-color: #3254a3;
+            background-color: #e5d2c5;
+        }
+
+        .fr-toolbar .fr-command.fr-btn, .fr-popup .fr-command.fr-btn, .fr-modal .fr-command.fr-btn {
+            height: 20px !important;
+        }
+
+        .fr-toolbar .fr-command.fr-btn i, .fr-toolbar .fr-command.fr-btn svg, .fr-popup .fr-command.fr-btn i, .fr-popup .fr-command.fr-btn svg, .fr-modal .fr-command.fr-btn i, .fr-modal .fr-command.fr-btn svg {
+            margin: 1px 2px;
+        }
+
+        .fr-toolbar .fr-command.fr-btn svg.fr-svg, .fr-popup .fr-command.fr-btn svg.fr-svg, .fr-modal .fr-command.fr-btn svg.fr-svg {
+            height: 20px !important;
+        }
+
+        .fr-sticky-dummy {
+            height: 0px !important;
+        }
+
+        .fr-second-toolbar {
+            display: none;
+        }
+
+        .fr-placeholder {
+            margin-top: 0;
+        }
+
+        .fr-box .second-toolbar {
+            display: none;
+        }
+
+        .fr-box .second-toolbar #logo {
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden;
+        }
+
+        .fr-box .fr-toolbar {
+            border-radius: 4px 4px 0 0;
+            border-color: #dcdfe6;
+        }
+
+        .fr-box .second-toolbar {
+            border-radius: 0 0 4px 4px;
+            border-color: #dcdfe6;
+        }
+
+        .fr-box .fr-wrapper {
+            border-color: #dcdfe6 !important;
+        }
+    </style>
+    <!--业务js-->
+    <script type="text/javascript">
+        window.onload = function () {
+            new QWebChannel(qt.webChannelTransport, function (channel) {
+                // 获取qt中绑定的交互对象
+                window.pyjs = channel.objects.interact_obj;
+                // js 绑定qt中的信号
+                pyjs.sig_send_to_js.connect(function (list) {
+                    let data=JSON.parse(list)
+                    window.editor.html.set(data['content']);
+                    alert("打开文件: ["+data['name']+"] success !")
+                });
+            });
+        }
+    </script>
+</head>
+
+<body>
+<div id="editor">
+    <button id="save">保存</button>
+    <div id='edit' style="margin-top: 0px;">
+
+        <!--<h1>Full Featured</h1>-->
+
+        <!--<p>This is the full featured Froala WYSIWYG HTML editor.</p>-->
+    </div>
+
+</div>
+    <!-- Include Code Mirror JS. -->
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/codemirror/codemirror.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/codemirror/xml.min.js"></script>
+
+    <!--
+    froala_editor.min.js为必须引用的，
+    align.min.js为控制文本方向的插件，
+    colors.min.js为颜色选择器插件，
+    font_size.min.js为设置字体大小插件，
+    char_counter.min.js为统计字数插件，
+    zh_cn.min.js为汉化插件。-->
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/froala_editor.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/align.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/char_counter.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/code_beautifier.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/code_view.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/colors.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/draggable.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/emoticons.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/entities.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/file.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/font_size.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/font_family.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/fullscreen.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/image.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/image_manager.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/line_breaker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/inline_style.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/link.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/lists.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/paragraph_format.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/paragraph_style.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/quick_insert.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/quote.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/table.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/save.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/url.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/video.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/help.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/print.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/third_party/spell_checker.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/special_characters.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/plugins/word_paste.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/froala_editor/js/languages/zh_cn.js"></script>
+
+    <script>
+
+        (function () {
+            window.editor = new FroalaEditor('div#edit', {
+                fullPage: true,//Using the fullPage option allows the usage of HTML, HEAD, BODY tags and DOCTYPE declaration.
+                //By enabling the document mode, the Froala WYSIWYG HTML Editor sets by default the best options for creating online documents. After editing the content, the print and export as PDF buttons are perfect so you to take the content and use it further just as you'd do with any Word processor such as Microsoft Word or Google Docs.
+                documentReady: true,
+                autofocus: true,
+                language: 'zh_cn',
+                // ================color===================================
+                colorsHEXInput: false,
+                colorsBackground: ['#2E2E2E', '#767676', '#DF281B', '#F4821C', '#46AC43', '#2E5BF7', '#A249B3', 'REMOVE'],
+                colorsText: ['#2E2E2E', '#767676', '#DF281B', '#F4821C', '#46AC43', '#2E5BF7', '#A249B3', 'REMOVE'],
+                //Using the iframe the editor's content will be placed in an iframe and isolated from the rest of the page.
+                //iframe: true, //使用iframe替换编辑器内容
+                initOnClick: false,//点击时初始化编辑器
+                toolbarInline: false,//选择显示行内工具条
+                charCounterCount: false, //字符统计器
+                toolbarVisibleWithoutSelection: false,//始终显示工具条
+                // ==================选择工具按钮,true显示,false不显示=================================
+//                toolbarButtons: ['fontFamily', '|', 'fontSize', '|', 'paragraphFormat', '|', 'bold', 'italic', 'underline', 'undo', 'redo', 'codeView'],
+                //toolbarButtons: [['undo', 'redo'], ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript'], ['fontFamily', 'fontSize', 'textColor', 'backgroundColor'], ['inlineClass', 'inlineStyle', 'clearFormatting']],
+                /* 选择不同的按钮大小
+               toolbarButtons for large devices (≥ 1200px)
+               toolbarButtonsMD for medium devices (≥ 992px)
+               toolbarButtonsSM for small devices (≥ 768px)
+               toolbarButtonsXS for extra small devices (< 768px)
+                */
+                toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic', 'underline', '|', 'fontFamily', 'fontSize', 'align', 'color', 'textColor', 'backgroundColor', '|', 'inlineClass', 'clearFormatting', 'fullscreen'],
+                /*
+                               toolbarButtonsXS: {
+                                   'moreText': {
+                                       'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
+                                   },
+                                   'moreParagraph': {
+                                       'buttons': ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote']
+                                   },
+                                   'moreRich': {
+                                       'buttons': ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR']
+                                   },
+                                   'moreMisc': {
+                                       'buttons': ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help']
+                                   }
+                               },
+
+                           toolbarButtonsMD: [['undo', 'redo'], ['bold', 'italic', 'underline']],
+                           // Set custom buttons.
+                           toolbarButtonsSM: {
+                               // Key represents the more button from the toolbar.
+                               moreText: {
+                                   // List of buttons used in the  group.
+                                   buttons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting'],
+
+                                   // Alignment of the group in the toolbar.
+                                   align: 'left',
+
+                                   // By default, 3 buttons are shown in the main toolbar. The rest of them are available when using the more button.
+                                   buttonsVisible: 3
+                               },
+
+
+                               moreParagraph: {
+                                   buttons: ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote'],
+                                   align: 'left',
+                                   buttonsVisible: 3
+                               },
+
+                               moreRich: {
+                                   buttons: ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR'],
+                                   align: 'left',
+                                   buttonsVisible: 3
+                               },
+
+                               moreMisc: {
+                                   buttons: ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
+                                   align: 'right',
+                                   buttonsVisible: 2
+                               }
+                           },
+                           */
+
+
+
+                // ================font===================================
+                fontSize: ['14', '16', '18', '20', '24', '28', '30'],
+                htmlAllowComments: false,
+                pasteAllowedStyleProps: ['font-size', 'color'],
+                placeholderText: '请输入内容',
+                //charCounterMax: 500,
+                fontSizeDefaultSelection: '16',
+                height: 100,
+                fontFamilySelection: true,
+                fontSizeSelection: true,
+                paragraphFormatSelection: true,
+                toolbarStickyOffset: 0,//距离顶部的距离
+                toolbarSticky: true,//默认编辑器的工具栏将保留在屏幕顶部,设为false则不保留
+                toolbarBottom: false,// true工具栏放在底部
+                // ================table===================================
+                tableResizerOffset: 10,
+                tableResizingLimit: 50,
+                // =================image==================================
+                // imageTUIOptions: {
+                //     includeUI: {
+                //         initMenu: "filter",
+                //         menuBarPosition: "left",
+                //         theme: {
+                //             "menu.activeIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-b.svg",
+                //             "menu.disabledIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-a.svg",
+                //             "menu.hoverIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-c.svg",
+                //             "menu.normalIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-d.svg",
+                //             "submenu.activeIcon.name": "icon-c",
+                //             "submenu.activeIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-c.svg",
+                //             "submenu.normalIcon.name": "icon-d",
+                //             "submenu.normalIcon.path": "https://cdn.jsdelivr.net/npm/tui-image-editor@3.2.2/dist/svg/icon-d.svg"
+                //         }
+                //     }
+                // },
+                imageUpload: false,
+                //imageUploadURL:"",
+                imageUploadParam: 'file_name',
+                imageUploadParams: {
+                    id: 'my_editor'
+                },
+                //imageUploadRemoteUrls: false,//通过URL插入的图像上传到自定义服务器，而不是通过URL链接它们。
+                imageDefaultDisplay: 'inline',
+                //imageCORSProxy: 'https://cors-anywhere.herokuapp.com',//代理服务器
+                imageTextNear: false,
+                //imageEditButtons: ['imageDisplay', 'imageAlign', 'imageInfo', 'imageRemove'],
+                events: {
+                    'image.beforePasteUpload': function (img) {
+                        // Do something here.
+                        // this is the editor instance.
+                        console.log(this);
+                    },
+                    'image.inserted': function ($img, response) {
+                        // Do something here.
+                        // this is the editor instance.
+                        console.log(this);
+                    },
+                    'image.uploaded': function (response) {
+                        // Do something here.
+                        // this is the editor instance.
+                        console.log(this);
+                    },
+                    'image.loaded': function ($img) {
+                        // Do something here.
+                        // this is the editor instance.
+                        console.log(this);
+                    },
+                    contentChanged: function () {
+                        console.log('content changed');
+                    }
+                }
+
+            }, function () {
+                // console.log(editor.html.get());
+            })
+        })()
+
+        $('#save').click(function () {
+            console.log(window.editor.html.get());
+            // js调用qt中的方法
+            let json_data={
+                "name":'123',
+                "content":window.editor.html.get()
+            }
+            let out=JSON.stringify(json_data)
+            alert(typeof out)
+            pyjs.receive_str_from_js(out)
+            // pyjs.receive_str_from_js(window.editor.html.get())
+            // alert(window.editor.html.get());
+            // alert('');
+        })
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+*** Settings ***
+Documentation     GUI_keywords ：关键字文件
+...
+...               这两个文件中存储关键字，是RIDE实现关键字驱动部分。关键字是因为业务需求进行二次封闭。
+Resource          share_resourse.txt
+Library           BuiltIn
+Library           Screenshot
+Library           Collections
+Library           DateTime
+Library           Dialogs
+Library           OperatingSystem
+Library           Process
+Library           Screenshot
+Library           String
+Library           Telnet
+Library           XML
+Library           AutoItLibrary
+
+*** Keywords ***
+GUI_open browser
+    [Arguments]    ${browser}=%{U_CUSTOME_BROWSER_TYPE}
+    log    ${browser}
+    #browser type
+    open browser    %{G_PROD_DOMAIN_NAME}    ${browser}
+    maximize

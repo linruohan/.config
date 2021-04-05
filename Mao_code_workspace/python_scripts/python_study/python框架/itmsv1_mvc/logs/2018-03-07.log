@@ -1,0 +1,82 @@
+2018-03-07 08:29:21,647 - root - INFO - You had select Chrome browser.
+2018-03-07 08:29:21,647 - root - INFO - The test server url is: http://193.169.100.249:8086/itmsld/login
+2018-03-07 08:29:26,442 - root - INFO - Starting Chrome browser.
+2018-03-07 08:29:27,613 - root - INFO - Open url: http://193.169.100.249:8086/itmsld/login
+2018-03-07 08:29:28,739 - root - INFO - Maximize the current window.
+2018-03-07 08:29:28,741 - root - INFO - Set implicitly wait 10 seconds.
+2018-03-07 08:29:28,766 - root - INFO - Had find the element  [ input ] successful by id via value: username 
+2018-03-07 08:29:28,795 - root - INFO - Clear text in input box before typing.
+2018-03-07 08:29:28,818 - root - INFO - Had find the element  [ input ] successful by id via value: password 
+2018-03-07 08:29:28,836 - root - INFO - Clear text in input box before typing.
+2018-03-07 08:29:28,848 - root - INFO - Had find the element  [ input ] successful by id via value: username 
+2018-03-07 08:29:28,918 - root - INFO - Had type  [ admin ] in inputBox
+2018-03-07 08:29:28,925 - root - INFO - Had find the element  [ input ] successful by id via value: password 
+2018-03-07 08:29:28,977 - root - INFO - Had type  [ admin ] in inputBox
+2018-03-07 08:29:28,992 - root - INFO - Had find the element [ input ] successful by xpath via value: //input[@value="登 录"] 
+2018-03-07 08:29:29,500 - root - INFO - The element was clicked.
+2018-03-07 08:29:32,528 - root - INFO - Had find the element [ a ] successful by xpath via value: //*[@id="menu_1304261304150253833622fa401af96b"]/p/a 
+2018-03-07 08:29:32,579 - root - INFO - The element was clicked.
+2018-03-07 08:29:34,595 - root - INFO - Had find the element [ a ] successful by xpath via value: //*[@id="1307261601351405acf514ba3ff39a63"]/a 
+2018-03-07 08:29:34,634 - root - INFO - The element was clicked.
+2018-03-07 08:29:36,993 - root - INFO - Had take screenshot and save to folder : /screenshots
+2018-03-07 11:35:18,077 - root - INFO - You had select Chrome browser.
+2018-03-07 11:35:18,077 - root - INFO - The test server url is: http://193.169.100.249:8086/itmsld/login
+2018-03-07 11:35:22,620 - root - INFO - Starting Chrome browser.
+2018-03-07 11:35:23,554 - root - INFO - Open url: http://193.169.100.249:8086/itmsld/login
+2018-03-07 11:35:24,686 - root - INFO - Maximize the current window.
+2018-03-07 11:35:24,686 - root - INFO - Set implicitly wait 10 seconds.
+2018-03-07 11:35:24,703 - root - INFO - Had find the element  [ input ] successful by id via value: username 
+2018-03-07 11:35:24,714 - root - INFO - Clear text in input box before typing.
+2018-03-07 11:35:24,730 - root - INFO - Had find the element  [ input ] successful by id via value: password 
+2018-03-07 11:35:24,751 - root - INFO - Clear text in input box before typing.
+2018-03-07 11:35:24,762 - root - INFO - Had find the element  [ input ] successful by id via value: username 
+2018-03-07 11:35:24,923 - root - INFO - Had type  [ admin ] in inputBox
+2018-03-07 11:35:24,929 - root - INFO - Had find the element  [ input ] successful by id via value: password 
+2018-03-07 11:35:24,995 - root - INFO - Had type  [ admin ] in inputBox
+2018-03-07 11:35:25,009 - root - INFO - Had find the element [ input ] successful by xpath via value: //input[@value="登 录"] 
+2018-03-07 11:35:25,503 - root - INFO - The element was clicked.
+2018-03-07 11:35:28,539 - root - INFO - Had find the element [ a ] successful by xpath via value: //*[@id="menu_1304261304150253833622fa401af96b"]/p/a 
+2018-03-07 11:35:28,588 - root - INFO - The element was clicked.
+2018-03-07 11:35:30,607 - root - INFO - Had find the element [ a ] successful by xpath via value: //*[@id="1307261601351405acf514ba3ff39a63"]/a 
+2018-03-07 11:35:30,640 - root - INFO - The element was clicked.
+2018-03-07 11:36:18,955 - root - INFO - You had select Chrome browser.
+2018-03-07 11:36:18,956 - root - INFO - The test server url is: http://193.169.100.249:8086/itmsld/login
+2018-03-07 11:36:23,511 - root - INFO - Starting Chrome browser.
+2018-03-07 11:36:24,407 - root - INFO - Open url: http://193.169.100.249:8086/itmsld/login
+2018-03-07 11:36:25,533 - root - INFO - Maximize the current window.
+2018-03-07 11:36:25,533 - root - INFO - Set implicitly wait 10 seconds.
+2018-03-07 11:36:25,548 - root - INFO - Had find the element  [ input ] successful by id via value: username 
+2018-03-07 11:36:25,560 - root - INFO - Clear text in input box before typing.
+2018-03-07 11:36:25,576 - root - INFO - Had find the element  [ input ] successful by id via value: password 
+2018-03-07 11:36:25,600 - root - INFO - Clear text in input box before typing.
+2018-03-07 11:36:25,611 - root - INFO - Had find the element  [ input ] successful by id via value: username 
+2018-03-07 11:36:25,718 - root - INFO - Had type  [ admin ] in inputBox
+2018-03-07 11:36:25,731 - root - INFO - Had find the element  [ input ] successful by id via value: password 
+2018-03-07 11:36:25,796 - root - INFO - Had type  [ admin ] in inputBox
+2018-03-07 11:36:25,810 - root - INFO - Had find the element [ input ] successful by xpath via value: //input[@value="登 录"] 
+2018-03-07 11:36:28,127 - root - INFO - The element was clicked.
+2018-03-07 11:36:31,147 - root - INFO - Had find the element [ a ] successful by xpath via value: //*[@id="menu_1304261304150253833622fa401af96b"]/p/a 
+2018-03-07 11:36:31,194 - root - INFO - The element was clicked.
+2018-03-07 11:36:33,206 - root - INFO - Had find the element [ a ] successful by xpath via value: //*[@id="1307261601351405acf514ba3ff39a63"]/a 
+2018-03-07 11:36:33,240 - root - INFO - The element was clicked.
+2018-03-07 11:38:04,376 - root - INFO - You had select Chrome browser.
+2018-03-07 11:38:04,376 - root - INFO - The test server url is: http://193.169.100.249:8086/itmsld/login
+2018-03-07 11:38:08,917 - root - INFO - Starting Chrome browser.
+2018-03-07 11:38:10,021 - root - INFO - Open url: http://193.169.100.249:8086/itmsld/login
+2018-03-07 11:38:11,146 - root - INFO - Maximize the current window.
+2018-03-07 11:38:11,146 - root - INFO - Set implicitly wait 10 seconds.
+2018-03-07 11:38:11,162 - root - INFO - Had find the element  [ input ] successful by id via value: username 
+2018-03-07 11:38:11,175 - root - INFO - Clear text in input box before typing.
+2018-03-07 11:38:11,187 - root - INFO - Had find the element  [ input ] successful by id via value: password 
+2018-03-07 11:38:11,213 - root - INFO - Clear text in input box before typing.
+2018-03-07 11:38:11,233 - root - INFO - Had find the element  [ input ] successful by id via value: username 
+2018-03-07 11:38:11,341 - root - INFO - Had type  [ admin ] in inputBox
+2018-03-07 11:38:11,347 - root - INFO - Had find the element  [ input ] successful by id via value: password 
+2018-03-07 11:38:11,413 - root - INFO - Had type  [ admin ] in inputBox
+2018-03-07 11:38:11,427 - root - INFO - Had find the element [ input ] successful by xpath via value: //input[@value="登 录"] 
+2018-03-07 11:38:11,959 - root - INFO - The element was clicked.
+2018-03-07 11:38:14,975 - root - INFO - Had find the element [ a ] successful by xpath via value: //*[@id="menu_1304261304150253833622fa401af96b"]/p/a 
+2018-03-07 11:38:15,016 - root - INFO - The element was clicked.
+2018-03-07 11:38:17,055 - root - INFO - Had find the element [ a ] successful by xpath via value: //*[@id="1307261601351405acf514ba3ff39a63"]/a 
+2018-03-07 11:38:17,091 - root - INFO - The element was clicked.
+2018-03-07 11:38:19,523 - root - INFO - Had take screenshot and save to folder : /screenshots

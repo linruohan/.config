@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>XiaoHan Editor.js 🤩🧦🤨</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+    <!-- css文件 -->
+    <link href="../assets/css/notionEditor.css" rel="stylesheet">
+    <script src="../assets/js/fileParse.js"></script>
+    <!-- json处理js -->
+    <script src="../assets/js/json-preview.js"></script>
+    <!-- 文件保存 js-->
+    <script src="https://cdn.bootcss.com/FileSaver.js/1.3.8/FileSaver.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="/eel.js"></script>
+    <script type="text/javascript">
+        // eel.save('123')();
+        // alert(1);
+    </script>
+</head>
+
+<body>
+<div class="ce-example">
+    <div class="ce-example__header">
+        <a class="ce-example__header-logo" href="">我的编辑器🤩🧦🤨</a>
+
+        <div class="ce-example__header-menu">
+            <a href="" target="_blank">插件</a>
+            <a href="" target="_blank">使用</a>
+            <a href="" target="_blank">配置</a>
+            <a href="" target="_blank">接口API</a>
+        </div>
+    </div>
+    <input type="file" name="files" style="display: none;" id="files" onchange="readFile();">
+    <input type="button" id="fileOpen" value="打开"/>
+    <input class="ce-example__filename" id="filename" placeholder="输入保存的文件名" style="align-items: right;"/>
+    <div class="ce-example__button" id="saveButton">保存
+
+    </div>
+    <div class="ce-example__content _ce-example__content--small">
+        <div id="editorjs"></div>
+    </div>
+    <div class="ce-example__output">
+        <pre class="ce-example__output-content" id="output"></pre>
+
+        <div class="ce-example__output-footer">
+            <a href="" style="font-weight: bold;">Made by xiaohan</a>
+        </div>
+    </div>
+</div>
+
+<!-- Load Tools -->
+<!--
+You can upload Tools to your project's directory and use as in example below.
+Also you can load each Tool from CDN or use NPM/Yarn packages.
+Read more in Tool's README file. For example:
+https://github.com/editor-js/header#installation
+-->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+<!-- Header -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script>
+<!-- Image -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+<!-- Delimiter -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+<!-- List -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script>
+<!-- Checklist -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+<!-- Quote -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
+<!-- Code -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script>
+<!-- Embed -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
+<!-- Table -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
+<!-- Link -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@latest"></script>
+<!-- Warning -->
+
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script>
+<!-- Marker -->
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script>
+<!-- Inline Code -->
+
+<!-- Load Editor.js's Core -->
+<script src="../assets/js/editor.js"></script>
+
+<!-- Initialization -->
+<script>
+    /**
+     * Saving button
+     */
+    eel.save('123');
+    const saveButton = document.getElementById('saveButton');
+    const fileName = document.getElementById("filename");
+    //点击导入按钮,使files触发点击事件,然后完成读取文件的操作
+    $("#fileOpen").click(function (e) {
+        $("#files").click();
+        $("#files").val("");
+        e.preventDefault();
+    });
+
+    function readFile() {
+        var selectedFile = document.getElementById('files').files[0];
+        var reader = new FileReader(); //这是核心,读取操作就是由它完成.
+        reader.readAsText(selectedFile); //读取文件的内容,也可以读取文件的URL
+        reader.onload = function () {
+            //当读取完成后回调这个函数,然后此时文件的内容存储到了result中,直接操作即可
+            let json = JSON.parse(this.result);
+            startEditor(json);
+        };
+    }
+
+    /**
+     * To initialize the Editor, create a new instance with configuration object
+     * @see docs/installation.md for mode details
+     */
+    editor = new EditorJS({
+        /**
+         * Wrapper of Editor
+         */
+        holder: 'editorjs',
+
+        /**
+         * Tools list
+         */
+        tools: {
+            /**
+             * Each Tool is a Plugin. Pass them via 'class' option with necessary settings {@link docs/tools.md}
+             */
+            header: {
+                class: Header,
+                inlineToolbar: ['link'],
+                config: {
+                    placeholder: 'Header'
+                },
+                shortcut: 'CMD+SHIFT+H'
+            },
+
+            /**
+             * Or pass class directly without any configuration
+             */
+            image: SimpleImage,
+
+            list: {
+                class: List,
+                inlineToolbar: true,
+                shortcut: 'CMD+SHIFT+L'
+            },
+
+            checklist: {
+                class: Checklist,
+                inlineToolbar: true,
+            },
+
+            quote: {
+                class: Quote,
+                inlineToolbar: true,
+                config: {
+                    quotePlaceholder: 'Enter a quote',
+                    captionPlaceholder: 'Quote\'s author',
+                },
+                shortcut: 'CMD+SHIFT+O'
+            },
+
+            warning: Warning,
+
+            marker: {
+                class: Marker,
+                shortcut: 'CMD+SHIFT+M'
+            },
+
+            code: {
+                class: CodeTool,
+                shortcut: 'CMD+SHIFT+C'
+            },
+
+            delimiter: Delimiter,
+
+            inlineCode: {
+                class: InlineCode,
+                shortcut: 'CMD+SHIFT+C'
+            },
+
+            linkTool: LinkTool,
+
+            embed: Embed,
+
+            table: {
+                class: Table,
+                inlineToolbar: true,
+                shortcut: 'CMD+ALT+T'
+            },
+
+        },
+
+        /**
+         * This Tool will be used as default
+         */
+        // initialBlock: 'paragraph',
+
+        /**
+         * Initial Editor data
+         */
+        data: [],
+        placeholder: "记录你的故事！述说你的缤纷！let's beginning...",
+        /** *启用自动对焦*/
+        autofocus: true,
+        onReady: function () {
+            // saveButton.click();
+        },
+        onChange: function () {
+            console.log('something changed');
+        }
+    });
+
+    function startEditor(fileJsonData) {
+        editor.blocks.render(fileJsonData);
+    };
+    /**
+     * 保存json文件,直接从浏览器下载
+     */
+
+    saveButton.addEventListener('click', function () {
+        editor.save().then((savedData) => {
+            var output = JSON.stringify(savedData, null, 4);
+            var saveFilename = fileName.value || "unfined"
+            var blob = new Blob([output], {
+                type: "text/plain;charset=utf-8"
+            });
+            saveAs(blob, saveFilename + '.json');
+            console.log(saveFilename + ".json");
+            editor.blocks.clear();
+            fileName.innerHTML = '';
+        });
+    });
+</script>
+</body>
+
+</html>

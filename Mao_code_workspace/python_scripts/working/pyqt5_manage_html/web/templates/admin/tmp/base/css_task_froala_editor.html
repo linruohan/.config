@@ -1,0 +1,278 @@
+<link rel="stylesheet" href="../../assets/plugins/froala_editor/wp-content/cac.css" data-minify="1"/>
+<style type="text/css">
+    img.wp-smiley, img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important
+    }
+</style>
+<script type='text/javascript' src='../../assets/plugins/froala_editor/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript'
+        src='../../assets/plugins/froala_editor/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript'
+        src='../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/js/jquery-3.4.1.min.js'></script>
+<script type='text/javascript'
+        src='../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/custom_js.js'></script>
+<script type='text/javascript'
+        src='../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/js/script.js'></script>
+<script type='text/javascript'
+        src='../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/js/tooltipster.bundle.min.js'></script>
+<script type='text/javascript'
+        src='../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/js/jquery.cookie.min.js'></script>
+<script type='text/javascript'
+        src='../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/js/webfont.min.js'></script>
+<script type='text/javascript'
+        src='../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/js/utils.min.js'></script>
+<script type='text/javascript'
+        src='../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/js/v4-shims.min.js'></script>
+<link rel='https:/api.w.org/' href='https:/froala.com/wp-json/'/>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https:/froala.com/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https:/froala.com/wp-includes/wlwmanifest.xml"/>
+<meta name="generator" content="WordPress 5.4.4"/>
+<link rel="stylesheet"
+      href="../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/css/codemirror.min.css"/>
+<link rel="stylesheet"
+      href="../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/css/tui-image-editor.css"/>
+<link rel="stylesheet"
+      href="../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/css/tui-color-picker.css"/>
+<link rel="stylesheet"
+      href="../../assets/plugins/froala_editor/wp-content/themes/jupiterx-child/asserts/css/tribute.css"/>
+<style>
+    .form-control {
+        font-size: 1.5rem;
+    }
+
+    /*body {*/
+    /*    display: block;*/
+    /*    margin: 0px !important;*/
+    /*}*/
+
+    .fr-second-toolbar {
+        display: none !important;
+    }
+
+    div#edit {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        text-align: left;
+    }
+
+    .ss {
+        background-color: red;
+    }
+
+    .editor-wrap > div {
+        width: 100%;
+    }
+
+    /*.fr-box.fr-document .fr-wrapper .fr-element {*/
+    /*    width: 100% !important;*/
+    /*    background: #ccbaba;*/
+    /*}*/
+
+    .fr-wrapper > div[style*="z-index:9999;"],
+    .fr-wrapper > div[style*="z-index: 9999;"] {
+        overflow: hidden;
+        position: absolute;
+        top: -1000000px;
+        /*opacity: 0;*/
+
+    }
+
+    .fr-toolbar .fr-newline {
+        display: none;
+    }
+
+    .fr-view {
+        min-height: 500px !important;
+    }
+
+    /*editor 高度*/
+    .fr-box.fr-document .fr-wrapper {
+        text-align: left;
+        /*height: 200px !important;*/
+        /*padding: 0px !important;*/
+    }
+    .dark-theme.fr-box.fr-basic .fr-wrapper {
+        background: #a79a9a;
+        font-family: "PingFang SC";
+    }
+    .fr-view {
+        /*padding: 0 0 0 10px;*/
+        position: absolute;
+        /*top: 0;*/
+    }
+
+    .fr-box .fr-toolbar {
+        /*border-radius: 4px 4px 0px 0px !important;*/
+        /*border-color: #3254a3;*/
+        /*background-color: #e5d2c5;*/
+    }
+
+    .fr-toolbar .fr-command.fr-btn, .fr-popup .fr-command.fr-btn, .fr-modal .fr-command.fr-btn {
+        height: 30px !important;
+    }
+
+    .fr-toolbar .fr-command.fr-btn i, .fr-toolbar .fr-command.fr-btn svg, .fr-popup .fr-command.fr-btn i, .fr-popup .fr-command.fr-btn svg, .fr-modal .fr-command.fr-btn i, .fr-modal .fr-command.fr-btn svg {
+        /*margin: 1px 2px;*/
+    }
+
+    .fr-toolbar .fr-command.fr-btn svg.fr-svg, .fr-popup .fr-command.fr-btn svg.fr-svg, .fr-modal .fr-command.fr-btn svg.fr-svg {
+        height: 20px !important;
+    }
+
+    .fr-sticky-dummy {
+        /*height: 0px !important;*/
+    }
+
+    .fr-second-toolbar {
+        display: none;
+    }
+
+    .fr-placeholder {
+        /*margin-top: 0;*/
+    }
+
+    .fr-box .second-toolbar {
+        display: none;
+    }
+
+    .fr-box .second-toolbar #logo {
+        /*width: 0 !important;*/
+        /*height: 0 !important;*/
+        overflow: hidden;
+    }
+
+    .fr-box .fr-toolbar {
+        /*border-radius: 4px 4px 0 0;*/
+        /*border-color: #dcdfe6;*/
+    }
+    .fr-box .fr-wrapper {
+        /*border-color: #dcdfe6 !important;*/
+    }
+</style>
+<!--<style>-->
+<!--    .form-control {-->
+<!--        font-size: 1.5rem;-->
+<!--    }-->
+
+<!--    body {-->
+<!--        display: block;-->
+<!--        margin: 0px !important;-->
+<!--    }-->
+
+<!--    .fr-second-toolbar {-->
+<!--        display: none !important;-->
+<!--    }-->
+
+<!--    div#edit {-->
+<!--        width: 100%;-->
+<!--        height: 100%;-->
+<!--        margin: auto;-->
+<!--        text-align: left;-->
+<!--    }-->
+
+<!--    .ss {-->
+<!--        background-color: red;-->
+<!--    }-->
+
+<!--    .editor-wrap > div {-->
+<!--        width: 100%;-->
+<!--    }-->
+
+<!--    .fr-box.fr-document .fr-wrapper .fr-element {-->
+<!--        width: 100% !important;-->
+<!--        /*background: #ccbaba;*/-->
+<!--    }-->
+
+<!--    .fr-wrapper > div[style*="z-index:9999;"],-->
+<!--    .fr-wrapper > div[style*="z-index: 9999;"] {-->
+<!--        overflow: hidden;-->
+<!--        position: absolute;-->
+<!--        top: -1000000px;-->
+<!--        opacity: 0;-->
+
+<!--    }-->
+
+<!--    .fr-toolbar .fr-newline {-->
+<!--        display: none;-->
+<!--    }-->
+
+<!--    .fr-view {-->
+<!--        min-height: 500px !important;-->
+<!--    }-->
+
+<!--    /*editor 高度*/-->
+<!--    .fr-box.fr-document .fr-wrapper {-->
+<!--        text-align: left;-->
+<!--        /*height: 200px !important;*/-->
+<!--        padding: 0px !important;-->
+<!--    }-->
+
+<!--    .fr-view {-->
+<!--        padding: 0 0 0 10px;-->
+<!--        position: absolute;-->
+<!--        top: 0;-->
+<!--    }-->
+
+<!--    .fr-box .fr-toolbar {-->
+<!--        border-radius: 4px 4px 0px 0px !important;-->
+<!--        border-color: #3254a3;-->
+<!--        background-color: #e5d2c5;-->
+<!--    }-->
+
+<!--    .fr-toolbar .fr-command.fr-btn, .fr-popup .fr-command.fr-btn, .fr-modal .fr-command.fr-btn {-->
+<!--        height: 20px !important;-->
+<!--    }-->
+
+<!--    .fr-toolbar .fr-command.fr-btn i, .fr-toolbar .fr-command.fr-btn svg, .fr-popup .fr-command.fr-btn i, .fr-popup .fr-command.fr-btn svg, .fr-modal .fr-command.fr-btn i, .fr-modal .fr-command.fr-btn svg {-->
+<!--        margin: 1px 2px;-->
+<!--    }-->
+
+<!--    .fr-toolbar .fr-command.fr-btn svg.fr-svg, .fr-popup .fr-command.fr-btn svg.fr-svg, .fr-modal .fr-command.fr-btn svg.fr-svg {-->
+<!--        height: 20px !important;-->
+<!--    }-->
+
+<!--    .fr-sticky-dummy {-->
+<!--        height: 0px !important;-->
+<!--    }-->
+
+<!--    .fr-second-toolbar {-->
+<!--        display: none;-->
+<!--    }-->
+
+<!--    .fr-placeholder {-->
+<!--        margin-top: 0;-->
+<!--    }-->
+
+<!--    .fr-box .second-toolbar {-->
+<!--        display: none;-->
+<!--    }-->
+
+<!--    .fr-box .second-toolbar #logo {-->
+<!--        width: 0 !important;-->
+<!--        height: 0 !important;-->
+<!--        overflow: hidden;-->
+<!--    }-->
+
+<!--    .fr-box .fr-toolbar {-->
+<!--        border-radius: 4px 4px 0 0;-->
+<!--        border-color: #dcdfe6;-->
+<!--    }-->
+
+<!--    .fr-box .second-toolbar {-->
+<!--        border-radius: 0 0 4px 4px;-->
+<!--        border-color: #dcdfe6;-->
+<!--    }-->
+
+<!--    .fr-box .fr-wrapper {-->
+<!--        border-color: #dcdfe6 !important;-->
+<!--    }-->
+<!--</style>-->

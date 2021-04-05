@@ -1,0 +1,7 @@
+*** Settings ***
+Documentation     func_keywords ：关键字文件
+...
+...               这两个文件中存储关键字，是RIDE实现关键字驱动部分。关键字是因为业务需求进行二次封闭。
+
+*** Keywords ***
+Fetch_Orders_frome_file

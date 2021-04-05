@@ -1,0 +1,1164 @@
+// TTSDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "TTS.h"
+#include "TTSDlg.h"
+#include <io.h>
+#include <direct.h>
+//using namespace std;
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+//Interphonic 序列号
+char g_SerialNo[]="P4GM29-QC4LXX-NAN6BF";
+
+extern int bSTTSApiLoaded;
+
+//本结构用来传递合成参数到线程中
+typedef struct tTHREADPARAM{
+	int nCodePage;//内码
+	int nSpeed;//合成语速
+	int nAudioFmt;//音频格式
+	TCHAR* szSource;//源文本，可以是字符串或者文本文件
+	TCHAR* szDest;//目标音频文件，可以为空，自动生成
+	BOOL bString;//标识szSource是待合成字符串还是文本路径，如果为真，则传入的是字符串
+}THREADPARAM;
+
+// CTTSDlg dialog
+
+
+CTTSDlg::CTTSDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(CTTSDlg::IDD, pParent)
+{
+	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	m_timer = 1;
+	m_isStart = false;
+	m_speed = 0;
+}
+
+CTTSDlg::~CTTSDlg()
+{
+	SaveIndex();
+}
+
+void CTTSDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+}
+
+BEGIN_MESSAGE_MAP(CTTSDlg, CDialog)
+	ON_WM_PAINT()
+	ON_WM_QUERYDRAGICON()
+	//}}AFX_MSG_MAP
+	ON_BN_CLICKED(IDC_START, &CTTSDlg::OnPlay)
+	ON_WM_TIMER()
+END_MESSAGE_MAP()
+
+
+// CTTSDlg message handlers
+
+BOOL CTTSDlg::OnInitDialog()
+{
+	CDialog::OnInitDialog();
+
+	// Set the icon for this dialog.  The framework does this automatically
+	//  when the application's main window is not a dialog
+	SetIcon(m_hIcon, TRUE);			// Set big icon
+	SetIcon(m_hIcon, FALSE);		// Set small icon
+	int res;
+	res = InitSapi();
+	if(res == -1)
+		exit(-1);
+	LoadPage(string("D:\\TTS.txt"));
+
+	InitIndex();
+	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+void CTTSDlg::OnPaint()
+{
+	if (IsIconic())
+	{
+		CPaintDC dc(this); // device context for painting
+
+		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
+
+		// Center icon in client rectangle
+		int cxIcon = GetSystemMetrics(SM_CXICON);
+		int cyIcon = GetSystemMetrics(SM_CYICON);
+		CRect rect;
+		GetClientRect(&rect);
+		int x = (rect.Width() - cxIcon + 1) / 2;
+		int y = (rect.Height() - cyIcon + 1) / 2;
+
+		// Draw the icon
+		dc.DrawIcon(x, y, m_hIcon);
+	}
+	else
+	{
+		CDialog::OnPaint();
+	}
+}
+
+//初始化Speech SDK
+HRESULT CTTSDlg::InitSapi()
+{
+	DWORD dwErr;
+	char szInfo[255];
+	char *strIP = NULL;
+
+	//装载STTSApi.dll和iFlyTTS.dll
+	if(!STTSLoadLibrary()) {
+		dwErr=GetLastError();
+		AfxMessageBox(_T("不能装载STTSApi.dll"));
+		return -1;
+	}
+	//初始化声音合成接口
+	if(!(m_isInit=STTSInit())) {
+		//得到错误代码
+		dwErr = GetLastError();
+		if ( dwErr != TTSERR_OK ) {
+			if ( TTSGETERRCODE(dwErr) == TTSERR_NOLICENCE ) {
+				sprintf(szInfo, "初始化TTS失败, 错误原因: 没有正确的授权。");
+			}
+			else {
+				sprintf(szInfo, "初始化TTS失败, 错误代号: %d。", dwErr);
+			}
+			AfxMessageBox( CString(szInfo), MB_OK|MB_ICONSTOP );
+		}
+		return -1;
+	}
+
+	//连接TTS服务器
+	if(!(m_hTTSInstance=STTSConnect( g_SerialNo, strIP ))) {
+		//用GetLastError()来得到出错原因
+		dwErr=GetLastError();
+		if ( dwErr != TTSERR_OK )
+		{
+			if( TTSGETERRCODE(dwErr) == TTSERR_INVALIDSN ) {
+				sprintf(szInfo, "连接TTS服务失败, 错误原因: 错误的序列号。");
+			}
+			else if ( TTSGETERRCODE(dwErr) == TTSERR_NOLICENCE ) {
+				sprintf(szInfo, "连接TTS服务失败, 错误原因: 没有足够的授权。");
+			}
+			else {
+				sprintf(szInfo, "连接TTS服务失败, errorcode: 0x00%x", TTSGETERRCODE(dwErr));
+			}
+			
+			AfxMessageBox(CString(szInfo), MB_OK|MB_ICONSTOP);
+		}
+		return -1;
+	}
+	//设置文字编码方式
+	STTSSetParam(m_hTTSInstance,TTS_PARAM_CODEPAGE,1);
+	STTSSetParam(m_hTTSInstance,TTS_PARAM_AUDIODATAFMT,0);
+	return 0;
+}
+
+//释放Speech SDK
+void CTTSDlg::ReleaseSapi()
+{
+	//释放TTS连接
+	STTSDisconnect(m_hTTSInstance);
+	//回收工作
+	if(bSTTSApiLoaded) {	
+		//释放TTS
+		if(m_isInit) {
+			STTSDeinit();
+			m_isInit=FALSE;
+		}
+		//卸载TTS DLL
+		STTSUnloadLibrary();
+		bSTTSApiLoaded=FALSE;
+	}
+}
+
+HCURSOR CTTSDlg::OnQueryDragIcon()
+{
+	return static_cast<HCURSOR>(m_hIcon);
+}
+//处理输入的文本，进行断句
+void CTTSDlg::LoadPage(const string filename)
+{
+	ifstream file(filename.c_str());
+	char c, d;
+
+	
+	c = file.get();
+	string sentence;
+
+	if(c == EOF)		//如果为一个空文本
+	{			
+		sentence = string("当前放入的是空白纸张或无法识别的纸张，请重新放置.");
+		m_page.push_back(sentence);
+		file.close();
+		m_senPos = m_page.begin();
+		return;
+	}
+	else if((c & 0x80) == 0)		//第一个字符为英文字符
+	{
+		m_page.push_back("朗读开始。");		//在开头加入朗读开始
+		if(c != 34)					//去除引号
+			sentence.push_back(c);
+	}
+	else if((c & 0x80) != 0)			//第一个字符为中文字符
+	{
+		m_page.push_back("朗读开始。");
+		d = file.get();
+		if(c != -95 || (c == -95 && (d != -80 && d != -79)))	//去除引号
+		{
+			sentence.push_back(c);
+			sentence.push_back(d);
+		}
+	}
+	//读取文本循环
+	while((c = file.get()) != EOF)
+	{
+		if(m_page.size() == 1 && c == 10)			//回车按照一个句号处理，作为断句标识
+		{
+			string temp = "";
+			for(unsigned i = 0; i < sentence.length(); i++)
+			{
+				if(sentence.at(i) != ' ')
+					temp.push_back(sentence.at(i));
+			}
+			if(temp.length() == 0)
+			{
+				sentence.clear();
+				continue;
+			}
+			else
+			{
+				m_page.push_back(sentence);
+				sentence.clear();
+			}
+			continue;
+		}
+		//2007.5.15修改
+		else if(c == 10)
+			continue;
+		else if((c & 0x80) == 0)		//处理英文字符
+		{
+			if(c == 34)				//引号排除
+				continue;
+			else if((c == 33 || c == 63) && sentence.length() == 0)	//多个问号或者叹号只处理第一个
+				continue;
+			sentence.push_back(c);
+			if((c == 33 || c == 63) && sentence.length() > 6)		//问号或者叹号时
+			{
+				m_page.push_back(sentence);
+				sentence.clear();
+			}
+		}
+		else if((c & 0x80) > 0)		//处理中文字符
+		{
+			d = file.get();
+			if(c == -95 && (d == -80 || d == -79))		//处理引号
+				continue;
+			else if(c == -93 && (d == -95 || d == -65) && sentence.length() == 0)	//处理多个问号或者感叹号
+				continue;
+			else if(c == -95 && d == -93 && sentence.length() == 0)
+				continue;
+			else if(c == -93 && (d == -88 || d == -87))		//处理括号
+				continue;
+
+			sentence.push_back(c);
+			sentence.push_back(d);
+			if(c == -95 && d == -93)		//句号断句
+			{
+				string temp = "";
+				for(unsigned i = 0; i < sentence.length(); i++)
+				{
+					if(sentence.at(i) != ' ')
+						temp.push_back(sentence.at(i));
+				}
+				if(temp.length() > 6)
+				{
+					m_page.push_back(temp);
+					sentence.clear();
+				}
+				//sentence = temp;
+				//temp.clear();
+				continue;
+			}
+			else if(c == -93 && d == -95)	//感叹号断句
+			{
+				string temp = "";
+				for(unsigned i = 0; i < sentence.length(); i++)
+				{
+					if(sentence.at(i) != ' ')
+						temp.push_back(sentence.at(i));
+				}
+				if(temp.length() > 6)
+				{
+					m_page.push_back(temp);
+					sentence.clear();
+				}
+				continue;
+			}
+			else if(c == -93 && d == -65)	//问号断句
+			{
+				string temp = "";
+				for(unsigned i = 0; i < sentence.length(); i++)
+				{
+					if(sentence.at(i) != ' ')
+						temp.push_back(sentence.at(i));
+				}
+				if(temp.length() > 6)
+				{
+					m_page.push_back(temp);
+					sentence.clear();
+				}
+				continue;
+			}
+
+		}
+	}
+
+	if(!sentence.empty())
+		m_page.push_back(sentence);
+	m_page.push_back("朗读结束, 按暂停/虫读键重新听一遍，按返回键继续操作。");
+	file.close();
+	m_senPos = m_page.begin();
+
+}
+//播放音频
+void CTTSDlg::OnPlay()
+{
+	//关闭定时器
+	KillTimer(m_timer);
+
+	if(m_senPos == m_page.end())
+	{
+		m_isStart = false;
+		return;
+	}
+
+	m_isStop = false;
+	m_isPause = false;
+
+	STTSSetParam(m_hTTSInstance,TTS_PARAM_SPEED,m_speed);
+	
+	m_timer=SetTimer(1,300,NULL);
+	//STTSGetParam(m_hTTSInstance,TTS_PARAM_AUDIODATAFMT,&nAudioFmt);
+	STTSPlayString(m_hTTSInstance, (char*)m_senPos->c_str(), 1);
+	//STTSDisconnect(hTTSInstance);
+}
+
+//恢复或者暂停语音
+void CTTSDlg::OnPause()
+{
+	if(!m_isPause)	//当前正在播放,暂停播放
+	{
+		KillTimer(m_timer);
+		STTSPlayStop();
+		m_isPause = true;
+	}
+	else			//当前已经暂停，恢复播放
+	{
+		m_isPause = false;
+		OnPlay();
+	}
+}
+
+//停止当前读音
+void CTTSDlg::OnStop()
+{
+	KillTimer(m_timer);
+	m_isStop = true;
+	STTSPlayStop();
+	m_senPos = m_page.begin();
+	m_speed = 0;
+	m_isStart = false;
+}
+
+//增加语速
+void CTTSDlg::OnIncreaseRate()
+{
+	KillTimer(m_timer);
+	if(m_speed <= 500)
+		m_speed += 100;
+	m_timer=SetTimer(1,500,NULL);
+}
+
+//降低语速
+void CTTSDlg::OnDecreaseRate()
+{
+	KillTimer(m_timer);
+	if(m_speed >= -500)
+		m_speed -= 100;
+	m_timer=SetTimer(1,500,NULL);
+}
+
+//获取键盘输入
+BOOL CTTSDlg::PreTranslateMessage(MSG* pMsg)
+{
+	if(pMsg->message == WM_KEYDOWN)
+	{
+		switch(pMsg->wParam)
+		{
+		case VK_DIVIDE:		//返回建/
+			if(!m_isStop)
+				OnStop();
+			break;
+		case 99:			//快退3
+			if(m_senPos == m_page.end())
+			{
+				KillTimer(m_timer);
+				STTSPlayStop();
+				m_senPos--;
+				m_senPos--;
+				m_isStart = true;
+				OnPlay();
+			}
+			else if(m_senPos != m_page.begin())
+			{
+				KillTimer(m_timer);
+				STTSPlayStop();
+				m_senPos--;
+				OnPlay();
+			}
+			break;
+		case VK_DECIMAL:		//快进。
+			if(m_senPos != m_page.end())
+			{
+				KillTimer(m_timer);
+				STTSPlayStop();
+				m_senPos++;
+				OnPlay();
+			}
+			break;
+		case 102:				//减速6
+			OnDecreaseRate();
+			break;
+		case 105:				//加速9
+			OnIncreaseRate();
+			break;
+		case VK_ADD:			//暂停键
+			if(!m_isStart)
+			{
+				if(!m_isLoad)		//不读取存储文本
+				{
+					m_senPos = m_page.begin();
+					m_isStart = true;
+					m_isStop = false;
+					OnPlay();
+				}
+				else				//读取存储文本
+				{
+					LoadSavedPage();
+					m_isStart = true;
+					m_isStop = false;
+					OnPlay();
+				}
+			}
+			else
+				OnPause();
+			break;
+		case 100:			// 4 前一本书
+			if(m_isCover)
+				m_isCover = false;
+			if(m_isStart)
+			{
+				m_isStart = false;
+				m_isStop = true;
+			}
+			STTSPlayStop();
+			PreBook();
+			break;
+		case 101:			//	5 后一本书
+			if(m_isCover)
+				m_isCover = false;
+			if(m_isStart)
+			{
+				m_isStart = false;
+				m_isStop = true;
+			}
+			STTSPlayStop();
+			NextBook();
+			break;
+		case 97:			// 1 前一页
+			if(m_isCover)
+				m_isCover = false;
+			if(m_isStart)
+			{
+				m_isStart = false;
+				m_isStop = true;
+			}
+			STTSPlayStop();
+			PrePage();
+			break;
+		case 98:			// 2 后一页
+			if(m_isCover)
+				m_isCover = false;
+			if(m_isStart)
+			{
+				m_isStart = false;
+				m_isStop = true;
+			}
+			STTSPlayStop();
+			NextPage();
+			break;
+		case 96:			// 0 录入
+			if(m_isDelete)
+				m_isDelete = false;
+			if(m_isStart)
+			{
+				m_isStart = false;
+				m_isStop = true;
+			}
+			STTSPlayStop();
+			CheckSavePage();
+			break;
+		case VK_BACK:		//删除 BackSpace
+			if(m_isSave)
+			{
+				m_isSave = false;
+				m_isCover = false;
+			}
+			if(m_isStart)
+			{
+				m_isStart = false;
+				m_isStop = true;
+			}
+			STTSPlayStop();
+			CheckDelete();
+			break;
+		case VK_SUBTRACT:		//帮助文件 '-'
+			STTSPlayStop();
+			if(m_isDelete)
+				m_isDelete = false;
+			if(m_isSave)
+				m_isSave = false;
+			if(m_isLoad)
+				m_isLoad = false;
+			m_isStop = true;
+			m_isStart = false;
+			STTSPlayTextFile(m_hTTSInstance, "D:/TTS-Help.txt", 1);
+		default:
+			break;
+		};
+	}
+
+	return CDialog::PreTranslateMessage(pMsg);
+}
+
+void CTTSDlg::OnCancel()
+{
+	
+	CDialog::OnCancel();
+}
+
+void CTTSDlg::OnOK()
+{
+	//CDialog::OnOK();
+}
+
+void CTTSDlg::OnTimer(UINT_PTR nIDEvent)
+{
+	int status;
+	STTSQueryPlayStatus(&status);
+	if(status == 0 && m_senPos != m_page.end() && !m_isStop)	//读完一句话，且没有暂停或停止,读下一句
+	{
+		m_senPos++;
+		OnPlay();
+	}
+	CDialog::OnTimer(nIDEvent);
+}
+
+
+void CTTSDlg::InitIndex()
+{
+	//初始化
+	m_bookIndex.resize(1000);
+	memset(m_readTag, 0, 1000);
+	memset(m_saveTag, 0, 1000);
+	m_isLoad = false;
+	m_isSave = false;
+	m_isCover = false;
+	m_isDelete = false;
+
+	//this is the index data file
+	ifstream file("D:/TTS-Data/index.dat");
+	string line;
+	
+	//初始化文件索引、阅读标记以及存储标记
+	::getline(file, line);
+	//get the readTeg
+	istringstream temp(line);
+	temp >> m_lastReadBook >> m_lastSaveBook;
+
+	int bookNum = 0;
+	while(::getline(file, line))
+	{
+		istringstream input(line);
+		int readTag;
+		int saveTag;
+		string content;
+
+		input >> readTag >> saveTag >> content;
+		m_bookIndex[bookNum] = content;
+		m_readTag[bookNum] = readTag;
+		m_saveTag[bookNum] = saveTag;
+		bookNum++;
+	}
+
+	//初始化中间变量, Book从0开始计数
+	m_currentBook = m_lastReadBook;
+	m_currentPage = m_readTag[m_lastReadBook];
+	m_curSaveBook = m_lastSaveBook;
+	m_curSavePage = m_saveTag[m_lastSaveBook];
+}
+
+void CTTSDlg::NextBook()
+{
+	ostringstream readStr;
+	if(m_isSave)		//当前为录制状态
+	{
+		if(m_curSaveBook != 999)
+		{		
+			m_curSaveBook++;
+			m_curSavePage = m_saveTag[m_curSaveBook];
+
+			readStr << "录制当前阅读的内容到第" << m_curSaveBook+1 << "本书。"
+				<< m_bookIndex[m_curSaveBook] << "第" << m_saveTag[m_curSaveBook]+1
+				<< "页。按录制键确认录制或选择其他书页";			
+		}
+		else
+			readStr << "已经到达最后一本书.";
+	}
+	else if(m_isDelete)		//当前为删除状态
+	{
+		if(m_currentBook != 999)
+		{
+			m_currentBook++;
+			m_currentPage = 0;
+			m_isDelBook = true;
+
+			readStr << "清除当前整书, 第"  << m_currentBook+1 << "本书"
+				<< m_bookIndex[m_currentBook] << "是否确认" 
+				<< "或通过前后页选择要清除的页码";
+		}
+		else
+			readStr << "已经到达最后一本书.";
+	}
+	else	//当前为阅读状态
+	{
+		m_isLoad = true;
+		if(m_currentBook != 999)	//如果不是最后一本书
+		{
+			m_currentBook++;
+			m_currentPage = m_readTag[m_currentBook];
+			
+			if(m_bookIndex[m_currentBook].length() == 0)
+				readStr << "第" << m_currentBook+1 << "本书，该书为空白。";
+			else
+			{
+				readStr << "第" << m_currentBook+1 << "本书。" << m_bookIndex[m_currentBook]
+						<< "当前读到第" << m_readTag[m_currentBook]+1 << "页";
+			}						
+		}
+		else
+			readStr << "已经到达最后一本书.";
+	}
+
+	STTSPlayString(m_hTTSInstance, (char*)readStr.str().c_str(), 1);
+}
+
+void CTTSDlg::PreBook()
+{
+	ostringstream readStr;
+
+	if(m_isSave)				//当前状态为录制
+	{
+		if(m_curSaveBook != 0)
+		{	
+			m_curSaveBook--;
+			m_curSavePage = m_saveTag[m_curSaveBook];
+
+			readStr << "录制当前阅读的内容到第" << m_curSaveBook+1 << "本书。"
+				<< m_bookIndex[m_curSaveBook] << "第" << m_saveTag[m_curSaveBook]+1
+				<< "页。按录制键确认录制或选择其他书页";
+		}
+		else
+			readStr << "已经到达第一本书";
+	}
+	else if(m_isDelete)
+	{
+		if(m_currentBook != 0)
+		{	
+			m_currentBook--;		
+			m_currentPage = 0;
+			m_isDelBook = true;
+
+			readStr << "清除当前整书, 第"  << m_currentBook+1 << "本书"
+				<< m_bookIndex[m_currentBook] << "是否确认" 
+				<< "或通过前后页选择要清除的页码";
+		}
+		else
+			readStr << "已经到达第一本书";
+	}
+	else		//当前状态为阅读
+	{
+		m_isLoad = true;
+		if(m_currentBook != 0)	//如果不是第一本书
+		{
+			m_currentBook--;
+			m_currentPage = m_readTag[m_currentBook];
+
+			if(m_bookIndex[m_currentBook].length() == 0)
+				readStr << "第" << m_currentBook+1 << "本书，该书为空白。";
+			else
+			{
+				readStr << "第" << m_currentBook+1 << "本书。"
+					<< m_bookIndex[m_currentBook] << "当前读到第" 
+					<< m_readTag[m_currentBook]+1 << "页";
+			}
+		}
+		else
+			readStr << "已经到达第一本书";
+	}
+
+	STTSPlayString(m_hTTSInstance, (char*)readStr.str().c_str(), 1);
+}
+
+void CTTSDlg::NextPage()
+{
+	ostringstream readStr;
+	if(m_isSave)		//当前状态为录制状态
+	{	
+		//该书为空白
+		//if(m_bookIndex[m_curSaveBook].length() == 0)
+		//{
+		//	readStr << "该书为空白，录制当前阅读的内容到第" << m_curSavePage+1 << "页"
+		//		<< "请按录制键开始录制";
+		//	STTSPlayString(m_hTTSInstance, (char*)readStr.str().c_str(), 1);
+		//	return;
+		//}
+		//if(m_curSavePage != 0)
+		//	m_curSavePage++;
+		m_curSavePage++;
+		readStr << "录制当前阅读的内容到第" << m_curSavePage+1 << "页"
+			<< "按录制键确认录制或选择其他书页";
+	}
+	else if(m_isDelete)		//当前状态为删除状态
+	{	
+		m_isDelBook = false;
+		m_currentPage++;	
+		ostringstream pageName;
+		pageName << "D:/TTS-Data/" << m_currentBook << "/" << m_currentPage;
+
+		string line;
+		ifstream file(pageName.str().c_str());
+		if(!file.is_open())		//该页为空白页
+		{
+			readStr << "该页为空白页";
+		}
+		else
+		{
+			::getline(file, line);
+			::getline(file, line);
+			file.close();
+			readStr << "清除当前的内容, 第" << m_currentPage+1 << "页" << line
+				<< "请按清除键确认清除";
+		}
+	}
+	else	//当前状态为阅读状态
+	{
+		//判断该书是否有内容
+		m_isLoad = true;
+		if(m_bookIndex[m_currentBook].length() == 0)
+		{
+			STTSPlayString(m_hTTSInstance, (char*)"该书为空白", 1);
+			return;
+		}	
+		m_currentPage++;	
+		
+		//当前页的名字
+		ostringstream pageName;
+		pageName << "D:/TTS-Data/" << m_currentBook << "/" << m_currentPage;
+		ifstream file(pageName.str().c_str());
+
+		if(!file.is_open())	//如果该页为空
+			readStr << "第" << m_currentPage+1 << "页。本页为空白页。";
+		else				//如果该页不为空
+		{
+			string line;
+			//得到该页的第一行
+			::getline(file, line);
+			::getline(file, line);
+			readStr << "第" << m_currentPage+1 << "页。" << line << "请按朗读暂停键开始阅读";
+			file.close();
+		}
+	}
+
+
+	STTSPlayString(m_hTTSInstance, (char*)readStr.str().c_str(), 1);
+}
+
+void CTTSDlg::PrePage()
+{
+	ostringstream readStr;
+	if(m_isSave)			//当前状态为录制状态
+	{
+		if(m_curSavePage == 0)
+			readStr << "已到达首页";
+		else
+		{			
+			m_curSavePage--;
+			readStr << "录制当前阅读的内容到第" << m_curSavePage+1 << "页"
+				<< "按录制键确认录制或选择其他书页";
+		}
+	}
+	else if(m_isDelete)		//当前状态为删除 
+	{
+		m_isDelBook = false;
+		if(m_currentPage == 0)
+			readStr << "已到达首页";
+		else
+		{
+			m_currentPage--;
+			ostringstream pageName;
+			pageName << "D:/TTS-Data/" << m_currentBook << "/" << m_currentPage;
+
+			string line;
+			ifstream file(pageName.str().c_str());
+			if(!file.is_open())		//该页为空白页
+				readStr << "该页为空白页";
+			else
+			{
+				::getline(file, line);
+				::getline(file, line);
+				file.close();
+				readStr << "清除当前的内容, 第" << m_currentPage+1 << "页" << line
+					<< "请按清除键确认清除";
+			}
+		}
+	}
+	else	//当前状态为阅读状态
+	{
+		//判断该书是否有内容
+		m_isLoad = true;
+		if(m_bookIndex[m_currentBook].length() == 0)
+		{
+			STTSPlayString(m_hTTSInstance, (char*)"该书为空白", 1);
+			return;
+		}
+		
+		if(m_currentPage == 0)
+			readStr << "已到达首页";
+		else
+		{	
+			m_currentPage--;
+			ostringstream pageName;
+			pageName << "D:/TTS-Data/" << m_currentBook << "/" << m_currentPage;
+			ifstream file(pageName.str().c_str());
+
+			if(!file.is_open())		//this page is empty
+				readStr << "第" << m_currentPage+1 << "页。本页为空白页。";
+			else					//this page is not empty
+			{
+				string line;
+				//得到该页的第一行
+				::getline(file, line);
+				::getline(file, line);
+				readStr << "第" << m_currentPage+1 << "页。" << line << "请按朗读暂停键开始阅读";
+				file.close();
+			}
+		}
+	}
+
+	STTSPlayString(m_hTTSInstance, (char*)readStr.str().c_str(), 1);
+}
+
+void CTTSDlg::LoadSavedPage()
+{
+	ostringstream pageName;
+	pageName << "D:/TTS-Data/" << m_currentBook << "/"
+		<< m_currentPage;
+
+	ifstream file(pageName.str().c_str());
+
+	if(!file.is_open())
+	{
+		STTSPlayString(m_hTTSInstance, "该页为空白页", 1);
+		return;
+	}
+
+	if(!m_page.empty())
+		m_page.clear();
+
+	//装载存储的文件
+	string line;
+	while(::getline(file, line))
+		m_page.push_back(line);
+
+	file.close();
+	m_senPos = m_page.begin();
+
+	//更新阅读标记
+	m_lastReadBook = m_currentBook;
+	m_readTag[m_currentBook] = m_currentPage;
+}
+
+void CTTSDlg::CheckSavePage()
+{
+	//当第二次进行确认时，保存该页内容
+	if(m_isSave)
+	{
+		SavePage();
+		return;
+	}
+
+	m_isSave = true;
+	ostringstream readStr;
+	readStr << "录制当前阅读的内容到第"<< m_lastSaveBook+1 << "本书。"
+		<< m_bookIndex[m_lastSaveBook].c_str() << "第" 
+		<< m_saveTag[m_lastSaveBook]+1 << "页。" << "按录制键确认录制或选择其他书页";
+	m_curSavePage = m_saveTag[m_curSaveBook];
+
+	STTSPlayString(m_hTTSInstance, (char*)readStr.str().c_str(), 1);
+}
+
+void CTTSDlg::SavePage()
+{
+	ostringstream dirName;
+	dirName << "D:/TTS-Data/" << m_curSaveBook;
+
+	_finddata_t fileInfo;
+	intptr_t handle;
+	//如果该书还不存在，创建该书
+	handle = _findfirst(dirName.str().c_str(), &fileInfo);
+	if(handle == -1)
+		_mkdir(dirName.str().c_str());
+	_findclose(handle);
+
+	ostringstream pageName;
+	pageName << "D:/TTS-Data/" << m_curSaveBook << "/"
+			<< m_curSavePage;
+
+	if(m_isCover)		//用户要求覆盖该页内容
+	{
+		ofstream file(pageName.str().c_str());
+		for(list<string>::iterator pos = m_page.begin();
+			pos != m_page.end(); pos++)
+			file << *pos << endl;
+		file.close();
+
+		//更新录制标记
+		m_lastSaveBook = m_curSaveBook;
+		m_saveTag[m_curSaveBook] = m_curSavePage + 1;
+
+		//表示录制成功
+		m_isCover = false;
+		m_isSave = false;
+
+		STTSPlayString(m_hTTSInstance, "该页内容已经录制", 1);
+		
+	}
+	else
+	{
+		//检查该页内是否已经有内容
+		ifstream checkFile(pageName.str().c_str());
+		if(!checkFile.is_open())	//该页为空白页
+		{
+			//写入文件
+			ofstream file(pageName.str().c_str());
+			for(list<string>::iterator pos = m_page.begin();
+				pos != m_page.end(); pos++)
+				file << *pos << endl;
+			file.close();
+
+			//更新录制标记
+			m_lastSaveBook = m_curSaveBook;
+			m_saveTag[m_curSaveBook] = m_curSavePage + 1;
+			m_isSave = false;	//录制成功
+
+			STTSPlayString(m_hTTSInstance, "该页内容已经录制", 1);
+		}
+		else		//该页已有内容
+		{
+			STTSPlayString(m_hTTSInstance, "本页已有内容，按录制键覆盖或选择其他页", 1);
+			m_isCover = true;
+		}
+	}
+
+	//更新书目索引
+	dirName << "/*.*";
+	handle = _findfirst(dirName.str().c_str(), &fileInfo);
+	if(handle != -1)
+	{
+		do
+		{
+			if(string(fileInfo.name) == "."
+				|| string(fileInfo.name) == "..")
+				continue;
+			else
+				break;
+		}while(_findnext(handle, &fileInfo) == 0);
+	}
+	ostringstream firstPage;
+	firstPage << "D:/TTS-Data/" << m_curSaveBook << "/"
+		<< fileInfo.name;
+	ifstream first(firstPage.str().c_str());
+	string line;
+	::getline(first, line);
+	::getline(first, line);
+	if(m_bookIndex[m_curSaveBook] != line)
+		m_bookIndex[m_curSaveBook] = line;
+	
+	//if(m_curSavePage == 0)
+	//{
+	//	//这本书原本为空
+	//	list<string>::iterator pos = m_page.begin();
+	//	pos++;
+	//	if(m_bookIndex[m_curSaveBook].length() == 0)
+	//	{
+	//		m_bookIndex[m_curSaveBook] = *pos;
+	//		m_readTag[m_curSaveBook] = 0;
+	//	}
+	//	else
+	//		m_bookIndex[m_curSaveBook] = *pos;
+	//}
+}
+
+void CTTSDlg::CheckDelete()
+{
+	if(m_isDelete)
+	{
+		Delete();
+		return;
+	}
+
+	m_isDelete = true;
+	m_currentPage = 0;
+	ostringstream readStr;
+	readStr << "清除当前整书, 第"  << m_currentBook+1 << "本书"
+		<< m_bookIndex[m_currentBook] << "是否确认" 
+		<< "或通过前后页选择要清除的页码";
+
+	STTSPlayString(m_hTTSInstance, (char*)readStr.str().c_str(), 1);
+}
+
+void CTTSDlg::Delete()
+{
+	ostringstream name;
+	ostringstream readStr;
+	
+	if(m_isDelBook)	//清除整书
+	{
+		name << "D:/TTS-Data/" << m_currentBook << "/*.*";
+		list<string> deleteFiles;
+
+		_finddata_t fileInfo;
+		intptr_t handle;
+
+		handle = _findfirst(name.str().c_str(), &fileInfo);
+
+		//删除该目录下所有文件
+		if(handle != -1)
+		{
+			do
+			{
+				if(string(fileInfo.name) == "."
+					|| string(fileInfo.name) == "..")
+					continue;
+				ostringstream filename;
+				filename << "D:/TTS-Data/" << m_currentBook
+					<< "/" << fileInfo.name;
+				//int res = remove(fileInfo.name);
+				deleteFiles.push_back(filename.str());
+			}while(_findnext(handle, &fileInfo) == 0);
+		}
+		_findclose(handle);
+
+		for(list<string>::iterator pos = deleteFiles.begin();
+			pos != deleteFiles.end(); pos++)
+			int res = remove(pos->c_str());
+		ostringstream dirName;
+		dirName << "D:/TTS-Data/" << m_currentBook;
+		int res = _rmdir(dirName.str().c_str());
+		//更新书目索引
+		m_bookIndex[m_currentBook] = "";
+		m_readTag[m_currentBook] = 0;
+		m_saveTag[m_currentBook] = 0;
+		m_isDelete = false;
+
+		readStr << "第" << m_currentBook+1 << "本书已经清除";
+	}
+	else		//清除一页
+	{
+		name << "D:/TTS-Data/" << m_currentBook << "/"
+			<< m_currentPage;
+
+		ifstream checkFile(name.str().c_str());
+		if(!checkFile.is_open())	//该页为空白页
+			return;
+		else
+			checkFile.close();
+		
+		int res = remove(name.str().c_str());
+		m_isDelete = false;
+		readStr << "第" << m_currentBook + 1 << "本书第" << m_currentPage+1 << "页已经清除";
+
+		//更新书目
+		_finddata_t fileInfo;
+		intptr_t handle;
+		ostringstream dirName;
+		dirName << "D:/TTS-Data/" << m_currentBook << "/*.*";
+		handle = _findfirst(dirName.str().c_str(), &fileInfo);
+		if(handle != -1)
+		{
+			do
+			{
+				if(string(fileInfo.name) == "."
+					|| string(fileInfo.name) == "..")
+					continue;
+				else
+					break;
+			}while(_findnext(handle, &fileInfo) == 0);
+		}
+		_findclose(handle);
+
+		ostringstream firstPage;
+		firstPage << "D:/TTS-Data/" << m_curSaveBook << "/"
+			<< fileInfo.name;
+		ifstream first(firstPage.str().c_str());
+		string line;
+		::getline(first, line);
+		::getline(first, line);
+		if(m_bookIndex[m_curSaveBook] != line)
+			m_bookIndex[m_curSaveBook] = line;
+		first.close();
+
+		if(line == "")
+		{
+			m_readTag[m_currentBook] = 0;
+			m_saveTag[m_currentBook] = 0;
+			ostringstream delDir;
+			delDir << "D:/TTS-Data/" << m_currentBook;
+			remove(delDir.str().c_str());
+		}
+
+
+	}
+
+	STTSPlayString(m_hTTSInstance, (char*)readStr.str().c_str(), 1);
+}
+
+void CTTSDlg::SaveIndex()
+{
+	ofstream file("D:/TTS-Data/index.dat");
+
+	file << m_lastReadBook << " " << m_lastSaveBook << endl;
+	for(unsigned i = 0; i < m_bookIndex.size(); i++)
+	{
+		file << m_readTag[i] << " "
+			<< m_saveTag[i] << " "
+			<< m_bookIndex[i] << endl;
+	}
+	file.close();
+}

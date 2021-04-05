@@ -1,0 +1,72 @@
+<!DOCTPYE html>  
+<html lang="zh">  
+<head>  
+    <link rel="icon" href="public/img/beyond.jpg" type="image/x-icon"/>
+    <meta charset="UTF-8">
+    <meta name="author" content="beyond">
+    <meta http-equiv="refresh" content="520">
+    <meta name="description" content="未闻花名-免费零基础教程-beyond">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <meta name="keywords" content="HTML,CSS,JAVASCRIPT,JQUERY,XML,JSON,C,C++,C#,OC,PHP,JAVA,JSP,PYTHON,RUBY,PERL,LUA,SQL,LINUX,SHELL,汇编,日语,英语,泰语,韩语,俄语,粤语,阿语,魔方,乐理,动漫,PR,PS,AI,AE">
+    <!--[if lt IE 9]>
+        <script src="//apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+        <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.js">
+        </script>
+        <![endif]-->
+ 
+    <!-- 公共的样式 -->
+    <style type="text/css">
+        body{
+            font-size: 100%; 
+            /*声明margin和padding是个好习惯*/  
+            margin: 0;  
+            padding: 0; 
+            background-image: url("public/img/sakura4.png");  
+            background-repeat: no-repeat;  
+            background-position: center center;  
+        }
+    </style>
+    <!-- 公共的样式 -->
+    <link rel="stylesheet" type="text/css" href="public/css/beyondbasestylewhite5.css">
+    <!-- 绿色按钮的css效果 -->
+    <link rel="stylesheet" type="text/css" href="public/css/beyondbuttongreen.css">        
+ 
+    <!-- 公共的JS特效 -->
+    <script type="text/javascript" src="public/js/nslog.js"></script>
+    <!-- jquery -->
+    <script type="text/javascript" src="public/js/jquery2.1.4.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="public/lib/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="public/lib/bootstrap/dist/js/bootstrap.js"></script>
+ 
+    <!-- 这个标题 要留一个坑,给后代去实现自己的title -->
+    <title>
+        {{ block 'block_1_title'}}
+            beyond心中の动漫神作
+        {{ /block }}
+    </title>
+ 
+    <!-- 这个head中要 要留一个坑,给后代去链接自己的css或js-->
+    {{ block 'block_2_head_css_js'}}
+    {{ /block }}
+ 
+    </head>  
+    <body>
+        <!-- include进来公共的顶部、底部、左侧边栏、右广告栏 -->
+        {{ include './public_top.html' }}
+        {{ include './public_left.html' }}
+        
+        <!-- 这个body最后要 要留一个坑,给后代去实现自己的content-->
+        {{ block 'block_3_body_content'}}
+                这是母板默认的正文<br/>
+        {{ /block }}
+ 
+        {{ include './public_right.html' }}
+        {{ include './public_footer.html' }}
+ 
+        <!-- 这个body最后要 要留一个坑,给后代去实现自己的js-->
+        {{ block 'block_4_body_js'}}
+        {{ /block }}
+    </body>
+</html>

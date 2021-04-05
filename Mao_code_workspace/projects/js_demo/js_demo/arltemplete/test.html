@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../Notionlike_editor/assets/js/templete-web.js"></script>
+</head>
+
+<body>
+    <div id="content"></div>
+    <script type="text/html" id="test">
+        {{title}} {{ include './layout.art'}}
+    </script>
+    <script>
+        var data = {
+            title: '标签',
+            list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+        };
+        var html = template('test', data);
+        document.getElementById('content').innerHTML = html;
+    </script>
+</body>
+
+</html>

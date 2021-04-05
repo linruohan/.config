@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+
+<!--    <link rel="stylesheet" href="main.css">-->
+    
+</head>
+<body>
+<%
+include('./header.art', {
+title: title
+})
+%>
+<p>This is just an awesome page.</p>
+
+{{include './footer.art'}}
+<script src="../../lib/template-web.js"></script>
+<script>
+    const data = {
+        title: 'My Page'
+    };
+    document.render('./index.html', data);
+    console.log(html);
+
+</script>
+</body>
+</html>

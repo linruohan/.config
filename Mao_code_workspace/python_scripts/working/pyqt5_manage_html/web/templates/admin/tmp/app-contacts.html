@@ -1,0 +1,289 @@
+{% extends "base.html" %}      <!-- # 继承base.html文件-->
+
+{% block title %} tasks {% endblock %}<!-- 定制title部分的内容-->
+
+<!--# styles && css && scripts-->
+{% block head_styles %}
+<link href="../../assets/css/Rubik.css" rel="stylesheet">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../assets/css/all.min.css" rel="stylesheet">
+<link href="../../assets/plugins/icomoon/style.css" rel="stylesheet">
+<link href="../../assets/plugins/switchery/switchery.min.css" rel="stylesheet">
+
+
+<!-- Theme Styles -->
+<link href="../../assets/css/concept.min.css" rel="stylesheet">
+<link href="../../assets/css/custom.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+{% endblock %}
+{% block head_css %}{% endblock %}
+{% block head_scripts %}{{  super()  }}{% endblock %}
+
+{% block main_wrapper_rows %}
+
+
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="contact-search">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" id="todo-search" class="form-control"
+                                           placeholder="Search contacts">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="contacts-menu">
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="contacts-all active"><i></i>All<span>167</span></a></li>
+                                <li><a href="#" class="contacts-work"><i></i>Work<span>36</span></a></li>
+                                <li><a href="#" class="contacts-family"><i></i>Family<span>14</span></a></li>
+                                <li><a href="#" class="contacts-friends"><i></i>Friends<span>72</span></a></li>
+                                <li><a href="#" class="contacts-other"><i></i>Other<span>45</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="task-list">
+                            <div class="task-list-header">
+                                <p class="float-left">Showing 15 out of 167</p>
+                                <button class="btn btn-primary float-right">New Contact</button>
+                                <button class="btn btn-secondary float-right m-r-xxs">Refresh</button>
+                                <button class="btn btn-secondary float-right m-r-xxs">&gt;</button>
+                                <button class="btn btn-secondary float-right m-r-xxs">&lt;</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-all-contacts">
+                                                <label class="custom-control-label" for="check-all-contacts">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">E-mail</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-1">
+                                                <label class="custom-control-label" for="check-c-1">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Kenny Highland</td>
+                                        <td>202-555-0114</td>
+                                        <td>kenny.high@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-2">
+                                                <label class="custom-control-label" for="check-c-2">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Jacob Lee</td>
+                                        <td>262-251-7167</td>
+                                        <td>jacob.lee@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-3">
+                                                <label class="custom-control-label" for="check-c-3">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Matt Anderson</td>
+                                        <td>973-481-7156</td>
+                                        <td>matt.anderson@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-4">
+                                                <label class="custom-control-label" for="check-c-4">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Tye North</td>
+                                        <td>262-251-7167</td>
+                                        <td>tye.north@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-5">
+                                                <label class="custom-control-label" for="check-c-5">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Elvis Mahoney</td>
+                                        <td>678-290-1680</td>
+                                        <td>elvis.mahoney@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-6">
+                                                <label class="custom-control-label" for="check-c-6">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Riley Beach</td>
+                                        <td>912-280-8764</td>
+                                        <td>riley.beach@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-7">
+                                                <label class="custom-control-label" for="check-c-7">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Kashif Byrne</td>
+                                        <td>610-646-6223</td>
+                                        <td>kashif.byrne@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-8">
+                                                <label class="custom-control-label" for="check-c-8">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Sonny Rosas</td>
+                                        <td>972-883-0333</td>
+                                        <td>sonny.rosas@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-9">
+                                                <label class="custom-control-label" for="check-c-9">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Huw Orr</td>
+                                        <td>314-836-4040</td>
+                                        <td>huw.orr@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" value=""
+                                                       id="check-c-10">
+                                                <label class="custom-control-label" for="check-c-10">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <td>Haydon Kenny</td>
+                                        <td>505-285-1769</td>
+                                        <td>haydon.kenny@gmail.com</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="task-info" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="contact-person">
+                                            <div class="person-header">
+                                                <img src="../../assets/images/avatars/avatar3.png" alt="Kenny Highland">
+                                                <h3>Kenny Highland</h3>
+                                                <span>CEO at Stacks®</span>
+                                            </div>
+                                            <div class="person-body">
+                                                <h4>Short Bio</h4>
+                                                <p>Donec quis magna eget ipsum accumsan venenatis. Morbi efficitur
+                                                    tristique nisi, bibendum dapibus neque malesuada et. Ut facilisis
+                                                    leo ac erat vestibulum placerat. Donec ac lacus commodo, ultrices
+                                                    elit non, porttitor turpis.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary">Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block inner_scripts %}
+<!-- Javascripts -->
+<script src="../../assets/plugins/jquery/jquery-3.1.0.min.js"></script>
+<script src="../../assets/plugins/bootstrap/popper.min.js"></script>
+<script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../../assets/plugins/switchery/switchery.min.js"></script>
+<script src="../../assets/js/concept.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        "use strict";
+
+        $('.task-list .table tbody td').on('click', function(e) {
+            $('#task-info').modal('show');
+        });
+
+        $('.task-list .table tbody th').on('click', function(e) {
+            if(e.target == this){
+                $(this).find('input').click();
+            }
+        });
+
+        $('.task-list .table thead th input').on('change', evt =>  {
+            if($(evt.target).is(':checked')) {
+                $('.task-list table tbody th input:not(:checked)').click();
+            } else {
+                $('.task-list table tbody th input:checked').click();
+            }
+        });
+    });
+</script>
+{% endblock %}

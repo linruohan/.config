@@ -1,0 +1,3 @@
+D:\workspace\vs2019_space\VoiceCtrl\voiceControl\obj\Release\voiceControl.csprojAssemblyReference.cache
+D:\workspace\vs2019_space\VoiceCtrl\voiceControl\obj\Release\voiceControl.exe
+D:\workspace\vs2019_space\VoiceCtrl\voiceControl\obj\Release\voiceControl.pdb

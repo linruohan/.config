@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<GRAMMAR LANGID="804">
+	<RULE NAME="命令" TOPLEVEL="ACTIVE">
+	<L>
+		<P>上翻</P>
+		<P>下翻</P>
+		<P>翻</P>
+		<P>翻页</P>		
+		<P>呸奇唐</P>
+		<P>呸奇阿迫</P>		
+		<P>开始控制</P>
+		<P>停止控制</P>
+		<P>关</P>		
+		<P>关闭程序</P>
+		<P>左</P>
+		<P>右</P>		
+    </L>
+	</RULE>
+</GRAMMAR>
