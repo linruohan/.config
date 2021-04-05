@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="phonelog-fk" uuid="b93e0887-425b-4417-85d7-3f18e471091c">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\workspace\Python_pro\python_GUI\其他\phonelog-fk.db</jdbc-url>
+    </data-source>
+  </component>
+</project>
