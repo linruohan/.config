@@ -204,9 +204,9 @@ plugins=(z git zsh-autosuggestions zsh-syntax-highlighting)
 
 4.中文和命令ll支持
 
-Cmder 是不支持中文和 ll 命令的，这需要你在 Startup 下的 Environment 中设置一下。将 
-set LANG=zh_CN.UTF-8 
-alias ll=ls -al --show-control-chars --color $* 
+Cmder 是不支持中文和 ll 命令的，这需要你在 Startup 下的 Environment 中设置一下。将 
+set LANG=zh_CN.UTF-8 
+alias ll=ls -al --show-control-chars --color $* 
 ```
 
 ![image-20191214010816978](F:\Typora_book\typora_pic\image-20191214010816978.png)
