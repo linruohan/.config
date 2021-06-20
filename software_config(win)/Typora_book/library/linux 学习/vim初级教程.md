@@ -70,7 +70,7 @@ map a b a键改b键
 
 2. vim-surround:字符快速替换 
 
-(1)单个修改: `cs”‘` 光标放在目标字符串内,输入cs”}
+(1)单个修改: `cs”‘` 光标放在目标字符串内,输入cs”}
 
 (2)批量修改: V选中需要修改行, `:norm $cs"''`
 
@@ -93,7 +93,7 @@ v}:Tabularize /=
 ```
 
 5. SimpylFold: 代码折叠 `o`
-6. Tagbar:函数和 变量列表查看 `T` 上下键跳转,回车直接跳到函数代码处,ctrl+o 返回之前的代码行,ctrl+i 返回到之前的函数处
+6. Tagbar:函数和 变量列表查看 `T` 上下键跳转,回车直接跳到函数代码处,ctrl+o 返回之前的代码行,ctrl+i 返回到之前的函数处
 
 <img src="imgs/image-20210619211053372.png" alt="image-20210619211053372" style="zoom:50%;" />
 
@@ -102,7 +102,7 @@ v}:Tabularize /=
 
 <img src="imgs/image-20210619211651896.png" alt="image-20210619211651896" style="zoom:50%;" />
 
-9. coc-rename: 批量变量重命名 `rn`  输入要修改的名
+9. coc-rename: 批量变量重命名 `rn`  输入要修改的名
 
 <img src="imgs/image-20210619211819326.png" alt="image-20210619211819326" style="zoom:50%;" />
 
@@ -114,15 +114,15 @@ v}:Tabularize /=
 
 ![image-20210619212234847](imgs/image-20210619212234847.png)
 
-12. Far: 查找函数引用插件 `:F math %` 
+12. Far: 查找函数引用插件 `:F math %` 
 
 <img src="imgs/image-20210619212429268.png" alt="image-20210619212429268" style="zoom:47%;" />
 
-13. 代码运行和执行  `r` 
+13. 代码运行和执行  `r` 
 
 自定义代码
 
-14. Undotree:修改记录表 `L` 打开undotree `jk上下移动查阅`
+14. Undotree:修改记录表 `L` 打开undotree `jk上下移动查阅`
 
 <img src="imgs/image-20210619212823276.png" alt="image-20210619212823276" style="zoom:50%;" />
 
@@ -132,9 +132,9 @@ v}:Tabularize /=
 
 <img src="imgs/image-20210619212954451.png" alt="image-20210619212954451" style="zoom:50%;" />
 
-16. NERDTree:文件树 `tt`  i 编辑文件, l分屏打开文件, h隐藏文件 E回到文件树,B书签 `,a` 新建文件
+16. NERDTree:文件树 `tt`  i 编辑文件, l分屏打开文件, h隐藏文件 E回到文件树,B书签 `,a` 新建文件
 
-17. MarkdownPreview.nvim :`r` 打开浏览器同步编译
+17. MarkdownPreview.nvim :`r` 打开浏览器同步编译
 
 定义各种snippets简化markdown编写
 
@@ -160,7 +160,7 @@ v}:Tabularize /=
 
 - [ ]  vim-table-mode markdown表格格式化 `space +  tm` 打开,再次关闭
 
-19. 近义词:`space + th` 
+19. 近义词:`space + th` 
 
 <img src="imgs/image-20210619214929316.png" alt="image-20210619214929316" style="zoom:50%;" />
 
