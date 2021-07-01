@@ -1,0 +1,13 @@
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\obj\Debug\netcoreapp3.1\CmdGame.AssemblyInfoInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\obj\Debug\netcoreapp3.1\CmdGame.AssemblyInfo.cs
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\obj\Debug\netcoreapp3.1\CmdGame.csproj.CoreCompileInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\bin\Debug\netcoreapp3.1\CmdGame.exe
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\bin\Debug\netcoreapp3.1\CmdGame.deps.json
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\bin\Debug\netcoreapp3.1\CmdGame.runtimeconfig.json
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\bin\Debug\netcoreapp3.1\CmdGame.runtimeconfig.dev.json
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\bin\Debug\netcoreapp3.1\CmdGame.dll
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\bin\Debug\netcoreapp3.1\CmdGame.pdb
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\obj\Debug\netcoreapp3.1\CmdGame.dll
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\obj\Debug\netcoreapp3.1\CmdGame.pdb
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\obj\Debug\netcoreapp3.1\CmdGame.genruntimeconfig.cache
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\CmdGame\obj\Debug\netcoreapp3.1\CmdGame.csproj.AssemblyReference.cache

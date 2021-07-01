@@ -6,6 +6,7 @@
 ![](https://amwiki.xf09.net/docs/assets/001.tiny/02-0e63f48d.png)
 
 2. ##### 安装 Atom 完成之后，再安装插件 amWiki，您可以通过以下三种途径安装：
+    
     - 【方式一】：通过 Atom 菜单，File -> Setting -> Install -> 搜索 `amWiki`  
       ![](https://amwiki.xf09.net/docs/assets/001.tiny/02-ec2b10b3.png)  
       <br>
@@ -13,7 +14,7 @@
       ![](https://amwiki.xf09.net/docs/assets/001.tiny/02-37a29814.png)  
       <br>
     - 【方式三】：从Github的 [amWiki版本发布](https://github.com/TevinLi/amWiki/releases) 下载zip，(windows)解压到 `C:\Users\Administrator\.atom\packages`，并将文件夹名 `amWiki-x.x.x` 改为 `amWiki`
-
+    
 3. ##### 重启 Atom (必须)
 
 4. ##### 在本地您需要创建文库的位置创建一个文件夹 (非 Atom 编辑器中)

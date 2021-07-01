@@ -1,0 +1,12 @@
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\bin\Debug\netcoreapp3.1\firstgame_helloworld.exe
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\bin\Debug\netcoreapp3.1\firstgame_helloworld.deps.json
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\bin\Debug\netcoreapp3.1\firstgame_helloworld.runtimeconfig.json
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\bin\Debug\netcoreapp3.1\firstgame_helloworld.runtimeconfig.dev.json
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\bin\Debug\netcoreapp3.1\firstgame_helloworld.dll
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\bin\Debug\netcoreapp3.1\firstgame_helloworld.pdb
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\obj\Debug\netcoreapp3.1\firstgame_helloworld.AssemblyInfoInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\obj\Debug\netcoreapp3.1\firstgame_helloworld.AssemblyInfo.cs
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\obj\Debug\netcoreapp3.1\firstgame_helloworld.csproj.CoreCompileInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\obj\Debug\netcoreapp3.1\firstgame_helloworld.dll
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\obj\Debug\netcoreapp3.1\firstgame_helloworld.pdb
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\firstgame_helloworld\obj\Debug\netcoreapp3.1\firstgame_helloworld.genruntimeconfig.cache

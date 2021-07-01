@@ -1,0 +1,13 @@
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\bin\Debug\netcoreapp3.1\guss_nums.exe
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\bin\Debug\netcoreapp3.1\guss_nums.deps.json
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\bin\Debug\netcoreapp3.1\guss_nums.runtimeconfig.json
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\bin\Debug\netcoreapp3.1\guss_nums.runtimeconfig.dev.json
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\bin\Debug\netcoreapp3.1\guss_nums.dll
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\bin\Debug\netcoreapp3.1\guss_nums.pdb
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\obj\Debug\netcoreapp3.1\guss_nums.AssemblyInfoInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\obj\Debug\netcoreapp3.1\guss_nums.AssemblyInfo.cs
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\obj\Debug\netcoreapp3.1\guss_nums.csproj.CoreCompileInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\obj\Debug\netcoreapp3.1\guss_nums.dll
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\obj\Debug\netcoreapp3.1\guss_nums.pdb
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\obj\Debug\netcoreapp3.1\guss_nums.genruntimeconfig.cache
+D:\.config\Mao_code_workspace\c#_pro\myGames\games\guss_nums\obj\Debug\netcoreapp3.1\guss_nums.csprojAssemblyReference.cache
