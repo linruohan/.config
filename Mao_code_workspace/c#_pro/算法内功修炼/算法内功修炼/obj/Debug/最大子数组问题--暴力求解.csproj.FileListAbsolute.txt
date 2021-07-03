@@ -1,0 +1,6 @@
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\算法内功修炼\bin\Debug\算法内功修炼.exe.config
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\算法内功修炼\bin\Debug\算法内功修炼.exe
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\算法内功修炼\bin\Debug\算法内功修炼.pdb
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\算法内功修炼\obj\Debug\最大子数组问题--暴力求解.csproj.CoreCompileInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\算法内功修炼\obj\Debug\算法内功修炼.exe
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\算法内功修炼\obj\Debug\算法内功修炼.pdb

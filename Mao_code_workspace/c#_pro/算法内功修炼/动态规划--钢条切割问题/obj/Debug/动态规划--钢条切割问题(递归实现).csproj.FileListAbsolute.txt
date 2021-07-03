@@ -1,0 +1,6 @@
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\动态规划--钢条切割问题\bin\Debug\动态规划--钢条切割问题.exe.config
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\动态规划--钢条切割问题\bin\Debug\动态规划--钢条切割问题.exe
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\动态规划--钢条切割问题\bin\Debug\动态规划--钢条切割问题.pdb
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\动态规划--钢条切割问题\obj\Debug\动态规划--钢条切割问题(递归实现).csproj.CoreCompileInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\动态规划--钢条切割问题\obj\Debug\动态规划--钢条切割问题.exe
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\动态规划--钢条切割问题\obj\Debug\动态规划--钢条切割问题.pdb

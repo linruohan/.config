@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C69B452-F3C6-4444-8652-DC0BD2730A75}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Lec03_CmdGame</RootNamespace>
+    <AssemblyName>Lec03_CmdGame</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Game\Actor\Boss.cs" />
+    <Compile Include="Game\Component\Buff.cs" />
+    <Compile Include="Game\Component\Skill.cs" />
+    <Compile Include="Game\Logic\EActorType.cs" />
+    <Compile Include="Game\Logic\GameState.cs" />
+    <Compile Include="Game\Util\Debug.cs" />
+    <Compile Include="Game\Actor\Actor.cs" />
+    <Compile Include="Game\Component\AI.cs" />
+    <Compile Include="Game\Util\Driver.cs" />
+    <Compile Include="Game\Util\IAwake.cs" />
+    <Compile Include="Game\Util\ILifeCycle.cs" />
+    <Compile Include="Game\Util\IUpdate.cs" />
+    <Compile Include="Game\Util\RandomUtil.cs" />
+    <Compile Include="Game\Util\Time.cs" />
+    <Compile Include="Game\Render\CmdRenderEngine.cs" />
+    <Compile Include="Game\Component\Component.cs" />
+    <Compile Include="Game\Logic\EGameState.cs" />
+    <Compile Include="Game\Actor\Enemy.cs" />
+    <Compile Include="Game\Component\EnemyAI.cs" />
+    <Compile Include="Game\Logic\Game.cs" />
+    <Compile Include="Game\Component\HurtEffect.cs" />
+    <Compile Include="Game\Logic\InputManager.cs" />
+    <Compile Include="Game\Actor\Player.cs" />
+    <Compile Include="Game\Component\PlayerAI.cs" />
+    <Compile Include="Game\Render\RenderEngine.cs" />
+    <Compile Include="Game\Render\RenderInfo.cs" />
+    <Compile Include="Game\Render\RenderInfos.cs" />
+    <Compile Include="Game\Render\UnityRenderEngine.cs" />
+    <Compile Include="Game\Util\Vector2.cs" />
+    <Compile Include="Game\Logic\World.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,6 @@
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\背包问题--自顶向下--带备忘\bin\Debug\背包问题--自顶向下--带备忘.exe.config
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\背包问题--自顶向下--带备忘\bin\Debug\背包问题--自顶向下--带备忘.exe
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\背包问题--自顶向下--带备忘\bin\Debug\背包问题--自顶向下--带备忘.pdb
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\背包问题--自顶向下--带备忘\obj\Debug\背包问题--自顶向下--带备忘.csproj.CoreCompileInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\背包问题--自顶向下--带备忘\obj\Debug\背包问题--自顶向下--带备忘.exe
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\背包问题--自顶向下--带备忘\obj\Debug\背包问题--自顶向下--带备忘.pdb

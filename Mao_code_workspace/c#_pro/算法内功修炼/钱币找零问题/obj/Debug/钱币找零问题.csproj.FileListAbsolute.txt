@@ -1,0 +1,7 @@
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\钱币找零问题\bin\Debug\钱币找零问题.exe.config
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\钱币找零问题\bin\Debug\钱币找零问题.exe
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\钱币找零问题\bin\Debug\钱币找零问题.pdb
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\钱币找零问题\obj\Debug\钱币找零问题.csproj.AssemblyReference.cache
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\钱币找零问题\obj\Debug\钱币找零问题.csproj.CoreCompileInputs.cache
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\钱币找零问题\obj\Debug\钱币找零问题.exe
+D:\.config\Mao_code_workspace\c#_pro\算法内功修炼\钱币找零问题\obj\Debug\钱币找零问题.pdb
