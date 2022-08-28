@@ -176,6 +176,7 @@ alias ...='cd ../../..'
 alias l.='lsd -d .* --color=auto'
 alias ll='lsd -laF --color=auto'
 alias ls='lsd --color=auto'
+alias f='shfmt -d -i 4 -ci -w'
 # Changing "ls" to "exa"
 #alias ls='exa -al --color=always --group-directories-first' # my preferred listing
 #alias la='exa -a --color=always --group-directories-first'  # all files and dirs
