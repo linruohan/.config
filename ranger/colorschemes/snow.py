@@ -6,6 +6,7 @@ from __future__ import (absolute_import, division, print_function)
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import default_colors, reverse, bold, BRIGHT
 
+
 class Snow(ColorScheme):
 
     def use(self, context):
