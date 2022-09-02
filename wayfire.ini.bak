@@ -1,28 +1,21 @@
 # Default config for Wayfire
-#
 # Copy this to ~/.config/wayfire.ini and edit it to your liking.
 #
 # Take the tutorial to get started.
 # https://github.com/WayfireWM/wayfire/wiki/Tutorial
-#
 # Read the Configuration document for a complete reference.
 # wayfire配置 WIKI页面
 # https://github.com/WayfireWM/wayfire/wiki/Configuration
-
-# Input configuration ──────────────────────────────────────────────────────────
+# Input configuration ──────────────
 # 键盘输出设置
 # Example configuration:
-# 举例
 # [input]
 # xkb_layout = us,fr
 # xkb_variant = dvorak,bepo
-#
-# See Input options for a complete reference.
-# https://github.com/WayfireWM/wayfire/wiki/Configuration#input
+# See Input options for a complete reference. https://github.com/WayfireWM/wayfire/wiki/Configuration#input
 
 [input] 
-# 键盘格式
-# US键盘输入格式
+# 键盘格式# US键盘输入格式
 xkb_layout = us 
 # 鼠标加速 default none adaptive flat
 mouse_accel_profile = adaptive  
@@ -33,43 +26,42 @@ cursor_theme = Adwaita
 # 鼠标大小 这些仅作用于wayfire
 cursor_size = 36 
 
-# Output configuration ─────────────────────────────────────────────────────────
+# Output configuration ──────────────────
 # Example configuration:
-# 举例
 # [output:eDP-1]
 # mode = 1920x1080@60000
 # position = 0,0
 # transform = normal
 # scale = 1.000000
-
-[output:eDP-1] 
-# 屏幕输出分辨率，位置，方向，缩放等
-# 分辨率 刷新率
-mode = 1920x1080@60000 
+[output:LVDS-1] 
+mode = 1366x768@60000 
 # 如果是笔记本，自带的屏幕位置必须是0,0,否则在只接一块屏时会出错
 position = 0,0 
-# 方向
 transform = normal 
-# 缩放比例
 scale = 1.000000 
 
 [output:HDMI-A-1]
 mode = 1920x1080@60000
-position = -1920,0
+position = 1366,0
+transform = normal
+scale = 1.000000
+
+[output:VGA-2]
+mode = 640x480@60000
+position = 3286,0
 transform = normal
 scale = 1.000000
 
 # You can get the names of your outputs with wlr-randr.
 # 你可以通过wlr-randr来查看你的显示器名
 # https://github.com/emersion/wlr-randr
-#
 # See also kanshi for configuring your outputs automatically.
 # https://wayland.emersion.fr/kanshi/
 #
 # See Output options for a complete reference.
 # https://github.com/WayfireWM/wayfire/wiki/Configuration#output
 
-# Core options ─────────────────────────────────────────────────────────────────
+# Core options ─────────────
 [core]
 # List of plugins to be enabled.
 # See the Configuration document for a complete list.
@@ -107,26 +99,36 @@ plugins = \
 # You can find its documentation here:
 # https://github.com/WayfireWM/wayfire/wiki/Configuration#blur
 
-# Close focused window.
-# 关闭窗口
-close_top_view = <super> KEY_X | <alt> KEY_F4
+# Close focused window. 关闭窗口
+close_top_view = <super> KEY_Q | <alt> KEY_F4
 
-# Workspaces arranged into a grid: 3 × 3.
-# 工作区间数量比例
+# Workspaces arranged into a grid: 3 × 3.# 工作区间数量比例
 vwidth = 2
 vheight = 2
 
-# Prefer client-side decoration or server-side decoration
-# 首选窗口装饰
+# Prefer client-side decoration or server-side decoration 首选窗口装饰
 preferred_decoration_mode = server
 
-# Effects ──────────────────────────────────────────────────────────────────────
-# 特效
+# Effects ──────────────
+# 特效 fire
+# open_animation = fire
+# close_animation = fire
 [animate]
-open_animation = fire
-close_animation = fire
-duration = 200
-
+close_animation = zoom
+duration = 400
+enabled_for = (type equals "toplevel" | (type equals "x-or" & focusable equals true))
+fade_duration = 400
+fade_enabled_for = type equals "overlay"
+fire_color = \#B22303FF
+fire_duration = 300
+fire_enabled_for = none
+fire_particle_size = 16.000000
+fire_particles = 2000
+open_animation = zoom
+random_fire_color = false
+startup_duration = 600
+zoom_duration = 500
+zoom_enabled_for = none
 # Mouse bindings ───────────────────────────────────────────────────────────────
 # 鼠标绑定
 
@@ -197,7 +199,7 @@ bar = waybar
 
 # 壁纸
 # 随机壁纸
-background = swaybg -i $(find img/. -type f | shuf -n1) -m fill
+background = swaybg -i $(find ~/Pictures/ -type f | shuf -n1) -m fill
 # swaybg -i img/.$(date -u -d @$((($(date -u +%s) / 600) * 600)) "+%Hh%M").png -m fill
 # swaybg -i $(find img/. -type f | shuf -n1) -m fill
 
@@ -217,7 +219,7 @@ notifications = mako
 # Screen color temperature
 # 屏幕色温 已关闭，启用时请安装 wlsunset
 # https://sr.ht/~kennylevinsen/wlsunset/
-# gamma = wlsunset
+gamma = wlsunset
 
 # Idle configuration
 # 空闲设置
@@ -251,13 +253,12 @@ command_brightness_up = brightnessctl set +10%
 
 # Start a terminal
 # 启动一个终端
-# https://github.com/alacritty/alacritty
-binding_terminal = <super> KEY_Z
+binding_terminal = <super> KEY_ENTER
 command_terminal = kitty #默认kitty
 
 # Toggle Waybar 
 # 切换是否隐藏waybar
-binding_waybar = <super> KEY_Q
+binding_waybar = <super> KEY_B
 command_waybar = killall -s USR1 waybar
 
 # Start your launcher 
@@ -265,30 +266,30 @@ command_waybar = killall -s USR1 waybar
 # https://hg.sr.ht/~scoopta/wofi
 # Note: Add mode=run or mode=drun to ~/.config/wofi/config.
 # You can also specify the mode with --show option.
-binding_launcher = <super> <shift> KEY_E
+binding_launcher = <super> KEY_S
 command_launcher = wofi
 
 # Screen locker 
 # 屏幕锁屏
 # https://github.com/swaywm/swaylock
-binding_lock = <super> KEY_ESC
-command_lock = swaylock --image Moichi_Lin/wallpaper/Lock_4k.jpg
+binding_lock = <super> KEY_L
+command_lock = swaylock --image ~/Pictures/1dbc43f4880511ebb6edd017c2d2eca2.jpg
 
 # Logout 
 # 登出 登录管理器
 # https://github.com/ArtsyMacaw/wlogout
-binding_logout = <super> <shift> KEY_ESC
+binding_logout = <super> <shift> KEY_Q
 command_logout = wlogout
 
 # Screenshots 
 # 截图
 # https://wayland.emersion.fr/grim/
 # https://wayland.emersion.fr/slurp/
-binding_screenshot = <ctrl> <super> <alt> KEY_C
+binding_screenshot = <shift> KEY_SYSRQ
 command_screenshot = grim $HOME/Pictures/screenshot/$(date "+%F_%T").png
 
-binding_screenshot_clip_paste = <ctrl> <alt> KEY_C
-command_screenshot_clip_paste = slurp | grim -g - - | wl-copy && wl-paste > ~/Pictures/screenshot/$(date '+%F_%T').png
+binding_screenshot_clip_paste = <alt> KEY_A
+command_screenshot_clip_paste = slurp | grim -g - - | wl-copy
 
 # Volume controls 
 # 音量控制
