@@ -47,8 +47,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
-set list
-set listchars=tab:\|\ ,trail:▫
+set nolist
+"set listchars=tab:\|\ ,trail:▫
 set scrolloff=4
 set ttimeoutlen=0
 set notimeout
