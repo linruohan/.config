@@ -23,7 +23,7 @@ gui:
     optionsTextColor:
       - blue
     selectedLineBgColor:
-      - reverse
+      - default
     selectedRangeBgColor:
       - blue
 reporting: "off"
@@ -31,6 +31,7 @@ splashupdatesindex: 0
 startuppopupversion: 1
 keybinding:
   universal:
+    quit-alt1: '<esc>'
     prevItem-alt: 'u'
     nextItem-alt: 'e'
     prevBlock-alt: 'n'
@@ -50,6 +51,7 @@ keybinding:
     filteringMenu: '<c-f>'
   files:
     ignoreFile: 'I'
+    IgnoreOrExcludeFile: 'I'
   commits:
     moveDownCommit: '<c-e>'
     moveUpCommit: '<c-u>'
