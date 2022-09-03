@@ -1,3 +1,8 @@
+# ============== copy from ==============
+# https://github.com/MoichiLin/dotfiles/blob/main/wayfire.ini
+# =======================================
+
+
 # Default config for Wayfire
 # Copy this to ~/.config/wayfire.ini and edit it to your liking.
 #
@@ -254,7 +259,7 @@ command_brightness_up = brightnessctl set +10%
 # Start a terminal
 # 启动一个终端
 binding_terminal = <super> KEY_ENTER
-command_terminal = kitty #默认kitty
+command_terminal = kitty
 
 # Toggle Waybar 
 # 切换是否隐藏waybar

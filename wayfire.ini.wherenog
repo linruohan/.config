@@ -1,3 +1,7 @@
+# ===============================
+# https://gitee.com/wherenog/dotfile/blob/master/wayfire.ini
+# ===============================
+
 [alpha]
 min_value = 0.100000
 modifier = <alt> <super> 
@@ -20,8 +24,10 @@ zoom_duration = 500
 zoom_enabled_for = none
 
 [autostart]
+# network 
 a0 = nm-applet --indicator
 autostart_wf_shell = false
+# background image
 background = swaybg -i ~/Pictures/guidao/5_4a3f1dde5d.jpg -m fill
 bar = waybar
 gamma = wlsunset
@@ -55,12 +61,17 @@ toggle = none
 # lock
 binding_0 = <super> KEY_L
 command_0 = swaylock -i ~/Pictures/1dbc43f4880511ebb6edd017c2d2eca2.jpg
-# launcher
-binding_launcher = <super> KEY_S | hotspot bottom-right 10x10 250
-command_launcher = ~/.config/rofi/bin/launcher_ribbon
+# 1. launcher rofi
+# binding_launcher = <super> KEY_S | hotspot bottom-right 10x10 250
+# command_launcher = ~/.config/rofi/bin/launcher_ribbon
+# 2. launcher wofi
+binding_launcher = <super> KEY_S
+command_launcher = wofi
+
 # logout
 binding_logout = <alt> <shift> KEY_Q
 command_logout = wlogout -r 50 -c 40
+
 # screenshot
 binding_screenshot = KEY_SYSRQ
 binding_screenshot_interactive = <shift> KEY_SYSRQ
@@ -68,6 +79,7 @@ binding_screenshot_interactive_toclipboard = <alt> KEY_A
 command_screenshot = grim $(date '+%F_%T').png
 command_screenshot_interactive = slurp | grim -g - ~/Pictures/screenshots_$(date '+%F_%T').png
 command_screenshot_interactive_toclipboard = grim -g "$(slurp -d)" - | wl-copy
+
 # terminal 
 command_terminal = kitty
 binding_terminal = <alt> KEY_ENTER
