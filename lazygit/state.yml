@@ -1,11 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/xiaohan/codehub/theniceboy.config
+- /home/xiaohan/codehub/LunarVim.Neovim-from-scratch
+- /home/xiaohan/codehub/my_config/askfiy.nvim
+- /home/xiaohan/codehub/my_config
 - /home/xiaohan/codehub/my_dwm
 - /home/xiaohan/codehub/typora_book
-- /home/xiaohan/codehub/dwm-distrotube
-- /home/xiaohan/codehub/slstatus
-- /home/xiaohan/codehub/st-distrotube
-- /home/xiaohan/codehub/my_config
 - /home/xiaohan/.config
 - /home/xiaohan/.config/nvim
 startuppopupversion: 5
