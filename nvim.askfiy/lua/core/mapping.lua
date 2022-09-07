@@ -5,6 +5,20 @@ local mapping = {}
 api.map.bulk_register({
     {
         mode = { "n" },
+        lhs = "Q",
+        rhs = ":q!<cr>",
+        options = { silent = true },
+        description = "quit Neovim",
+    },
+    {
+        mode = { "n" },
+        lhs = "S",
+        rhs = ":w!<cr>",
+        options = { silent = true },
+        description = "save Neovim",
+    },
+    {
+        mode = { "n" },
         lhs = "<leader><esc>",
         rhs = ":qa!<cr>",
         options = { silent = true },
