@@ -11,4 +11,5 @@ cd ~/.config/nvim && patch < ../theniceboy_nvim.init.vim.patch
 git clone git@github.com:LunarVim/Neovim-from-scratch.git ~/.config
 
 #  2.3 git@github.com:askfiy/nvim.git
-git clone git@github.com:askfiy/nvim.git
+git clone git@github.com:askfiy/nvim.git ~/.config
+cd ~/.config/nvim/ && patch < ../askfiy.nvim.patch
