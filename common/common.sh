@@ -23,25 +23,6 @@ rt_err() {
     echo -e "${color_red}$(date '+[%Y-%m-%d %H:%M:%S]')[ERROR] $* ${color_clean}"
 }
 
-main_install_cmd() {
-    # shell 相关
-    {
-        rt_log "[oh-my-zsh] & [shfmt shellcheck] install stating ..."
-        zsh_install && ohmyzsh_install && shell_tool_install
-        # add alias
-        cat "${BIN}/home.files/.zshrc" >> ~/.zshrc
-    }
-    # 编辑器安装
-    {
-        python_install
-        node_install
-        go_install
-        git_install
-        neovim_install
-    }
-
-}
-
 neovim_install() {
     # neovim install
     type neovim && return 0
