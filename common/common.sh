@@ -3,7 +3,6 @@
 cur=$(dirname $(realpath $0))
 BIN=$(dirname $cur)
 source ./common/zsh_install.sh
-source ./common/config_install.sh
 
 color_blue="\033[1;34m"
 color_green="\033[0;32m"
@@ -33,17 +32,21 @@ neovim_install() {
     npm install -g neovim
     # config files install
     flag="${1:-LunarVim}"
+    [ -d ~/.config/nivm ] && mv ~/.config/nvim ~/.config/nvim.old
     case "$flag" in
         "theniceboy")
             #  2.1 theniceboy: https://github.com/theniceboy/nvim
-            theniceboy_nvim
+            git clone git@github.com:theniceboy/nvim.git ~/.config/nvim
+            cd ~/.config/nvim && patch < "${BIN}/patch.files/theniceboy_nvim.init.vim.patch" || rt_err "patch to theniceboy_nvim failed"
             ;;
         "scratch")
             #  2.2 git@github.com:LunarVim/Neovim-from-scratch.git
-            git clone git@github.com:LunarVim/Neovim-from-scratch.git ~/.config
+            git clone git@github.com:LunarVim/Neovim-from-scratch.git ~/.config/nvim
             ;;
         "LunarVim")
-            lunarvim_install # lua init.lua statring test
+            git clone https://github.com/LunarVim/LunarVim.git ~/.config/nvim
+            rt_log "stating install lunarvim ..."
+            nvim +PackerSync
             ;;
         "askfiy")
             #  2.3 git@github.com:askfiy/nvim.git
@@ -57,21 +60,6 @@ neovim_install() {
 
 }
 
-theniceboy_nvim() {
-    # neovim config: 使用 https://github.com/theniceboy/nvim
-    git clone git@github.com:theniceboy/nvim.git nvim.theniceboy
-    cd nvim.theniceboy && patch < "${BIN}/patch.files/theniceboy_nvim.init.vim.patch" \
-        || rt_err "patch to theniceboy_nvim failed"
-    return 0
-}
-
-lunarvim_install() {
-    git clone https://github.com/LunarVim/LunarVim.git
-    [ -d ~/.config/nvim ] && mv ~/.config/nvim ~/.config/nvim.old
-    ln -sf $(realpath ./LunarVim) ~/.config/nvim
-    rt_log "stating install lunarvim ..."
-    nvim +PackerSync
-}
 python_install() {
     #type python3 && return 0
     [ -d ~/.pip ] && {
@@ -167,4 +155,30 @@ git_install() {
     colorMoved = default
 	" > ~/.gitconfig
     rt_log "git and lazygit setting success"
+}
+
+config_main() {
+    # 1. install .config from theniceboy .config
+    rt_log "theniceboy config downloading ..."
+    git clone git@github.com:theniceboy/.config.git theniceboy.config
+    cp -arv ./theniceboy.config/* ~/.config
+    cd ~/.config && patch < ${BIN}/patch.files/theniceboy.config.patch
+    rt_log "theniceboy config cp done !"
+}
+
+rime_config() {
+    # 2. rime 输入法 配置文件
+    rt_log "rime installing ......."
+    if uname | grep Linux; then
+        rt_log "linux rime install !"
+        install_dir="~/.local/share/fcitx5/themes"
+        [ ! -d ${install_dir} ] && mkdir -p ${install_dir}
+        cp -arv ../config.files/fcitx5/themes/xiaohan-rime ${install_dir}
+    else
+        # windows install
+        git clone git@github.com:iDvel/rime-ice.git
+        cp -arv ./rime-ice/* ~/.local/fcitx5/rime
+        cp -arvf win10/soft_config/rime-ice_setting_cover/* ~/.local/fcitx5/rime
+    fi
+    rt_log "rime cfg installed success !"
 }
