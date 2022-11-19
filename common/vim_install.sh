@@ -50,5 +50,13 @@ neovim_install() {
             ;;
     esac
 }
-
-neovim_install "$@"
+nvim_type=$(rt_select "nvim lvim")
+case ${nvim_type} in
+    "nvim")
+        neovim_install "$@"
+        ;;
+    "lvim")
+        git clone https://github.com/LunarVim/LunarVim.git
+        sh LunarVim/utils/installer/install.sh
+        ;;
+esac
