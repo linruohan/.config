@@ -21,6 +21,7 @@ ohmyzsh_install() {
     [ -d ~/.oh-my-zsh ] || {
         type wget || sudo pacman -Sy wget
         sh -c "$(wget -O- https://gitee.com/pocmon/mirrors/raw/master/tools/install.sh)"
+        cd ~/.oh-my-zsh && patch < "${BIN}/patch.files/ohmyzsh.patch"
     }
     # install plugins
     grep -rw "zsh-syntax-highlighting" ~/.zshrc || {

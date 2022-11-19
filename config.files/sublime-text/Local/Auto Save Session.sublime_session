@@ -1,17 +1,34 @@
 {
+	"file_history":
+	[
+		"/home/xiaohan/.config/sublime-text/Packages/MarkdownPreview/MarkdownPreview.sublime-settings",
+		"/home/xiaohan/.config/sublime-text/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/xiaohan/.config/sublime-text/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/xiaohan/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap",
+		"/home/xiaohan/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+		"/home/xiaohan/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+		"/home/xiaohan/.config/sublime-text/Packages/MarkdownEditing/Default (Linux).sublime-keymap",
+		"/home/xiaohan/.config/sublime-text/Packages/MarkdownEditing/Distraction Free.sublime-settings",
+		"/home/xiaohan/.config/sublime-text/Packages/User/Distraction Free.sublime-settings"
+	],
 	"folder_history":
 	[
 		"/home/xiaohan/codehub/typora_book"
 	],
-	"last_version": 4126,
-	"last_window_id": 12,
+	"last_version": 4143,
+	"last_window_id": 19,
 	"log_indexing": false,
-	"next_update_check": 1661691461,
+	"next_update_check": 1668949786,
 	"settings":
 	{
 		"new_window_full_screen": false,
 		"new_window_height": 0.0,
 		"new_window_maximized": true,
+		"new_window_position":
+		[
+			0.0,
+			30.0
+		],
 		"new_window_settings":
 		{
 			"auto_complete":
@@ -31,8 +48,16 @@
 				"selected_items":
 				[
 					[
+						"markdownprev",
+						"Markdown Preview: Preview in Browser"
+					],
+					[
 						"install",
 						"Package Control: Install Package"
+					],
+					[
+						"reload",
+						"LiveReload: Enable/disable plug-ins"
 					],
 					[
 						"remove",
@@ -51,7 +76,7 @@
 			},
 			"console":
 			{
-				"height": 136.0,
+				"height": 388.0,
 				"history":
 				[
 				]
@@ -67,15 +92,18 @@
 			},
 			"file_history":
 			[
-				"/home/xiaohan/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
-				"/home/xiaohan/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+				"/home/xiaohan/.config/sublime-text/Packages/User/MarkdownPreview.sublime-settings",
+				"/home/xiaohan/codehub/typora_book/Vue3_vite_Ts_pinia_实战_源码_全栈/Sublime Text4的 Markdown 预览.md",
+				"/home/xiaohan/.config/sublime-text/Packages/User/imagepaste.sublime-settings",
+				"/home/xiaohan/.config/sublime-text/Packages/imagepaste/imagepaste.sublime-settings",
+				"/home/xiaohan/codehub/typora_book/Vue3_vite_Ts_pinia_实战_源码_全栈/11_vue_UI库.md",
 				"/home/xiaohan/codehub/typora_book/Easyx库基础用法教程.md",
 				"/home/xiaohan/.config/sublime-text/Packages/User/JsFormat.sublime-settings",
 				"/home/xiaohan/.config/sublime-text/Packages/JsFormat/JsFormat.sublime-settings"
 			],
 			"find":
 			{
-				"height": 0.0
+				"height": 58.0
 			},
 			"find_in_files":
 			{
@@ -107,7 +135,7 @@
 			},
 			"incremental_find":
 			{
-				"height": 0.0
+				"height": 58.0
 			},
 			"input":
 			{
@@ -129,7 +157,7 @@
 			"pinned_build_system": "",
 			"replace":
 			{
-				"height": 0.0
+				"height": 112.0
 			},
 			"save_all_on_build": true,
 			"select_file":
@@ -138,6 +166,14 @@
 				"last_filter": "",
 				"selected_items":
 				[
+					[
+						"markdown",
+						"SublimeText3的Markdown实时预览全面总.md"
+					],
+					[
+						"预览",
+						"Vue3_vite_Ts_pinia_实战_源码_全栈/Sublime Text4的 Markdown 预览.md"
+					]
 				],
 				"width": 0.0
 			},
@@ -182,6 +218,103 @@
 			},
 			"buffers":
 			[
+				{
+					"file": "/home/xiaohan/codehub/typora_book/12-藏____个人收藏/60-良心网站.md",
+					"settings":
+					{
+						"buffer_size": 691,
+						"encoding": "UTF-8",
+						"line_ending": "Windows"
+					},
+					"undo_stack":
+					[
+						[
+							18,
+							1,
+							"insert",
+							{
+								"characters": "kk"
+							},
+							"AgAAAIcAAAAAAAAAiAAAAAAAAAAAAAAAiAAAAAAAAACJAAAAAAAAAAAAAAA",
+							"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACHAAAAAAAAAIcAAAAAAAAAAAAAAAAA8L8"
+						],
+						[
+							19,
+							2,
+							"left_delete",
+							null,
+							"AgAAAIgAAAAAAAAAiAAAAAAAAAABAAAAa4cAAAAAAAAAhwAAAAAAAAABAAAAaw",
+							"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACJAAAAAAAAAIkAAAAAAAAAAAAAAAAA8L8"
+						],
+						[
+							20,
+							1,
+							"insert",
+							{
+								"characters": "asd"
+							},
+							"AwAAAIcAAAAAAAAAiAAAAAAAAAAAAAAAiAAAAAAAAACJAAAAAAAAAAAAAACJAAAAAAAAAIoAAAAAAAAAAAAAAA",
+							"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACHAAAAAAAAAIcAAAAAAAAAAAAAAAAA8L8"
+						],
+						[
+							21,
+							3,
+							"left_delete",
+							null,
+							"AwAAAIkAAAAAAAAAiQAAAAAAAAABAAAAZIgAAAAAAAAAiAAAAAAAAAABAAAAc4cAAAAAAAAAhwAAAAAAAAABAAAAYQ",
+							"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACKAAAAAAAAAIoAAAAAAAAAAAAAAAAA8L8"
+						]
+					]
+				},
+				{
+					"file": "/home/xiaohan/codehub/typora_book/ArchLinux安装教程.md",
+					"settings":
+					{
+						"buffer_size": 10372,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/xiaohan/codehub/typora_book/SublimeText3的Markdown实时预览全面总.md",
+					"settings":
+					{
+						"buffer_size": 3092,
+						"encoding": "UTF-8",
+						"line_ending": "Windows"
+					},
+					"undo_stack":
+					[
+						[
+							34,
+							1,
+							"insert",
+							{
+								"characters": "asd"
+							},
+							"AwAAAK8AAAAAAAAAsAAAAAAAAAAAAAAAsAAAAAAAAACxAAAAAAAAAAAAAACxAAAAAAAAALIAAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAArwAAAAAAAACvAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							40,
+							1,
+							"insert",
+							{
+								"characters": "\n\n"
+							},
+							"AgAAALIAAAAAAAAAswAAAAAAAAAAAAAAswAAAAAAAAC0AAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAsgAAAAAAAACyAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							48,
+							3,
+							"cut",
+							null,
+							"AwAAAK8AAAAAAAAArwAAAAAAAAAEAAAAYXNkCq8AAAAAAAAArwAAAAAAAAABAAAACq8AAAAAAAAArwAAAAAAAAABAAAACg",
+							"AQAAAAAAAAABAAAAsgAAAAAAAACyAAAAAAAAAAAAAAAAAPC/"
+						]
+					]
+				}
 			],
 			"build_system": "",
 			"build_system_choices":
@@ -194,6 +327,14 @@
 				"last_filter": "",
 				"selected_items":
 				[
+					[
+						"livere",
+						"LiveReload: Enable/disable plug-ins"
+					],
+					[
+						"markdownprev",
+						"Markdown Preview: Preview in Browser"
+					],
 					[
 						"install",
 						"Package Control: Install Package"
@@ -250,7 +391,7 @@
 			],
 			"find":
 			{
-				"height": 46.0
+				"height": 58.0
 			},
 			"find_in_files":
 			{
@@ -292,12 +433,108 @@
 				{
 					"sheets":
 					[
+						{
+							"buffer": 0,
+							"file": "/home/xiaohan/codehub/typora_book/12-藏____个人收藏/60-良心网站.md",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 691,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										187,
+										203
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/MarkdownEditing/syntaxes/Markdown.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"stack_multiselect": false,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/xiaohan/codehub/typora_book/ArchLinux安装教程.md",
+							"semi_transient": true,
+							"settings":
+							{
+								"buffer_size": 10372,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										151,
+										151
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/MarkdownEditing/syntaxes/Markdown.sublime-syntax",
+									"tab_size": 3,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 441.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"stack_multiselect": false,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/xiaohan/codehub/typora_book/SublimeText3的Markdown实时预览全面总.md",
+							"selected": true,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 3092,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										175,
+										175
+									]
+								],
+								"settings":
+								{
+									"color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+									"mde.match_heading_hashes": false,
+									"parser": "markdown",
+									"syntax": "Packages/MarkdownEditing/syntaxes/Markdown.sublime-syntax",
+									"tab_size": 4,
+									"target": "disk",
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"stack_multiselect": false,
+							"type": "text"
+						}
 					]
 				}
 			],
 			"incremental_find":
 			{
-				"height": 46.0
+				"height": 58.0
 			},
 			"input":
 			{
@@ -339,11 +576,11 @@
 				"height": 0.0
 			},
 			"pinned_build_system": "",
-			"position": "0,1,0,0,0,0,27,1920,1052,1920,1080,0",
+			"position": "0,1,0,0,0,0,0,1920,1050,1920,1080,0",
 			"project": "",
 			"replace":
 			{
-				"height": 88.0
+				"height": 112.0
 			},
 			"save_all_on_build": true,
 			"select_file":
@@ -352,6 +589,10 @@
 				"last_filter": "",
 				"selected_items":
 				[
+					[
+						"markdown",
+						"SublimeText3的Markdown实时预览全面总.md"
+					],
 					[
 						"预览",
 						"Vue3_vite_Ts_pinia_实战_源码_全栈/Sublime Text4的 Markdown 预览.md"
