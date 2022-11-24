@@ -1,0 +1,1157 @@
+INFO 11/19/2022, 10:11:33 AM  launch with argv [/usr/share/typora/Typora]
+INFO 11/19/2022, 10:11:33 AM  launchFromDiffVersion, pre version is undefined
+INFO 11/19/2022, 10:11:33 AM  start LM in devVersion=false
+INFO 11/19/2022, 10:11:33 AM  [Raven] instanceKey = 9cbf7c6f-e52b-497b-ba12-2cf828dc538b
+INFO 11/19/2022, 10:11:33 AM  [watch L]
+INFO 11/19/2022, 10:11:33 AM  ls put SLicense
+INFO 11/19/2022, 10:11:33 AM  [L] Read from incorrupted InstallDate
+INFO 11/19/2022, 10:11:33 AM  writeInstallDate fromBTime=true
+INFO 11/19/2022, 10:11:33 AM  overwriteThemeFolder
+INFO 11/19/2022, 10:11:33 AM  ------------------start------------------
+INFO 11/19/2022, 10:11:33 AM  typora version: 1.4.7
+INFO 11/19/2022, 10:11:33 AM  undefined
+INFO 11/19/2022, 10:11:33 AM  ls put IDate
+INFO 11/19/2022, 10:11:33 AM  [L] installDate is 11/19/2022, trail remains: 15 days
+INFO 11/19/2022, 10:11:33 AM  [watch L] hasL: false
+INFO 11/19/2022, 10:11:33 AM  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 11/19/2022, 10:11:33 AM  [focus] 1
+INFO 11/19/2022, 10:11:33 AM  synced recovery
+[Error: ENOENT: no such file or directory, open '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'
+}
+INFO 11/19/2022, 10:11:35 AM  handle document.loadData
+INFO 11/19/2022, 10:11:35 AM  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 11/19/2022, 10:11:35 AM  [RenderProcess 1][Log] reset NodeMap
+INFO 11/19/2022, 10:11:35 AM  synced recovery
+INFO 11/19/2022, 10:11:36 AM  [RenderProcess 1][Log] onBecomeActive
+INFO 11/19/2022, 10:11:36 AM  [RenderProcess 1][Log] File.activeWindow = true
+INFO 11/19/2022, 10:11:46 AM  [blur] 1
+INFO 11/19/2022, 10:11:46 AM  [win] blur
+INFO 11/19/2022, 10:11:55 AM  [focus] 1
+INFO 11/19/2022, 10:11:55 AM  addRecentFolder
+INFO 11/19/2022, 10:12:04 AM  switchDocument 1 [/home/xiaohan/codehub/typora_book/kitty使用手册.md]
+INFO 11/19/2022, 10:12:04 AM  addRecentDocument
+INFO 11/19/2022, 10:12:04 AM  synced recovery
+INFO 11/19/2022, 10:12:04 AM  [RenderProcess 1][Log] File.activeWindow = true
+INFO 11/19/2022, 10:12:04 AM  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 11/19/2022, 10:12:04 AM  [RenderProcess 1][Log] reset NodeMap
+INFO 11/19/2022, 10:12:04 AM  [RenderProcess 1][Log] readContentFrom /home/xiaohan/codehub/typora_book/kitty使用手册.md
+INFO 11/19/2022, 10:12:04 AM  synced recovery
+INFO 11/19/2022, 10:12:09 AM  [blur] 1
+INFO 11/19/2022, 10:12:09 AM  [win] blur
+INFO 11/19/2022, 10:12:09 AM  synced recovery
+INFO 11/19/2022, 10:12:18 AM  [focus] 1
+INFO 11/19/2022, 10:12:20 AM  synced recovery
+INFO 11/19/2022, 10:12:30 AM  updateTheme
+INFO 11/19/2022, 10:12:44 AM  window.File && (function(){File.option.enableAutoSave = true;})();
+INFO 11/19/2022, 10:13:00 AM  window.File && (function(){document.body.classList.remove("show-footer"),document.body.classList.add("hide-footer")})();
+INFO 11/19/2022, 10:13:06 AM  File.option.prettyIndent = true;
+INFO 11/19/2022, 10:13:12 AM  window.File && (function(){File.setDefaultImageStorage("per-file-assert");})();
+INFO 11/19/2022, 10:13:14 AM  window.File && (function(){File.setDefaultImageStorage("folder");})();
+INFO 11/19/2022, 10:13:18 AM  File.setDefaultImageStorage("./${filename}")
+INFO 11/19/2022, 10:13:22 AM  File.setDefaultImageStorage("./i")
+INFO 11/19/2022, 10:13:22 AM  File.setDefaultImageStorage("./im")
+INFO 11/19/2022, 10:13:23 AM  File.setDefaultImageStorage("./img")
+INFO 11/19/2022, 10:13:23 AM  File.setDefaultImageStorage("./imgs")
+INFO 11/19/2022, 10:13:31 AM  [blur] 1
+INFO 11/19/2022, 10:13:31 AM  [win] blur
+INFO 11/19/2022, 10:13:32 AM  [focus] 1
+INFO 11/19/2022, 10:13:39 AM  synced recovery
+INFO 11/19/2022, 10:13:39 AM  ----------------before-quit-----------------
+INFO 11/19/2022, 10:13:39 AM  ------------------will-quit------------------
+INFO 11/19/2022, 10:13:39 AM  -----------------quit------------------
+INFO 11/19/2022, 10:13:39 AM  closeLogging
+INFO 11/19/2022, 10:14:59 AM  launch with argv [/usr/share/typora/Typora]
+INFO 11/19/2022, 10:15:00 AM  start LM in devVersion=false
+INFO 11/19/2022, 10:15:00 AM  [Raven] instanceKey = 8c84d62e-cc53-4386-aa69-5cf3202fb118
+INFO 11/19/2022, 10:15:00 AM  [watch L]
+INFO 11/19/2022, 10:15:00 AM  ls put SLicense
+INFO 11/19/2022, 10:15:00 AM  [L] installDate is 11/19/2022, trail remains: 15 days
+INFO 11/19/2022, 10:15:00 AM  [watch L] hasL: false
+INFO 11/19/2022, 10:15:00 AM  ------------------start------------------
+INFO 11/19/2022, 10:15:00 AM  typora version: 1.4.7
+INFO 11/19/2022, 10:15:00 AM  undefined
+INFO 11/19/2022, 10:15:00 AM  updateTheme
+[Error: ENOENT: no such file or directory, open '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'
+}
+INFO 11/19/2022, 10:15:00 AM  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 11/19/2022, 10:15:00 AM  [focus] 1
+INFO 11/19/2022, 10:15:00 AM  synced recovery
+INFO 11/19/2022, 10:15:01 AM  [blur] 1
+INFO 11/19/2022, 10:15:01 AM  [win] blur
+INFO 11/19/2022, 10:15:01 AM  [focus] 2
+INFO 11/19/2022, 10:15:01 AM  [blur] 2
+INFO 11/19/2022, 10:15:01 AM  [focus] 1
+INFO 11/19/2022, 10:15:01 AM  [blur] 1
+INFO 11/19/2022, 10:15:01 AM  [win] blur
+INFO 11/19/2022, 10:15:01 AM  [focus] 2
+INFO 11/19/2022, 10:15:02 AM  handle document.loadData
+INFO 11/19/2022, 10:15:02 AM  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 11/19/2022, 10:15:02 AM  [RenderProcess 1][Log] reset NodeMap
+INFO 11/19/2022, 10:15:02 AM  synced recovery
+INFO 11/19/2022, 10:15:03 AM  [RenderProcess 1][Log] onBecomeActive
+INFO 11/19/2022, 10:15:03 AM  [RenderProcess 1][Log] File.activeWindow = true
+INFO 11/19/2022, 10:15:04 AM  [focus] 1
+INFO 11/19/2022, 10:15:04 AM  [blur] 1
+INFO 11/19/2022, 10:15:04 AM  [win] blur
+INFO 11/19/2022, 10:15:04 AM  [focus] 1
+INFO 11/19/2022, 10:15:22 AM  [blur] 1
+INFO 11/19/2022, 10:15:22 AM  [win] blur
+INFO 11/19/2022, 10:15:22 AM  [focus] 1
+INFO 11/19/2022, 10:15:31 AM  [blur] 1
+INFO 11/19/2022, 10:15:31 AM  [win] blur
+INFO 11/19/2022, 10:16:53 AM  [focus] 1
+INFO 11/19/2022, 10:16:54 AM  [blur] 1
+INFO 11/19/2022, 10:16:54 AM  [win] blur
+INFO 11/19/2022, 10:17:10 AM  [focus] 1
+INFO 11/19/2022, 10:17:11 AM  [blur] 1
+INFO 11/19/2022, 10:17:11 AM  [win] blur
+INFO 11/19/2022, 10:17:13 AM  [focus] 1
+INFO 11/19/2022, 10:17:23 AM  [blur] 1
+INFO 11/19/2022, 10:17:23 AM  [win] blur
+INFO 11/19/2022, 10:17:23 AM  [focus] 1
+INFO 11/19/2022, 10:17:24 AM  [blur] 1
+INFO 11/19/2022, 10:17:24 AM  [win] blur
+INFO 11/19/2022, 10:17:42 AM  [focus] 1
+INFO 11/19/2022, 10:17:49 AM  updateTheme
+INFO 11/19/2022, 10:17:56 AM  [blur] 1
+INFO 11/19/2022, 10:17:56 AM  [win] blur
+INFO 11/19/2022, 10:18:25 AM  [focus] 1
+INFO 11/19/2022, 10:18:29 AM  synced recovery
+INFO 11/19/2022, 10:18:29 AM  ----------------before-quit-----------------
+INFO 11/19/2022, 10:18:29 AM  ------------------will-quit------------------
+INFO 11/19/2022, 10:18:29 AM  -----------------quit------------------
+INFO 11/19/2022, 10:18:29 AM  closeLogging
+INFO 11/19/2022, 10:23:48 AM  launch with argv [/usr/share/typora/Typora]
+INFO 11/19/2022, 10:23:49 AM  start LM in devVersion=false
+INFO 11/19/2022, 10:23:49 AM  [Raven] instanceKey = 61dfa675-2714-4c21-86ad-3b707a2a84c4
+INFO 11/19/2022, 10:23:49 AM  [watch L]
+INFO 11/19/2022, 10:23:49 AM  ls put SLicense
+INFO 11/19/2022, 10:23:49 AM  [L] installDate is 11/19/2022, trail remains: 15 days
+INFO 11/19/2022, 10:23:49 AM  [watch L] hasL: false
+INFO 11/19/2022, 10:23:49 AM  ------------------start------------------
+INFO 11/19/2022, 10:23:49 AM  typora version: 1.4.7
+INFO 11/19/2022, 10:23:49 AM  undefined
+[Error: ENOENT: no such file or directory, open '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'
+}
+INFO 11/19/2022, 10:23:49 AM  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 11/19/2022, 10:23:49 AM  [focus] 2
+INFO 11/19/2022, 10:23:49 AM  synced recovery
+INFO 11/19/2022, 10:23:51 AM  [blur] 2
+INFO 11/19/2022, 10:23:51 AM  [win] blur
+INFO 11/19/2022, 10:23:51 AM  [focus] 1
+INFO 11/19/2022, 10:23:51 AM  handle document.loadData
+INFO 11/19/2022, 10:23:52 AM  [RenderProcess 2][Log] [UndoManager] reset commandStack
+INFO 11/19/2022, 10:23:52 AM  [RenderProcess 2][Log] reset NodeMap
+INFO 11/19/2022, 10:23:52 AM  synced recovery
+INFO 11/19/2022, 10:23:52 AM  [focus] 2
+INFO 11/19/2022, 10:23:52 AM  [blur] 2
+INFO 11/19/2022, 10:23:52 AM  [win] blur
+INFO 11/19/2022, 10:23:52 AM  [focus] 2
+INFO 11/19/2022, 10:23:53 AM  [RenderProcess 2][Log] onBecomeActive
+INFO 11/19/2022, 10:23:53 AM  [RenderProcess 2][Log] File.activeWindow = true
+INFO 11/19/2022, 10:24:01 AM  [blur] 2
+INFO 11/19/2022, 10:24:01 AM  [win] blur
+INFO 11/19/2022, 10:24:37 AM  [focus] 2
+INFO 11/19/2022, 10:24:41 AM  synced recovery
+INFO 11/19/2022, 10:24:41 AM  ----------------before-quit-----------------
+INFO 11/19/2022, 10:24:41 AM  ------------------will-quit------------------
+INFO 11/19/2022, 10:24:41 AM  -----------------quit------------------
+INFO 11/19/2022, 10:24:41 AM  closeLogging
+INFO 11/19/2022, 10:24:46 AM  launch with argv [/usr/share/typora/Typora]
+INFO 11/19/2022, 10:24:46 AM  start LM in devVersion=false
+INFO 11/19/2022, 10:24:46 AM  [Raven] instanceKey = 83461fed-3260-4a07-9f13-60bbb77ad7e8
+INFO 11/19/2022, 10:24:46 AM  [watch L]
+INFO 11/19/2022, 10:24:46 AM  ls put SLicense
+INFO 11/19/2022, 10:24:46 AM  [L] installDate is 11/19/2022, trail remains: 15 days
+INFO 11/19/2022, 10:24:46 AM  [watch L] hasL: false
+INFO 11/19/2022, 10:24:46 AM  ------------------start------------------
+INFO 11/19/2022, 10:24:46 AM  typora version: 1.4.7
+INFO 11/19/2022, 10:24:46 AM  undefined
+[Error: ENOENT: no such file or directory, open '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'
+}
+INFO 11/19/2022, 10:24:46 AM  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 11/19/2022, 10:24:47 AM  [focus] 1
+INFO 11/19/2022, 10:24:47 AM  synced recovery
+INFO 11/19/2022, 10:24:47 AM  [blur] 1
+INFO 11/19/2022, 10:24:47 AM  [win] blur
+INFO 11/19/2022, 10:24:47 AM  [focus] 2
+INFO 11/19/2022, 10:24:49 AM  handle document.loadData
+INFO 11/19/2022, 10:24:49 AM  [focus] 1
+INFO 11/19/2022, 10:24:49 AM  [blur] 1
+INFO 11/19/2022, 10:24:49 AM  [win] blur
+INFO 11/19/2022, 10:24:49 AM  [focus] 1
+INFO 11/19/2022, 10:24:49 AM  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 11/19/2022, 10:24:49 AM  [RenderProcess 1][Log] reset NodeMap
+INFO 11/19/2022, 10:24:50 AM  synced recovery
+INFO 11/19/2022, 10:24:50 AM  [RenderProcess 1][Log] onBecomeActive
+INFO 11/19/2022, 10:24:50 AM  [RenderProcess 1][Log] File.activeWindow = true
+INFO 11/19/2022, 10:25:01 AM  switchDocument 1 [/home/xiaohan/codehub/typora_book/【Shell】sh执行脚本报错Syntax error “(“ unexpected.md]
+INFO 11/19/2022, 10:25:01 AM  addRecentDocument
+INFO 11/19/2022, 10:25:01 AM  synced recovery
+INFO 11/19/2022, 10:25:01 AM  [RenderProcess 1][Log] File.activeWindow = true
+INFO 11/19/2022, 10:25:01 AM  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 11/19/2022, 10:25:01 AM  [RenderProcess 1][Log] reset NodeMap
+INFO 11/19/2022, 10:25:01 AM  [RenderProcess 1][Log] readContentFrom /home/xiaohan/codehub/typora_book/【Shell】sh执行脚本报错Syntax error “(“ unexpected.md
+INFO 11/19/2022, 10:25:02 AM  synced recovery
+INFO 11/19/2022, 10:25:13 AM  synced recovery
+INFO 11/19/2022, 10:25:13 AM  ----------------before-quit-----------------
+INFO 11/19/2022, 10:25:13 AM  ------------------will-quit------------------
+INFO 11/19/2022, 10:25:13 AM  -----------------quit------------------
+INFO 11/19/2022, 10:25:13 AM  closeLogging
+INFO 2022/11/19上午10:30:44  luanchFromDiffVersion, pre version is 1.0.0
+INFO 2022/11/19上午10:30:44  cleanupOlderCache
+INFO 2022/11/19上午10:30:44  [Raven] instanceKey = dc2092a9-57e1-4215-a01a-cba7248a8f5b
+INFO 2022/11/19上午10:30:44  overwriteThemeFolder
+INFO 2022/11/19上午10:30:44  ------------------start------------------
+INFO 2022/11/19上午10:30:44  typora version: 0.11.8
+INFO 2022/11/19上午10:30:45  added recovery 1 null undefined (0)
+INFO 2022/11/19上午10:30:45  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 2022/11/19上午10:30:45  [focus] 1
+INFO 2022/11/19上午10:30:45  synced recovery
+INFO 2022/11/19上午10:30:46  handle document.loadInitData
+INFO 2022/11/19上午10:30:47  added recovery 1 undefined undefined (0)
+INFO 2022/11/19上午10:30:47  synced recovery
+INFO 2022/11/19上午10:31:20  [blur] 1
+INFO 2022/11/19上午10:31:20  [win] blur
+INFO 2022/11/19上午10:32:38  [focus] 1
+INFO 2022/11/19上午10:32:42  synced recovery
+INFO 2022/11/19 10:34:17  launch with argv [/usr/share/typora/Typora, -V]
+INFO 2022/11/19 10:34:17  start LM in devVersion=false
+INFO 2022/11/19 10:34:17  [Raven] instanceKey = 5aded51c-9812-412c-aec0-af33a90e17b8
+INFO 2022/11/19 10:34:17  [watch L]
+INFO 2022/11/19 10:34:17  ls put SLicense
+INFO 2022/11/19 10:34:17  [L] installDate is 11/19/2022, trail remains: 15 days
+INFO 2022/11/19 10:34:17  [watch L] hasL: false
+INFO 2022/11/19 10:34:18  ------------------start------------------
+INFO 2022/11/19 10:34:18  typora version: 1.4.7
+INFO 2022/11/19 10:34:18  undefined
+[Error: ENOENT: no such file or directory, open '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'] {
+  errno: [33m-2[39m,
+  code: [32m'ENOENT'[39m,
+  syscall: [32m'open'[39m,
+  path: [32m'/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'[39m
+}
+INFO 2022/11/19 10:34:18  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 2022/11/19 10:34:18  [focus] 2
+INFO 2022/11/19 10:34:18  synced recovery
+INFO 2022/11/19 10:34:19  [focus] 1
+INFO 2022/11/19 10:34:22  synced recovery
+INFO 2022/11/19 10:34:22  ----------------before-quit-----------------
+INFO 2022/11/19 10:34:22  ------------------will-quit------------------
+INFO 2022/11/19 10:34:22  -----------------quit------------------
+INFO 2022/11/19 10:34:22  closeLogging
+INFO 2022/11/19 10:34:28  launch with argv [/usr/share/typora/Typora, --version]
+INFO 2022/11/19 10:34:28  start LM in devVersion=false
+INFO 2022/11/19 10:34:28  [Raven] instanceKey = ae468a79-e889-4566-88a0-102a29332a0b
+INFO 2022/11/19 10:34:28  [watch L]
+INFO 2022/11/19 10:34:28  ls put SLicense
+INFO 2022/11/19 10:34:28  [L] installDate is 11/19/2022, trail remains: 15 days
+INFO 2022/11/19 10:34:28  [watch L] hasL: false
+INFO 2022/11/19 10:34:28  ------------------start------------------
+INFO 2022/11/19 10:34:28  typora version: 1.4.7
+INFO 2022/11/19 10:34:28  undefined
+[Error: ENOENT: no such file or directory, open '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'] {
+  errno: [33m-2[39m,
+  code: [32m'ENOENT'[39m,
+  syscall: [32m'open'[39m,
+  path: [32m'/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'[39m
+}
+INFO 2022/11/19 10:34:28  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 2022/11/19 10:34:28  [focus] 2
+INFO 2022/11/19 10:34:28  synced recovery
+INFO 2022/11/19 10:34:30  [blur] 2
+INFO 2022/11/19 10:34:30  [win] blur
+INFO 2022/11/19 10:34:30  [focus] 1
+INFO 2022/11/19 10:34:30  handle document.loadData
+INFO 2022/11/19 10:34:31  [RenderProcess 2][Log] [UndoManager] reset commandStack
+INFO 2022/11/19 10:34:31  [RenderProcess 2][Log] reset NodeMap
+INFO 2022/11/19 10:34:31  synced recovery
+INFO 2022/11/19 10:34:31  [focus] 2
+INFO 2022/11/19 10:34:31  [blur] 2
+INFO 2022/11/19 10:34:31  [win] blur
+INFO 2022/11/19 10:34:31  [focus] 2
+INFO 2022/11/19 10:34:31  [RenderProcess 2][Log] onBecomeActive
+INFO 2022/11/19 10:34:31  [RenderProcess 2][Log] File.activeWindow = true
+INFO 2022/11/19 10:34:39  synced recovery
+INFO 2022/11/19 10:34:39  ----------------before-quit-----------------
+INFO 2022/11/19 10:34:39  ------------------will-quit------------------
+INFO 2022/11/19 10:34:39  -----------------quit------------------
+INFO 2022/11/19 10:34:39  closeLogging
+INFO 11/19/2022, 10:39:08 AM  launch with argv [/usr/share/typora/Typora]
+INFO 11/19/2022, 10:39:08 AM  start LM in devVersion=false
+INFO 11/19/2022, 10:39:08 AM  [Raven] instanceKey = 484721fa-d23d-4d7e-bfdf-4052810558ea
+INFO 11/19/2022, 10:39:08 AM  [watch L]
+INFO 11/19/2022, 10:39:08 AM  ls put SLicense
+INFO 11/19/2022, 10:39:08 AM  [L] installDate is 11/19/2022, trail remains: 15 days
+INFO 11/19/2022, 10:39:08 AM  [watch L] hasL: false
+INFO 11/19/2022, 10:39:08 AM  ------------------start------------------
+INFO 11/19/2022, 10:39:08 AM  typora version: 1.4.7
+INFO 11/19/2022, 10:39:08 AM  undefined
+[Error: ENOENT: no such file or directory, open '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/home/xiaohan/.config/Typora/typora-dictionaries/user-dict.json'
+}
+INFO 11/19/2022, 10:39:08 AM  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 11/19/2022, 10:39:08 AM  [focus] 2
+INFO 11/19/2022, 10:39:08 AM  [blur] 2
+INFO 11/19/2022, 10:39:08 AM  [win] blur
+INFO 11/19/2022, 10:39:08 AM  [focus] 2
+INFO 11/19/2022, 10:39:08 AM  synced recovery
+INFO 11/19/2022, 10:39:10 AM  [blur] 2
+INFO 11/19/2022, 10:39:10 AM  [win] blur
+INFO 11/19/2022, 10:39:10 AM  [focus] 1
+INFO 11/19/2022, 10:39:11 AM  handle document.loadData
+INFO 11/19/2022, 10:39:11 AM  [RenderProcess 2][Log] [UndoManager] reset commandStack
+INFO 11/19/2022, 10:39:11 AM  [RenderProcess 2][Log] reset NodeMap
+INFO 11/19/2022, 10:39:11 AM  synced recovery
+INFO 11/19/2022, 10:39:11 AM  [focus] 2
+INFO 11/19/2022, 10:39:11 AM  [blur] 2
+INFO 11/19/2022, 10:39:11 AM  [win] blur
+INFO 11/19/2022, 10:39:11 AM  [focus] 2
+INFO 11/19/2022, 10:39:12 AM  [RenderProcess 2][Log] onBecomeActive
+INFO 11/19/2022, 10:39:12 AM  [RenderProcess 2][Log] File.activeWindow = true
+INFO 11/19/2022, 10:39:15 AM  switchDocument 2 [/home/xiaohan/codehub/typora_book/kitty使用手册.md]
+INFO 11/19/2022, 10:39:15 AM  addRecentDocument
+INFO 11/19/2022, 10:39:15 AM  synced recovery
+INFO 11/19/2022, 10:39:15 AM  [RenderProcess 2][Log] File.activeWindow = true
+INFO 11/19/2022, 10:39:15 AM  [RenderProcess 2][Log] [UndoManager] reset commandStack
+INFO 11/19/2022, 10:39:15 AM  [RenderProcess 2][Log] reset NodeMap
+INFO 11/19/2022, 10:39:16 AM  [RenderProcess 2][Log] readContentFrom /home/xiaohan/codehub/typora_book/kitty使用手册.md
+INFO 11/19/2022, 10:39:16 AM  synced recovery
+INFO 11/19/2022, 10:39:25 AM  synced recovery
+INFO 11/19/2022, 10:39:34 AM  synced recovery
+INFO 11/19/2022, 10:39:35 AM  synced recovery
+INFO 11/19/2022, 10:39:38 AM  synced recovery
+INFO 11/19/2022, 10:39:40 AM  synced recovery
+INFO 11/19/2022, 10:39:42 AM  synced recovery
+INFO 11/19/2022, 10:39:43 AM  synced recovery
+INFO 11/19/2022, 10:39:45 AM  synced recovery
+INFO 11/19/2022, 10:40:59 AM  [blur] 2
+INFO 11/19/2022, 10:40:59 AM  [win] blur
+INFO 2022/11/19上午10:44:35  luanchFromDiffVersion, pre version is 1.0.0
+INFO 2022/11/19上午10:44:35  cleanupOlderCache
+INFO 2022/11/19上午10:44:35  [Raven] instanceKey = 642081ed-9ef7-462c-b40d-aae2b7d41493
+INFO 2022/11/19上午10:44:35  overwriteThemeFolder
+INFO 2022/11/19上午10:44:35  ------------------start------------------
+INFO 2022/11/19上午10:44:35  typora version: 0.11.8
+INFO 2022/11/19上午10:44:35  launch from abnormal quit
+INFO 2022/11/19上午10:44:35  recoverWindow {"id":2,"path":"/home/xiaohan/codehub/typora_book/kitty使用手册.md","useCRLF":false,"hasUnsaved":false,"scrollPos":696,"syncDate":1668825585552,"mountFolder":"/home/xiaohan/codehub/typora_book"}
+INFO 2022/11/19上午10:44:35  addRecentDocument
+INFO 2022/11/19上午10:44:36  added recovery 1 /home/xiaohan/codehub/typora_book/kitty使用手册.md undefined (0)
+INFO 2022/11/19上午10:44:36  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 2022/11/19上午10:44:36  [focus] 1
+INFO 2022/11/19上午10:44:36  synced recovery
+INFO 2022/11/19上午10:44:37  handle document.loadInitData
+INFO 2022/11/19上午10:44:38  added recovery 1 /home/xiaohan/codehub/typora_book/kitty使用手册.md undefined (0)
+INFO 2022/11/19上午10:44:38  synced recovery
+INFO 2022/11/19上午10:44:40  synced recovery
+INFO 2022/11/19上午10:44:40  ----------------before-quit-----------------
+INFO 2022/11/19上午10:44:40  ------------------will-quit------------------
+INFO 2022/11/19上午10:44:40  -----------------quit------------------
+INFO 2022/11/19上午10:44:40  closeLogging
+INFO 11/19/2022, 11:09:55 AM  [focus] 2
+INFO 11/19/2022, 11:10:01 AM  synced recovery
+INFO 11/19/2022, 11:10:05 AM  [blur] 2
+INFO 11/19/2022, 11:10:05 AM  [win] blur
+INFO 11/19/2022, 11:10:12 AM  [focus] 2
+INFO 11/19/2022, 11:10:15 AM  synced recovery
+INFO 11/19/2022, 11:10:18 AM  synced recovery
+INFO 11/19/2022, 11:10:20 AM  synced recovery
+INFO 11/19/2022, 11:10:25 AM  [blur] 2
+INFO 11/19/2022, 11:10:25 AM  [win] blur
+INFO 11/19/2022, 11:10:25 AM  synced recovery
+INFO 11/19/2022, 11:11:11 AM  [focus] 2
+INFO 11/19/2022, 11:11:18 AM  synced recovery
+INFO 11/19/2022, 11:11:22 AM  [blur] 2
+INFO 11/19/2022, 11:11:22 AM  [win] blur
+INFO 11/19/2022, 11:11:29 AM  [focus] 2
+INFO 11/19/2022, 11:11:30 AM  synced recovery
+INFO 11/19/2022, 11:11:36 AM  synced recovery
+INFO 11/19/2022, 11:11:39 AM  synced recovery
+INFO 11/19/2022, 11:11:41 AM  synced recovery
+INFO 11/19/2022, 11:11:45 AM  synced recovery
+INFO 11/19/2022, 11:11:46 AM  [blur] 2
+INFO 11/19/2022, 11:11:46 AM  [win] blur
+INFO 11/19/2022, 11:11:48 AM  [focus] 2
+INFO 11/19/2022, 11:11:54 AM  [blur] 2
+INFO 11/19/2022, 11:11:54 AM  [win] blur
+INFO 11/19/2022, 11:11:59 AM  [focus] 2
+INFO 11/19/2022, 11:12:02 AM  [blur] 2
+INFO 11/19/2022, 11:12:02 AM  [win] blur
+INFO 11/19/2022, 11:12:11 AM  [focus] 2
+INFO 11/19/2022, 11:12:16 AM  synced recovery
+INFO 11/19/2022, 11:12:18 AM  synced recovery
+INFO 11/19/2022, 11:12:20 AM  synced recovery
+INFO 11/19/2022, 11:12:23 AM  synced recovery
+INFO 11/19/2022, 11:12:24 AM  synced recovery
+INFO 11/19/2022, 11:12:31 AM  synced recovery
+INFO 11/19/2022, 11:12:32 AM  synced recovery
+INFO 11/19/2022, 11:12:33 AM  [blur] 2
+INFO 11/19/2022, 11:12:33 AM  [win] blur
+INFO 11/19/2022, 11:12:33 AM  synced recovery
+INFO 11/19/2022, 11:12:42 AM  [focus] 2
+INFO 11/19/2022, 11:12:46 AM  [blur] 2
+INFO 11/19/2022, 11:12:46 AM  [win] blur
+INFO 11/19/2022, 11:12:46 AM  synced recovery
+INFO 11/19/2022, 11:12:55 AM  [focus] 2
+INFO 11/19/2022, 11:12:57 AM  [blur] 2
+INFO 11/19/2022, 11:12:57 AM  [win] blur
+INFO 11/19/2022, 11:13:03 AM  [focus] 2
+INFO 11/19/2022, 11:13:05 AM  [blur] 2
+INFO 11/19/2022, 11:13:05 AM  [win] blur
+INFO 11/19/2022, 11:13:12 AM  [focus] 2
+INFO 11/19/2022, 11:13:19 AM  [blur] 2
+INFO 11/19/2022, 11:13:19 AM  [win] blur
+INFO 11/19/2022, 11:13:24 AM  [focus] 2
+INFO 11/19/2022, 11:13:26 AM  synced recovery
+INFO 11/19/2022, 11:13:28 AM  [blur] 2
+INFO 11/19/2022, 11:13:28 AM  [win] blur
+INFO 11/19/2022, 11:13:34 AM  [focus] 2
+INFO 11/19/2022, 11:13:36 AM  synced recovery
+INFO 11/19/2022, 11:13:39 AM  synced recovery
+INFO 11/19/2022, 11:13:43 AM  synced recovery
+INFO 11/19/2022, 11:13:43 AM  [blur] 2
+INFO 11/19/2022, 11:13:43 AM  [win] blur
+INFO 11/19/2022, 11:13:50 AM  [focus] 2
+INFO 11/19/2022, 11:13:52 AM  synced recovery
+INFO 11/19/2022, 11:13:56 AM  synced recovery
+INFO 11/19/2022, 11:13:58 AM  synced recovery
+INFO 11/19/2022, 11:14:01 AM  synced recovery
+INFO 11/19/2022, 11:14:04 AM  [blur] 2
+INFO 11/19/2022, 11:14:04 AM  [win] blur
+INFO 11/19/2022, 11:14:09 AM  [focus] 2
+INFO 11/19/2022, 11:14:11 AM  synced recovery
+INFO 11/19/2022, 11:14:13 AM  [blur] 2
+INFO 11/19/2022, 11:14:13 AM  [win] blur
+INFO 11/19/2022, 11:14:18 AM  [focus] 2
+INFO 11/19/2022, 11:14:20 AM  synced recovery
+INFO 11/19/2022, 11:14:22 AM  synced recovery
+INFO 11/19/2022, 11:14:25 AM  [blur] 2
+INFO 11/19/2022, 11:14:25 AM  [win] blur
+INFO 11/19/2022, 11:14:30 AM  [focus] 2
+INFO 11/19/2022, 11:14:33 AM  synced recovery
+INFO 11/19/2022, 11:14:36 AM  synced recovery
+INFO 11/19/2022, 11:15:29 AM  [blur] 2
+INFO 11/19/2022, 11:15:29 AM  [win] blur
+INFO 11/19/2022, 11:15:30 AM  [focus] 2
+INFO 11/19/2022, 11:15:37 AM  [blur] 2
+INFO 11/19/2022, 11:15:37 AM  [win] blur
+INFO 11/19/2022, 11:24:06 AM  [focus] 2
+INFO 11/19/2022, 11:24:11 AM  [blur] 2
+INFO 11/19/2022, 11:24:11 AM  [win] blur
+INFO 11/19/2022, 11:37:30 AM  [focus] 2
+INFO 11/19/2022, 11:37:31 AM  [blur] 2
+INFO 11/19/2022, 11:37:31 AM  [win] blur
+INFO 11/19/2022, 11:41:15 AM  [focus] 2
+INFO 11/19/2022, 11:41:15 AM  [blur] 2
+INFO 11/19/2022, 11:41:15 AM  [win] blur
+INFO 11/19/2022, 12:19:16 PM  [focus] 2
+INFO 11/19/2022, 12:19:17 PM  [blur] 2
+INFO 11/19/2022, 12:19:17 PM  [win] blur
+INFO 11/19/2022, 12:20:55 PM  [focus] 2
+INFO 11/19/2022, 12:20:58 PM  [blur] 2
+INFO 11/19/2022, 12:20:58 PM  [win] blur
+INFO 11/19/2022, 12:24:03 PM  [focus] 2
+INFO 11/19/2022, 12:24:04 PM  [blur] 2
+INFO 11/19/2022, 12:24:04 PM  [win] blur
+INFO 11/19/2022, 12:25:30 PM  [focus] 2
+INFO 11/19/2022, 12:25:31 PM  [blur] 2
+INFO 11/19/2022, 12:25:31 PM  [win] blur
+INFO 11/19/2022, 12:29:59 PM  [focus] 2
+INFO 11/19/2022, 12:30:06 PM  addRecentDocument
+INFO 11/19/2022, 12:30:23 PM  ------------------start------------------
+INFO 11/19/2022, 12:30:23 PM  typora version: 0.11.8
+INFO 11/19/2022, 12:30:23 PM  [Raven] instanceKey = 7527a61a-fb6b-4d40-b0f3-45c64c8e16a9
+INFO 11/19/2022, 12:30:23 PM  [Raven] userId = 6aff94be-1651-491e-b64d-b1a0beedf056
+INFO 11/19/2022, 12:30:23 PM  launch from abnormal quit
+INFO 11/19/2022, 12:30:23 PM  recoverWindow {"id":2,"path":"/home/xiaohan/codehub/typora_book/kitty使用手册.md","useCRLF":false,"hasUnsaved":false,"scrollPos":2120,"syncDate":1668827676863,"mountFolder":"/home/xiaohan/codehub/typora_book"}
+INFO 11/19/2022, 12:30:23 PM  addRecentDocument
+INFO 11/19/2022, 12:30:23 PM  added recovery 1 /home/xiaohan/codehub/typora_book/kitty使用手册.md undefined (0)
+INFO 11/19/2022, 12:30:23 PM  [focus] 1
+INFO 11/19/2022, 12:30:23 PM  [blur] 1
+INFO 11/19/2022, 12:30:23 PM  [win] blur
+INFO 11/19/2022, 12:30:23 PM  [focus] 1
+INFO 11/19/2022, 12:30:23 PM  synced recovery
+INFO 11/19/2022, 12:30:25 PM  handle document.loadInitData
+INFO 11/19/2022, 12:30:25 PM  added recovery 1 /home/xiaohan/codehub/typora_book/kitty使用手册.md undefined (0)
+INFO 11/19/2022, 12:30:25 PM  synced recovery
+INFO 11/19/2022, 12:30:31 PM  addRecentDocument
+INFO 11/19/2022, 12:30:31 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md undefined (0)
+INFO 11/19/2022, 12:30:31 PM  [blur] 1
+INFO 11/19/2022, 12:30:31 PM  [win] blur
+INFO 11/19/2022, 12:30:31 PM  [focus] 2
+INFO 11/19/2022, 12:30:31 PM  synced recovery
+INFO 11/19/2022, 12:30:32 PM  handle document.loadInitData
+INFO 11/19/2022, 12:30:33 PM  [blur] 2
+INFO 11/19/2022, 12:30:33 PM  [win] blur
+INFO 11/19/2022, 12:30:33 PM  [focus] 1
+INFO 11/19/2022, 12:30:33 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md undefined (0)
+INFO 11/19/2022, 12:30:33 PM  synced recovery
+INFO 11/19/2022, 12:30:36 PM  [focus] 2
+INFO 11/19/2022, 12:30:49 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:49 PM  synced recovery
+INFO 11/19/2022, 12:30:49 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:49 PM  synced recovery
+INFO 11/19/2022, 12:30:50 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:50 PM  synced recovery
+INFO 11/19/2022, 12:30:50 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:50 PM  synced recovery
+INFO 11/19/2022, 12:30:51 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:51 PM  synced recovery
+INFO 11/19/2022, 12:30:51 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:51 PM  synced recovery
+INFO 11/19/2022, 12:30:52 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:52 PM  synced recovery
+INFO 11/19/2022, 12:30:52 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:52 PM  synced recovery
+INFO 11/19/2022, 12:30:52 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:52 PM  synced recovery
+INFO 11/19/2022, 12:30:52 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:52 PM  synced recovery
+INFO 11/19/2022, 12:30:52 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:52 PM  synced recovery
+INFO 11/19/2022, 12:30:52 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:30:52 PM  synced recovery
+INFO 11/19/2022, 12:31:01 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:01 PM  synced recovery
+INFO 11/19/2022, 12:31:01 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:01 PM  synced recovery
+INFO 11/19/2022, 12:31:02 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:02 PM  synced recovery
+INFO 11/19/2022, 12:31:03 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:03 PM  synced recovery
+INFO 11/19/2022, 12:31:04 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:04 PM  synced recovery
+INFO 11/19/2022, 12:31:04 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:04 PM  synced recovery
+INFO 11/19/2022, 12:31:05 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:05 PM  synced recovery
+INFO 11/19/2022, 12:31:05 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:05 PM  synced recovery
+INFO 11/19/2022, 12:31:06 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:06 PM  synced recovery
+INFO 11/19/2022, 12:31:07 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:07 PM  synced recovery
+INFO 11/19/2022, 12:31:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:09 PM  synced recovery
+INFO 11/19/2022, 12:31:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:09 PM  synced recovery
+INFO 11/19/2022, 12:31:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:09 PM  synced recovery
+INFO 11/19/2022, 12:31:10 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:10 PM  synced recovery
+INFO 11/19/2022, 12:31:10 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:10 PM  synced recovery
+INFO 11/19/2022, 12:31:10 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:10 PM  synced recovery
+INFO 11/19/2022, 12:31:10 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:10 PM  synced recovery
+INFO 11/19/2022, 12:31:12 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:12 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:12 PM  synced recovery
+INFO 11/19/2022, 12:31:12 PM  synced recovery
+INFO 11/19/2022, 12:31:13 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:13 PM  synced recovery
+INFO 11/19/2022, 12:31:13 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:13 PM  synced recovery
+INFO 11/19/2022, 12:31:15 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:15 PM  synced recovery
+INFO 11/19/2022, 12:31:15 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:15 PM  synced recovery
+INFO 11/19/2022, 12:31:16 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:16 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:16 PM  synced recovery
+INFO 11/19/2022, 12:31:16 PM  synced recovery
+INFO 11/19/2022, 12:31:16 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:16 PM  synced recovery
+INFO 11/19/2022, 12:31:16 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:16 PM  synced recovery
+INFO 11/19/2022, 12:31:16 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:16 PM  synced recovery
+INFO 11/19/2022, 12:31:18 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:18 PM  synced recovery
+INFO 11/19/2022, 12:31:20 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:20 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:20 PM  synced recovery
+INFO 11/19/2022, 12:31:20 PM  synced recovery
+INFO 11/19/2022, 12:31:21 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:21 PM  synced recovery
+INFO 11/19/2022, 12:31:21 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:21 PM  synced recovery
+INFO 11/19/2022, 12:31:23 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:23 PM  synced recovery
+INFO 11/19/2022, 12:31:23 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:23 PM  synced recovery
+INFO 11/19/2022, 12:31:24 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:24 PM  synced recovery
+INFO 11/19/2022, 12:31:27 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:27 PM  synced recovery
+INFO 11/19/2022, 12:31:27 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:27 PM  synced recovery
+INFO 11/19/2022, 12:31:28 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:28 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:28 PM  synced recovery
+INFO 11/19/2022, 12:31:28 PM  synced recovery
+INFO 11/19/2022, 12:31:30 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:31:30 PM  synced recovery
+INFO 11/19/2022, 12:32:24 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:32:24 PM  synced recovery
+INFO 11/19/2022, 12:32:51 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:32:51 PM  synced recovery
+INFO 11/19/2022, 12:32:51 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:32:51 PM  synced recovery
+INFO 11/19/2022, 12:33:06 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:33:06 PM  synced recovery
+INFO 11/19/2022, 12:33:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:33:09 PM  synced recovery
+INFO 11/19/2022, 12:33:10 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:33:10 PM  synced recovery
+INFO 11/19/2022, 12:33:18 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:33:18 PM  synced recovery
+INFO 11/19/2022, 12:33:19 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:33:19 PM  synced recovery
+INFO 11/19/2022, 12:34:15 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:34:15 PM  synced recovery
+INFO 11/19/2022, 12:34:15 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:34:15 PM  synced recovery
+INFO 11/19/2022, 12:34:17 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:34:17 PM  synced recovery
+INFO 11/19/2022, 12:34:18 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:34:18 PM  synced recovery
+INFO 11/19/2022, 12:34:18 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:34:18 PM  synced recovery
+INFO 11/19/2022, 12:34:18 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:34:18 PM  synced recovery
+INFO 11/19/2022, 12:34:53 PM  window.File && (function() {		File.option.smartDash = true;	})();
+INFO 11/19/2022, 12:34:54 PM  window.File && (function() {		File.option.smartDash = true;	})();
+INFO 11/19/2022, 12:35:01 PM  File.setIndentFirstLine(true, true);
+INFO 11/19/2022, 12:35:02 PM  File.setIndentFirstLine(false, true);
+INFO 11/19/2022, 12:35:11 PM  File.option.useCustomFontSize=true
+INFO 11/19/2022, 12:35:11 PM  document.body.parentElement.style.fontSize = '14px'
+INFO 11/19/2022, 12:35:12 PM  File.option.customFontSize=13
+INFO 11/19/2022, 12:35:12 PM  document.body.parentElement.style.fontSize = '13px'
+INFO 11/19/2022, 12:35:12 PM  File.option.customFontSize=12
+INFO 11/19/2022, 12:35:12 PM  document.body.parentElement.style.fontSize = '12px'
+INFO 11/19/2022, 12:35:12 PM  File.option.customFontSize=11
+INFO 11/19/2022, 12:35:12 PM  document.body.parentElement.style.fontSize = '11px'
+INFO 11/19/2022, 12:35:12 PM  File.option.customFontSize=10
+INFO 11/19/2022, 12:35:12 PM  document.body.parentElement.style.fontSize = '10px'
+INFO 11/19/2022, 12:35:13 PM  File.option.customFontSize=11
+INFO 11/19/2022, 12:35:13 PM  document.body.parentElement.style.fontSize = '11px'
+INFO 11/19/2022, 12:35:13 PM  File.option.customFontSize=12
+INFO 11/19/2022, 12:35:13 PM  document.body.parentElement.style.fontSize = '12px'
+INFO 11/19/2022, 12:35:13 PM  File.option.customFontSize=13
+INFO 11/19/2022, 12:35:13 PM  document.body.parentElement.style.fontSize = '13px'
+INFO 11/19/2022, 12:35:13 PM  File.option.customFontSize=14
+INFO 11/19/2022, 12:35:13 PM  document.body.parentElement.style.fontSize = '14px'
+INFO 11/19/2022, 12:35:14 PM  File.option.customFontSize=15
+INFO 11/19/2022, 12:35:14 PM  document.body.parentElement.style.fontSize = '15px'
+INFO 11/19/2022, 12:35:14 PM  File.option.customFontSize=16
+INFO 11/19/2022, 12:35:14 PM  document.body.parentElement.style.fontSize = '16px'
+INFO 11/19/2022, 12:35:14 PM  File.option.customFontSize=17
+INFO 11/19/2022, 12:35:14 PM  document.body.parentElement.style.fontSize = '17px'
+INFO 11/19/2022, 12:35:15 PM  File.option.customFontSize=18
+INFO 11/19/2022, 12:35:15 PM  document.body.parentElement.style.fontSize = '18px'
+INFO 11/19/2022, 12:35:16 PM  File.option.customFontSize=18
+INFO 11/19/2022, 12:35:16 PM  document.body.parentElement.style.fontSize = '18px'
+INFO 11/19/2022, 12:35:23 PM  window.File && (function() {$("[data-group='dev-tool']").show();})();
+INFO 11/19/2022, 12:35:38 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:38 PM  synced recovery
+INFO 11/19/2022, 12:35:38 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:38 PM  synced recovery
+INFO 11/19/2022, 12:35:39 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:39 PM  synced recovery
+INFO 11/19/2022, 12:35:40 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:40 PM  synced recovery
+INFO 11/19/2022, 12:35:40 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:40 PM  synced recovery
+INFO 11/19/2022, 12:35:41 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:41 PM  synced recovery
+INFO 11/19/2022, 12:35:41 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:41 PM  synced recovery
+INFO 11/19/2022, 12:35:42 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:42 PM  synced recovery
+INFO 11/19/2022, 12:35:42 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:42 PM  synced recovery
+INFO 11/19/2022, 12:35:43 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:43 PM  synced recovery
+INFO 11/19/2022, 12:35:46 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:46 PM  synced recovery
+INFO 11/19/2022, 12:35:54 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:54 PM  synced recovery
+INFO 11/19/2022, 12:35:54 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:54 PM  synced recovery
+INFO 11/19/2022, 12:35:59 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:35:59 PM  synced recovery
+INFO 11/19/2022, 12:36:02 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:02 PM  synced recovery
+INFO 11/19/2022, 12:36:25 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:25 PM  synced recovery
+INFO 11/19/2022, 12:36:25 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:25 PM  synced recovery
+INFO 11/19/2022, 12:36:26 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:26 PM  synced recovery
+INFO 11/19/2022, 12:36:27 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:27 PM  synced recovery
+INFO 11/19/2022, 12:36:27 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:27 PM  synced recovery
+INFO 11/19/2022, 12:36:32 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:32 PM  synced recovery
+INFO 11/19/2022, 12:36:33 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:33 PM  synced recovery
+INFO 11/19/2022, 12:36:34 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:34 PM  synced recovery
+INFO 11/19/2022, 12:36:38 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:38 PM  synced recovery
+INFO 11/19/2022, 12:36:39 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:39 PM  synced recovery
+INFO 11/19/2022, 12:36:39 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:39 PM  synced recovery
+INFO 11/19/2022, 12:36:41 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:41 PM  synced recovery
+INFO 11/19/2022, 12:36:45 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:45 PM  synced recovery
+INFO 11/19/2022, 12:36:47 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:47 PM  synced recovery
+INFO 11/19/2022, 12:36:50 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:50 PM  synced recovery
+INFO 11/19/2022, 12:36:55 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:55 PM  synced recovery
+INFO 11/19/2022, 12:36:55 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:55 PM  synced recovery
+INFO 11/19/2022, 12:36:57 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:57 PM  synced recovery
+INFO 11/19/2022, 12:36:57 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:57 PM  synced recovery
+INFO 11/19/2022, 12:36:58 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:36:58 PM  synced recovery
+INFO 11/19/2022, 12:37:02 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:37:02 PM  synced recovery
+INFO 11/19/2022, 12:37:02 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:37:02 PM  synced recovery
+INFO 11/19/2022, 12:37:03 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:37:03 PM  synced recovery
+INFO 11/19/2022, 12:37:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:37:09 PM  synced recovery
+INFO 11/19/2022, 12:37:12 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:37:12 PM  synced recovery
+INFO 11/19/2022, 12:37:12 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:37:12 PM  synced recovery
+INFO 11/19/2022, 12:37:14 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:37:14 PM  synced recovery
+INFO 11/19/2022, 12:37:40 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:37:40 PM  synced recovery
+INFO 11/19/2022, 12:37:57 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:37:57 PM  synced recovery
+INFO 11/19/2022, 12:38:02 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:38:02 PM  synced recovery
+INFO 11/19/2022, 12:38:05 PM  [blur] 2
+INFO 11/19/2022, 12:38:05 PM  [win] blur
+INFO 11/19/2022, 12:38:15 PM  [focus] 2
+INFO 11/19/2022, 12:38:16 PM  [blur] 2
+INFO 11/19/2022, 12:38:16 PM  [win] blur
+INFO 11/19/2022, 12:38:17 PM  [focus] 2
+INFO 11/19/2022, 12:38:36 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:38:36 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:38:36 PM  synced recovery
+INFO 11/19/2022, 12:38:36 PM  synced recovery
+INFO 11/19/2022, 12:38:37 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:38:37 PM  synced recovery
+INFO 11/19/2022, 12:38:37 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:38:37 PM  synced recovery
+INFO 11/19/2022, 12:38:37 PM  [blur] 2
+INFO 11/19/2022, 12:38:37 PM  [win] blur
+INFO 11/19/2022, 12:38:47 PM  [focus] 2
+INFO 11/19/2022, 12:38:49 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:38:49 PM  synced recovery
+INFO 11/19/2022, 12:38:49 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:38:49 PM  synced recovery
+INFO 11/19/2022, 12:38:51 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:38:51 PM  synced recovery
+INFO 11/19/2022, 12:38:55 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:38:55 PM  synced recovery
+INFO 11/19/2022, 12:39:06 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:06 PM  synced recovery
+INFO 11/19/2022, 12:39:07 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:07 PM  synced recovery
+INFO 11/19/2022, 12:39:07 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:07 PM  synced recovery
+INFO 11/19/2022, 12:39:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:09 PM  synced recovery
+INFO 11/19/2022, 12:39:16 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:16 PM  synced recovery
+INFO 11/19/2022, 12:39:20 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:20 PM  synced recovery
+INFO 11/19/2022, 12:39:20 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:20 PM  synced recovery
+INFO 11/19/2022, 12:39:22 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:22 PM  synced recovery
+INFO 11/19/2022, 12:39:24 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:24 PM  synced recovery
+INFO 11/19/2022, 12:39:27 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:27 PM  synced recovery
+INFO 11/19/2022, 12:39:29 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:29 PM  synced recovery
+INFO 11/19/2022, 12:39:30 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:30 PM  synced recovery
+INFO 11/19/2022, 12:39:31 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:31 PM  synced recovery
+INFO 11/19/2022, 12:39:31 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:31 PM  synced recovery
+INFO 11/19/2022, 12:39:39 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:39 PM  synced recovery
+INFO 11/19/2022, 12:39:47 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:47 PM  synced recovery
+INFO 11/19/2022, 12:39:48 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:48 PM  synced recovery
+INFO 11/19/2022, 12:39:49 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:49 PM  synced recovery
+INFO 11/19/2022, 12:39:49 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:49 PM  synced recovery
+INFO 11/19/2022, 12:39:50 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:39:50 PM  synced recovery
+INFO 11/19/2022, 12:40:14 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:14 PM  synced recovery
+INFO 11/19/2022, 12:40:15 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:15 PM  synced recovery
+INFO 11/19/2022, 12:40:22 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:22 PM  synced recovery
+INFO 11/19/2022, 12:40:23 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:23 PM  synced recovery
+INFO 11/19/2022, 12:40:29 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:29 PM  synced recovery
+INFO 11/19/2022, 12:40:34 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:34 PM  synced recovery
+INFO 11/19/2022, 12:40:34 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:34 PM  synced recovery
+INFO 11/19/2022, 12:40:34 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:34 PM  synced recovery
+INFO 11/19/2022, 12:40:34 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:34 PM  synced recovery
+INFO 11/19/2022, 12:40:37 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:37 PM  synced recovery
+INFO 11/19/2022, 12:40:38 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:38 PM  synced recovery
+INFO 11/19/2022, 12:40:38 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:38 PM  synced recovery
+INFO 11/19/2022, 12:40:38 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:38 PM  synced recovery
+INFO 11/19/2022, 12:40:44 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:44 PM  synced recovery
+INFO 11/19/2022, 12:40:44 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:44 PM  synced recovery
+INFO 11/19/2022, 12:40:56 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:56 PM  synced recovery
+INFO 11/19/2022, 12:40:57 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:57 PM  synced recovery
+INFO 11/19/2022, 12:40:57 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:57 PM  synced recovery
+INFO 11/19/2022, 12:40:58 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:58 PM  synced recovery
+INFO 11/19/2022, 12:40:59 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:59 PM  synced recovery
+INFO 11/19/2022, 12:40:59 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:40:59 PM  synced recovery
+INFO 11/19/2022, 12:41:00 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:41:00 PM  synced recovery
+INFO 11/19/2022, 12:41:53 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:41:53 PM  synced recovery
+INFO 11/19/2022, 12:41:54 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:41:54 PM  synced recovery
+INFO 11/19/2022, 12:42:11 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:11 PM  synced recovery
+INFO 11/19/2022, 12:42:11 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:11 PM  synced recovery
+INFO 11/19/2022, 12:42:24 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:24 PM  synced recovery
+INFO 11/19/2022, 12:42:26 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:26 PM  synced recovery
+INFO 11/19/2022, 12:42:28 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:28 PM  synced recovery
+INFO 11/19/2022, 12:42:28 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:28 PM  synced recovery
+INFO 11/19/2022, 12:42:30 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:30 PM  synced recovery
+INFO 11/19/2022, 12:42:30 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:30 PM  synced recovery
+INFO 11/19/2022, 12:42:33 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:33 PM  synced recovery
+INFO 11/19/2022, 12:42:33 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:33 PM  synced recovery
+INFO 11/19/2022, 12:42:35 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:35 PM  synced recovery
+INFO 11/19/2022, 12:42:36 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:36 PM  synced recovery
+INFO 11/19/2022, 12:42:40 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:40 PM  synced recovery
+INFO 11/19/2022, 12:42:43 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:43 PM  synced recovery
+INFO 11/19/2022, 12:42:43 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:43 PM  synced recovery
+INFO 11/19/2022, 12:42:46 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:46 PM  synced recovery
+INFO 11/19/2022, 12:42:48 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:48 PM  synced recovery
+INFO 11/19/2022, 12:42:49 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:49 PM  synced recovery
+INFO 11/19/2022, 12:42:54 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:54 PM  synced recovery
+INFO 11/19/2022, 12:42:55 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:55 PM  synced recovery
+INFO 11/19/2022, 12:42:55 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:55 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:55 PM  synced recovery
+INFO 11/19/2022, 12:42:55 PM  synced recovery
+INFO 11/19/2022, 12:42:58 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:58 PM  synced recovery
+INFO 11/19/2022, 12:42:59 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:42:59 PM  synced recovery
+INFO 11/19/2022, 12:43:05 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:05 PM  synced recovery
+INFO 11/19/2022, 12:43:06 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:06 PM  synced recovery
+INFO 11/19/2022, 12:43:15 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:15 PM  synced recovery
+INFO 11/19/2022, 12:43:16 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:16 PM  synced recovery
+INFO 11/19/2022, 12:43:16 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:16 PM  synced recovery
+INFO 11/19/2022, 12:43:19 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:19 PM  synced recovery
+INFO 11/19/2022, 12:43:20 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:20 PM  synced recovery
+INFO 11/19/2022, 12:43:21 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:21 PM  synced recovery
+INFO 11/19/2022, 12:43:21 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:21 PM  synced recovery
+INFO 11/19/2022, 12:43:22 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:22 PM  synced recovery
+INFO 11/19/2022, 12:43:23 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:23 PM  synced recovery
+INFO 11/19/2022, 12:43:31 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:31 PM  synced recovery
+INFO 11/19/2022, 12:43:32 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:32 PM  synced recovery
+INFO 11/19/2022, 12:43:32 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:32 PM  synced recovery
+INFO 11/19/2022, 12:43:34 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:34 PM  synced recovery
+INFO 11/19/2022, 12:43:34 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:34 PM  synced recovery
+INFO 11/19/2022, 12:43:37 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:37 PM  synced recovery
+INFO 11/19/2022, 12:43:37 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:37 PM  synced recovery
+INFO 11/19/2022, 12:43:39 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:39 PM  synced recovery
+INFO 11/19/2022, 12:43:48 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:48 PM  synced recovery
+INFO 11/19/2022, 12:43:53 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:53 PM  synced recovery
+INFO 11/19/2022, 12:43:54 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:54 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:43:54 PM  synced recovery
+INFO 11/19/2022, 12:43:54 PM  synced recovery
+INFO 11/19/2022, 12:44:06 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:06 PM  synced recovery
+INFO 11/19/2022, 12:44:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:09 PM  synced recovery
+INFO 11/19/2022, 12:44:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:09 PM  synced recovery
+INFO 11/19/2022, 12:44:10 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:10 PM  synced recovery
+INFO 11/19/2022, 12:44:12 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:12 PM  synced recovery
+INFO 11/19/2022, 12:44:27 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:27 PM  synced recovery
+INFO 11/19/2022, 12:44:31 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:31 PM  synced recovery
+INFO 11/19/2022, 12:44:32 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:32 PM  synced recovery
+INFO 11/19/2022, 12:44:32 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:32 PM  synced recovery
+INFO 11/19/2022, 12:44:34 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:34 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:34 PM  synced recovery
+INFO 11/19/2022, 12:44:34 PM  synced recovery
+INFO 11/19/2022, 12:44:37 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:37 PM  synced recovery
+INFO 11/19/2022, 12:44:37 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 12:44:37 PM  synced recovery
+INFO 11/19/2022, 1:41:19 PM  [blur] 2
+INFO 11/19/2022, 1:41:19 PM  [win] blur
+INFO 11/19/2022, 1:42:20 PM  [focus] 2
+INFO 11/19/2022, 1:42:21 PM  [blur] 2
+INFO 11/19/2022, 1:42:21 PM  [win] blur
+INFO 11/19/2022, 2:01:27 PM  [focus] 2
+INFO 11/19/2022, 2:01:31 PM  [blur] 2
+INFO 11/19/2022, 2:01:31 PM  [win] blur
+INFO 11/19/2022, 2:01:32 PM  [focus] 2
+INFO 11/19/2022, 2:01:34 PM  [blur] 2
+INFO 11/19/2022, 2:01:34 PM  [win] blur
+INFO 11/19/2022, 2:01:34 PM  [focus] 2
+INFO 11/19/2022, 2:01:35 PM  [blur] 2
+INFO 11/19/2022, 2:01:35 PM  [win] blur
+INFO 11/19/2022, 2:01:43 PM  [focus] 2
+INFO 11/19/2022, 2:01:51 PM  [blur] 2
+INFO 11/19/2022, 2:01:51 PM  [win] blur
+INFO 11/19/2022, 2:02:52 PM  [focus] 2
+INFO 11/19/2022, 2:02:53 PM  [blur] 2
+INFO 11/19/2022, 2:02:53 PM  [win] blur
+INFO 11/19/2022, 2:06:28 PM  [focus] 2
+INFO 11/19/2022, 2:06:29 PM  [blur] 2
+INFO 11/19/2022, 2:06:29 PM  [win] blur
+INFO 11/19/2022, 2:07:24 PM  [focus] 2
+INFO 11/19/2022, 2:07:25 PM  [blur] 2
+INFO 11/19/2022, 2:07:25 PM  [win] blur
+INFO 11/19/2022, 2:08:07 PM  [focus] 2
+INFO 11/19/2022, 2:08:09 PM  [blur] 2
+INFO 11/19/2022, 2:08:09 PM  [win] blur
+INFO 11/19/2022, 2:09:19 PM  [focus] 2
+INFO 11/19/2022, 2:09:21 PM  [blur] 2
+INFO 11/19/2022, 2:09:21 PM  [win] blur
+INFO 11/19/2022, 2:09:53 PM  [focus] 2
+INFO 11/19/2022, 2:09:54 PM  [blur] 2
+INFO 11/19/2022, 2:09:54 PM  [win] blur
+INFO 11/19/2022, 2:10:46 PM  [focus] 2
+INFO 11/19/2022, 2:10:48 PM  [blur] 2
+INFO 11/19/2022, 2:10:48 PM  [win] blur
+INFO 11/19/2022, 2:20:16 PM  [focus] 2
+INFO 11/19/2022, 2:20:17 PM  [blur] 2
+INFO 11/19/2022, 2:20:17 PM  [win] blur
+INFO 11/19/2022, 2:20:31 PM  [focus] 2
+INFO 11/19/2022, 2:20:33 PM  [blur] 2
+INFO 11/19/2022, 2:20:33 PM  [win] blur
+INFO 11/19/2022, 2:22:47 PM  [focus] 2
+INFO 11/19/2022, 2:22:48 PM  [blur] 2
+INFO 11/19/2022, 2:22:48 PM  [win] blur
+INFO 11/19/2022, 2:22:50 PM  [focus] 2
+INFO 11/19/2022, 2:22:51 PM  [blur] 2
+INFO 11/19/2022, 2:22:51 PM  [win] blur
+INFO 11/19/2022, 2:22:52 PM  [focus] 2
+INFO 11/19/2022, 2:22:54 PM  [blur] 2
+INFO 11/19/2022, 2:22:54 PM  [win] blur
+INFO 11/19/2022, 2:28:33 PM  [focus] 2
+INFO 11/19/2022, 2:28:41 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:28:41 PM  synced recovery
+INFO 11/19/2022, 2:28:41 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:28:41 PM  synced recovery
+INFO 11/19/2022, 2:28:41 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:28:41 PM  synced recovery
+INFO 11/19/2022, 2:28:46 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:28:46 PM  synced recovery
+INFO 11/19/2022, 2:28:48 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:28:48 PM  synced recovery
+INFO 11/19/2022, 2:28:48 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:28:48 PM  synced recovery
+INFO 11/19/2022, 2:28:49 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:28:49 PM  synced recovery
+INFO 11/19/2022, 2:28:59 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:28:59 PM  synced recovery
+INFO 11/19/2022, 2:29:30 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:29:30 PM  synced recovery
+INFO 11/19/2022, 2:29:35 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:29:35 PM  synced recovery
+INFO 11/19/2022, 2:29:35 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:29:35 PM  synced recovery
+INFO 11/19/2022, 2:29:50 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:29:50 PM  synced recovery
+INFO 11/19/2022, 2:29:58 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:29:58 PM  synced recovery
+INFO 11/19/2022, 2:30:01 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:30:01 PM  synced recovery
+INFO 11/19/2022, 2:30:04 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:30:04 PM  synced recovery
+INFO 11/19/2022, 2:30:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:30:09 PM  synced recovery
+INFO 11/19/2022, 2:30:09 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:30:09 PM  synced recovery
+INFO 11/19/2022, 2:30:11 PM  [blur] 2
+INFO 11/19/2022, 2:30:11 PM  [win] blur
+INFO 11/19/2022, 2:31:57 PM  [focus] 2
+INFO 11/19/2022, 2:32:00 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:00 PM  synced recovery
+INFO 11/19/2022, 2:32:04 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:04 PM  synced recovery
+INFO 11/19/2022, 2:32:05 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:05 PM  synced recovery
+INFO 11/19/2022, 2:32:42 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:42 PM  synced recovery
+INFO 11/19/2022, 2:32:43 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:43 PM  synced recovery
+INFO 11/19/2022, 2:32:43 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:43 PM  synced recovery
+INFO 11/19/2022, 2:32:44 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:44 PM  synced recovery
+INFO 11/19/2022, 2:32:52 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:52 PM  synced recovery
+INFO 11/19/2022, 2:32:56 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:56 PM  synced recovery
+INFO 11/19/2022, 2:32:57 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:57 PM  synced recovery
+INFO 11/19/2022, 2:32:57 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:57 PM  synced recovery
+INFO 11/19/2022, 2:32:59 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:59 PM  synced recovery
+INFO 11/19/2022, 2:32:59 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:32:59 PM  synced recovery
+INFO 11/19/2022, 2:33:00 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:00 PM  synced recovery
+INFO 11/19/2022, 2:33:00 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:00 PM  synced recovery
+INFO 11/19/2022, 2:33:16 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:16 PM  synced recovery
+INFO 11/19/2022, 2:33:31 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:31 PM  synced recovery
+INFO 11/19/2022, 2:33:31 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:31 PM  synced recovery
+INFO 11/19/2022, 2:33:41 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:41 PM  synced recovery
+INFO 11/19/2022, 2:33:43 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:43 PM  synced recovery
+INFO 11/19/2022, 2:33:46 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:46 PM  synced recovery
+INFO 11/19/2022, 2:33:46 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:46 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:46 PM  synced recovery
+INFO 11/19/2022, 2:33:46 PM  synced recovery
+INFO 11/19/2022, 2:33:47 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:47 PM  synced recovery
+INFO 11/19/2022, 2:33:47 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:47 PM  synced recovery
+INFO 11/19/2022, 2:33:48 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:48 PM  synced recovery
+INFO 11/19/2022, 2:33:48 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:48 PM  synced recovery
+INFO 11/19/2022, 2:33:49 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:49 PM  synced recovery
+INFO 11/19/2022, 2:33:50 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:33:50 PM  synced recovery
+INFO 11/19/2022, 2:33:50 PM  [blur] 2
+INFO 11/19/2022, 2:33:50 PM  [win] blur
+INFO 11/19/2022, 2:34:23 PM  [focus] 2
+INFO 11/19/2022, 2:34:25 PM  added recovery 2 /home/xiaohan/codehub/typora_book/ArchLinux安装教程.md null (0)
+INFO 11/19/2022, 2:34:25 PM  synced recovery
+INFO 11/19/2022, 2:34:26 PM  synced recovery
+INFO 11/19/2022, 2:34:26 PM  ----------------before-quit-----------------
+INFO 11/19/2022, 2:34:26 PM  ------------------will-quit------------------
+INFO 11/19/2022, 2:34:26 PM  -----------------quit------------------
+INFO 11/19/2022, 2:34:26 PM  closeLogging

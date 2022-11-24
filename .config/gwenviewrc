@@ -1,0 +1,25 @@
+[$Version]
+update_info=gwenview.upd:SideBar_StatusBar_Rename,gwenview.upd:ImageView_AlphaBackgroundMode_Update,gwenview.upd:DeleteThumbnailSetting_Rename
+
+[General]
+LastUsedVersion=210800
+ThumbnailBarIsVisible=true
+
+[ImageView]
+ThumbnailSplitterSizes=316,90
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=32
+
+[MainWindow]
+HDMI-1=HDMI-1
+HDMI-1 XPosition 1920x1080 HDMI-1=640
+HDMI-1 YPosition 1920x1080 HDMI-1=326
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAoAAAAG7AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/.local/share/fcitx5/themes/Psionics-Remix/highlight.png
+Name1[$e]=highlight.png
