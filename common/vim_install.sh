@@ -36,9 +36,10 @@ neovim_install() {
             rt_log "start nvim with [nvim +PackerSync]"
             ;;
         "LunarVim")
-            git clone https://github.com/LunarVim/LunarVim.git ~/.config/nvim
-            rt_log "stating install lunarvim ..."
+            git clone https://github.com/LunarVim/LunarVim.git /tmp
+            sh /tmp/LunarVim/utils/installer/install.sh
             rt_log "start nvim with [nvim +PackerSync]"
+            rm -rf /tmp/LunarVim
             ;;
         "askfiy")
             #  2.3 git@github.com:askfiy/nvim.git
@@ -50,13 +51,4 @@ neovim_install() {
             ;;
     esac
 }
-nvim_type=$(rt_select "nvim lvim")
-case ${nvim_type} in
-    "nvim")
-        neovim_install "$@"
-        ;;
-    "lvim")
-        git clone https://github.com/LunarVim/LunarVim.git
-        sh LunarVim/utils/installer/install.sh
-        ;;
-esac
+neovim_install
