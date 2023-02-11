@@ -1,0 +1,71 @@
+7,8c7,8
+< vim.opt.shiftwidth = 2
+< vim.opt.tabstop = 2
+---
+> vim.opt.shiftwidth = 4
+> vim.opt.tabstop = 4
+9a10
+> vim.opt.wrap = true
+14,16c15,17
+<   enabled = true,
+<   pattern = "*.lua",
+<   timeout = 1000,
+---
+>     enabled = true,
+>     pattern = "*.lua",
+>     timeout = 1000,
+24a26,32
+> lvim.keys.normal_mode["S"] = ":w!<cr>"
+> lvim.keys.normal_mode["Q"] = ":q!<cr>"
+> lvim.keys.normal_mode[";"] = ":"
+> lvim.keys.normal_mode["="] = "n"
+> lvim.keys.insert_mode["jk"] = "ESC"
+> lvim.keys.normal_mode["-"] = "N"
+> lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+26,28c34,37
+< -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+< -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+< 
+---
+> lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+> lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+> vim.api.nvim_create_autocmd("BufReadPost",
+>     { command = [[ if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]] })
+34a44
+> lvim.colorscheme = "deus"
+50c60
+< -- lvim.lsp.installer.setup.automatic_installation = false
+---
+> lvim.lsp.installer.setup.automatic_installation = false
+86,94c96
+< --   { command = "flake8", filetypes = { "python" } },
+< --   {
+< --     command = "shellcheck",
+< --     args = { "--severity", "warning" },
+< --   },
+< -- }
+< 
+< -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
+< -- lvim.plugins = {
+---
+> --     { command = "flake8", filetypes = { "python" } },
+96,97c98,99
+< --       "folke/trouble.nvim",
+< --       cmd = "TroubleToggle",
+---
+> --         command = "shellcheck",
+> --         args = { "--severity", "warning" },
+99a102,114
+> 
+> -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
+> lvim.plugins = {
+>     {
+>         "tpope/vim-surround",
+>         cmd = "VimSurround",
+>         enabled = lvim.builtin.project.active,
+>         event = "VimEnter",
+>     },
+>     {
+>         "theniceboy/nvim-deus",
+>     },
+> }
