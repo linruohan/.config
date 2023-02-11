@@ -16,10 +16,7 @@ neovim_install() {
     }
     flag=$(rt_select "LunarVim theniceboy scratch askfiy")
     flag="${flag:-LunarVim}"
-    [ -d ~/.config/nivm ] && {
-        mv ~/.config/nvim ~/.config/nvim.old
-        rm -rf ~/.config/nvim
-    }
+    [ -d ~/.config/nivm ] && mv ~/.config/nvim ~/.config/nvim.old
     rt_log "[${flag}] nvim installing ..."
     case "$flag" in
         "theniceboy")
@@ -51,4 +48,5 @@ neovim_install() {
             ;;
     esac
 }
+
 neovim_install

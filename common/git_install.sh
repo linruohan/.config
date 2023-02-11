@@ -14,10 +14,9 @@ git_install() {
             rt_err "manual lazygit install failed !"
         }
     }
-	git config --system http.sslverify false
-    git config --global https.proxy http://127.0.0.1:15732
-    git config --global http.proxy http://127.0.0.1:15732
-    # git config
+    git config --global http.sslverify false
+    # git config --global https.proxy http://127.0.0.1:15732
+    # git config --global http.proxy http://127.0.0.1:15732
     rt_log "gitconfig setting ...."
     grep "linruohan" ~/.gitconfig && (
         rt_log "gitconfig setting already"
