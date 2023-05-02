@@ -1,16 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
-export XMODIFIERS="@im=fcitx"
-export XIM=fcitx
-export XIM_PROGRAM=fcitx
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -25,19 +23,18 @@ export XIM_PROGRAM=fcitx
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
-# Uncomment the following line to disable colors in ls
+# Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
@@ -47,8 +44,9 @@ export XIM_PROGRAM=fcitx
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -72,24 +70,23 @@ export XIM_PROGRAM=fcitx
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions sudo)
+plugins=(z git zsh-syntax-highlighting zsh-autosuggestions sudo)
 
 source $ZSH/oh-my-zsh.sh
 
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-export LANG=zh_CN.UTF-8
+
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -102,14 +99,17 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export LANG=zh_CN.UTF-8
-export LANGUAGE=zh_CN.UTF-8
-export LC_ALL=zh_CN.UTF-8
 export PATH=$PATH:$HOME/.local/bin
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 export LANG=zh_CN.UTF-8
 
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='vim'
+else
+    export EDITOR='nvim'
+fi
 ### EXPORT
 export TERM="xterm-256color" # getting proper colors
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
@@ -136,16 +136,14 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 # adding flags
 alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
-alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
-alias vifm='./.config/vifm/scripts/vifmrun'
-alias ncmpcpp='ncmpcpp ncmpcpp_directory=$HOME/.config/ncmpcpp/'
-alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc -O MOCDir="$XDG_CONFIG_HOME"/moc'
 
 # ps
 alias psa="ps auxf"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias psmem='ps auxf | sort -nr -k 4'
 alias pscpu='ps auxf | sort -nr -k 3'
+alias pg="pgrep -f"
+alias pk="pkill -9 -f"
 
 # Merge Xresources
 alias merge='xrdb -merge ~/.Xresources'
@@ -178,13 +176,14 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 alias wifi1='iwlist scan | grep "ESSID:"'
 alias wifi='nmcli device wifi list | head -10'
 alias shouji='nmcli device wifi connect "HONOR 30" password "12345678"'
-alias kuandai='nmcli device wifi connect "xiaohan001" password "Mm1214875764"'
+alias kuandai='nmcli device wifi connect "sx001" password "Mm1214875764."'
 alias duankaiwifi='nmcli device disconnect wlp3s0'
 
 # 2. custom: dir commands
-alias wo='cd ~/working'
 alias co='cd ~/codehub'
+alias do='cd ~/Downloads'
 alias m="cd ~"
+alias fonts='fc-list | grep' # 查看已安装字体
 # ===========================
 alias rm='rm -rf'
 alias ln='ln -i'
@@ -194,7 +193,7 @@ alias mv='mv -i'
 alias mkdir='mkdir -pv'
 alias ..='cd ../../'
 alias ...='cd ../../..'
-alias l.='lsd -d .* --color=auto'
+alias l='lsd -d .* --color=auto'
 alias ll='lsd -laF --color=auto'
 alias ls='lsd --color=auto'
 alias f='shfmt -d -i 4 -ci -w -bn -sr'
@@ -205,10 +204,9 @@ alias f='shfmt -d -i 4 -ci -w -bn -sr'
 #alias lt='exa -aT --color=always --group-directories-first' # tree listing
 #alias l.='exa -a | egrep "^\."'
 
-alias .2='cd ../..'
-alias .3='cd ../../..'
-alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
+alias ..='cd ../..'
+alias ...='cd ../../..'
+alias ....='cd ../../../..'
 
 # 2.1 custom cat commands
 alias nocomment='grep -Ev "^(#|$)"'
@@ -221,7 +219,7 @@ alias diff='colordiff'
 # 2.3 custom time commands
 alias now='date "+%Y-%m-%d %H:%M:%S.%s"'
 alias timestamp='now; echo s: $(date +"%s"); echo ms: $(echo `expr \`date +%s%N\` / 1000000`)'
-
+alias time_sync='sudo timedatectl set-ntp true'
 # 2.4 net commands
 alias curl='curl -O'
 
@@ -250,6 +248,7 @@ alias j='jobs -l'
 
 # 3. custom tools
 alias vi=nvim
+alias v=lvim
 alias ra='ranger'
 alias lg='lazygit'
 
@@ -259,20 +258,11 @@ alias gp='git push origin master'
 alias ga='git add'
 alias gs='git status'
 alias gll='git pull'
-alias glp='git log -p'
 alias gc='git commit -m'
 alias gb='git branch -a'
 alias gd='git diff'
-alias addup='git add -u'
-alias addall='git add .'
-alias branch='git branch'
+alias glp='git log -p'
 alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
-alias fetch='git fetch'
-alias pull='git pull origin'
-alias push='git push origin'
-alias stat='git status' # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
 
@@ -310,9 +300,6 @@ alias ytv-best="yt-dlp -f bestvideo+bestaudio "
 # I do not recommend switching default SHELL from bash.
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
-
-# bare git repo alias for dotfiles
-alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 # termbin
 alias tb="nc termbin.com 9999"
@@ -370,78 +357,11 @@ case ${TERM} in
         ;;
 esac
 
-### Function extract for common file formats ###
-SAVEIFS=$IFS
-IFS=$(echo -en "\n\b")
-
-function extract {
-    if [ -z "$1" ]; then
-        # display usage if no parameters given
-        echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
-        echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
-    else
-        for n in "$@"; do
-            if [ -f "$n" ]; then
-                case "${n%,}" in
-                    *.cbt | *.tar.bz2 | *.tar.gz | *.tar.xz | *.tbz2 | *.tgz | *.txz | *.tar)
-                        tar xvf "$n"
-                        ;;
-                    *.lzma) unlzma ./"$n" ;;
-                    *.bz2) bunzip2 ./"$n" ;;
-                    *.cbr | *.rar) unrar x -ad ./"$n" ;;
-                    *.gz) gunzip ./"$n" ;;
-                    *.cbz | *.epub | *.zip) unzip ./"$n" ;;
-                    *.z) uncompress ./"$n" ;;
-                    *.7z | *.arj | *.cab | *.cb7 | *.chm | *.deb | *.dmg | *.iso | *.lzh | *.msi | *.pkg | *.rpm | *.udf | *.wim | *.xar)
-                        7z x ./"$n"
-                        ;;
-                    *.xz) unxz ./"$n" ;;
-                    *.exe) cabextract ./"$n" ;;
-                    *.cpio) cpio -id < ./"$n" ;;
-                    *.cba | *.ace) unace x ./"$n" ;;
-                    *)
-                        echo "extract: '$n' - unknown archive method"
-                        return 1
-                        ;;
-                esac
-            else
-                echo "'$n' - file does not exist"
-                return 1
-            fi
-        done
-    fi
-}
-
-IFS=$SAVEIFS
-
-### ALIASES ###
-
-# root privileges
-alias doas="doas --"
-
-# navigation
-up() {
-    local d=""
-    local limit="$1"
-
-    # Default to limit of 1
-    if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
-        limit=1
-    fi
-
-    for ((i = 1; i <= limit; i++)); do
-        d="../$d"
-    done
-
-    # perform cd. Show error if cd fails
-    if ! cd "$d"; then
-        echo "Couldn't go up $limit dirs."
-    fi
-}
-
 pxon() {
-    # 
-    sudo pigchacli
+    # sudo pigchacli
+    sudo curl -o /usr/bin/pigchacli https://webdownload.duangspeed.com/linux/pigchacli_x86_64 -k
+    sudo chmod +x /usr/bin/pigchacli
+
     # 设置git代理执行：
     git config --global http.proxy http://127.0.0.1:15777 && git config --global https.proxy http://127.0.0.1:15777
     # 设置代理执行：
