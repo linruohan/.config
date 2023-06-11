@@ -1,0 +1,230 @@
+diff --git a/.stylua.toml b/.stylua.toml
+index bfcffff..bd94b5a 100644
+--- a/.stylua.toml
++++ b/.stylua.toml
+@@ -1,7 +1,7 @@
+ column_width = 120
+ line_endings = "Unix"
+ indent_type = "Spaces"
+-indent_width = 2
++indent_width = 4
+ quote_style = "AutoPreferDouble"
+ call_parentheses = "None"
+ collapse_simple_statement = "Always"
+diff --git a/lua/astronvim/bootstrap.lua b/lua/astronvim/bootstrap.lua
+index 7d0d67d..4e6a7fe 100644
+--- a/lua/astronvim/bootstrap.lua
++++ b/lua/astronvim/bootstrap.lua
+@@ -42,7 +42,7 @@ local function load_module_file(module)
+     -- if successful at loading, set the return variable
+     if status_ok then
+       out = loaded_module
+-    -- if unsuccessful, throw an error
++      -- if unsuccessful, throw an error
+     else
+       vim.api.nvim_err_writeln("Error loading file: " .. found_file .. "\n\n" .. loaded_module)
+     end
+@@ -63,11 +63,11 @@ local function func_or_extend(overrides, default, extend)
+     if type(overrides) == "table" then
+       local opts = overrides or {}
+       default = default and vim.tbl_deep_extend("force", default, opts) or opts
+-    -- if the override is  a function, call it with the default and overwrite default with the return value
++      -- if the override is  a function, call it with the default and overwrite default with the return value
+     elseif type(overrides) == "function" then
+       default = overrides(default)
+     end
+-  -- if extend is set to false and we have a provided override, simply override the default
++    -- if extend is set to false and we have a provided override, simply override the default
+   elseif overrides ~= nil then
+     default = overrides
+   end
+@@ -129,4 +129,5 @@ astronvim.user_terminals = {}
+ --- table of language servers to ignore the setup of, configured through lsp.skip_setup in the user configuration
+ astronvim.lsp = { skip_setup = astronvim.user_opts("lsp.skip_setup", {}) }
+ --- the default colorscheme to apply on startup
+-astronvim.default_colorscheme = astronvim.user_opts("colorscheme", "astrotheme", false)
++-- astronvim.default_colorscheme = astronvim.user_opts("colorscheme", "astrotheme", false)
++astronvim.default_colorscheme = astronvim.user_opts("colorscheme", "deus", false)
+diff --git a/lua/astronvim/options.lua b/lua/astronvim/options.lua
+index c17b5ad..85c7553 100644
+--- a/lua/astronvim/options.lua
++++ b/lua/astronvim/options.lua
+@@ -1,66 +1,66 @@
+-vim.opt.viewoptions:remove "curdir" -- disable saving current directory with views
++vim.opt.viewoptions:remove "curdir"             -- disable saving current directory with views
+ vim.opt.shortmess:append { s = true, I = true } -- disable startup message
+-vim.opt.backspace:append { "nostop" } -- Don't stop backspace at insert
++vim.opt.backspace:append { "nostop" }           -- Don't stop backspace at insert
+ if vim.fn.has "nvim-0.9" == 1 then
+-  vim.opt.diffopt:append "linematch:60" -- enable linematch diff algorithm
++  vim.opt.diffopt:append "linematch:60"         -- enable linematch diff algorithm
+ end
+ local options = astronvim.user_opts("options", {
+   opt = {
+-    breakindent = true, -- Wrap indent to match  line start
+-    clipboard = "unnamedplus", -- Connection to the system clipboard
+-    cmdheight = 0, -- hide command line unless needed
+-    completeopt = { "menu", "menuone", "noselect" }, -- Options for insert mode completion
+-    copyindent = true, -- Copy the previous indentation on autoindenting
+-    cursorline = true, -- Highlight the text line of the cursor
+-    expandtab = true, -- Enable the use of space in tab
+-    fileencoding = "utf-8", -- File content encoding for the buffer
+-    fillchars = { eob = " " }, -- Disable `~` on nonexistent lines
+-    foldenable = true, -- enable fold for nvim-ufo
+-    foldlevel = 99, -- set high foldlevel for nvim-ufo
+-    foldlevelstart = 99, -- start with all code unfolded
++    breakindent = true,                                     -- Wrap indent to match  line start
++    clipboard = "unnamedplus",                              -- Connection to the system clipboard
++    cmdheight = 0,                                          -- hide command line unless needed
++    completeopt = { "menu", "menuone", "noselect" },        -- Options for insert mode completion
++    copyindent = true,                                      -- Copy the previous indentation on autoindenting
++    cursorline = true,                                      -- Highlight the text line of the cursor
++    expandtab = true,                                       -- Enable the use of space in tab
++    fileencoding = "utf-8",                                 -- File content encoding for the buffer
++    fillchars = { eob = " " },                              -- Disable `~` on nonexistent lines
++    foldenable = true,                                      -- enable fold for nvim-ufo
++    foldlevel = 99,                                         -- set high foldlevel for nvim-ufo
++    foldlevelstart = 99,                                    -- start with all code unfolded
+     foldcolumn = vim.fn.has "nvim-0.9" == 1 and "1" or nil, -- show foldcolumn in nvim 0.9
+-    history = 100, -- Number of commands to remember in a history table
+-    ignorecase = true, -- Case insensitive searching
+-    infercase = true, -- Infer cases in keyword completion
+-    laststatus = 3, -- globalstatus
+-    linebreak = true, -- Wrap lines at 'breakat'
+-    mouse = "a", -- Enable mouse support
+-    number = true, -- Show numberline
+-    preserveindent = true, -- Preserve indent structure as much as possible
+-    pumheight = 10, -- Height of the pop up menu
+-    relativenumber = true, -- Show relative numberline
+-    scrolloff = 8, -- Number of lines to keep above and below the cursor
+-    shiftwidth = 2, -- Number of space inserted for indentation
+-    showmode = false, -- Disable showing modes in command line
+-    showtabline = 2, -- always display tabline
+-    sidescrolloff = 8, -- Number of columns to keep at the sides of the cursor
+-    signcolumn = "yes", -- Always show the sign column
+-    smartcase = true, -- Case sensitivie searching
+-    smartindent = true, -- Smarter autoindentation
+-    splitbelow = true, -- Splitting a new window below the current one
+-    splitright = true, -- Splitting a new window at the right of the current one
+-    tabstop = 2, -- Number of space in a tab
+-    termguicolors = true, -- Enable 24-bit RGB color in the TUI
+-    timeoutlen = 500, -- Shorten key timeout length a little bit for which-key
+-    undofile = true, -- Enable persistent undo
+-    updatetime = 300, -- Length of time to wait before triggering the plugin
+-    virtualedit = "block", -- allow going past end of line in visual block mode
+-    wrap = false, -- Disable wrapping of lines longer than the width of window
+-    writebackup = false, -- Disable making a backup before overwriting a file
++    history = 100,                                          -- Number of commands to remember in a history table
++    ignorecase = true,                                      -- Case insensitive searching
++    infercase = true,                                       -- Infer cases in keyword completion
++    laststatus = 3,                                         -- globalstatus
++    linebreak = true,                                       -- Wrap lines at 'breakat'
++    mouse = "a",                                            -- Enable mouse support
++    number = true,                                          -- Show numberline
++    preserveindent = true,                                  -- Preserve indent structure as much as possible
++    pumheight = 10,                                         -- Height of the pop up menu
++    relativenumber = true,                                  -- Show relative numberline
++    scrolloff = 8,                                          -- Number of lines to keep above and below the cursor
++    shiftwidth = 4,                                         -- Number of space inserted for indentation
++    showmode = false,                                       -- Disable showing modes in command line
++    showtabline = 4,                                        -- always display tabline
++    sidescrolloff = 8,                                      -- Number of columns to keep at the sides of the cursor
++    signcolumn = "yes",                                     -- Always show the sign column
++    smartcase = true,                                       -- Case sensitivie searching
++    smartindent = true,                                     -- Smarter autoindentation
++    splitbelow = true,                                      -- Splitting a new window below the current one
++    splitright = true,                                      -- Splitting a new window at the right of the current one
++    tabstop = 4,                                            -- Number of space in a tab
++    termguicolors = true,                                   -- Enable 24-bit RGB color in the TUI
++    timeoutlen = 500,                                       -- Shorten key timeout length a little bit for which-key
++    undofile = true,                                        -- Enable persistent undo
++    updatetime = 300,                                       -- Length of time to wait before triggering the plugin
++    virtualedit = "block",                                  -- allow going past end of line in visual block mode
++    wrap = true,                                            -- Disable wrapping of lines longer than the width of window
++    writebackup = false,                                    -- Disable making a backup before overwriting a file
+   },
+   g = {
+-    mapleader = " ", -- set leader key
+-    maplocalleader = ",", -- set default local leader key
++    mapleader = " ",                                                    -- set leader key
++    maplocalleader = ",",                                               -- set default local leader key
+     -- AstroNvim specific global options
+-    autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
+-    autopairs_enabled = true, -- enable autopairs at start
+-    cmp_enabled = true, -- enable completion at start
+-    codelens_enabled = true, -- enable or disable automatic codelens refreshing for lsp that support it
+-    diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
+-    highlighturl_enabled = true, -- highlight URLs by default
+-    icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available)
+-    lsp_handlers_enabled = true, -- enable or disable default vim.lsp.handlers (hover and signatureHelp)
+-    ui_notifications_enabled = true, -- disable notifications when toggling UI elements
++    autoformat_enabled = true,                                          -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
++    autopairs_enabled = true,                                           -- enable autopairs at start
++    cmp_enabled = true,                                                 -- enable completion at start
++    codelens_enabled = true,                                            -- enable or disable automatic codelens refreshing for lsp that support it
++    diagnostics_mode = 3,                                               -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
++    highlighturl_enabled = true,                                        -- highlight URLs by default
++    icons_enabled = true,                                               -- disable icons in the UI (disable if no nerd font is available)
++    lsp_handlers_enabled = true,                                        -- enable or disable default vim.lsp.handlers (hover and signatureHelp)
++    ui_notifications_enabled = true,                                    -- disable notifications when toggling UI elements
+   },
+   t = vim.t.bufs and vim.t.bufs or { bufs = vim.api.nvim_list_bufs() }, -- initialize buffers for the current tab
+ })
+diff --git a/lua/plugins/core.lua b/lua/plugins/core.lua
+index 3138ae8..84e2c7b 100644
+--- a/lua/plugins/core.lua
++++ b/lua/plugins/core.lua
+@@ -1,10 +1,11 @@
+ return {
+   "nvim-lua/plenary.nvim",
+-  { "AstroNvim/astrotheme", opts = { plugins = { ["dashboard-nvim"] = true } } },
+-  { "famiu/bufdelete.nvim", cmd = { "Bdelete", "Bwipeout" } },
+-  { "max397574/better-escape.nvim", event = "InsertCharPre", opts = { timeout = 300 } },
+-  { "NMAC427/guess-indent.nvim", event = "User AstroFile", config = require "plugins.configs.guess-indent" },
+-  { -- TODO: REMOVE neovim-session-manager with AstroNvim v4
++  { "AstroNvim/astrotheme",         opts = { plugins = { ["dashboard-nvim"] = true } } },
++  { "famiu/bufdelete.nvim",         cmd = { "Bdelete", "Bwipeout" } },
++  { "max397574/better-escape.nvim", event = "InsertCharPre",                           opts = { timeout = 300 } },
++  { "NMAC427/guess-indent.nvim",    event = "User AstroFile",                          config = require "plugins.configs.guess-indent" },
++  {
++    -- TODO: REMOVE neovim-session-manager with AstroNvim v4
+     "Shatur/neovim-session-manager",
+     event = "BufWritePost",
+     cmd = "SessionManager",
+@@ -76,12 +77,12 @@ return {
+         end
+ 
+         return (filetype == "" or buftype == "nofile") and "indent" -- only use indent until a file is opened
+-          or function(bufnr)
+-            return require("ufo")
+-              .getFolds(bufnr, "lsp")
+-              :catch(function(err) return handleFallbackException(bufnr, err, "treesitter") end)
+-              :catch(function(err) return handleFallbackException(bufnr, err, "indent") end)
+-          end
++            or function(bufnr)
++              return require("ufo")
++                  .getFolds(bufnr, "lsp")
++                  :catch(function(err) return handleFallbackException(bufnr, err, "treesitter") end)
++                  :catch(function(err) return handleFallbackException(bufnr, err, "indent") end)
++            end
+       end,
+     },
+   },
+@@ -96,6 +97,17 @@ return {
+       return commentstring_avail and commentstring and { pre_hook = commentstring.create_pre_hook() } or {}
+     end,
+   },
++  {
++    "kylechui/nvim-surround",
++    version = "*", -- Use for stability; omit to use `main` branch for the latest features
++    event = "VeryLazy",
++    config = function()
++      require("nvim-surround").setup({
++        -- Configuration here, or leave empty to use defaults
++      })
++    end
++  },
++  { "theniceboy/nvim-deus" },
+   {
+     "akinsho/toggleterm.nvim",
+     cmd = { "ToggleTerm", "TermExec" },
