@@ -1,0 +1,73 @@
+diff --git a/lua/astronvim/mappings.lua b/lua/astronvim/mappings.lua
+index 08cdf47..668cf9c 100644
+--- a/lua/astronvim/mappings.lua
++++ b/lua/astronvim/mappings.lua
+@@ -30,6 +30,15 @@ maps.n["<C-s>"] = { "<cmd>w!<cr>", desc = "Force write" }
+ maps.n["<C-q>"] = { "<cmd>qa!<cr>", desc = "Force quit" }
+ maps.n["|"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" }
+ maps.n["\\"] = { "<cmd>split<cr>", desc = "Horizontal Split" }
++maps.n["jj"] = { "<ESC>"}
++maps.n["+"] = { "N"}
++maps.n["-"] = { "n"}
++maps.n["y"] = { '"+y'}
++maps.n["<C-c>"] = { '"+y'}
++maps.n["<C-v>"] = { '"+p'}
++maps.v["<C-c>"] = { '"+y'}
++maps.v["<C-v>"] = { '"+p'}
++
+ -- TODO: Remove when dropping support for <Neovim v0.10
+ if not vim.ui.open then maps.n["gx"] = { utils.system_open, desc = "Open the file under cursor with system app" } end
+ 
+diff --git a/lua/astronvim/options.lua b/lua/astronvim/options.lua
+index 57f8f42..d7c1d8d 100644
+--- a/lua/astronvim/options.lua
++++ b/lua/astronvim/options.lua
+@@ -28,9 +28,9 @@ local options = astronvim.user_opts("options", {
+     number = true, -- show numberline
+     preserveindent = true, -- preserve indent structure as much as possible
+     pumheight = 10, -- height of the pop up menu
+-    relativenumber = true, -- show relative numberline
++    relativenumber = false, -- show relative numberline
+     scrolloff = 8, -- number of lines to keep above and below the cursor
+-    shiftwidth = 2, -- number of space inserted for indentation
++    shiftwidth = 4, -- number of space inserted for indentation
+     showmode = false, -- disable showing modes in command line
+     showtabline = 2, -- always display tabline
+     sidescrolloff = 8, -- number of columns to keep at the sides of the cursor
+@@ -38,13 +38,13 @@ local options = astronvim.user_opts("options", {
+     smartcase = true, -- case sensitive searching
+     splitbelow = true, -- splitting a new window below the current one
+     splitright = true, -- splitting a new window at the right of the current one
+-    tabstop = 2, -- number of space in a tab
++    tabstop = 4, -- number of space in a tab
+     termguicolors = true, -- enable 24-bit RGB color in the TUI
+     timeoutlen = 500, -- shorten key timeout length a little bit for which-key
+     undofile = true, -- enable persistent undo
+     updatetime = 300, -- length of time to wait before triggering the plugin
+     virtualedit = "block", -- allow going past end of line in visual block mode
+-    wrap = false, -- disable wrapping of lines longer than the width of window
++    wrap = true, -- disable wrapping of lines longer than the width of window
+     writebackup = false, -- disable making a backup before overwriting a file
+   },
+   g = {
+diff --git a/lua/plugins/core.lua b/lua/plugins/core.lua
+index 0b74cec..87e9743 100644
+--- a/lua/plugins/core.lua
++++ b/lua/plugins/core.lua
+@@ -10,6 +10,16 @@ return {
+     cmd = "SessionManager",
+     enabled = vim.g.resession_enabled ~= true,
+   },
++  {
++    "kylechui/nvim-surround",
++    version = "*", -- Use for stability; omit to use `main` branch for the latest features
++    event = "VeryLazy",
++    config = function()
++        require("nvim-surround").setup({
++            -- Configuration here, or leave empty to use defaults
++        })
++    end
++  },
+   {
+     "stevearc/resession.nvim",
+     enabled = vim.g.resession_enabled == true,
