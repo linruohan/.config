@@ -112,6 +112,7 @@ else
 fi
 ### EXPORT
 export TERM="xterm-256color" # getting proper colors
+export TERM="xterm-kitty" # getting proper colors
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -300,7 +301,8 @@ alias ytv-best="yt-dlp -f bestvideo+bestaudio "
 # I do not recommend switching default SHELL from bash.
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
-
+alias sl='sudo sublime'
+alias typora='sudo typora'
 # termbin
 alias tb="nc termbin.com 9999"
 
@@ -339,6 +341,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 [ -d "$HOME/.bin" ] && PATH="$HOME/.bin:$PATH"
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/Applications" ] && PATH="$HOME/Applications:$PATH"
+[ -d "$HOME/.cargo/bin" ] && PATH="$HOME/.cargo/bin:$PATH"
 ### SETTING OTHER ENVIRONMENT VARIABLES
 [ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
 [ -z "$XDG_DATA_HOME" ] && export XDG_DATA_HOME="$HOME/.local/share"
@@ -359,8 +362,8 @@ esac
 
 pxon() {
     # sudo pigchacli
-    sudo curl -o /usr/bin/pigchacli https://webdownload.duangspeed.com/linux/pigchacli_x86_64 -k
-    sudo chmod +x /usr/bin/pigchacli
+    # sudo curl -o /usr/bin/pigchacli https://webdownload.duangspeed.com/linux/pigchacli_x86_64 -k
+    # sudo chmod +x /usr/bin/pigchacli
 
     # 设置git代理执行：
     git config --global http.proxy http://127.0.0.1:15777 && git config --global https.proxy http://127.0.0.1:15777
