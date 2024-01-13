@@ -14,23 +14,16 @@ neovim_install() {
         rt_warn "neovim config install skipped !"
         return 1
     }
-    flag=$(rt_select "LunarVim theniceboy scratch askfiy")
+    flag=$(rt_select "LunarVim askfiy NvChad")
     flag="${flag:-LunarVim}"
     [ -d ~/.config/nivm ] && mv ~/.config/nvim ~/.config/nvim.old
     rt_log "[${flag}] nvim installing ..."
     case "$flag" in
-        "theniceboy")
-            #  2.1 theniceboy: https://github.com/theniceboy/nvim
-            git clone git@github.com:theniceboy/nvim.git ~/.config/nvim
-            (cd ~/.config/nvim && patch < "${BIN}/patch.files/theniceboy_nvim.init.vim.patch") || {
-                rt_err "patch to theniceboy_nvim failed"
-            }
-            rt_log "start nvim with [nvim +PlugInstall]"
-            ;;
-        "scratch")
-            #  2.2 git@github.com:LunarVim/Neovim-from-scratch.git
-            git clone git@github.com:LunarVim/Neovim-from-scratch.git ~/.config/nvim
-            rt_log "start nvim with [nvim +PackerSync]"
+        "NvChad")
+            [ -d "$HOME/.config/nvim" ] && mv ~/.config/nvim ~/.config/nvim.bak
+            git clone https://github.com/NvChad/NvChad.git ~/.config/nvim
+            git clone https://github.com/linruohan/NvChad_custom.git ~/.config/nvim/lua/custom
+            rt_log "start nvim with [nvim]"
             ;;
         "LunarVim")
             git clone https://github.com/LunarVim/LunarVim.git /tmp

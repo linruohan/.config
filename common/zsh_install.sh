@@ -37,6 +37,7 @@ ohmyzsh_install() {
 
 shell_tool_install() {
     (type shellcheck && type shfmt) || sudo pacman -Ss shellcheck shfmt
+    alias f='shfmt -d -i 4 -ci -w -bn -sr'
 }
 
 zsh_install "$@"

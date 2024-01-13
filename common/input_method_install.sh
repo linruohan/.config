@@ -11,9 +11,13 @@ rime_config() {
     rt_log "[${platform}] rime installing ... !"
     case $platform in
         "linux")
-            install_dir="$HOME/.local/share/fcitx5/themes"
-            [ ! -d "${install_dir}" ] && mkdir -p "${install_dir}"
-            cp -arv "${BIN:-}/config.files/fcitx5/themes/xiaohan-rime" "${install_dir}"
+            sudo pacman -Syu pi fcitx5-chinese-addons  fcitx5-rime
+            install_dir="$HOME/.local/share/fcitx5"
+            [ ! -d "${install_dir}" ] && mkdir -p "${install_dir}/themes"
+            # rime-ice 配置文件
+            git clone git@github.com:iDvel/rime-ice.git "$install_dir"
+            # rime-theme 主题文件
+            cp -arv "${BIN:-}/home.files/.local/share/fcitx5/themes/*" "${install_dir}"
             ;;
         "windows")
             # windows install
